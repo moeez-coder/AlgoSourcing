@@ -8,7 +8,7 @@ user gives explicit final approval to resume live pushes — check with the
 user (not just this file) before assuming that approval has happened, and
 update this section the moment it does.
 
-While this phase is active, an execution session should:
+While this phase is active, any session — master or individual — should:
 - Do the full sourcing workflow (companies → people → dedup-check against the
   ledger → save CSVs) exactly as normal.
 - **Skip step 5 (push to HeyReach) and step 6 (update ledger with push
@@ -32,6 +32,34 @@ critically, where API keys actually live (environment-level config — never
 in this repo or in chat). Blitz has no MCP wrapper — call its REST API
 directly via HTTP using the `BLITZ_API_KEY` env var, after confirming your
 session's environment actually has it.
+
+## Data philosophy: maximize coverage, cheap → expensive waterfall
+
+Standing instruction from the user (2026-09-08): **always prefer more data
+over less.** Use every tool available for sourcing and enrichment — don't
+stop at the first tool/endpoint that returns a partial result if another
+available tool could add more (more qualifying companies, more people per
+company, more enrichment fields per person — email, phone, verified
+LinkedIn, etc.). This applies to the actual sourced sample/batch; it does
+**not** loosen the TAM-sizing step above, where using cheap total-match
+counts instead of enriching every record is still the right call precisely
+because it maximizes what you can report (total market size) for the
+least cost.
+
+Sequence tools/endpoints **cheap → expensive**, but only as an ordering rule,
+never as a reason to skip a more expensive source:
+1. Try the cheapest available source/endpoint first (e.g. Blitz's own
+   waterfall cascade already sequences this internally per its docs; a free
+   or low-cost Clay lookup before a paid enrichment call).
+2. Escalate to progressively more expensive sources/endpoints for whatever
+   the cheap tier didn't fully resolve — missing email, missing phone,
+   ambiguous company match, etc.
+3. Combine and merge results across tools rather than treating the first hit
+   as final. If Blitz returns a person's title/company but no email, and
+   Clay (or another connected tool) can find the email, use both and keep
+   the richer combined record.
+4. As new tools get connected (Cold IQ, Prospeo, etc. — see `TOOLS.md`), add
+   them into this waterfall rather than treating Clay+Blitz as the ceiling.
 
 ## Workflow
 

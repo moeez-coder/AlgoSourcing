@@ -1,61 +1,80 @@
 # Multi-Session Coordination
 
-The user runs a **separate Claude session/agent per vertical** (and possibly
-per segment within a vertical), all working out of this same repo at the same
-time. These rules exist so sessions don't collide, duplicate pushes, or lose
-each other's work.
+**Updated 2026-09-08 — supersedes the earlier "hub session does groundwork /
+execution session does sourcing" split.** The user now wants most actual
+sourcing work done in one primary session, with individual per-vertical
+sessions used only occasionally, for fine-tuning or troubleshooting. These
+rules exist so that primary session and any occasional individual sessions
+don't collide, duplicate pushes, or lose each other's work.
 
 **Check `pipeline.md`'s "Current phase" banner before pushing anything to
 HeyReach** — as of 2026-09-08 all verticals are in a testing/priming phase
-with pushes paused pending the user's final approval. This applies across
-every vertical, not just whichever one you're assigned to.
+with pushes paused pending the user's final approval. This applies to every
+session, master or individual, across every vertical.
 
-## Two kinds of session
+## Master / individual session model
 
-- **Hub session** (this one, where the user discusses strategy/new
-  segments/verticals): used to lay groundwork *before* a new
-  vertical/segment execution session is spun up — writing its
-  `sourcing/verticals/<slug>.md` file, adding its row(s) to
-  `heyreach-campaign-map.md` (creating the HeyReach campaigns first via the
-  `heyreach-vertical-launch` skill if they don't exist yet), scaffolding its
-  `sourcing/data/<slug>/{companies,people}/` dirs and empty
-  `contacted_ledger.csv`, and resolving open questions (ICP identity, revenue
-  cutoffs, which existing campaigns to target) with the user directly. Do
-  this groundwork here, commit it, *then* the user opens the dedicated
-  session.
-- **Execution session** (one per vertical/segment, opened by the user in
-  Claude Code once groundwork above exists): does the actual sourcing →
-  ledger-check → push → ledger-update → log loop for its one vertical, per
-  `pipeline.md`. It should not need to make ICP-identity-level decisions or
-  create new HeyReach campaigns on its own — if it hits a question at that
-  level, it should surface it back to the user rather than guessing, the same
-  way this hub session does.
+- **Master session** (this one — the one the user is primarily working in;
+  currently `session_019W2MEyTk1GwcVjEfcm7j7v`): does most of the actual work,
+  across **all** verticals directly — TAM sizing, sourcing companies/people
+  via Blitz/Clay, saving CSVs, ledger checks/updates, Progress Log entries,
+  and (once the testing/priming phase lifts) HeyReach pushes. Not restricted
+  to one vertical's files — free to read/write across
+  `sourcing/verticals/*`, `sourcing/data/*/**` for whichever vertical the
+  user is asking about. Also still does the groundwork role from the old
+  model: laying groundwork for a new vertical/segment (ICP file, HeyReach
+  campaign map entry, data folders + ledger, creating HeyReach campaigns via
+  the `heyreach-vertical-launch` skill if needed) before an individual
+  session for it would ever be opened.
+- **Individual session** (opened by the user directly in Claude Code, only
+  when something needs fine-tuning or isn't going right in one specific
+  vertical/segment — not the default way work gets done anymore): scoped to
+  **one vertical**, same restricted rules as before — stay inside that
+  vertical's `sourcing/verticals/<slug>.md` and
+  `sourcing/data/<slug>/**`, treat everything else as shared/read-mostly, and
+  `git pull` before touching anything, since the master session is likely to
+  have pushed new data since the individual session was last opened. It
+  should not make ICP-identity-level decisions or create new HeyReach
+  campaigns on its own — surface those to the user instead of guessing.
+
+Because the master session does most of the work now, most commits will come
+from here — that's expected. An individual session is the exception, spun up
+for a specific fix, not a standing per-vertical worker.
 
 ## Ownership boundaries
 
-- Each session works **one vertical** (`vertical-1-staffing-recruitment`,
-  `vertical-2-marketing`, or `vertical-3-ma`) at a time. Stay inside:
-  - `sourcing/verticals/<your-vertical>.md` (read + append to Progress Log)
-  - `sourcing/data/<your-vertical>/**` (read + write new files)
-- Treat these as **shared, read-mostly**: `sourcing/README.md`,
-  `sourcing/icp-overview.md`, `sourcing/heyreach-campaign-map.md`,
-  `sourcing/pipeline.md`, `sourcing/TOOLS.md`, `sourcing/COORDINATION.md`.
-  If one of these needs a
-  substantive change (e.g. a new confirmed campaign ID, a corrected ICP
-  filter), make the edit, but keep it additive/small and mention it prominently
-  in your Progress Log entry so other sessions notice it on their next pull.
-- Never edit another vertical's file, and never edit another session's
-  existing Progress Log entries — only append new ones.
+- The **master session** may read/write across all of `sourcing/verticals/*`
+  and `sourcing/data/*/**` — it isn't scoped to one vertical.
+- An **individual session** stays scoped to **one vertical**
+  (`vertical-1-staffing-recruitment`, `vertical-2-marketing`, or
+  `vertical-3-ma`) for the duration of that session:
+  - `sourcing/verticals/<its-vertical>.md` (read + append to Progress Log/TAM)
+  - `sourcing/data/<its-vertical>/**` (read + write new files)
+- Treat these as **shared, read-mostly** from an individual session (the
+  master session can edit them freely as part of its normal work):
+  `sourcing/README.md`, `sourcing/icp-overview.md`,
+  `sourcing/heyreach-campaign-map.md`, `sourcing/pipeline.md`,
+  `sourcing/TOOLS.md`, `sourcing/COORDINATION.md`. If an individual session
+  needs a substantive change here (e.g. a new confirmed campaign ID), make
+  the edit, but keep it additive/small and mention it prominently in its
+  Progress Log entry so the master session notices it on its next pull.
+- Never edit another vertical's file from an individual session, and never
+  edit another session's existing Progress Log/TAM entries — only append new
+  ones. This applies to the master session too when appending alongside
+  work an individual session already logged.
 
-## Before doing any sourcing or push in a session
+## Before doing any sourcing or push, in either session type
 
-1. `git pull` (or fetch + check) to get any updates other sessions have
-   pushed since you last read this repo.
-2. Re-read your vertical's file, in particular its Progress Log, so you know
-   what's already been sourced and what's already been pushed to HeyReach.
+1. `git pull` (or fetch + check) to get any updates the other session type
+   has pushed since you last read this repo. This matters more now, not
+   less: the master session may be actively pushing across several verticals
+   while an individual session is open for just one of them.
+2. Re-read the relevant vertical's file, in particular its Progress Log and
+   TAM section, so you know what's already been sourced and what's already
+   been pushed to HeyReach.
 3. Re-check `heyreach-campaign-map.md` for the current live campaign ID for
-   your vertical+stage — statuses drift, and another session may have noted a
-   change there.
+   that vertical+stage — statuses drift, and the other session may have
+   noted a change there.
 
 ## De-duplication — the contacted ledger
 
@@ -67,23 +86,25 @@ per-run people CSVs) as the answer to "have we already reached out to this
 person." This is what actually prevents sending the same person a connection
 request or open-profile InMail twice.
 
-If two sessions are sourcing the same vertical concurrently (shouldn't
-normally happen under the one-session-per-vertical model, but can if the user
-starts a second one), `git pull` immediately before checking the ledger so
-you see the other session's latest pushes, and resolve any ledger merge
-conflict by keeping both sessions' rows (never drop a row to resolve a
-conflict).
+If the master session and an individual session end up sourcing the same
+vertical concurrently (uncommon now that individual sessions are the
+exception, but possible if the user opens one to fine-tune something while
+also asking the master session to keep working that vertical), `git pull`
+immediately before checking the ledger so you see the other session's latest
+pushes, and resolve any ledger merge conflict by keeping both sessions' rows
+(never drop a row to resolve a conflict).
 
-## After every sourcing/push run (mandatory)
+## After every sourcing/push run (mandatory), in either session type
 
 - Save the company list and/or people list as new timestamped CSV files under
-  `sourcing/data/<your-vertical>/...` — see `pipeline.md` for the naming
+  `sourcing/data/<that-vertical>/...` — see `pipeline.md` for the naming
   convention and column format. Do this for every run, not just "final"
   batches — partial/exploratory pulls count too, so nothing is lost if the
   session ends unexpectedly.
-- Append one Progress Log entry to your vertical's file (format in
-  `pipeline.md`).
-- Commit and push these changes to the branch so other sessions can see them.
+- Append one Progress Log entry (and a TAM entry, if sizing was done) to that
+  vertical's file (format in `pipeline.md`).
+- Commit and push these changes to the branch so the other session type can
+  see them.
 
 ## Git conflict handling
 

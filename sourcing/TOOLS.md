@@ -44,13 +44,14 @@ stop and tell the user, not ask them to paste it into chat or a file.
 | Gmail / Google Calendar / Google Drive / Slack | ✅ Connected, not core to sourcing | Available if a sourcing session needs to check the client Slack channel, send something, or read a doc, but not part of the Blitz/Clay → HeyReach pipeline itself. |
 | Prospeo | ❓ Unconfirmed | Referenced in the existing Vertical 1 sourcing config's `sourcing_instructions` ("Use prospeo, use blitz api...") but no Prospeo MCP tool or env var is present in this session either. Same treatment as Blitz/Cold IQ — don't assume it works, confirm before relying on it. |
 
-## What this means for an execution session, practically
+## What this means practically (master session or individual session)
 
-- **Clay and Blitz are both live** as of 2026-09-08 — use both per
-  `pipeline.md` (Blitz for waterfall ICP/company/people search and
-  enrichment, Clay for enrichment, Claygent scoring, and workspace-specific
-  subroutines). **Cold IQ and Prospeo are still not confirmed** — don't
-  assume either works.
+- **Clay and Blitz are both live** as of 2026-09-08 — use **both**, not
+  either/or, per `pipeline.md`'s "Data philosophy" section: the user wants
+  maximum data coverage, sequencing tools cheap → expensive but never
+  skipping a more expensive tool just to save cost. **Cold IQ and Prospeo are
+  still not confirmed** — don't assume either works, but fold them into the
+  waterfall the moment they are.
 - Before calling Blitz, confirm the key is actually in *your* session's
   environment first (`env | grep -q '^BLITZ_API_KEY='`) — don't assume it's
   present just because this file says Blitz is live overall; a session
