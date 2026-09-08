@@ -35,6 +35,18 @@ session's environment actually has it.
 
 ## Workflow
 
+0. **TAM sizing (required every run, before/alongside sourcing):** get the
+   *total* count of companies matching that vertical's ICP filters, and the
+   total count of people matching its persona/title filters across those
+   companies — not just the small batch you're actually going to sample.
+   Most search tools (Blitz waterfall ICP / people search, Clay searches)
+   return a total-match count in their response metadata even when you only
+   paginate through a subset — use that rather than trying to enumerate and
+   enrich every single match, which would burn far more record budget than
+   sizing the market requires. Record the result in the vertical's file under
+   its "TAM" section (template there) — this is a running log, not a
+   single number, since it'll shift as filters get refined. Report the
+   current TAM to the user alongside any sourced sample.
 1. **Companies:** find target companies per vertical using Blitz API and/or
    Clay (Clay company search / find-and-enrich-company), filtered by
    `icp-overview.md` + the vertical's own file (revenue, headcount, HQ
@@ -102,6 +114,19 @@ Two additional safety nets, on top of the ledger:
 Neither of those replaces the ledger — the ledger is what lets a session
 avoid even *attempting* to push someone twice, and it's what a brand-new
 session with no other context can trust on day one.
+
+## TAM entry format (append to the relevant vertical file's TAM section)
+
+```
+### 2026-09-08 14:32 UTC — <session/agent name or id>
+- Companies matching ICP filters: N (method: <tool/endpoint + filters used>)
+- People matching persona/title filters across those companies: M (method: <tool/endpoint + filters used>)
+- Notes: <exact/estimate, any filter caveats, overlap with other verticals if relevant>
+```
+
+Treat this like the Progress Log — append-only, newest on top, don't edit or
+delete another session's prior estimate (the history of how TAM moved as
+filters got refined is useful on its own).
 
 ## Data file naming convention
 

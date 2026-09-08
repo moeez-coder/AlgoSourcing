@@ -41,6 +41,14 @@ only raw HeyReach campaigns.
 of 2026-09-08, no runs yet). Check it before every push, update it after
 every push — see `../pipeline.md`, "The contacted ledger."
 
+## TAM (Total Addressable Market) — append-only, newest entry on top
+
+Total companies matching this vertical's ICP filters, and total people
+matching its persona/title filters across those companies — not the sample
+actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
+
+_No estimate logged yet as of 2026-09-08._
+
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
 _No sourcing runs yet as of 2026-09-08._
