@@ -15,16 +15,18 @@
    respectively, then commit them. This is the durable record other
    sessions/agents rely on — don't leave sourcing output only in chat or in an
    external tool's UI.
-4. **Push to HeyReach — Con Req only:** once a people file is finalized, push
-   those leads into that vertical's **Con Req** campaign (see
-   `heyreach-campaign-map.md` — "Push target" line per vertical) using
-   `mcp__Algo__add_leads_to_campaign` / `add_leads_to_campaign_v2` (or
-   `add_leads_to_list` if staging into the campaign's linked list first).
-   Standing instruction from the user (2026-09-08): **only push to Con Req
-   campaigns.** Never push sourced leads to Con Acc or Open Profile (they fill
-   automatically via Clay webhook once a lead accepts/opens) or to Open Check
-   (a different funnel not in use for this project). Re-check the Con Req
-   campaign's live status immediately before pushing.
+4. **Push to HeyReach — Con Req AND Open Check:** once a people file is
+   finalized, push those leads into **both** that vertical's Con Req campaign
+   and its Open Check campaign (see `heyreach-campaign-map.md` — "Push
+   targets" per vertical) using `mcp__Algo__add_leads_to_campaign` /
+   `add_leads_to_campaign_v2` (or `add_leads_to_list` if staging into each
+   campaign's own linked list first — they each need their own list, don't
+   share one). Standing instruction from the user (updated 2026-09-08): **push
+   to Con Req and Open Check, never to Con Acc or Open Profile** — those two
+   fill automatically via Clay webhook once a lead accepts the connection
+   request or is confirmed open-profile. Re-check both campaigns' live status
+   immediately before pushing — some verticals' Open Check campaigns are
+   currently FINISHED/drained and need confirmation before reuse.
 5. **Log the run** by appending an entry to that vertical's Progress Log
    (bottom of its file in `verticals/`) — see format below.
 
@@ -47,12 +49,15 @@ estimated_revenue, industry, signal(s), qualified (yes/no), notes`
 
 `first_name, last_name, full_name, title, company_name, company_domain,
 linkedin_url, email (if found), seniority, source (blitz/clay/both),
-pushed_to_campaign_id, pushed_at`
+pushed_to_con_req_campaign_id, pushed_to_con_req_at,
+pushed_to_open_check_campaign_id, pushed_to_open_check_at`
 
-Fill `pushed_to_campaign_id` / `pushed_at` after the HeyReach push step, and
-re-save the file (or save a second "pushed" version) so it's clear from the
-file alone what has already gone out — this is the main de-dup signal other
-sessions should check before sourcing the same vertical again.
+Fill the four `pushed_to_*` columns after each HeyReach push step (a lead may
+land in Con Req and Open Check at different times if they weren't pushed
+together), and re-save the file (or save a second "pushed" version) so it's
+clear from the file alone what has already gone out to which campaign — this
+is the main de-dup signal other sessions should check before sourcing the
+same vertical again.
 
 ## Progress Log entry format (append to the relevant vertical file)
 
@@ -61,7 +66,8 @@ sessions should check before sourcing the same vertical again.
 - Sourced: N companies / M people
 - Files: sourcing/data/<vertical>/companies/2026-09-08_1432_<label>.csv,
          sourcing/data/<vertical>/people/2026-09-08_1432_<label>.csv
-- Pushed to HeyReach campaign: <name> (<id>), <count> leads
+- Pushed to HeyReach Con Req campaign: <name> (<id>), <count> leads
+- Pushed to HeyReach Open Check campaign: <name> (<id>), <count> leads
 - Notes: <dedup notes, exclusions applied, anything the next session needs>
 ```
 

@@ -10,21 +10,22 @@ Every vertical has 4 campaigns, in dependency order:
 
 | # | Type | What it does | Where its leads come from |
 |---|---|---|---|
-| 1 | **Con Req** | Sends the LinkedIn connection request | **This is where we push net-new sourced leads** |
+| 1 | **Con Req** | Sends the LinkedIn connection request | **We push net-new sourced leads here** |
 | 2 | **Con Acc** | 3-message follow-up sequence | Automated — Clay pushes leads here via webhook once they accept the connection request sent by Con Req. Never push sourced leads here directly. |
-| 3 | **Open Check** | Checks if a profile is "open" (messageable without connecting) and views it | A *separate* entry funnel, not used by us right now |
+| 3 | **Open Check** | Checks if a profile is "open" (messageable without connecting) and views it | **We also push net-new sourced leads here** (parallel entry point, independent of Con Req/connection status) |
 | 4 | **Open Profile** | Sends InMail to confirmed open profiles | Automated — fed by Open Check via Clay webhook, same pattern as Con Acc |
 
-**Standing instruction from the user (2026-09-08): only push sourced leads to
-Con Req campaigns.** We are not using the Open Check / Open Profile funnel for
-this BD sourcing work. Con Acc and Open Profile are never a push target
-either way — they fill automatically from Con Req / Open Check respectively.
+**Standing instruction from the user (updated 2026-09-08): push sourced leads
+to both Con Req AND Open Check campaigns** for each vertical — these are two
+independent entry points that both accept net-new leads in parallel (Con Req
+attempts a connection; Open Check separately checks/views the profile and, if
+open, feeds Open Profile automatically). Con Acc and Open Profile are never a
+push target either way — they always fill automatically from Con Req / Open
+Check respectively via Clay webhook.
 
-So in practice: for each vertical, find its current live **Con Req** campaign
-ID below and push there. Ignore the Con Acc / Open Check / Open Profile rows
-except as background — they're listed for completeness and because the
-"current generation vs. superseded" reasoning below depends on seeing the
-whole quadset together.
+So in practice: for each vertical, push the same sourced batch of people to
+**both** its current live Con Req campaign ID and its current live Open Check
+campaign ID below. Skip Con Acc and Open Profile.
 
 **Statuses drift constantly** (leads exhaust, campaigns get paused/relaunched
 with a new version suffix). Treat the IDs below as a map of what existed as of
@@ -47,10 +48,15 @@ versions of each — see raw pull if needed):
 | Open Check | US & Europe \| Open Check \| Vertical 1 \|Moe 1.3 | 567476 | FINISHED |
 | Open Profile | US & Europe \| Open Profile \| Vertical 1 \|Moe | 557771 | IN_PROGRESS |
 
-**Push target = Con Req 567452** — but it's currently PAUSED, so before
-pushing, either confirm with the user it should be resumed, or check whether
-one of the older still-IN_PROGRESS Con Req versions below is the intended live
-target instead.
+**Push targets:**
+- **Con Req 567452** — currently PAUSED, so before pushing, either confirm
+  with the user it should be resumed, or check whether one of the older
+  still-IN_PROGRESS Con Req versions below is the intended live target
+  instead.
+- **Open Check 567476** — currently FINISHED (fully drained, 24,100 users
+  already processed). Confirm with the user whether to resume/reuse this one
+  or whether a fresh Open Check campaign should be created for this vertical
+  before pushing new leads.
 
 Older still-IN_PROGRESS Con Req versions for this vertical (leads may still be
 draining through these — don't double-push the same people): 550752 (Moe),
@@ -65,7 +71,9 @@ draining through these — don't double-push the same people): 550752 (Moe),
 | Open Check | US \| Open Check \| Vertical 2 \| Moe 1.0 | 568621 | IN_PROGRESS |
 | Open Profile | US \| Open Profile \| Vertical 2 \| Moe 1.0 | 580498 | IN_PROGRESS |
 
-**Push target = Con Req 568586** (IN_PROGRESS — live, ready to receive leads).
+**Push targets:**
+- **Con Req 568586** (IN_PROGRESS — live, ready to receive leads)
+- **Open Check 568621** (IN_PROGRESS — live, ready to receive leads)
 
 No `icp_config` / `sourcing_config` exists yet for this vertical in the new
 tracking-clients system — only the raw HeyReach campaigns above.
@@ -87,7 +95,13 @@ DRAFT/PAUSED).
 | Open Check | M&A - SEPT - OP CHECK | 587156 | FINISHED |
 | Open Profile Msg | M&A - SEPT - OPEN PROF MSG | 587225 | IN_PROGRESS |
 
-**Push target = Con Req 587149** (IN_PROGRESS — live, ready to receive leads).
+**Push targets:**
+- **Con Req 587149** (IN_PROGRESS — live, ready to receive leads)
+- **Open Check 587156** — currently FINISHED (fully drained, 8,290 users
+  already processed). Confirm with the user whether to resume/reuse this one
+  or create a fresh Open Check campaign for this vertical before pushing new
+  leads. Note there's also an older superseded Open Check (580514, DRAFT,
+  Sept-2 generation) — don't use that one either without checking first.
 
 Superseded Sept 2 generation (DRAFT/PAUSED, likely not the live target — do
 not push here unless the user says otherwise): Con Req 580487 (PAUSED),
@@ -95,14 +109,17 @@ Con Acc 580482 (PAUSED), Open Check 580514 (DRAFT), Open Profile 580496 (DRAFT).
 
 ## How to push sourced leads in
 
-**Only push to each vertical's Con Req campaign** (see "Push target" line in
-each section above). Never push directly to Con Acc, Open Check, or Open
-Profile — Con Acc and Open Profile fill automatically from Clay via webhook,
-and Open Check is a different funnel we aren't using for this project.
+**Push each sourced batch to both the Con Req and Open Check campaigns** for
+that vertical (see "Push targets" in each section above). Never push directly
+to Con Acc or Open Profile — they fill automatically from Clay via webhook
+once a lead accepts the connection request (Con Req) or is confirmed
+open-profile (Open Check).
 
-Use `mcp__Algo__add_leads_to_campaign` / `add_leads_to_campaign_v2` with the
-Con Req campaign ID above, or `add_leads_to_list` if staging into its
-`linkedInUserListId` first (each campaign above has one attached — see
-`linkedInUserListId` in the raw pull). Always re-confirm the campaign's
-current status and `progressStats` right before pushing, since these numbers
-move daily.
+Use `mcp__Algo__add_leads_to_campaign` / `add_leads_to_campaign_v2` against
+each of the two target campaign IDs, or `add_leads_to_list` if staging into
+each campaign's own linked list first (Con Req and Open Check each have their
+own dedicated list — never share one list across both). Always re-confirm
+both campaigns' current status and `progressStats` right before pushing,
+since these numbers move daily — several verticals' Open Check campaigns are
+currently FINISHED (fully drained) and need the user's input on whether to
+resume/reuse or relaunch before they can receive new leads.
