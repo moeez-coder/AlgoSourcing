@@ -8,7 +8,7 @@ user gives explicit final approval to resume live pushes — check with the
 user (not just this file) before assuming that approval has happened, and
 update this section the moment it does.
 
-While this phase is active, an execution session should:
+While this phase is active, any session — master or individual — should:
 - Do the full sourcing workflow (companies → people → dedup-check against the
   ledger → save CSVs) exactly as normal.
 - **Skip step 5 (push to HeyReach) and step 6 (update ledger with push
