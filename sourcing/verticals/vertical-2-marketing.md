@@ -48,6 +48,35 @@ Total companies matching this vertical's ICP filters, and total people
 matching its persona/title filters across those companies — not the sample
 actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
+### 2026-09-08 14:48 UTC — execution-session-vertical-2 (wide-net re-run, per user request)
+- Companies matching ICP filters: 19,604 (method: Blitz `POST /v2/search/companies`,
+  `total_results`; same as prior entry below but industry list widened from 5 to 8:
+  added Market Research, Design Services, Events Services. Headcount/revenue/HQ/type
+  filters unchanged.)
+- People matching persona/title filters across those companies: 422,850 (method:
+  Blitz `POST /v2/search/people`, `total_results`, `max_results=1`; same 8-industry
+  company filters, person filters switched from the narrow title-keyword list to
+  `job_level` = [C-Team, VP, Director, Manager, Staff] AND `job_function` = [Advertising
+  & Marketing, Sales & Business Development] — this is a materially different, broader
+  targeting method than the previous entry's title-keyword approach, done at the
+  user's explicit request to widen the net toward ~400,000 people. Landed at 422,850,
+  ~6% over the ~400k target — close enough without further tuning.)
+- Notes: **This number is legitimate but concentration-heavy** — confirmed by
+  pulling real records, not just inferred: of the first 3,000 people records
+  returned by blanket pagination against this exact filter set, 2,674 (89%) were
+  a single company (Publicis Groupe, 41,945 LinkedIn employees) and the rest were
+  Figma (a design SaaS company, mistagged into the "Design Services" industry —
+  see Progress Log for detail). A handful of the largest global holding-company
+  networks account for a very large share of the 422,850 total; the number is
+  real but not evenly distributed across the 19,604 companies. See Progress Log
+  entry same timestamp for how the actual sample was built to avoid this
+  concentration.
+- This *replaces* the prior entry's method as the vertical's working definition of
+  "decision-maker" for TAM purposes going forward (bracket-exact C-suite titles
+  were abandoned in favor of job_level+job_function for volume) — flagging in case
+  a future run wants to reconcile the two TAM methodologies rather than just take
+  the newest number at face value.
+
 ### 2026-09-08 11:39 UTC — execution-session-vertical-2 (test run)
 - Companies matching ICP filters: 13,383 (method: Blitz `POST /v2/search/companies`,
   `total_results` field; filters: `industry.include` = [Marketing and Advertising,
@@ -83,6 +112,74 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   specific non-EU states) is intended.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-08 14:48 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (wide-net re-run)
+- Sourced: 198 qualified companies (200 evaluated) / 986 people
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-08_1448_wide-net-batch2.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-08_1448_wide-net-batch2.csv
+- Pushed to HeyReach: none (testing/priming phase — awaiting final approval)
+- Push targets: still Con Req 568586 / Open Check 568621, per the entry above — not
+  re-checked again this run (checked ~3 hours earlier same day, no reason to expect
+  drift within the same session).
+- Context: the user asked to "make the net much wider" after the first test run,
+  then explicitly chose (multi-select): bigger volume at the same quality bar,
+  bring the holding-company networks back in, broaden industry/title definitions,
+  and use Clay in addition to Blitz — then gave a concrete target of "~400,000"
+  prospects. This run widened company industries (5→8: added Market Research,
+  Design Services, Events Services) and switched person targeting from a curated
+  C-suite title list to `job_level` (C-Team/VP/Director/Manager/Staff) + `job_function`
+  (Advertising & Marketing, Sales & Business Development) to hit that volume via
+  Blitz. **Clay was not used this run** — ran out of scope for this pass; flagging
+  per `TOOLS.md`'s standing instruction not to silently skip a requested tool. Should
+  be layered on in a follow-up run per the "maximize coverage" data philosophy in
+  `pipeline.md`.
+- Feedback given to user: new TAM = 19,604 companies / 422,850 people (~6% over the
+  400k target). Critical finding en route to this number: **blanket pagination
+  against a broadened filter that includes large holding-company networks does not
+  produce a diversified sample** — tested directly by pulling 3,000 consecutive
+  people records against the widened filter and finding only 2 distinct companies
+  represented (2,674 from Publicis Groupe alone, 326 from Figma), because Blitz's
+  cursor pagination appears to enumerate a matching company's full employee base
+  before moving to the next company, and Publicis alone (41,945 LinkedIn employees)
+  is large enough to fill many thousands of consecutive results. Fixed by switching
+  to **one capped query per company** (`max_results=5`, scoped via `company.linkedin_url`
+  to each of the 198 qualified companies individually) instead of one blanket
+  cross-company query — this guarantees every company is represented in the actual
+  sample regardless of its size, at the cost of not literally enumerating the
+  ~400k-person TAM into a file (which was never the intent — TAM is a total-match
+  count, not a to-be-enriched list, per `pipeline.md` step 0). This is a real,
+  previously-undocumented Blitz pagination behavior worth keeping in mind for any
+  future high-volume pull across multiple companies, not just this vertical.
+- Notes / judgment calls and data-quality issues this run:
+  1. **Two companies excluded as confirmed mistags, not just flagged this time:**
+     Figma (a design SaaS/software company, matched via the "Design Services"
+     industry tag but is not a marketing/creative agency) and "Google Adsense"
+     (a Google ad product, not an independent company — clearly a data artifact
+     in Blitz's company index). Both are marked `qualified=no` in the companies
+     CSV. The rest of the "Design Services" tag looked legitimate on inspection
+     (IDEO, Pentagram, Wolff Olins, AKQA, Designit, COLLINS, WongDoody, etc. — real
+     branding/design agencies), so the whole industry category was kept rather than
+     dropped wholesale.
+  2. **Seniority bar is intentionally much looser than the previous run.** Widening
+     `job_level` down to Manager/Staff (previously bracket-exact C-suite titles only)
+     pulled in real volume but also junior-leaning titles (Associate, Coordinator,
+     Specialist, Assistant) — 132 of 986 rows flagged `seniority=junior` in the
+     people CSV's notes/seniority columns. This is a direct, expected consequence of
+     the volume target, not a mistake — flagging so the user can decide whether the
+     job_level floor should sit higher (e.g. drop Staff) once real numbers are
+     visible, since 400k was requested with "use all possible filters," which this
+     run took literally.
+  3. **Large holding-company networks are back in-scope** per the user's explicit
+     choice ("bring the holding networks back in") — Publicis, Omnicom, IPG, WPP-
+     owned shops, etc. are no longer excluded from either the TAM or the qualified-
+     company list, reversing the previous run's manual curation. Their outbound-BD
+     fit concern raised in the prior entry still stands and wasn't re-litigated here
+     since the user already made the call.
+  4. Dedup logic re-verified against the ledger (still empty) — 0 of 986 sampled
+     people matched, as expected.
+- Notes: Total Blitz record spend this run: ~1,190 records (several cheap `max_results=1`
+  probes while tuning the ~400k target, 200 for the company pool, 986 for the
+  per-company people pull) — negligible against the ~14.9M remaining balance.
 
 ### 2026-09-08 11:39 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH
 - Sourced: 12 qualified companies (50 evaluated) / 50 people
