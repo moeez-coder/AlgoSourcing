@@ -15,12 +15,16 @@
    respectively, then commit them. This is the durable record other
    sessions/agents rely on — don't leave sourcing output only in chat or in an
    external tool's UI.
-4. **Push to HeyReach:** once a people file is finalized, push those leads
-   into the correct existing HeyReach campaign for that vertical (see
-   `heyreach-campaign-map.md`) using `mcp__Algo__add_leads_to_campaign` /
-   `add_leads_to_campaign_v2` (or `add_leads_to_list` if staging into the
-   campaign's linked list first). Re-check the campaign's live status
-   immediately before pushing.
+4. **Push to HeyReach — Con Req only:** once a people file is finalized, push
+   those leads into that vertical's **Con Req** campaign (see
+   `heyreach-campaign-map.md` — "Push target" line per vertical) using
+   `mcp__Algo__add_leads_to_campaign` / `add_leads_to_campaign_v2` (or
+   `add_leads_to_list` if staging into the campaign's linked list first).
+   Standing instruction from the user (2026-09-08): **only push to Con Req
+   campaigns.** Never push sourced leads to Con Acc or Open Profile (they fill
+   automatically via Clay webhook once a lead accepts/opens) or to Open Check
+   (a different funnel not in use for this project). Re-check the Con Req
+   campaign's live status immediately before pushing.
 5. **Log the run** by appending an entry to that vertical's Progress Log
    (bottom of its file in `verticals/`) — see format below.
 
