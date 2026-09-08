@@ -34,7 +34,8 @@ each other's work.
   - `sourcing/data/<your-vertical>/**` (read + write new files)
 - Treat these as **shared, read-mostly**: `sourcing/README.md`,
   `sourcing/icp-overview.md`, `sourcing/heyreach-campaign-map.md`,
-  `sourcing/pipeline.md`, `sourcing/COORDINATION.md`. If one of these needs a
+  `sourcing/pipeline.md`, `sourcing/TOOLS.md`, `sourcing/COORDINATION.md`.
+  If one of these needs a
   substantive change (e.g. a new confirmed campaign ID, a corrected ICP
   filter), make the edit, but keep it additive/small and mention it prominently
   in your Progress Log entry so other sessions notice it on their next pull.

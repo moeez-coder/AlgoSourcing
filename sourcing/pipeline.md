@@ -1,28 +1,9 @@
 # Sourcing Pipeline — Blitz + Clay → HeyReach
 
-## Tooling status (check this before assuming a tool works)
-
-- **Clay** — real, functional MCP access (`mcp__Clay__*`: find-and-enrich-company,
-  find-and-enrich-contacts-at-company, find-and-enrich-list-of-contacts,
-  query-objects, run_subroutine, etc.), connected to the actual Clay
-  workspace. Ready to use.
-- **Blitz** — as of 2026-09-08, only *documentation* access exists
-  (`mcp__Blitz-API__search_blitz_api_the_api_engine_for` and
-  `query_docs_filesystem_...` — these search/read Blitz's docs, they do not
-  call the Blitz API). Blitz is a real REST API
-  (`https://api.blitz-api.ai`, e.g. `/v2/search/waterfall-icp-keyword`,
-  `/people-search/find-people`) authenticated via an `x-api-key` header (or
-  `BLITZ_API_KEY` env var for the SDKs). **No API key is present in this
-  environment** — confirmed by checking env vars. To actually run Blitz
-  searches, a session needs either: (a) a `BLITZ_API_KEY` supplied by the
-  user (then call it directly via curl/HTTP — there's no MCP wrapper), or
-  (b) a proper Blitz MCP execution tool connected. Don't assume Blitz calls
-  will work without checking for this first.
-- **Cold IQ** — no tool, MCP server, or env var found under this name at all
-  as of 2026-09-08. Not connected. If the user references it, ask what it is
-  and how it should be connected before assuming it's available.
-- **HeyReach (via the `Algo` MCP server)** — real, functional access, used
-  for all campaign/lead-push operations.
+**Before starting, read `TOOLS.md`** for what's actually callable right now
+(Clay is live; Blitz/Cold IQ are not execution-ready as of 2026-09-08) and,
+critically, where API keys actually live (environment-level config — never
+in this repo or in chat).
 
 ## Workflow
 

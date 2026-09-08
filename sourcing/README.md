@@ -13,6 +13,7 @@ sessions from colliding or duplicating leads.
 ## Index
 
 - `COORDINATION.md` — **read first** — rules for running multiple sessions/agents against this repo at once
+- `TOOLS.md` — **read second** — what's actually callable (Clay/Blitz/Cold IQ/HeyReach status) and where API keys live (never in this repo)
 - `icp-overview.md` — shared firmographic/geographic filters across all verticals
 - `verticals/vertical-1-staffing-recruitment.md`
 - `verticals/vertical-2-marketing.md`
