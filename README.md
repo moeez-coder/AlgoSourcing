@@ -46,4 +46,4 @@ execution session — see `sourcing/COORDINATION.md`.
   wrapper; it's called directly via HTTP using an environment-level
   `BLITZ_API_KEY`).
 - Cold IQ is referenced by the user but not yet identified/connected.
-- Tracked in pull request [#2](https://github.com/moeez-coder/AlgoSourcing/pull/2) (PR #1 merged this initial setup).
+- Tracked in pull requests [#1](https://github.com/moeez-coder/AlgoSourcing/pull/1) and [#2](https://github.com/moeez-coder/AlgoSourcing/pull/2), both merged. Further pushes to this branch will open a new PR automatically.
