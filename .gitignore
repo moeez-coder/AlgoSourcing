@@ -1,0 +1,6 @@
+# Never commit secrets. See sourcing/TOOLS.md for where API keys actually live.
+.env
+.env.*
+!.env.example
+*.key
+*credentials*.json
