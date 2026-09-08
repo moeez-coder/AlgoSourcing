@@ -1,5 +1,31 @@
 # Sourcing Pipeline — Blitz + Clay → HeyReach
 
+## 🛑 Current phase (as of 2026-09-08): TESTING / PRIMING — DO NOT PUSH TO HEYREACH
+
+The user has explicitly paused all HeyReach pushes across **every vertical**
+while sourcing gets tested and primed. This overrides step 5 below until the
+user gives explicit final approval to resume live pushes — check with the
+user (not just this file) before assuming that approval has happened, and
+update this section the moment it does.
+
+While this phase is active, an execution session should:
+- Do the full sourcing workflow (companies → people → dedup-check against the
+  ledger → save CSVs) exactly as normal.
+- **Skip step 5 (push to HeyReach) and step 6 (update ledger with push
+  data) entirely** — do not call `add_leads_to_campaign` /
+  `add_leads_to_campaign_v2` / `add_leads_to_list` at all right now.
+- **Report back for feedback before going further.** Don't just log a
+  Progress Log entry and stop silently — surface to the user: what you
+  sourced, sample rows (a handful of companies/people so they can eyeball
+  quality), how many passed the ICP filters vs. got excluded and why, any
+  judgment calls you made, and any gaps/questions (ambiguous signals, a
+  persona list that doesn't feel right, data quality issues). This is
+  exactly the point of the testing phase — the user is relying on this
+  feedback to decide whether the ICP/persona/signal criteria need
+  adjusting before real pushes start.
+- Mark the Progress Log entry clearly as a **test run, no push** (see format
+  below).
+
 **Before starting, read `TOOLS.md`** for what's actually callable right now
 (Clay and Blitz are both live as of 2026-09-08; Cold IQ/Prospeo are not) and,
 critically, where API keys actually live (environment-level config — never
@@ -102,6 +128,22 @@ is not the dedup source (that's the ledger, above). After pushing, the
 ledger gets the `pushed_to_*` / timestamp data, not this file.
 
 ## Progress Log entry format (append to the relevant vertical file)
+
+While the testing/priming phase (above) is active, use this form — no push
+happened, so say so explicitly rather than omitting the push lines:
+
+```
+### 2026-09-08 14:32 UTC — <session/agent name or id> — TEST RUN, NO PUSH
+- Sourced: N companies / M people
+- Files: sourcing/data/<vertical>/companies/2026-09-08_1432_<label>.csv,
+         sourcing/data/<vertical>/people/2026-09-08_1432_<label>.csv
+- Pushed to HeyReach: none (testing/priming phase — awaiting final approval)
+- Feedback given to user: <summary of what you reported for review — sample
+  quality, exclusion reasons, open questions>
+- Notes: <dedup notes, exclusions applied, anything the next session needs>
+```
+
+Once the user lifts the pause and live pushes resume, switch to:
 
 ```
 ### 2026-09-08 14:32 UTC — <session/agent name or id>

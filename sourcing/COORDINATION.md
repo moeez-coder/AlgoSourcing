@@ -5,6 +5,11 @@ per segment within a vertical), all working out of this same repo at the same
 time. These rules exist so sessions don't collide, duplicate pushes, or lose
 each other's work.
 
+**Check `pipeline.md`'s "Current phase" banner before pushing anything to
+HeyReach** — as of 2026-09-08 all verticals are in a testing/priming phase
+with pushes paused pending the user's final approval. This applies across
+every vertical, not just whichever one you're assigned to.
+
 ## Two kinds of session
 
 - **Hub session** (this one, where the user discusses strategy/new
