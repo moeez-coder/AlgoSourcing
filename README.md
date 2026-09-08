@@ -1,9 +1,8 @@
 # AlgoSourcing
 
 Algo Acquisition's own BD sourcing pipeline: find companies and decision-makers
-via Clay (and Blitz, once connected), then push them into HeyReach outbound
-campaigns. This isn't a client project — it's Algo Acquisition prospecting for
-itself.
+via Clay and Blitz, then push them into HeyReach outbound campaigns. This
+isn't a client project — it's Algo Acquisition prospecting for itself.
 
 ## Structure
 
@@ -42,7 +41,9 @@ execution session — see `sourcing/COORDINATION.md`.
 
 ## Status / open items
 
-- Clay is fully connected. Blitz is documentation-access only right now (no
-  API key configured) — see `sourcing/TOOLS.md`.
+- Clay and Blitz are both fully connected and live as of 2026-09-08 — see
+  `sourcing/TOOLS.md` for confirmed API access details (Blitz has no MCP
+  wrapper; it's called directly via HTTP using an environment-level
+  `BLITZ_API_KEY`).
 - Cold IQ is referenced by the user but not yet identified/connected.
-- Tracked in pull request [#1](https://github.com/moeez-coder/AlgoSourcing/pull/1).
+- Tracked in pull request [#2](https://github.com/moeez-coder/AlgoSourcing/pull/2) (PR #1 merged this initial setup).

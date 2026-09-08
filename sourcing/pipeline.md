@@ -1,9 +1,11 @@
 # Sourcing Pipeline — Blitz + Clay → HeyReach
 
 **Before starting, read `TOOLS.md`** for what's actually callable right now
-(Clay is live; Blitz/Cold IQ are not execution-ready as of 2026-09-08) and,
+(Clay and Blitz are both live as of 2026-09-08; Cold IQ/Prospeo are not) and,
 critically, where API keys actually live (environment-level config — never
-in this repo or in chat).
+in this repo or in chat). Blitz has no MCP wrapper — call its REST API
+directly via HTTP using the `BLITZ_API_KEY` env var, after confirming your
+session's environment actually has it.
 
 ## Workflow
 
