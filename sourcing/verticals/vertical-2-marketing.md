@@ -2,13 +2,10 @@
 
 ## Status
 
+**Confirmed with the user (2026-09-08): Vertical 2 = Marketing companies.**
 Live HeyReach campaigns exist (see `../heyreach-campaign-map.md`, Vertical 2
 section) but there is **no tracking-clients ICP config or sourcing config yet**
-for this vertical in the new system — only raw HeyReach campaigns. Vertical
-name ("Marketing companies") is inferred by elimination (Vertical 1 =
-Staffing/Recruitment confirmed via existing ICP config, Vertical 3 = M&A
-confirmed via literal "M&A" campaign names) — **confirm with the user before
-relying on this**.
+for this vertical in the new system — only raw HeyReach campaigns.
 
 ## Target companies (draft — confirm/refine before large sourcing runs)
 
@@ -32,13 +29,12 @@ relying on this**.
   validated specifically for the marketing-agency vertical. Refine once real
   results come back.
 
-## To do before first sourcing run
+## To do (non-blocking — can proceed with drafts, refine as results come in)
 
-- [ ] Confirm "Vertical 2 = Marketing companies" with the user
 - [ ] Create a proper `icp_config` + `sourcing_config` in tracking-clients for
       this vertical (mirror the Vertical 1 structure) so it's tracked the same
       way
-- [ ] Confirm/replace the draft persona list above
+- [ ] Confirm/replace the draft persona list above once real results come back
 
 ## Dedup ledger
 
