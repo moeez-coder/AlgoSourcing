@@ -5,6 +5,27 @@ per segment within a vertical), all working out of this same repo at the same
 time. These rules exist so sessions don't collide, duplicate pushes, or lose
 each other's work.
 
+## Two kinds of session
+
+- **Hub session** (this one, where the user discusses strategy/new
+  segments/verticals): used to lay groundwork *before* a new
+  vertical/segment execution session is spun up — writing its
+  `sourcing/verticals/<slug>.md` file, adding its row(s) to
+  `heyreach-campaign-map.md` (creating the HeyReach campaigns first via the
+  `heyreach-vertical-launch` skill if they don't exist yet), scaffolding its
+  `sourcing/data/<slug>/{companies,people}/` dirs and empty
+  `contacted_ledger.csv`, and resolving open questions (ICP identity, revenue
+  cutoffs, which existing campaigns to target) with the user directly. Do
+  this groundwork here, commit it, *then* the user opens the dedicated
+  session.
+- **Execution session** (one per vertical/segment, opened by the user in
+  Claude Code once groundwork above exists): does the actual sourcing →
+  ledger-check → push → ledger-update → log loop for its one vertical, per
+  `pipeline.md`. It should not need to make ICP-identity-level decisions or
+  create new HeyReach campaigns on its own — if it hits a question at that
+  level, it should surface it back to the user rather than guessing, the same
+  way this hub session does.
+
 ## Ownership boundaries
 
 - Each session works **one vertical** (`vertical-1-staffing-recruitment`,
@@ -30,18 +51,22 @@ each other's work.
    your vertical+stage — statuses drift, and another session may have noted a
    change there.
 
-## De-duplication
+## De-duplication — the contacted ledger
 
-- Before pushing a batch of people to a HeyReach campaign, check the
-  vertical's already-saved people CSVs (`sourcing/data/<vertical>/people/`)
-  for LinkedIn URL / email overlap with your new batch, and check the
-  campaign's own current lead list if unsure (`get_leads_from_campaign`).
-  HeyReach itself may reject/ignore true duplicates, but avoid relying on that
-  — check first.
-- If two sessions are sourcing the same vertical concurrently (shouldn't
-  normally happen under the one-session-per-vertical model, but can if the
-  user starts a second one), the second session to push should skip any
-  person already logged as `pushed_to_campaign_id` in the first session's CSV.
+Each vertical's dedup source of truth is
+`sourcing/data/<vertical>/contacted_ledger.csv` — see `pipeline.md`, "The
+contacted ledger" section, for the exact mechanism. In short: check it before
+every push, update it immediately after every push, and treat it (not the
+per-run people CSVs) as the answer to "have we already reached out to this
+person." This is what actually prevents sending the same person a connection
+request or open-profile InMail twice.
+
+If two sessions are sourcing the same vertical concurrently (shouldn't
+normally happen under the one-session-per-vertical model, but can if the user
+starts a second one), `git pull` immediately before checking the ledger so
+you see the other session's latest pushes, and resolve any ledger merge
+conflict by keeping both sessions' rows (never drop a row to resolve a
+conflict).
 
 ## After every sourcing/push run (mandatory)
 

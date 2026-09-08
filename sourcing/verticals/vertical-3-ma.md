@@ -35,6 +35,12 @@ only raw HeyReach campaigns.
 - [ ] Confirm whether to keep feeding the Sept-6 generation campaigns or the
       user wants a fresh relaunch
 
+## Dedup ledger
+
+`sourcing/data/vertical-3-ma/contacted_ledger.csv` exists (header row only as
+of 2026-09-08, no runs yet). Check it before every push, update it after
+every push — see `../pipeline.md`, "The contacted ledger."
+
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
 _No sourcing runs yet as of 2026-09-08._

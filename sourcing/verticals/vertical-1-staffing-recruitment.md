@@ -38,6 +38,12 @@ cap). Update the ICP config in tracking-clients (`update_icp_config`) before
 using it to drive new sourcing, or treat it as reference only and apply
 `../icp-overview.md` filters directly in Clay/Blitz.
 
+## Dedup ledger
+
+`sourcing/data/vertical-1-staffing-recruitment/contacted_ledger.csv` exists
+(header row only as of 2026-09-08, no runs yet). Check it before every push,
+update it after every push — see `../pipeline.md`, "The contacted ledger."
+
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
 _No sourcing runs logged yet as of 2026-09-08._

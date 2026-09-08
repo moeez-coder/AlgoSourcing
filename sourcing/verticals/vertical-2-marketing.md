@@ -40,6 +40,12 @@ relying on this**.
       way
 - [ ] Confirm/replace the draft persona list above
 
+## Dedup ledger
+
+`sourcing/data/vertical-2-marketing/contacted_ledger.csv` exists (header row
+only as of 2026-09-08, no runs yet). Check it before every push, update it
+after every push — see `../pipeline.md`, "The contacted ledger."
+
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
 _No sourcing runs yet as of 2026-09-08._
