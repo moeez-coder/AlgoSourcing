@@ -18,23 +18,38 @@ for this vertical in the new system — only raw HeyReach campaigns.
   hiring burst, new office/market expansion, leadership change (new
   CEO/CRO/Head of Growth), recent funding or acquisition.
 
-## Target personas / titles (draft, mirrored from Vertical 1's buyer profile)
+## Target personas / titles
 
-- **Seniority include:** CXO, Director, Vice President, Owner / Partner,
-  Founder
-- **Job titles (draft):** CEO, Founder, Managing Partner, President, VP
-  Sales/Business Development, Head of Growth, Head of New Business
-- These are drafted from Algo's own stated buyer profile ("Founders, owners,
-  MDs and sales directors at B2B companies that depend on outbound") — not yet
-  validated specifically for the marketing-agency vertical. Refine once real
-  results come back.
+**Apply the shared seniority filter in `../icp-overview.md`** ("Seniority
+filter" section, added 2026-09-08) — this directly resolves finding #1 from
+the 2026-09-08 test run below (loose title matching pulled in junior
+BDR/associate-level people). Owner/Founder/Partner, C-suite,
+President/Managing Director, VP-and-above in Sales/BD/Growth/Revenue/
+Marketing/New Business/Partnerships. Director excluded by default.
+
+Vertical-specific job titles to search within that seniority band (draft):
+CEO, Founder, Managing Partner, President, VP Sales, VP Business Development,
+Head of Growth, Head of New Business. Use exact/bracket matching (`[CEO]`,
+`[Founder]`, `[President]`, etc.) for short titles per the shared rule's
+"Matching method" — this is what the test run below found necessary. Still
+not yet validated specifically for the marketing-agency vertical beyond that
+one test run; refine further as more results come back.
 
 ## To do (non-blocking — can proceed with drafts, refine as results come in)
 
+- [x] ~~Persona/title list needs bracket-exact matching + seniority
+      filter~~ — resolved 2026-09-08, see `../icp-overview.md` "Seniority
+      filter" section, added in response to this vertical's own test-run
+      finding.
 - [ ] Create a proper `icp_config` + `sourcing_config` in tracking-clients for
       this vertical (mirror the Vertical 1 structure) so it's tracked the same
       way
-- [ ] Confirm/replace the draft persona list above once real results come back
+- [ ] Company-size ceiling still missing (test-run finding #2, separate from
+      the seniority fix) — large holding companies (Publicis, Omnicom, IPG,
+      WPP) still pass the raw company filters
+- [ ] Re-run the TAM/sample with the new seniority filter applied — the
+      13,383/40,035 TAM and the 40,035 people figure both predate this rule
+      and are now stale
 
 ## Dedup ledger
 

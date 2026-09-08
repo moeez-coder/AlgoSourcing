@@ -81,7 +81,12 @@ never as a reason to skip a more expensive source:
    US/UK/Europe with founders locally present, vertical-specific signals).
 2. **People:** for qualified companies, find decision-makers via Clay
    (find-and-enrich-contacts-at-company / find-and-enrich-list-of-contacts)
-   and/or Blitz, filtered by the vertical's target personas/titles.
+   and/or Blitz, filtered by the vertical's target personas/titles **and,
+   always, the seniority filter in `icp-overview.md`** ("Seniority filter"
+   section — standing rule added 2026-09-08: only genuine senior
+   decision-makers, exact/bracket title matching not loose keywords, apply
+   the exclude list as a second pass even on include-matched results). This
+   applies in every vertical, not just wherever a persona list mentions it.
 3. **Dedup against the ledger BEFORE pushing (required):** load
    `sourcing/data/<vertical>/contacted_ledger.csv` and drop anyone whose
    `linkedin_url` already has a non-empty `con_req_pushed_at` (for the Con Req

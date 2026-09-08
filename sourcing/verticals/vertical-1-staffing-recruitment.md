@@ -20,23 +20,29 @@ campaigns: see `../heyreach-campaign-map.md` (Vertical 1 section).
 
 ## Target personas / titles
 
-From the existing ICP config (persona `eb374338-87bd-4296-a5ae-805a27da3942`):
+**Apply the shared seniority filter in `../icp-overview.md`** ("Seniority
+filter" section, added 2026-09-08) — Owner/Founder/Partner, C-suite,
+President/Managing Director, VP-and-above in Sales/BD/Growth/Revenue/
+Marketing/New Business/Partnerships. Director is excluded by default under
+that rule.
 
-- **Seniority include:** CXO, Director, Vice President, Owner / Partner
-- **Job titles:** Head of Staffing, CEO, CXO, CTO — plus in practice: Founder,
-  Managing Partner, President, VP Sales/BD, Head of Business Development
-  (these buyer-role generalizations come from Algo's own `callerBriefing`:
-  "Founders, owners, MDs and sales directors at B2B companies that depend on
-  outbound").
+Vertical-specific job titles to search within that seniority band: Head of
+Staffing, CEO, Founder, Managing Partner, President, VP Sales, VP Business
+Development, Head of Business Development (from Algo's own `callerBriefing`:
+"Founders, owners, MDs and sales directors at B2B companies that depend on
+outbound"). Use exact/bracket matching per the shared rule's "Matching
+method," not loose keyword search.
 
 ## Note
 
-The stored ICP config's `segments[].geos` is `["united states"]` and
-`company_sizes` is `["11-50","51-200","201-500"]` only — **this predates the
-2026-09-08 criteria** (US/UK/Europe geo, revenue floor, no upper headcount
-cap). Update the ICP config in tracking-clients (`update_icp_config`) before
-using it to drive new sourcing, or treat it as reference only and apply
-`../icp-overview.md` filters directly in Clay/Blitz.
+The stored tracking-clients ICP config (persona
+`eb374338-87bd-4296-a5ae-805a27da3942`) still includes **Director** as an
+included seniority level and uses a loose title list — **both are now stale
+against the 2026-09-08 seniority rule above**, in addition to its
+already-noted stale `geos`/`company_sizes`. Update the ICP config in
+tracking-clients (`update_icp_config`) before using it to drive new sourcing,
+or treat it as reference only and apply `../icp-overview.md` filters
+directly in Clay/Blitz.
 
 ## Dedup ledger
 
