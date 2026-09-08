@@ -46,11 +46,12 @@ stop and tell the user, not ask them to paste it into chat or a file.
 
 ## What this means practically (master session or individual session)
 
-- **Clay and Blitz are both live** as of 2026-09-08 — use both per
-  `pipeline.md` (Blitz for waterfall ICP/company/people search and
-  enrichment, Clay for enrichment, Claygent scoring, and workspace-specific
-  subroutines). **Cold IQ and Prospeo are still not confirmed** — don't
-  assume either works.
+- **Clay and Blitz are both live** as of 2026-09-08 — use **both**, not
+  either/or, per `pipeline.md`'s "Data philosophy" section: the user wants
+  maximum data coverage, sequencing tools cheap → expensive but never
+  skipping a more expensive tool just to save cost. **Cold IQ and Prospeo are
+  still not confirmed** — don't assume either works, but fold them into the
+  waterfall the moment they are.
 - Before calling Blitz, confirm the key is actually in *your* session's
   environment first (`env | grep -q '^BLITZ_API_KEY='`) — don't assume it's
   present just because this file says Blitz is live overall; a session
