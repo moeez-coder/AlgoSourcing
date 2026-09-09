@@ -63,6 +63,26 @@ Total companies matching this vertical's ICP filters, and total people
 matching its persona/title filters across those companies — not the sample
 actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
+### 2026-09-09 12:20 UTC — execution-session-vertical-2 (Director-and-above correction, per confirmed seniority rule)
+- Companies matching ICP filters: 19,604 (unchanged — same 8-industry, headcount/revenue/HQ/type
+  filters as the entry below; this run only changed the person-level seniority filter).
+- People matching persona/title filters across those companies: 83,223 (method: Blitz
+  `POST /v2/search/people`, `total_results`, `max_results=1`; company filters unchanged,
+  person filters corrected to `job_level` = [C-Team, VP, Director] (dropped Manager, Staff)
+  + `job_function` = [Advertising & Marketing, Sales & Business Development], per the
+  user's 2026-09-09 confirmation ("Director and above ... not lower than that") now
+  codified in `../icp-overview.md`'s "Seniority filter" section.
+- Notes: **This is the vertical's current working TAM** — supersedes the 422,850 figure
+  below, which used the broader Manager/Staff-inclusive job_level set at the user's
+  earlier "~400,000" volume request. The `total_results` figure (83,223) reflects only
+  the `job_level`+`job_function` filter, not the standing rule's mandatory second-pass
+  exclude list (Representative, Associate, Coordinator, Specialist, Analyst, Assistant,
+  Intern, Trainee, BDR, SDR, Account Executive, bare "Manager") — that exclude pass can
+  only be applied to actually-returned records (title strings), not to a `total_results`
+  count, so 83,223 is a slight overcount of the true addressable pool; the ~9.2%
+  exclude rate measured on the 10,512-person sample below (965 of 11,477 pre-exclude
+  records) is a reasonable estimate of the gap if a tighter TAM number is needed.
+
 ### 2026-09-08 14:48 UTC — execution-session-vertical-2 (wide-net re-run, per user request)
 - Companies matching ICP filters: 19,604 (method: Blitz `POST /v2/search/companies`,
   `total_results`; same as prior entry below but industry list widened from 5 to 8:
@@ -127,6 +147,60 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   specific non-EU states) is intended.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-09 12:20 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (Director-and-above correction, ~10k volume)
+- Sourced: 1,998 companies (same widened pool as the prior wide-net run, minus the 2
+  confirmed mistags) / 10,512 people
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-09_1220_director-plus-10k-batch3.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-09_1220_director-plus-10k-batch3.csv
+- Pushed to HeyReach: **none yet** — the user asked to "push around 10k leads to
+  connection req and open check campaign" and is creating a new HeyReach campaign for
+  this session to push into. Per the testing/priming phase's explicit "check with the
+  user directly, don't just assume" rule, and given a push of this size is not easily
+  reversible, this session prepared the leads but held the actual push pending (a) the
+  new campaign ID(s) from the user and (b) one more explicit go/no-go on this specific
+  push. Not calling `add_leads_to_campaign`/`add_leads_to_list` until both are in hand.
+- Push targets: existing Con Req 568586 / Open Check 568621 not re-verified this run
+  (last checked 2026-09-08) — open question for the user whether the new campaign
+  replaces or supplements these.
+- Context: the user corrected the seniority bar to "Director and above ... not lower
+  than that," which lines up exactly with the standing rule the master session had
+  just added to `../icp-overview.md` ("Seniority filter" section, confirmed 2026-09-09).
+  This run re-sourced from the same 8-industry/headcount/revenue/HQ-filtered company
+  universe as the prior wide-net batch, but with `job_level` restricted to
+  [C-Team, VP, Director] (dropping Manager, Staff) and then, critically, applied the
+  standing rule's **mandatory second-pass exclude list** on the actual returned titles
+  (Representative, Associate, Coordinator, Specialist, Analyst, Assistant, Intern,
+  Trainee, BDR, SDR, Account Executive, bare "Manager") — this is not redundant with
+  the job_level filter: it caught 965 people (9.2% of the initial 10,507-record pull)
+  who were tagged job_level=Director by Blitz but had junior-leaning titles, mostly
+  "Associate [X] Director" (877 of the 965) plus a smaller number of bare "Manager",
+  "Intern", "Account Executive", "Specialist", and "Assistant" titles. Recommend
+  treating this as confirmation that job_level alone is not sufficient and the
+  exclude-list pass should be standard for every future pull, not just this one.
+- **Repeated the same per-company-capped sourcing method from the prior wide-net run**
+  (one query per company, capped `max_results`, this time 10-15 depending on pass) to
+  avoid the Publicis/Figma-style domination problem discovered then — confirmed working
+  again: 1,563 distinct companies represented across 10,512 people, largest single
+  company only 19 (0.18%).
+- Process note: needed two passes to hit the ~10.5k target after the exclude-list
+  removed 965 — pass 1 queried all 1,998 qualified companies at `max_results=10` each
+  (10,507 before exclusions, 9,542 after); pass 2 topped up from the 581 companies that
+  had zero surviving results after pass 1's exclude filter, querying them at
+  `max_results=15` and applying the same exclude filter inline, adding 970 more from
+  266 of those companies to land at the final 10,512. No internal duplicates in the
+  final file (verified: 10,512 rows, 10,512 distinct `linkedin_url`s).
+- Dedup logic re-verified against the ledger (still empty) — 0 of 10,512 matched, as
+  expected. Separately checked cross-batch overlap across all three saved run files for
+  this vertical (batch1 test run, batch2 wide-net, batch3 this one) since they draw from
+  overlapping company pools with different seniority bars: 346 people appear in more
+  than one saved file. This does not affect a real push, since the ledger (not the
+  per-run CSVs) is the actual dedup source of truth and only this batch (batch3) would
+  be the one pushed — flagging only so a future session doesn't assume the three files
+  are mutually exclusive if it ever needs to reconcile them.
+- Notes: Blitz record spend this run: ~13,500 records (2,000 for the company pool,
+  ~10,507 + ~4,000-ish across the two people-search passes including companies that
+  returned 0 after filtering) — still negligible against the ~14.8M remaining balance.
 
 ### 2026-09-08 14:48 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (wide-net re-run)
 - Sourced: 198 qualified companies (200 evaluated) / 986 people
