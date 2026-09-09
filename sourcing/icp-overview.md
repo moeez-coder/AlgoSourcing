@@ -36,20 +36,21 @@ noticed as a problem (Vertical 2's test run — see its Progress Log entry
 2026-09-08 11:39 UTC — found free-text title matching pulling in junior
 BDR/associate-level people under keywords like "Business Development").
 
-**Include (seniority level):**
+**Include (seniority level) — Director and above, confirmed by the user
+2026-09-09:**
+- Director / Senior Director / Director-level (any function relevant to the
+  vertical — Sales, BD, Growth, Revenue, Marketing, New Business, Partnerships)
 - Owner / Founder / Co-Founder / Managing Partner / Partner
 - C-suite: CEO, COO, CFO, CRO, CMO, CTO, CGO, or any "Chief ... Officer"
 - President / Managing Director / Executive Director
 - VP and above (VP, SVP, EVP) in Sales, Business Development, Growth,
   Revenue, Marketing, New Business, or Partnerships
 
-**Director-level is excluded by default.** Vertical 1's existing
-tracking-clients ICP config ("Recruitment US") currently includes Director —
-that config needs updating to match this rule (see its vertical file's To
-do). If a specific vertical/segment has a good reason to include Director
-(e.g. very small companies where Director plausibly is the final decision-
-maker), that's a per-vertical override to write into that vertical's file
-explicitly, not the default.
+(An earlier draft of this rule, written 2026-09-08, excluded Director by
+default and treated it as a per-vertical override for M&A only. The user
+confirmed 2026-09-09 that Director-and-above is fine everywhere — this
+supersedes that draft. Vertical 1's stored tracking-clients ICP config
+already includes Director, so no change needed there on this point.)
 
 **Explicit exclude (regardless of an include-keyword match):** Representative,
 Associate, Coordinator, Specialist, Analyst, Assistant, Intern, Trainee, BDR,

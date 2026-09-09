@@ -21,10 +21,9 @@ campaigns: see `../heyreach-campaign-map.md` (Vertical 1 section).
 ## Target personas / titles
 
 **Apply the shared seniority filter in `../icp-overview.md`** ("Seniority
-filter" section, added 2026-09-08) — Owner/Founder/Partner, C-suite,
-President/Managing Director, VP-and-above in Sales/BD/Growth/Revenue/
-Marketing/New Business/Partnerships. Director is excluded by default under
-that rule.
+filter" section) — Director-and-above: Owner/Founder/Partner, C-suite,
+President/Managing Director, Director, VP-and-above in Sales/BD/Growth/
+Revenue/Marketing/New Business/Partnerships.
 
 Vertical-specific job titles to search within that seniority band: Head of
 Staffing, CEO, Founder, Managing Partner, President, VP Sales, VP Business
@@ -36,13 +35,13 @@ method," not loose keyword search.
 ## Note
 
 The stored tracking-clients ICP config (persona
-`eb374338-87bd-4296-a5ae-805a27da3942`) still includes **Director** as an
-included seniority level and uses a loose title list — **both are now stale
-against the 2026-09-08 seniority rule above**, in addition to its
-already-noted stale `geos`/`company_sizes`. Update the ICP config in
-tracking-clients (`update_icp_config`) before using it to drive new sourcing,
-or treat it as reference only and apply `../icp-overview.md` filters
-directly in Clay/Blitz.
+`eb374338-87bd-4296-a5ae-805a27da3942`) includes Director already (matches
+current rule) but still uses a loose/free-text title list rather than
+exact/bracket matching, and its `geos`/`company_sizes` predate the
+2026-09-08 criteria (US/UK/Europe, revenue floor, no upper headcount cap).
+Update the ICP config in tracking-clients (`update_icp_config`) before using
+it to drive new sourcing, or treat it as reference only and apply
+`../icp-overview.md` filters directly in Clay/Blitz.
 
 ## Dedup ledger
 

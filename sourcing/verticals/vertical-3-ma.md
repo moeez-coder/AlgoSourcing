@@ -22,19 +22,14 @@ only raw HeyReach campaigns.
 ## Target personas / titles (draft, mirrored from Vertical 1's buyer profile)
 
 **Apply the shared seniority filter in `../icp-overview.md`** ("Seniority
-filter" section, added 2026-09-08) — Owner/Founder/Partner, C-suite,
-President/Managing Director, VP-and-above in Sales/BD/Growth/Revenue/
-Marketing/New Business/Partnerships.
-
-**Per-vertical override on Director:** the shared rule excludes plain
-"Director" by default, but in investment banking/M&A advisory, "Director"
-and especially "Managing Director" are genuinely senior, deal-authority
-titles (Managing Director is often the most senior operating title at a
-boutique advisory shop, not mid-level like a corporate "Director"). For this
-vertical, **include Director and Managing Director** as senior — the default
-exclusion doesn't apply here. Still apply the exclude list (Associate,
-Analyst, etc.) as normal — "Associate" and "Analyst" are genuinely junior,
-non-decision-making titles at advisory firms too.
+filter" section) — Director-and-above: Owner/Founder/Partner, C-suite,
+President/Managing Director, Director, VP-and-above in Sales/BD/Growth/
+Revenue/Marketing/New Business/Partnerships. Worth noting for this vertical
+specifically: "Managing Director" is often the *most senior* operating title
+at a boutique M&A advisory shop (not mid-level like a corporate "Director"),
+so it's squarely in scope here. Still apply the exclude list (Associate,
+Analyst, etc.) as normal — those are genuinely junior, non-decision-making
+titles at advisory firms too.
 
 - **Job titles (draft):** Managing Partner, Managing Director, Director,
   Founder, CEO, President, Head of Business Development, VP Origination/Deal
@@ -51,9 +46,6 @@ non-decision-making titles at advisory firms too.
 - [ ] Confirm/replace the draft persona list above
 - [ ] Confirm whether to keep feeding the Sept-6 generation campaigns or the
       user wants a fresh relaunch
-- [ ] Confirm the Director/Managing Director override above with the user —
-      it's a reasonable industry-convention judgment call but not yet
-      explicitly signed off
 
 ## Dedup ledger
 

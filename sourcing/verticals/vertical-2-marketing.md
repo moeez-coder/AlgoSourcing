@@ -21,11 +21,11 @@ for this vertical in the new system — only raw HeyReach campaigns.
 ## Target personas / titles
 
 **Apply the shared seniority filter in `../icp-overview.md`** ("Seniority
-filter" section, added 2026-09-08) — this directly resolves finding #1 from
-the 2026-09-08 test run below (loose title matching pulled in junior
-BDR/associate-level people). Owner/Founder/Partner, C-suite,
-President/Managing Director, VP-and-above in Sales/BD/Growth/Revenue/
-Marketing/New Business/Partnerships. Director excluded by default.
+filter" section) — this directly resolves finding #1 from the 2026-09-08
+test run below (loose title matching pulled in junior BDR/associate-level
+people). Director-and-above: Owner/Founder/Partner, C-suite, President/
+Managing Director, Director, VP-and-above in Sales/BD/Growth/Revenue/
+Marketing/New Business/Partnerships.
 
 Vertical-specific job titles to search within that seniority band (draft):
 CEO, Founder, Managing Partner, President, VP Sales, VP Business Development,
