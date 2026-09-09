@@ -17,6 +17,17 @@ resumption** — the pause above still applies to every other
 vertical/campaign, including Vertical 2's own Con Req 568586, until
 separately confirmed.
 
+**Second one-off exception, 2026-09-09 (Vertical 1):** same pattern — the
+user confirmed resuming/reusing Vertical 1's (Staffing & Recruitment)
+FINISHED Open Check campaign 567476, then approved pushing a 2,000-person
+subset of the sourced batch (holding the remaining ~10.3k and all of Con
+Req 567452 back) rather than the full batch. See Vertical 1's Progress Log
+entry 2026-09-09 15:22 UTC for the full record. **Still a single-campaign,
+single-vertical exception, not a general resumption** — the pause above
+still applies to every other vertical/campaign, including Vertical 1's own
+Con Req 567452 and the ~10,329 unpushed people already sourced, until
+separately confirmed.
+
 While this phase is active, any session — master or individual — should:
 - Do the full sourcing workflow (companies → people → dedup-check against the
   ledger → save CSVs) exactly as normal.
