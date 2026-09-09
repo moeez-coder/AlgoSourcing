@@ -80,12 +80,11 @@ tracking-clients system — only the raw HeyReach campaigns above.
 
 ## Vertical 3 — M&A ("USA" Sept-2 draft set + "M&A - SEPT" relaunch set)
 
-Two generations of campaigns exist. The Sept 2 "USA | ... | Vertical 3" set
-looks superseded by the Sept 6 "M&A - SEPT - ..." set (created 4 days later,
-actively running/finished vs. the Vertical-3-named ones sitting in
-DRAFT/PAUSED).
+Two generations of campaigns exist. **Confirmed by the user (2026-09-09):
+use the "M&A - SEPT - ..." labeled campaigns** (created by Joe) — the
+earlier "USA | ... | Vertical 3" Sept-2 set is not in use.
 
-**Current (Sept 6) generation — use this one:**
+**Confirmed (Sept 6, "M&A"-labeled) generation — use this one:**
 
 | Stage | Campaign name | Campaign ID | Status (as of 2026-09-08) |
 |---|---|---|---|
