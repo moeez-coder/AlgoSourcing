@@ -2,11 +2,12 @@
 
 ## Status
 
-Live vertical, currently running its second generation of HeyReach campaigns
-("M&A - SEPT - ..." set, created 2026-09-06 — see `../heyreach-campaign-map.md`,
-Vertical 3 section, "current generation" table). No tracking-clients ICP
-config / sourcing config exists yet for this vertical in the new system —
-only raw HeyReach campaigns.
+Live vertical. **Confirmed by the user (2026-09-09): use the "M&A - SEPT -
+..." labeled campaigns** (created by Joe, 2026-09-06) — see
+`../heyreach-campaign-map.md`, Vertical 3 section. The earlier "USA | ... |
+Vertical 3" Sept-2 set is not in use. No tracking-clients ICP config /
+sourcing config exists yet for this vertical in the new system — only raw
+HeyReach campaigns.
 
 ## Target companies (draft — confirm/refine before large sourcing runs)
 
@@ -44,8 +45,16 @@ titles at advisory firms too.
 - [ ] Create a proper `icp_config` + `sourcing_config` in tracking-clients for
       this vertical (mirror the Vertical 1 structure)
 - [ ] Confirm/replace the draft persona list above
-- [ ] Confirm whether to keep feeding the Sept-6 generation campaigns or the
-      user wants a fresh relaunch
+- [x] ~~Confirm whether to keep feeding the Sept-6 generation campaigns or
+      the user wants a fresh relaunch~~ — resolved 2026-09-09: use the
+      "M&A"-labeled Sept-6 campaigns (Joe's).
+- [x] ~~Resume vs. fresh Open Check campaign~~ — user confirmed 2026-09-09:
+      reuse Open Check 587156, don't create a fresh one. **But note:** a
+      direct `resume_campaign` call (before adding any new leads) failed
+      twice with a 500 — see `../heyreach-campaign-map.md` push targets for
+      detail. Whoever sources for this vertical next should add leads first,
+      then check whether the campaign auto-resumes or a subsequent resume
+      call succeeds, and record what actually happens.
 
 ## Dedup ledger
 

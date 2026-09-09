@@ -80,12 +80,11 @@ tracking-clients system — only the raw HeyReach campaigns above.
 
 ## Vertical 3 — M&A ("USA" Sept-2 draft set + "M&A - SEPT" relaunch set)
 
-Two generations of campaigns exist. The Sept 2 "USA | ... | Vertical 3" set
-looks superseded by the Sept 6 "M&A - SEPT - ..." set (created 4 days later,
-actively running/finished vs. the Vertical-3-named ones sitting in
-DRAFT/PAUSED).
+Two generations of campaigns exist. **Confirmed by the user (2026-09-09):
+use the "M&A - SEPT - ..." labeled campaigns** (created by Joe) — the
+earlier "USA | ... | Vertical 3" Sept-2 set is not in use.
 
-**Current (Sept 6) generation — use this one:**
+**Confirmed (Sept 6, "M&A"-labeled) generation — use this one:**
 
 | Stage | Campaign name | Campaign ID | Status (as of 2026-09-08) |
 |---|---|---|---|
@@ -97,11 +96,18 @@ DRAFT/PAUSED).
 
 **Push targets:**
 - **Con Req 587149** (IN_PROGRESS — live, ready to receive leads)
-- **Open Check 587156** — currently FINISHED (fully drained, 8,290 users
-  already processed). Confirm with the user whether to resume/reuse this one
-  or create a fresh Open Check campaign for this vertical before pushing new
-  leads. Note there's also an older superseded Open Check (580514, DRAFT,
-  Sept-2 generation) — don't use that one either without checking first.
+- **Open Check 587156** — **user confirmed 2026-09-09: reuse this one, not a
+  fresh campaign.** Still FINISHED as of 2026-09-09 (8,290 users already
+  processed, 0 pending/in-progress). Tried `resume_campaign` directly (no new
+  leads added yet) — failed twice with a 500, campaign status unchanged.
+  Likely explanation: `resume_campaign` is for previously-*paused* campaigns
+  specifically, and there's nothing queued to resume with 0 pending leads.
+  **Not yet confirmed whether adding new leads first will auto-resume it or
+  unlock start/resume** — the next session with real leads to push should
+  try `add_leads_to_campaign` first, then re-check status / retry resume,
+  and record what actually happens here. Note there's also an older
+  superseded Open Check (580514, DRAFT, Sept-2 generation) — don't use that
+  one, per the user's confirmation to use the M&A-labeled set only.
 
 Superseded Sept 2 generation (DRAFT/PAUSED, likely not the live target — do
 not push here unless the user says otherwise): Con Req 580487 (PAUSED),
