@@ -8,6 +8,15 @@ user gives explicit final approval to resume live pushes — check with the
 user (not just this file) before assuming that approval has happened, and
 update this section the moment it does.
 
+**One-off exception, 2026-09-09:** the user explicitly asked to push ~10k
+Vertical 2 (Marketing) leads and, when asked to confirm the specific target,
+confirmed Open Check campaign 568621 only (holding Con Req for later) — see
+Vertical 2's Progress Log entry 2026-09-09 13:11 UTC for the full record.
+**This is a single-campaign, single-vertical exception, not a general
+resumption** — the pause above still applies to every other
+vertical/campaign, including Vertical 2's own Con Req 568586, until
+separately confirmed.
+
 While this phase is active, any session — master or individual — should:
 - Do the full sourcing workflow (companies → people → dedup-check against the
   ledger → save CSVs) exactly as normal.

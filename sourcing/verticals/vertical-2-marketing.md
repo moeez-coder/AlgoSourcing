@@ -148,6 +148,63 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
+### 2026-09-09 13:11 UTC — execution-session-vertical-2 — LIVE PUSH (testing/priming pause lifted for this batch, by explicit user confirmation)
+- Sourced: same batch as the entry directly below (10,512 people, file
+  `2026-09-09_1220_director-plus-10k-batch3.csv`) — this entry documents the push,
+  not a new sourcing run.
+- Pushed to HeyReach Open Check campaign: "US | Open Check | Vertical 2 | Moe 1.0"
+  (568621), 10,512 leads submitted.
+- **Not pushed to Con Req** — the user explicitly chose to hold Con Req 568586 for a
+  separate, later confirmation when asked. Con Req still has 0 leads from this
+  session as of this entry.
+- Push mechanics: split the 10,512-row CSV into 4 chunks of 2,628, each pushed by an
+  independent agent in batches of 100 via `add_leads_to_campaign_v2`, all fixed to
+  campaignId 568621 only. Results verified against the campaign's own `progressStats`
+  before/after (totalUsers: 63,441 → 70,713, a delta of exactly 7,272 — matches the
+  "added" count below, confirming the numbers are real, not just self-reported by
+  the push agents).
+- Results (summed across all 4 chunks / 106 batches):
+  - Added (genuinely new to the campaign): 7,272
+  - Updated (already existed in the campaign before this push): 3,184
+  - Failed (API-reported, per-lead): 0
+  - Unaccounted (present in neither added/updated/failed counts across all batches,
+    despite 0 reported failures): 56 of 10,512 (0.5%) — all 4 independent push agents
+    observed this same small gap pattern and attributed it to HeyReach silently
+    collapsing duplicate/near-duplicate LinkedIn profile URLs within a batch; not
+    confirmed further, flagging in case it recurs at a different rate on a future push.
+  - No batch-level (whole-call) failures across any of the 106 batches; no retries
+    needed.
+- **Important anomaly, flagged for the user's awareness rather than resolved
+  unilaterally:** the 3,184 "updated" (already-existing) leads were **not evenly
+  distributed** across the 4 chunks — chunks 1-3 were 90%+ "added" (genuinely new),
+  but chunk 4 (the last 2,628 rows of the sourced file, a mix of the tail of pass-1's
+  per-company pull and all of pass-2's top-up pull) was 96% "updated" (2,527 of
+  2,628). This means a large fraction of this specific batch's people were already
+  loaded into campaign 568621 from **before this session's ledger-based dedup system
+  existed** — the campaign itself was created 2026-08-25 and already had 63,441 total
+  users before today's push, none of which are reflected in the ledger (which was
+  still header-only immediately before this push). This is not a bug in this run,
+  but it does mean **the ledger cannot be trusted as a complete history of who has
+  been reached via this campaign** for anything that happened before this vertical's
+  ledger-based tracking began — only for pushes made through this documented process
+  from 2026-09-08 onward. Worth deciding whether to backfill the ledger from
+  campaign 568621's/568586's full historical lead lists (via `get_leads_from_campaign`)
+  if a complete contact history is needed, rather than assuming the ledger alone is
+  sufficient going forward for these two campaigns specifically.
+- Ledger updated: all 10,512 attempted people (added, updated, and the 56
+  unaccounted-for alike) now have `open_check_pushed_at` = 2026-09-09T13:11:53Z and
+  `open_check_campaign_id` = 568621 in `contacted_ledger.csv` — chosen deliberately
+  over only marking the "added" subset, since all were submitted in this push attempt
+  and re-submitting any of them (including the already-"updated" ones) in a future
+  run would add no value.
+- Notes: this push happened under an explicit exception to the repo's testing/priming
+  pause — the user directed "push around 10k leads," then, after this session raised
+  the standing "check with the user directly" rule from `pipeline.md`, explicitly
+  confirmed (via `AskUserQuestion`) both the specific target (existing Open Check
+  568621, not a new campaign) and to hold Con Req for later. This does not lift the
+  pause for any other vertical or for Con Req on this vertical — both remain paused
+  pending separate confirmation.
+
 ### 2026-09-09 12:20 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (Director-and-above correction, ~10k volume)
 - Sourced: 1,998 companies (same widened pool as the prior wide-net run, minus the 2
   confirmed mistags) / 10,512 people
