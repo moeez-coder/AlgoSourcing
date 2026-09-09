@@ -47,10 +47,14 @@ titles at advisory firms too.
 - [ ] Confirm/replace the draft persona list above
 - [x] ~~Confirm whether to keep feeding the Sept-6 generation campaigns or
       the user wants a fresh relaunch~~ — resolved 2026-09-09: use the
-      "M&A"-labeled Sept-6 campaigns (Joe's). Separately still open: Open
-      Check 587156 specifically is FINISHED/drained — resume vs. fresh
-      Open Check campaign is a distinct decision, not yet made (see
-      `../heyreach-campaign-map.md`, Vertical 3 push targets).
+      "M&A"-labeled Sept-6 campaigns (Joe's).
+- [x] ~~Resume vs. fresh Open Check campaign~~ — user confirmed 2026-09-09:
+      reuse Open Check 587156, don't create a fresh one. **But note:** a
+      direct `resume_campaign` call (before adding any new leads) failed
+      twice with a 500 — see `../heyreach-campaign-map.md` push targets for
+      detail. Whoever sources for this vertical next should add leads first,
+      then check whether the campaign auto-resumes or a subsequent resume
+      call succeeds, and record what actually happens.
 
 ## Dedup ledger
 
