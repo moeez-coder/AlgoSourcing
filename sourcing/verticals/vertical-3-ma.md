@@ -49,12 +49,13 @@ titles at advisory firms too.
       the user wants a fresh relaunch~~ — resolved 2026-09-09: use the
       "M&A"-labeled Sept-6 campaigns (Joe's).
 - [x] ~~Resume vs. fresh Open Check campaign~~ — user confirmed 2026-09-09:
-      reuse Open Check 587156, don't create a fresh one. **But note:** a
-      direct `resume_campaign` call (before adding any new leads) failed
-      twice with a 500 — see `../heyreach-campaign-map.md` push targets for
-      detail. Whoever sources for this vertical next should add leads first,
-      then check whether the campaign auto-resumes or a subsequent resume
-      call succeeds, and record what actually happens.
+      reuse Open Check 587156, don't create a fresh one. A direct
+      `resume_campaign` call failed twice with a 500 (see
+      `../heyreach-campaign-map.md` push targets) — **resolved 2026-09-10:
+      don't call resume_campaign at all, just push leads directly.**
+      Vertical 1 confirmed this on the identical FINISHED-campaign situation
+      (567476): pushing leads alone flips FINISHED → IN_PROGRESS
+      automatically, no resume call needed.
 
 ## Dedup ledger
 

@@ -97,16 +97,18 @@ earlier "USA | ... | Vertical 3" Sept-2 set is not in use.
 **Push targets:**
 - **Con Req 587149** (IN_PROGRESS — live, ready to receive leads)
 - **Open Check 587156** — **user confirmed 2026-09-09: reuse this one, not a
-  fresh campaign.** Still FINISHED as of 2026-09-09 (8,290 users already
-  processed, 0 pending/in-progress). Tried `resume_campaign` directly (no new
-  leads added yet) — failed twice with a 500, campaign status unchanged.
-  Likely explanation: `resume_campaign` is for previously-*paused* campaigns
-  specifically, and there's nothing queued to resume with 0 pending leads.
-  **Not yet confirmed whether adding new leads first will auto-resume it or
-  unlock start/resume** — the next session with real leads to push should
-  try `add_leads_to_campaign` first, then re-check status / retry resume,
-  and record what actually happens here. Note there's also an older
-  superseded Open Check (580514, DRAFT, Sept-2 generation) — don't use that
+  fresh campaign.** Was FINISHED as of 2026-09-09 (8,290 users already
+  processed, 0 pending/in-progress). A direct `resume_campaign` call (before
+  adding any leads) failed twice with a 500 — **don't bother calling it**;
+  the fix is simpler: **just push leads directly with
+  `add_leads_to_campaign`/`_v2`.** Confirmed 2026-09-09 on Vertical 1's own
+  FINISHED Open Check (567476, identical situation): pushing leads alone
+  flipped its status FINISHED → IN_PROGRESS automatically, with no
+  `resume_campaign` call needed at all. Apply the same approach here —
+  `resume_campaign` is for previously-*paused* campaigns specifically, not
+  drained/FINISHED ones; adding leads is what actually restarts a FINISHED
+  campaign. Note there's also an older superseded Open Check (580514, DRAFT,
+  Sept-2 generation) — don't use that
   one, per the user's confirmation to use the M&A-labeled set only.
 
 Superseded Sept 2 generation (DRAFT/PAUSED, likely not the live target — do
