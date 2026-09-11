@@ -148,6 +148,87 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
+### 2026-09-11 20:35 UTC — execution-session-vertical-2 — LIVE PUSH (Con Req completed + round-2 Open Check batch, by explicit user confirmation)
+- Two separate pushes this entry, both user-confirmed directly:
+  1. **Con Req 568586, first push:** pushed the original 10,512-person batch
+     (`2026-09-09_1220_director-plus-10k-batch3.csv`, already in Open Check since
+     2026-09-09) to Con Req for the first time — this completes the standard
+     "push same batch to both Con Req and Open Check" pattern that was
+     deferred in the 2026-09-09 13:11 UTC entry pending separate confirmation.
+  2. **Open Check 568621, round 2:** sourced and pushed a second, entirely new
+     batch of 10,167 people from 2,500 previously-unscanned companies (same
+     ICP filters, same Director-and-above seniority rule + exclude-list pass),
+     deduped against the ledger before sourcing so nothing already-pushed was
+     re-sourced.
+- Files (round 2): sourcing/data/vertical-2-marketing/companies/2026-09-11_2031_director-plus-round2-batch4.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-11_2031_director-plus-round2-batch4.csv
+- Push mechanics: same pattern as before — 4 parallel agents per push (8 total
+  this entry), each handling ~2,540-2,630 rows in 100-lead batches via
+  `add_leads_to_campaign_v2`, hard-pinned to a single campaign ID per push
+  (568586 for Con Req, 568621 for Open Check — verified no cross-contamination).
+- **Results verified against each campaign's own `progressStats` delta
+  (authoritative over agents' self-reported sums, which had some variance —
+  see below):**
+  - Con Req 568586: `totalUsers` 64,076 → 74,058 = **+9,982** net new leads.
+    Agents' self-reported sum of "added" was 9,698 (a ~2.8% undercount vs. the
+    verified delta) plus 753 "updated" (already-existing) — the discrepancy
+    between self-reported added and the real delta isn't fully explained;
+    treating the campaign's own number as ground truth.
+  - Open Check 568621 (round 2 only): `totalUsers` 71,410 → 78,579 = **+7,169**
+    net new leads. Self-reported sums from 3 of 4 push agents (chunks 2-4):
+    added 2,295+2,288+256=4,839, updated 231+247+2,272=2,750; the 4th agent
+    (chunk 1) did not report an exact added/updated split, only that
+    "added+updated accounted for the full 2,542 rows [minus a handful of
+    intra-batch duplicates]" — using the verified campaign delta (7,169) as
+    the authoritative total rather than reconciling the imprecise self-report.
+  - All 8 push-agent responses reported `failedLeadsCount: 0` on every one of
+    their ~208 combined batch calls; no batch-level (whole-call) failures, no
+    retries needed.
+- **Small, consistent per-batch shortfall (added+updated slightly under rows
+  submitted) observed again, ~0.3-1% per chunk, same as the first push.**
+  Different agents gave different, mutually exclusive explanations this time
+  (duplicate LinkedIn profile URLs within a batch; blank first/last name
+  fields in the source CSV; one agent explicitly ruled out duplicates in its
+  own chunk and still saw the gap) — **no single explanation held across all
+  8 chunks**, so this is being logged as an unresolved, low-magnitude
+  (sub-1%) artifact of the push endpoint or source data, not a confirmed root
+  cause. One concretely-verified case: chunk 3 of the Con Req push found ~13
+  rows with a blank first_name or last_name (single-token full names, e.g.
+  "Harne" with no first name) that the API silently didn't count as
+  added/updated/failed — this specific cause is real and worth a CSV-
+  construction fix (fall back to splitting `full_name` when first/last are
+  empty) for future runs, though it doesn't account for the gap seen in
+  chunks that had no such rows.
+- **Same "already-existing" pattern recurred for round-2 Open Check, at
+  similar magnitude to the first push:** one of round 2's four chunks was
+  ~89% "updated" (2,272 of 2,541) despite round 2 being sourced with an
+  explicit pre-sourcing dedup against the ledger. This reconfirms the
+  2026-09-09 13:11 UTC finding: campaign 568621 has a large population
+  predating this session's ledger (63,441 users before this vertical's
+  ledger-based tracking began) that a fresh, ledger-clean sourcing pass can
+  still collide with, since the ledger has no visibility into that older
+  population. Not a defect in this run's sourcing/dedup logic.
+- **Operational note for future multi-agent parallel pushes:** two of the 8
+  push agents (one Con Req, one Open Check) independently reported detecting
+  and self-correcting a scratchpad filename collision — concurrent agents
+  writing generic `batch_NN.json` files to the same shared scratchpad
+  directory clobbered each other's in-progress batch files before any
+  HeyReach call was made. Both agents caught this via a "file changed on
+  disk" signal and re-split their CSV into a uniquely-prefixed subdirectory
+  before proceeding, so no wrong-chunk or wrong-campaign data was ever
+  submitted — but future parallel pushes should give each agent a unique
+  working subdirectory from the start rather than relying on this kind of
+  self-correction.
+- Ledger updated: all 10,512 original people now have `con_req_pushed_at` =
+  2026-09-11T20:15:00Z / `con_req_campaign_id` = 568586 (in addition to their
+  existing `open_check_pushed_at` from 2026-09-09). All 10,167 round-2 people
+  are new ledger rows with `open_check_pushed_at` = 2026-09-11T20:35:00Z /
+  `open_check_campaign_id` = 568621. Ledger total for this vertical: 20,679
+  rows.
+- Notes: this continues the same one-off, user-directed exception to the
+  testing/priming pause established 2026-09-09 — does not extend to any
+  other vertical or campaign.
+
 ### 2026-09-09 13:11 UTC — execution-session-vertical-2 — LIVE PUSH (testing/priming pause lifted for this batch, by explicit user confirmation)
 - Sourced: same batch as the entry directly below (10,512 people, file
   `2026-09-09_1220_director-plus-10k-batch3.csv`) — this entry documents the push,
