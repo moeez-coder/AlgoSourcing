@@ -45,8 +45,10 @@ it to drive new sourcing, or treat it as reference only and apply
 
 ## Dedup ledger
 
-`sourcing/data/vertical-1-staffing-recruitment/contacted_ledger.csv` — 2,000
-rows as of 2026-09-09 (the Open Check 567476 push below). Check it before
+`sourcing/data/vertical-1-staffing-recruitment/contacted_ledger.csv` —
+12,329 rows as of 2026-09-11 (the full sourced batch from
+2026-09-09_1404_director-plus-batch1.csv, all now pushed to Open Check
+567476 across two push rounds; 0 rows pushed to Con Req). Check it before
 every push, update it after every push — see `../pipeline.md`, "The
 contacted ledger."
 
@@ -76,6 +78,58 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   floor on the people TAM, not an overcount.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-11 20:46 UTC — execution-session-vertical-1 — LIVE PUSH (remainder of the 2026-09-09 batch, Open Check only)
+- User asked to "send more to con req and open check." Live-checked both
+  campaigns first: Open Check 567476 had drained further to FINISHED again
+  (26,897 total, up from 25,531 two days ago — confirms the earlier
+  session's finding that pushing leads directly flips FINISHED ->
+  IN_PROGRESS, no `resume_campaign` call needed). Con Req 567452 was
+  PAUSED with 23,041 people already mid-flight from prior activity
+  unrelated to this batch (7,433 in progress + 15,608 pending) — resuming
+  it would restart sending to all of them, not just new leads, so I
+  surfaced that distinction to the user before acting. **User chose to
+  push only to the live one (Open Check) and leave Con Req paused/
+  untouched** — 0 leads pushed to Con Req this round, same as before.
+- Pushed the entire remaining 10,329-person held-back batch (from
+  2026-09-09_1404_director-plus-batch1.csv) to Open Check 567476 via
+  `add_leads_to_campaign_v2`, 104 batches of up to 100 leads, 10
+  independent agents in parallel.
+  - Added (genuinely new): 7,886
+  - Updated (already existed): 2,397
+  - Failed (API-reported, per-lead): 0
+  - Unaccounted: 46 of 10,329 (0.45%) — same small gap pattern as the
+    2026-09-09 push, but this time one push agent (chunks 055-065) traced
+    it precisely: **every unaccounted lead in its batch had a null
+    `lastName`** (3 for 3 — Manioris/crismanioris, Olivia/olivia-mae,
+    Roth/cam-roth), and no chunk without a null-lastName lead was short.
+    Other agents saw the same correlation on spot-check (chunk_054,
+    chunks 013/015). Working theory, not fully confirmed across every
+    unaccounted lead: `add_leads_to_campaign_v2` silently drops leads
+    missing a last name rather than reporting them as failed. Worth a
+    fix in the sourcing pipeline (backfill a placeholder last name from
+    the full name when Blitz doesn't return one) before the next large
+    push, across all verticals, not just this one.
+  - Checked against campaign 567476's own `progressStats`: `totalUsers`
+    26,897 -> 35,669 (delta 8,772) — **does not exactly match the 7,886
+    added tally**, unlike the 2026-09-09 push's exact match. The ~15-minute
+    wall-clock window across 10 parallel push agents means other queue
+    activity on this campaign (leads moving between pending/in-progress/
+    finished, `totalUsersFailed` also ticked 1784->1785) could account for
+    the gap; flagging the discrepancy rather than claiming a clean
+    reconciliation, since Con Req's own live figures are being watched
+    for evidence of similar drift going forward.
+- Ledger: all 10,329 attempted people appended with `open_check_pushed_at`
+  = this run's timestamp and `open_check_campaign_id` = 567476. Combined
+  with the 2026-09-09 push, **the entire 12,329-person sourced batch is
+  now in the ledger as pushed to Open Check** — 0 rows have a
+  `con_req_pushed_at` value; Con Req remains fully unpushed for this
+  vertical pending a separate go-ahead to resume it.
+- Notes for the next session: if the user later asks to push to Con Req
+  567452, that decision (resume now vs. queue-and-leave-paused) needs to
+  be raised again explicitly — it wasn't answered "no" permanently, just
+  deferred this round in favor of the live campaign. No new sourcing was
+  done this run; this is a pure push-the-existing-batch entry.
 
 ### 2026-09-09 15:22 UTC — execution-session-vertical-1 — LIVE PUSH (single-campaign exception, same pattern as Vertical 2's 2026-09-09 push — see `../pipeline.md`'s "One-off exception, 2026-09-09" note, now covering both verticals)
 - Sourced: 4,433 companies / 12,329 people (Director+, exact/bracket-safe
