@@ -148,6 +148,59 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
+### 2026-09-13 13:05 UTC — execution-session-vertical-2 — LIVE PUSH (round-3 batch, both campaigns, by explicit user confirmation)
+- User asked to "add more leads" without specifying scope; clarified via
+  AskUserQuestion — confirmed both Con Req 568586 + Open Check 568621, target
+  ~10k new.
+- Sourced 10,502 new people from 5,500 previously-unscanned companies (rounds
+  3+3b combined — the initial 2,500-company round-3 pool only yielded 6,151
+  people even after raising the per-company cap to 30, a much lower rate than
+  rounds 1-2's ~4-5/company; had to pull a second fresh pool of 3,000
+  companies (round 3b) to close the gap rather than keep raising the cap on
+  an already-thin pool). 3,306 distinct companies represented, largest single
+  company only 0.3% of the batch. Deduped against the by-then 20,679-row
+  ledger before sourcing.
+- **Applied a fix from the previous round's finding:** rows with a blank
+  first_name or last_name were repaired by splitting `full_name` as a
+  fallback (61 of 10,502 rows affected) before this batch was pushed.
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-13_1242_director-plus-round3-batch5.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-13_1242_director-plus-round3-batch5.csv
+- Pushed to HeyReach Con Req campaign: "US | Con Req | Vertical 2 | Moe 1.0"
+  (568586) — verified via progressStats delta: totalUsers 73,982 → 83,457 =
+  **+9,475** net new (self-reported agent sum: 9,462 added + 1,040 updated =
+  10,502, i.e. exact row-count reconciliation at the agent level; small
+  ~13-lead variance vs. the verified campaign delta, much tighter than the
+  prior round's ~300-lead variance).
+- Pushed to HeyReach Open Check campaign: "US | Open Check | Vertical 2 | Moe
+  1.0" (568621) — verified via progressStats delta: totalUsers 78,328 →
+  87,527 = **+9,199** net new (self-reported agent sum: 9,483 added + 1,019
+  updated = 10,502, exact row-count reconciliation at the agent level; larger
+  ~284-lead variance vs. the verified delta this time).
+- **Notable improvement over the previous two rounds: zero unaccounted-for
+  leads in every one of the 8 push agents' self-reported sums this round**
+  (added + updated = exactly the row count submitted, in all 8 chunks/~216
+  batches) — a first for this vertical's pushes. Consistent with the
+  full_name-fallback fix closing the specific gap-cause found last round
+  (blank name fields), though the campaign-level verified deltas still show
+  some variance against the agents' self-reports (see above) that isn't
+  fully explained — logging as an open, low-magnitude discrepancy between
+  "what the push API told the calling agent" and "what the campaign's own
+  aggregate counter shows," not resolved this run.
+- **Operational fix applied and confirmed working:** gave each of the 8
+  parallel push agents its own uniquely-named working subdirectory (e.g.
+  `r3_conreq_1/`, `r3_opencheck_2/`) instead of the shared scratchpad root,
+  per the collision two agents caught and self-corrected in the prior round.
+  No collisions were reported this round.
+- Ledger updated: all 10,502 people are new ledger rows with both
+  `con_req_pushed_at` and `open_check_pushed_at` set to 2026-09-13T13:05:00Z
+  (campaign IDs 568586 / 568621 respectively) — this batch went to both
+  campaigns from the start, unlike the 2026-09-11 entry where Con Req and
+  Open Check were pushed at different times for different batches. Ledger
+  total for this vertical: 31,181 rows.
+- Notes: continues the same one-off, user-directed exception to the
+  testing/priming pause established 2026-09-09 — does not extend to any
+  other vertical.
+
 ### 2026-09-11 20:35 UTC — execution-session-vertical-2 — LIVE PUSH (Con Req completed + round-2 Open Check batch, by explicit user confirmation)
 - Two separate pushes this entry, both user-confirmed directly:
   1. **Con Req 568586, first push:** pushed the original 10,512-person batch
