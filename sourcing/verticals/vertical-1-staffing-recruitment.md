@@ -46,11 +46,10 @@ it to drive new sourcing, or treat it as reference only and apply
 ## Dedup ledger
 
 `sourcing/data/vertical-1-staffing-recruitment/contacted_ledger.csv` —
-12,329 rows as of 2026-09-11 (the full sourced batch from
-2026-09-09_1404_director-plus-batch1.csv, all now pushed to Open Check
-567476 across two push rounds; 0 rows pushed to Con Req). Check it before
-every push, update it after every push — see `../pipeline.md`, "The
-contacted ledger."
+14,991 rows as of 2026-09-13 (12,329 from the first sourced batch +
+2,662 from the round-2 batch, all pushed to Open Check 567476; 0 rows
+pushed to Con Req). Check it before every push, update it after every
+push — see `../pipeline.md`, "The contacted ledger."
 
 ## TAM (Total Addressable Market) — append-only, newest entry on top
 
@@ -78,6 +77,51 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   floor on the people TAM, not an overcount.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-13 12:49 UTC — execution-session-vertical-1 — ROUND 2: new sourcing + LIVE PUSH (Open Check only)
+- User asked to "add more leads." The first batch's 4,433 sourced companies
+  were a subset of the full 6,825-company ICP universe (Find People's
+  pagination cap left ~2,392 companies unscanned in round 1). Rather than
+  re-running the same broad query and risking overlap, targeted exactly
+  those 2,392 previously-unsourced companies directly via `company.
+  linkedin_url` (Blitz caps this filter at 50 URLs/call — 48 batches, each
+  paginated to exhaustion), same Director+ `job_level` filter + exclude-
+  list second pass + per-company cap of 5 (keyed on domain).
+- Sourced: 1,329 companies / 2,662 people. 0 overlap with the 12,329
+  people already in the ledger (cross-checked before building the batch).
+- **Fix applied proactively:** the 2026-09-11 push traced its ~0.3-0.45%
+  "unaccounted" gap to leads with a null `lastName` being silently dropped
+  by `add_leads_to_campaign_v2`. This run backfilled a last name from
+  `full_name` for every person missing one before building the push
+  payload. Result: unaccounted rate dropped to 0.15% (4 of 2,662) this
+  round, vs 0.45% last time — the fix helped but didn't fully eliminate a
+  smaller residual gap, so it isn't the sole cause.
+- Files: `sourcing/data/vertical-1-staffing-recruitment/companies/2026-09-13_1235_director-plus-round2-batch1.csv`,
+         `sourcing/data/vertical-1-staffing-recruitment/people/2026-09-13_1235_director-plus-round2-batch1.csv`
+- Pushed the full 2,662-person batch to Open Check 567476 via
+  `add_leads_to_campaign_v2`, 27 batches of up to 100 leads, 3 parallel
+  agents (continuing the "Open Check only, Con Req stays paused/untouched"
+  choice from 2026-09-11 — not re-asked this round since nothing changed
+  about Con Req's status).
+  - Added (genuinely new): 2,261
+  - Updated (already existed): 397
+  - Failed (API-reported, per-lead): 0
+  - Unaccounted: 4 of 2,662 (0.15%)
+  - Checked against campaign 567476's own `progressStats`: `totalUsers`
+    35,669 -> 37,845 (delta 2,176) — close to but not exactly the 2,261
+    added tally, same small-gap pattern as 2026-09-11's push; not forcing
+    a false reconciliation.
+- Ledger: all 2,662 attempted people appended with `open_check_pushed_at`
+  = this run's timestamp and `open_check_campaign_id` = 567476. Ledger
+  total is now 14,991 rows (12,329 + 2,662).
+- Coverage note: 4,433 + 1,329 = 5,762 of the 6,825 total ICP-qualifying
+  companies have now been sourced from (84%). ~1,063 companies remain
+  fully unscanned for a future round-3 batch, using the same
+  company.linkedin_url-targeting approach.
+- Same judgment-call flags as before apply here too (a nonprofit-adjacent
+  org and at least one data-quality-artifact title string turned up in
+  spot-checks) — not filtered out unilaterally, consistent with prior
+  rounds' treatment.
 
 ### 2026-09-11 20:46 UTC — execution-session-vertical-1 — LIVE PUSH (remainder of the 2026-09-09 batch, Open Check only)
 - User asked to "send more to con req and open check." Live-checked both
