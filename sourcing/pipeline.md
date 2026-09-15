@@ -32,11 +32,27 @@ to the user rather than assumed; **user chose Open Check only** and to
 leave Con Req paused/untouched. Pushed the entire remaining 10,329-person
 batch to Open Check 567476 (7,886 added, 2,397 updated, 0 failed, 46
 unaccounted — see Vertical 1's Progress Log entry 2026-09-11 20:46 UTC).
-**The full 12,329-person sourced batch is now pushed to Open Check; Con
-Req 567452 still has 0 leads from this batch** — still a single-campaign
-exception, not a general resumption. The pause above still applies to
-every other vertical/campaign, including Vertical 1's own Con Req 567452,
-until separately confirmed.
+
+**Update, 2026-09-13/15 (Vertical 1):** two more rounds of new sourcing
+(2,662 then 435 people, from previously-unscanned companies) pushed to
+Open Check 567476 only, completing coverage of the full 6,825-company ICP
+universe. Then on 2026-09-15 the user asked to also load up Con Req — the
+entire 15,426-person backlog (all three sourcing rounds) was pushed to
+Con Req 567452 (11,693 added, 3,673 updated, 0 failed, 60 unaccounted),
+**leaving the campaign paused** (adding leads queues them without
+restarting the ~23,910 pre-existing mid-flight people that resuming would
+affect — that distinction was raised on 2026-09-11 and re-applied here
+without re-asking, since nothing about Con Req's paused status changed).
+See Vertical 1's Progress Log entries 2026-09-13 12:49 UTC, 2026-09-15
+11:00 UTC, and 2026-09-15 11:49 UTC for the full record.
+
+**Vertical 1's entire sourced-to-date backlog (15,426 people) is now
+pushed to both Open Check and Con Req** — still a single-vertical
+exception, not a general resumption of the testing/priming pause. The
+pause above still applies to every other vertical/campaign until
+separately confirmed. Con Req 567452 remains PAUSED — queued leads won't
+send until someone explicitly resumes it, which is a separate decision
+from adding leads (it also restarts the pre-existing mid-flight people).
 
 While this phase is active, any session — master or individual — should:
 - Do the full sourcing workflow (companies → people → dedup-check against the

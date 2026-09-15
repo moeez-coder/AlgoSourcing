@@ -46,10 +46,10 @@ it to drive new sourcing, or treat it as reference only and apply
 ## Dedup ledger
 
 `sourcing/data/vertical-1-staffing-recruitment/contacted_ledger.csv` —
-15,426 rows as of 2026-09-15 (12,329 + 2,662 + 435 across three sourcing
-rounds, all pushed to Open Check 567476; 0 rows pushed to Con Req). Check
-it before every push, update it after every push — see `../pipeline.md`,
-"The contacted ledger."
+15,426 rows as of 2026-09-15, **all now pushed to both Open Check 567476
+and Con Req 567452** (12,329 + 2,662 + 435 across three sourcing rounds).
+Check it before every push, update it after every push — see
+`../pipeline.md`, "The contacted ledger."
 
 ## TAM (Total Addressable Market) — append-only, newest entry on top
 
@@ -77,6 +77,58 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   floor on the people TAM, not an overcount.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-15 11:49 UTC — execution-session-vertical-1 — LIVE PUSH: full backlog (15,426 people) to Con Req 567452
+- User asked to "load up the con request ones as well." Con Req 567452
+  was re-checked live: still PAUSED, and its pre-existing mid-flight
+  count had grown to 23,910 (7,155 in progress + 17,086 pending, up from
+  23,041 on 2026-09-11) — this growth is unrelated to our batch, just
+  normal campaign activity in the 4 days since it was last checked.
+- **Left the campaign paused** — same distinction raised on 2026-09-11:
+  adding leads to a paused campaign only queues them, it doesn't restart
+  sending to the pre-existing mid-flight people, which is what resuming
+  would do. Not re-asked this time since the choice (queue vs. resume)
+  was already established and nothing new changed that calculus; will
+  raise resuming again explicitly if it comes up.
+- Pushed the **entire 15,426-person backlog** (all three sourcing rounds —
+  12,329 + 2,662 + 435 — everything currently in the ledger, all of which
+  had 0 prior Con Req activity) to Con Req 567452 via
+  `add_leads_to_campaign_v2`, 155 batches of up to 100 leads, 16 parallel
+  agents.
+  - Added (genuinely new): 11,693
+  - Updated (already existed — expected, since HeyReach's own list may
+    already carry some of these from unrelated activity): 3,673
+  - Failed (API-reported, per-lead): 0
+  - Unaccounted: 60 of 15,426 (0.39%) — same recurring small-gap pattern
+    as every push so far. Agents this round surfaced three plausible
+    (not confirmed) contributing causes rather than one: (1) leads with
+    `lastName: null` in round 1's original data (round 1 predates the
+    last-name-backfill fix applied starting round 2), (2) intra-batch
+    near-duplicate names/companies under different LinkedIn URLs that
+    HeyReach may collapse without incrementing either counter, and (3)
+    non-ASCII/emoji characters in a LinkedIn profile slug (e.g. an
+    emoji-prefixed vanity URL) possibly being silently rejected. None of
+    these were confirmed via a per-lead error — the API only returns
+    aggregate counts. Two chunks (128, 129) came back 0 added / 100
+    updated each — full overlap — the push agent flagged this as a sharp
+    jump from neighboring chunks' 4-20% overlap rate, worth a spot-check
+    if it recurs, but not investigated further this run.
+  - Checked against campaign 567452's own `progressStats`: `totalUsers`
+    26,806 -> 38,596 (delta 11,790), close to but not exactly the 11,693
+    added tally, and internally consistent (`totalUsersPending` moved by
+    the same 11,790, `totalUsersInProgress` unchanged at 7,155 — confirms
+    nothing started processing, campaign genuinely still paused).
+- Ledger: **updated in place** (not appended — these are the same 15,426
+  people already in the ledger from Open Check pushes) with
+  `con_req_pushed_at` = this run's timestamp and `con_req_campaign_id` =
+  567452 for all 15,426 rows. Every row in the ledger now has both
+  `open_check_pushed_at` and `con_req_pushed_at` set — this vertical's
+  entire sourced-to-date backlog is now pushed to both campaigns.
+- Notes for the next session: Con Req 567452 is still paused — the queued
+  leads won't actually send until someone resumes it. If/when the user
+  wants that, treat resuming as its own explicit decision (it also
+  restarts sending to the ~23,910 pre-existing mid-flight people), not
+  something to infer from a request to add more leads.
 
 ### 2026-09-15 11:00 UTC — execution-session-vertical-1 — ROUND 3: final coverage sweep + LIVE PUSH (Open Check only)
 - User asked to "send more to Open Check" again. Targeted the last 1,063
