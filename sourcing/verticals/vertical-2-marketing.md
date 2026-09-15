@@ -148,6 +148,51 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
+### 2026-09-15 11:20 UTC — execution-session-vertical-2 — LIVE PUSH (round-4 batch, both campaigns — full TAM coverage reached at current filters)
+- User asked for "more to open checks"; while sourcing was underway, also
+  asked to push the same batch to Con Req. Both confirmed directly.
+- **Sourcing hit a real ceiling this round.** Pulled every remaining
+  unscanned company (rounds 4+4b, 6,358 companies) — this **exhausts the
+  entire ~19,604-company TAM** at the current filters (8 industries,
+  headcount≥10, revenue≥$1M, US/UK/Europe, Director-and-above). Even
+  re-querying round-1's companies (the largest/highest-ranked, previously
+  capped at only 10-25 each) at cap=60 added **zero** new people, confirming
+  those are fully depleted at this seniority bar, not just under-capped.
+  Result: only 4,179 new people this round, well short of the ~10k the last
+  three rounds delivered. Surfaced this to the user directly rather than
+  silently pushing a smaller batch as if it hit target — user confirmed
+  pushing the 4,179 as-is; declined (for now) the offered alternatives of
+  layering in Clay or loosening the seniority bar back toward Manager-level.
+- **Standing instruction from the user this round: "minimum 10 head count is
+  non-negotiable."** This vertical's `employee_count.min` has been 10 in
+  every round including this one — no change needed, noted here for the
+  record since it came up mid-session.
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-15_1101_director-plus-round4-batch6.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-15_1101_director-plus-round4-batch6.csv
+- Pushed to HeyReach Con Req campaign 568586 — verified via progressStats
+  delta: totalUsers 83,149 → 87,063 = **+3,914** net new (self-reported
+  agent sum: 3,934 added + 229 updated = 4,163 of 4,179 rows; ~20-lead
+  variance vs. the verified delta).
+- Pushed to HeyReach Open Check campaign 568621 — verified via progressStats
+  delta: totalUsers 87,493 → 91,407 = **+3,914** net new (self-reported
+  agent sum: 3,914 added + 220 updated = 4,134 of 4,179 rows; exact match
+  vs. the verified delta this time).
+- Minor data-quality note: 7 of 4,179 people had `company_name` "Freelance"
+  or "Self-employed" — LinkedIn placeholder values, not real qualifying
+  companies. Flagged in the people CSV's notes column, not scrubbed from the
+  push (a small, known class of noise, consistent with prior rounds'
+  findings).
+- Ledger updated: all 4,179 people are new ledger rows with both
+  `con_req_pushed_at` and `open_check_pushed_at` set to
+  2026-09-15T11:20:00Z. Ledger total for this vertical: 35,360 rows.
+- **Implication for future rounds:** without a policy change (adding Clay
+  as a second source, loosening seniority, or broadening industries/geo),
+  this vertical's easily-reachable Blitz-sourced pool at the Director-and-
+  above bar is now effectively exhausted. Any further "send more" requests
+  should expect this same ceiling unless one of those levers changes — worth
+  deciding proactively rather than rediscovering it via another near-empty
+  sourcing run.
+
 ### 2026-09-13 13:05 UTC — execution-session-vertical-2 — LIVE PUSH (round-3 batch, both campaigns, by explicit user confirmation)
 - User asked to "add more leads" without specifying scope; clarified via
   AskUserQuestion — confirmed both Con Req 568586 + Open Check 568621, target
