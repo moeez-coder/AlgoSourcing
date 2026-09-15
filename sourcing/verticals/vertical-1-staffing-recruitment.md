@@ -46,10 +46,10 @@ it to drive new sourcing, or treat it as reference only and apply
 ## Dedup ledger
 
 `sourcing/data/vertical-1-staffing-recruitment/contacted_ledger.csv` —
-14,991 rows as of 2026-09-13 (12,329 from the first sourced batch +
-2,662 from the round-2 batch, all pushed to Open Check 567476; 0 rows
-pushed to Con Req). Check it before every push, update it after every
-push — see `../pipeline.md`, "The contacted ledger."
+15,426 rows as of 2026-09-15 (12,329 + 2,662 + 435 across three sourcing
+rounds, all pushed to Open Check 567476; 0 rows pushed to Con Req). Check
+it before every push, update it after every push — see `../pipeline.md`,
+"The contacted ledger."
 
 ## TAM (Total Addressable Market) — append-only, newest entry on top
 
@@ -77,6 +77,60 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   floor on the people TAM, not an overcount.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-15 11:00 UTC — execution-session-vertical-1 — ROUND 3: final coverage sweep + LIVE PUSH (Open Check only)
+- User asked to "send more to Open Check" again. Targeted the last 1,063
+  companies in the 6,825-company ICP universe never scanned by rounds 1-2
+  (5,762 of 6,825 already sourced = 84%), via `company.linkedin_url`
+  batches of 50 (22 batches).
+- Yield was much lower this round: 463 raw records from 1,063 companies
+  (0.44 people/company) vs round 2's 1.4/company and round 1's much
+  higher effective rate — expected, since rounds 1-2 already skimmed the
+  companies with the most Director+ headcount first. This is coverage
+  saturation, not a bug.
+- **Bug caught and fixed before finalizing:** 5 people with neither a
+  `company_linkedin_url` nor a `company_domain` from Blitz were all
+  collapsing into one empty-string cap key, wrongly capping ~20
+  distinct-by-name companies down to 5 (lost ~15 legitimate people to a
+  false "concentration" cap). Fixed by adding a company-name fallback key.
+  Checked rounds 1-2 for the same defect — both came back clean (0 records
+  with both fields empty), so no retroactive correction needed there.
+- **Data-quality issues found and handled:** manually removed 2 people
+  whose "company" was actually a government/military entity (US Army,
+  a UK district council — Cherwell District Council) that slipped through
+  the Staffing-and-Recruiting industry filter. Also spotted (but did not
+  fix — flagging as an open gap) a title-matching miss: "Assistent der
+  Geschäftsführung" (German for "assistant to management") wasn't caught
+  by the exclude list, which only matches English junior-title keywords.
+  Worth a standing fix in `../icp-overview.md`'s seniority filter — add
+  common non-English equivalents of the exclude-list terms — since this
+  is a shared-rule gap, not vertical-specific.
+- Sourced (after cleanup): 435 people (359 with a full company record,
+  76 with only a company name — Blitz didn't resolve a LinkedIn URL/domain
+  for their employer, noted in the companies CSV rather than dropped).
+- Files: `sourcing/data/vertical-1-staffing-recruitment/companies/2026-09-15_1053_director-plus-round3-batch1.csv`,
+         `sourcing/data/vertical-1-staffing-recruitment/people/2026-09-15_1053_director-plus-round3-batch1.csv`
+- Pushed all 435 to Open Check 567476 via `add_leads_to_campaign_v2` (5
+  batches, 1 agent — small enough not to need parallelization). Continued
+  leaving Con Req paused/untouched (unchanged since 2026-09-11, not
+  re-asked since nothing about its status changed).
+  - Added: 317 / Updated: 113 / Failed: 0 / Unaccounted: 5 (1.15% — higher
+    than round 2's 0.15%, agent traced it to a couple of duplicate/near-
+    duplicate LinkedIn profile URLs appearing across chunks, e.g. "Evelien
+    Van Eecke")
+  - Checked against campaign 567476's `progressStats`: `totalUsers`
+    37,845 -> 38,155 (delta 310), close to but not exactly the 317 added
+    tally — same small-gap pattern as prior rounds.
+- Ledger: all 435 appended with `open_check_pushed_at` = this run's
+  timestamp, `open_check_campaign_id` = 567476. Ledger total: 15,426 rows.
+- **This closes out the full 6,825-company ICP universe for Vertical 1
+  at the current seniority/industry/geo filters** — every company that
+  matched has now been scanned for Director+ people at least once. Any
+  further volume for this vertical would need either (a) loosening a
+  filter (e.g. widening `job_level` or the industry list), (b) a second
+  pass on already-scanned companies with a higher per-company cap than 5,
+  or (c) pushing the ~10,329+2,662+435 = 13,426 people currently sitting
+  in the ledger to Con Req as well, which is still fully unpushed.
 
 ### 2026-09-13 12:49 UTC — execution-session-vertical-1 — ROUND 2: new sourcing + LIVE PUSH (Open Check only)
 - User asked to "add more leads." The first batch's 4,433 sourced companies

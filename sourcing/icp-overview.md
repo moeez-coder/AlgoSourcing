@@ -61,6 +61,14 @@ include match succeeds — a title can contain an include keyword as a
 substring while still being a junior role (e.g. "Business Development
 Representative" contains "Business Development").
 
+**Known gap, found 2026-09-15 (Vertical 1, round 3):** the exclude list
+above is English-only. A German title, "Assistent der Geschäftsführung"
+(assistant to management), slipped through since it doesn't contain the
+English word "assistant" as a substring. Not fixed yet — flagging for
+whoever picks this up next to add non-English equivalents of the exclude
+terms (this is a shared-rule gap, likely to recur in any vertical with
+European companies, not specific to Vertical 1).
+
 **Matching method — this is what actually went wrong in the Vertical 2
 test run, apply the fix everywhere:**
 - Free-text/loose keyword title search over-matches badly — e.g. searching
