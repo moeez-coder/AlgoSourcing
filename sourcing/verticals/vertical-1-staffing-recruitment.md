@@ -46,10 +46,11 @@ it to drive new sourcing, or treat it as reference only and apply
 ## Dedup ledger
 
 `sourcing/data/vertical-1-staffing-recruitment/contacted_ledger.csv` —
-15,426 rows as of 2026-09-15, **all now pushed to both Open Check 567476
-and Con Req 567452** (12,329 + 2,662 + 435 across three sourcing rounds).
-Check it before every push, update it after every push — see
-`../pipeline.md`, "The contacted ledger."
+17,203 rows as of 2026-09-17. The first 15,426 (Blitz rounds 1-3) are
+pushed to both Open Check 567476 and Con Req 567452; the newest 1,777
+(Clay batch 1) are pushed to Open Check only so far — Con Req not yet
+re-asked for this batch. Check it before every push, update it after
+every push — see `../pipeline.md`, "The contacted ledger."
 
 ## TAM (Total Addressable Market) — append-only, newest entry on top
 
@@ -77,6 +78,60 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   floor on the people TAM, not an overcount.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-17 13:45 UTC — execution-session-vertical-1 — CLAY (second source): batch 1 sourced + pushed to Open Check
+- Following the Blitz bug found earlier today, user asked to also use
+  Clay ("it has a large database of companies"). Checked Clay's actual
+  connected capabilities first: no bulk company-discovery-by-filters
+  tool exists here (`query-objects` only searches the workspace's own
+  CRM/Audience data, confirmed completely empty — 0 accounts for any
+  query, including an unfiltered one). Clay can only enrich a company/
+  find contacts when you already know its domain or LinkedIn URL.
+- Proposed and got sign-off on the practical use: run Clay's
+  `find-and-enrich-contacts-at-company` against our already-verified
+  6,825-company ICP universe (built via Company Search before the Blitz
+  bug appeared, so still trustworthy) — an independent second source
+  using Clay's own company resolution, sidestepping Blitz's broken join
+  entirely. Spot-checked this directly: Clay correctly resolved
+  roberthalf.com to the real Robert Half, unlike Blitz's Forbes mixup.
+- **Scale constraint found and flagged before committing further:** each
+  company lookup returns a large response (~5,000+ tokens for a big
+  company); running all 6,825 companies in one go would need an
+  estimated 10-17M tokens of raw tool output, more than this session's
+  remaining budget. User confirmed a bounded first batch (~1,000
+  companies) rather than attempting all 6,825 at once.
+- Separately, user then asked to also run a "full blown sweep" on Blitz
+  ("don't worry about credits, go crazy"). Re-verified the Blitz bug was
+  still live at that exact moment (3 fresh, different company URLs still
+  all resolved to "Forbes") and flagged that a bigger Blitz sweep right
+  now would produce more wrong company associations, not more good
+  leads. **User confirmed: skip Blitz, go all-in on Clay.**
+- Batch 1: randomly sampled 1,000 of the 6,825 known-good companies, ran
+  Clay's contact search (title-keyword include list approximating
+  Director+, mandatory exclude-list keywords, both server-side) across
+  20 parallel agents (50 companies each). 3,982 raw contacts (~4/company
+  — much lower yield than Blitz's best companies, expected for a random
+  cross-section rather than the highest-headcount firms). After the
+  usual client-side exclude second pass, ledger cross-check (1,057
+  already there), and per-company cap of 5: **1,777 net-new people
+  across 634 companies**.
+- Files: `sourcing/data/vertical-1-staffing-recruitment/companies/2026-09-17_1336_clay-batch1.csv`,
+         `sourcing/data/vertical-1-staffing-recruitment/people/2026-09-17_1336_clay-batch1.csv`
+- Pushed all 1,777 to Open Check 567476 via `add_leads_to_campaign_v2`
+  (18 batches, 3 parallel agents): **1,417 added / 360 updated / 0
+  failed — sums to exactly 1,777, no unaccounted gap** (the cleanest
+  reconciliation of any push this vertical has done). Verified against
+  campaign `progressStats`: `totalUsers` 38,155 -> 39,569 (delta 1,414,
+  matching the added tally almost exactly).
+- Ledger: all 1,777 appended with `open_check_pushed_at` = this run's
+  timestamp, `open_check_campaign_id` = 567476. Ledger total: 17,203 rows.
+  **Not pushed to Con Req** for this batch — wasn't re-asked, and Con
+  Req's paused/mid-flight situation from 2026-09-11/15 hasn't changed.
+- Remaining scope: ~5,825 of the 6,825 known-good companies haven't been
+  through Clay yet. Continuing to the rest is a real option (Clay itself
+  is working correctly) but needs either a much bigger token budget than
+  this session has left, or running it across multiple future sessions/
+  turns in similar ~1,000-company batches.
 
 ### 2026-09-17 10:17 UTC — execution-session-vertical-1 — BLOCKED: Blitz data-integrity bug found, NO PUSH
 - User asked to "add the complete TAM to Open Check" — i.e. drop the
