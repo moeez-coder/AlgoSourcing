@@ -78,6 +78,42 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
+### 2026-09-17 10:17 UTC — execution-session-vertical-1 — BLOCKED: Blitz data-integrity bug found, NO PUSH
+- User asked to "add the complete TAM to Open Check" — i.e. drop the
+  per-company cap of 5 used in rounds 1-3 and push every Director+ person
+  Blitz can find across the ICP universe, not just a capped sample.
+- Re-ran the two broad Find People queries (US + Europe) to full
+  exhaustion this time (no page cap): US hit Find People's documented
+  hard ceiling of 50,000 results; Europe hit a 400-page/20,000-record
+  cap I set (not naturally exhausted) after showing the same runaway
+  growth pattern as US.
+- **Stopped before pushing anything** after two red flags: (1)
+  `total_results` for the same filters had grown from 50,332 (US+Europe
+  combined, 2026-09-08/09) to 138,371 just now — implausible for a niche
+  industry in 8 days; (2) of 19,288 unique companies in the new fetch,
+  16,301 (84%) were never in the previously-verified 6,825-company ICP
+  universe. Directly confirmed a live Blitz API bug: looked up three
+  different, unrelated company LinkedIn URLs via `company.linkedin_url`
+  and all three returned the identical wrong result ("Forbes," a media
+  company with no relation to staffing/recruiting). Full details and the
+  reproduction steps are in `../TOOLS.md` under "Blitz data-integrity bug,
+  found 2026-09-17."
+- **60,772 candidate people were sourced (deduped, exclude-list filtered,
+  cross-checked against the ledger) but held back, not pushed** — the
+  underlying company data is unreliable right now, so pushing at this
+  volume risked contacting people at completely wrong/unrelated companies
+  at scale. This is a hold, not a decision to abandon the request — once
+  Blitz's bug is confirmed fixed, the same fetch should be re-run (not
+  reused from this session, since the raw data may be corrupted) before
+  attempting the complete-TAM push again.
+- Nothing new touched the ledger or any HeyReach campaign this run. The
+  existing 15,426-person backlog (already verified good, pushed before
+  this bug appeared) is untouched and unaffected.
+- Flagging to the user directly: recommend checking with Blitz support
+  or retrying this exhaustive fetch in a future session before trying
+  "complete TAM" again, and other verticals' sessions should be aware
+  their own large Blitz pulls could hit the same issue right now.
+
 ### 2026-09-15 11:49 UTC — execution-session-vertical-1 — LIVE PUSH: full backlog (15,426 people) to Con Req 567452
 - User asked to "load up the con request ones as well." Con Req 567452
   was re-checked live: still PAUSED, and its pre-existing mid-flight
