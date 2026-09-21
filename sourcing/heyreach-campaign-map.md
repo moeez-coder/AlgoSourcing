@@ -107,6 +107,31 @@ Superseded Sept 2 generation (DRAFT/PAUSED, likely not the live target — do
 not push here unless the user says otherwise): Con Req 580487 (PAUSED),
 Con Acc 580482 (PAUSED), Open Check 580514 (DRAFT), Open Profile 580496 (DRAFT).
 
+## Vertical 4 — B2B SaaS companies ("US & Europe" campaigns, cloned from Vertical 1 templates 2026-09-21)
+
+Newly created 2026-09-21 via the `heyreach-vertical-launch` skill. No prior
+generation exists. See `verticals/vertical-4-b2b-saas.md` for full detail
+(target ICP draft, to-dos, progress log).
+
+| Stage | Campaign name | Campaign ID | Status (as of 2026-09-21) |
+|---|---|---|---|
+| Con Req | US & Europe \| Con Req \| Vertical 4 \|Moe 1.0 | 612584 | PAUSED (started once to unlock webhook, empty list, no leads sent) |
+| Con Acc | US & Europe \| Con Acc \| Vertical 4 \|Moe 1.0 | 612586 | DRAFT |
+| Open Check | US & Europe \| Open Check \| Vertical 4 \|Moe 1.0 | 612587 | **DRAFT — needs manual start in HeyReach UI** (repeated platform-side 500 on `start_campaign`, 3 attempts 2026-09-21) before its webhook can be created |
+| Open Profile | US & Europe \| Open Profile \| Vertical 4 \|Moe 1.0 | 612588 | DRAFT |
+
+**Push targets (once ready):**
+- **Con Req 612584** — webhook-eligible and confirmed correctly scoped
+  (Acc webhook 82967 → CONNECTION_REQUEST_ACCEPTED). Not yet loaded with
+  leads — copy (message1/2/3, subject/inmail) also still needs to be written
+  before any real push.
+- **Open Check 612587** — blocked on manual start in the UI; its
+  `VIEWED_PROFILE` webhook has not been created yet.
+
+Senders: first 100 valid accounts from Vertical 1's pool (4 disconnected
+Vertical-1 accounts were swapped for other valid Vertical-1 accounts to keep
+the pool at 100 — see `verticals/vertical-4-b2b-saas.md` for the exact swap).
+
 ## How to push sourced leads in
 
 **Push each sourced batch to both the Con Req and Open Check campaigns** for
