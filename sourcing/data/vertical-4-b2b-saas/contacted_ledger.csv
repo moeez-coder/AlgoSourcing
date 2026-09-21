@@ -1,211 +1,808 @@
 linkedin_url,full_name,company_name,title,con_req_pushed_at,con_req_campaign_id,open_check_pushed_at,open_check_campaign_id,first_sourced_run_file
-https://www.linkedin.com/in/frederikrasmussen/,Frederik Rasmussen,innRoad,CEO and President,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/alina-vandenberghe-1548564/,Alina Vandenberghe,Chili Piper,Co-Founder & Co-CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/rushabhasheth/,Rushabh Sheth,Docsumo,Co-founder & CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/simha-sadasiva-8033211/,Simha Sadasiva,Ushur,Co Founder & CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/craigunger/,Craig Unger,Hyperproof,Founder and CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/benenzon/,Nicolas Benenzon,Humand,CEO & Co-founder,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/dafydd-llewellyn-a8050a1/,Dafydd Llewellyn,HICX,Chief Executive Officer,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/fayez-mohamood-9b88a52/,Fayez Mohamood,Bluecore,Cofounder & CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/michael-gilson-b3857918/,Michael Gilson,Conversica,Chief Executive Officer,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-https://www.linkedin.com/in/michaelndunn/,Michael Dunn,Centerbase,Chief Executive Officer and Board Member,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
-"https://www.linkedin.com/in/ramynassar","Ramy Nassar","1000 Days Out","Founder + Managing Partner","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jeffbrodsly","Jeff Brodsly","100GROUP","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/aniketbehera","Aniket Behera","100ms","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/guptakshi","Kshitij Gupta","100ms","CEO and Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/janardanprasad","Janardan Prasad","101 GenAI","Co-Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/looneymike","Michael Looney","1080 Ventures","Co-Founder, Managing Partner","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/janabobosikova","Jana Bobosikova","12:01","Chief Executive Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/craig-herman-aab3","Craig Herman","120Water","Chief Revenue Officer (CRO)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/gjhewitt","Greg Hewitt","120Water","VP of Marketing","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/claude-choquet-3a140b5","Claude Choquet","123 Certification Inc.","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/sibtay","Sibtay Shah","12 Tech","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/kennyberlin","Kenny Berlin","12twenty","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/johnsutliffe","John Sutliffe","12twenty","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/lfbalaguer","Luis Balaguer","15Element AI","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/davidhassell","David Hassell","15Five","Vice Chairman, Co-Founder & Evangelist","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/georgiatregear","Georgia Tregear","Humara","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/andyscott999","Andrew Scott","1bios","Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/tobyhung","Toby Hung","1Fort AI","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/samcaucci","Sam Caucci","1Huddle","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/amandakahlow","Amanda Kahlow","1mind","Human CEO & Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/guytuell","Guy Tuell","1QR: The Point of Interest Marketing Solution","Principal CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/georgebardissi","George Bardissi","1Stream","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/george-avetisov","George Avetisov","1up","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/sunthara","Gajen Sunthara","1upHealth, Inc.","Founder & Key Shareholder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/nolanpkelly","Nolan Kelly","1upHealth, Inc.","Chief Commercial Officer (CCO/CRO)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jaydevdhinoja","Jaydev Dhinoja","200OK Solutions","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/shekharyadav","Shekhar Yadav","23 Ventures","Founder (CTO), 23 Ventures (AI Product Studio)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/debbiepopkin","Debbie Popkin","24/7 Software","President | Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/gerald-hwasta-b335","Gerald Hwasta","24/7 Software","Chairman & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/eric-boduch-a1b61","Eric Boduch","24 and Up","Founder and Chief Executive Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/gkraios","Greg Kraios","250ok","Founder / CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/scottarosenberg","Scott Rosenberg","257","Co-Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/talchalozin","Tal Chalozin","257","CTO and Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/matt-tabin-1471331","Matt Tabin","2am.tech","Co-founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jbakken","Jon Bakken","2Checkout","VP Strategic Sales, NA","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jamesriley2mee","James Riley","2mee","Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/kylemorrand","Kyle Morrand🥁","302 Interactive","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/pete-baxter-797a9b22","Pete Baxter","345 Global","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/carlmccauley","Carl McCauley","360factors, Inc.","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jeff-dumbrell-365ba713","Jeff Dumbrell","365 Retail Markets","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/tony-danna-8884b7128","Tony Danna","365 Retail Markets","VP of SMB Sales","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ridgejames","James Ridge","3B for Salesforce","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mattjelley","Matt Jelley BA (Hons)","3B for Salesforce","Chief Revenue Officer (CRO)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/codyforbes","Cody Forbes","3ʙɪ","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/snehaltalati","Snehal Talati","3C Software","Chief Revenue Officer, Profitability Solutions","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/helen-brown-3cubed","Helen Brown","3Cubed","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/bbesecker","Beck Besecker","3D Cloud","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/dmitow","Dmitry Morozov","3DiVi Inc.","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ivan-makeev-52155833","Ivan Makeev","3DLOOK","Chief Scientist, Co-founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/whitneyjoycathcart","Whitney Cathcart","3DLOOK","Co-Founder and Chief Commercial Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/johndogru","John Dogru","3DOS","CEO - Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/tomconnard","Tom Connard","3D Source","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/garryhoffman","Garry Hoffman","3 HTi","CEO / Principal / Sales Leadership","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/kumar-g-9342742","Kumar G.","3i Partners","Founder, Managing Partner","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/krishnac","Krishna K. Chittabathini","3K Technologies","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jankovicmilan","Milan Jankovic","3lite","President and Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/naman-aggarwal-24a13b","Naman Aggarwal","3Qi Labs","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/dillon-abend-762976172","Dillon Abend","3rd-i: Safety Made Social","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/grantsernick","Grant Sernick","3rdwave","VP - Sales and Marketing","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/dblauer","David Blauer","40grid","CEO, Chief Product Officer, Chief Revenue Officer, Co-Founder, Investor","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/peteyang","Peter D. Yang","42 | 42 Technologies","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/adamjamesstevens","Adam Stevens","44pixels","Co-founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/noamyasour","Noam Yasour","44pixels","Co-founder & CMO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/amolvaidya-47billion","Amol Vaidya","47Billion","Co-founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/rajeevkdixit","Rajeev Dixit","47Billion","Co-founder & CTO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/asupradeep","Supra Appikonda","4CRisk.ai","Co-Founder and COO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/nihar-rout-b566162","Nihar Rout","4DAlert","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/cory-goodyear-3974603a","Cory Goodyear","4D Nav, LLC","Chief Revenue Officer (CRO)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/david-kelleher-042278","David Kelleher","4G Clinical","Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/marty-carney-368368","Marty Carney","4impactdata","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/hr-team-4ways-64b632195","HR Team 4Ways","4WAYSTECH","CEO 4Waystech","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/annemzink","Anne Zink","5x5 Technologies Inc.","Chief Executive Officer/Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jonrobinson-phd","Jon Robinson, PhD","64 Robots","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/michelle-otto-97a4aa16b","Michelle Otto","6Storage Software Solutions","President and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mattmimo","⚡M A T T M I M O","⚡7ARDIS | AI-powered Smart Technology Solutions","Chief Executive Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/shariqwagener","Shariq Wagener","7Dxperts","Director of Data & AI (Co-founder)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jduv2683","Jeremy D.","7Factor Software","Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jordan-boesch","Jordan Boesch","7shifts","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ezracharm","Ezra Charm","7taps Microlearning","Co-Founder and COO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/andreyleites","Andrey Leites","7taps Microlearning","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ldecanio","Lesley DeCanio","Archie Labs","Chief Revenue Officer (CRO)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/aravindupadhyaya","Aravind Upadhyaya","8chili Inc","Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/boazhecht","Boaz Hecht","8Flow","Co-founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/josh-russ-4568307a","Josh Russ","8Flow","Co-founder & COO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/paul-pagel-2823b34","Paul Pagel","8th Light","Founder, Chairman of the Board","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/drew-oetting-52463337","Drew Oetting","8VC","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jakemedwellaustin","Jake Medwell","8VC","Co-Founder and Partner","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/steve-deitz-2a46b3a","Steve Deitz","900lbs","CEO / Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/chad-salahshour-5b846a11","Chad Salahshour","911Cellular Technologies","Founder / President / CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/stephenmesser","Stephen Messer","960 Media, Inc","Board Member and Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/tomhessen","Tom Hessen","9Lenses","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/marcus-bush-2760922","Marcus Bush","9Lenses","VP of Sales","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/kobi-masri-0980b639","Kobi Masri","A.Team","Co-Founder & COO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/raphaelouzan","Raphael Ouzan","A.Team","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/sekouwhite","Sekou White","A.Team","VP, Head of Marketing & Partnerships","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/dariana-lago","Dariana Lago","a11ySolutions","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/felipe-p%c3%a9rez","Felipe Pérez","a11ySolutions","Co-Founder/CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/chriswgarner","Chris Garner","hosting.com","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/sebdelemos","Seb de Lemos","hosting.com","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/emre-varol","Emre Varol","A2SV | Africa to Silicon Valley","Founder & CEO | A2SV - Africa to Silicon Valley","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/aaron-wallace-b48613a","Aaron Wallace","A2Z","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/roblautt","Rob Lautt","A3 Solutions","CEO, Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/nataliemac","Natalie MacLees","AAArdvark","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/michaelbethuy","Michael Bethuy","aACE Software","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/scottzielski","Scott Zielski","Aaniie, Inc.","Chairman and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/rajdarjiofficial","Raj Darji","abluva","Founder and Executive","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/lee-burke-4226852b","Lee Burke","Aareon UK","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/cameron-fink","Cameron Fink","Aaru","Co-Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/johncolekessler","John Kessler","Aaru","Co-Founder, CTO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/raykaat","Ray Karadayi","Applied Automation Technologies","President & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jesal-mehta-872977","Jesal Mehta","Aavenir","Founder, and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jorgelluch","Jorge Lluch","Abacum","Co-Founder, COO and CFO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/thejuliomartinez","Julio Martínez","Abacum","Co-Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/bindureddy","Bindu Reddy","Abacus.AI","CEO and Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/fabiandivito","Fabian Divito","Abacus.AI","VP of Sales","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/minalkumar-patel-a657576","Minalkumar Patel","Abacus Insights","CEO and Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/kaplanjonathan1","Jonathan Kaplan","Abacus Insights","VP - Strategic Accounts and Marketing","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mariafilmanovic","Maria Eugenia Filmanovic","Abatable","Co-founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/valerio-magliulo","Valerio Magliulo","Abatable","Co-Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/june-o-1169816","June O.","ABC-Plan","Co-Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mosofsky","Michael Osofsky","ABC-Plan","CTO, co-founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/terri-roeslmeier-8457542","Terri Roeslmeier","Automated Business Designs","President and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/seattle-hanlon","Mike Hanlon","Abett","Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ashequeshams","Asheque Shams","Abingdon Software Group","Founder and Group CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/rjschulte","Russell Schulte","ABIS, Inc.","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/neerajdatta","Neeraj Datta","Abjayon Inc.","Cofounder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/christopher-suarez-70076b1b7","Christopher Suarez","A BLUE WORLD","Ceo & Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/sallywhiteuk","Sally White","Ablyss Systems Ltd","Founder & Director","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ftrain","Paul Ford","Aboard","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/rich-ziade-a600221","Rich Ziade","Aboard","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/benabode","Ben S.","Abode","Co-Founder & CEO (acq. by 10KC)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/gavinwhite-eng","Gavin White","About:Energy","Founder / CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/kieranoregan1994","Kieran O'Regan","About:Energy","Founder & Chief Growth Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/loricihlar","Lori Cihlar","ABOUT Healthcare","VP of Marketing","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/landonboogaard","Landon Boogaard","Technology Management Concepts","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/webbbenjamin","Benjamin Webb","Above Data","CEO & Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/hsmccoy","Heather Smith","Abrigo","VP of Marketing","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/patrick-utz","Pat Utz","Abstract","Co-Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/zacharyrosen","Zack Rosen","Abundance Network","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/cisco801","Cisco Caceres","Abundera, Inc.","Founder, CTO & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/matt-diblasi-1a408b14","Matt DiBlasi","Abyde","Chief Executive Officer & Co-founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/richardprice","Richard Price","Academia.edu","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/junaili-lie-09b941","Junaili Lie","AccelByte","Co-Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/rconline","Rohit Choudhary","Acceldata","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mcquaid","Mike McQuaid","Acceldata","Chief Revenue Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/seans2","Sean St. Clair","Acceldata","VP Sales, Strategic Accounts","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/vijay-proddhutur-7b6b8b5","Vijay Proddhutur","Accelerize 360","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/scottcraig3","Scott Craig","AccelOne","Chief Executive Officer (CEO) / Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mahendra-alladi","Mahendra Alladi","ACCELQ","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/sham-reddy","Sham Reddy","ACCELQ","Director, Office of the CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/pete-mcchrystal-56637949","Pete McChrystal","Accent Technologies","President and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/marjorie-m-k-hlava-0b1662","Marjorie M K Hlava","Access Innovations, Inc.","Chief Scientist, Chairman and Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/davidjbutler","David B.","Access IT Automation","Co-Founder & COO at Access IT Automation","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/philip-eller-7667238b","Philip Eller","AccessOwl","CEO & Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/khurram-bilal-nawaz","Khurram Bilal Nawaz","AcclivousByte","Chief Technology Officer & Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/lmaung","Lwin Maung","Accolade Solutions","Founder and Managing Director","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/dyyy","David Yue","Accordance","Co-Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/reid-sandelands-3579008b","Reid Sandelands","Accordant Company","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/frank-cheung-25714a35","Frank Cheung","Accorded","Co-Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/james-geyer-00","James Geyer","AccountAim: RevOps Analytics","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/josh-mcclanahan","Josh McClanahan","AccountAim: RevOps Analytics","Co-Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/nasser-chanda-7b7230","Nasser Chanda","Accounting Seed","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/armashula","Gennadii Armashula","Accton","CEO, Head of Growth","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/rdavidcohen","David Cohen","Accumen Data Services","Director / Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jcjimenezbosques","Juan C Jimenez","AccurKardia","Co-Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mohamedsali","Mohamed Sadeq Ali","AccurKardia","Co-founder & Chief Operating Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jacobnhaddad","Jacob Haddad","Accurx","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mihess","Michael Hess","Accuvia Software Group","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/peterdanderson","Peter Anderson","ACD Systems","VP Sales & Business Development","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/j-caleb-jones","Caleb Jones","Acentri","Co-founder | Chief Executive Officer","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/greta-cutulenco","Greta Cutulenco","Acerta","Founder & CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/conordonahue","Conor D.","Ace Virtual Shooting","Co-Founder/Advisor","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/gregorylkeeney","Gregory L Keeney","Ace Virtual Shooting","VP of Enterprise Sales & Channel Partnerships","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/colin-callahan-63b0512","Colin Callahan","Acklen Avenue","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/davidawald","David Wald","Aclaimant","President and Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/alex-chilow-47195a35","Alex Chilow","Aclaimant","VP of Sales","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/matthew-hamburger-0277092","Matthew Hamburger","Acme Software","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ravi-m-842921","Ravi M.","Acnovate Corporation","Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/jamesleepring","James Pring","ACORD Solutions Group","Head of Growth - Global Reinsurance & Large Commercial","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/shengliang","Sheng Liang","Obot AI","Cofounder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/chrisswan1","Chris Swan","Acqueon","VP of Sales, Cisco","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ryan-hoogerwerf-bba822149","Ryan Hoogerwerf","AcquireROI","VP of Sales & Partnerships","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/ben-maddox-3b157167","Ben Maddox","Acres","Chief Operating Officer & Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/blumbergmatt","Matt Blumberg","Markup AI","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/neeraj-nagpal","Neeraj Nagpal","Acronotics Limited","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/beisel","Blair Beisel","ACSI - Alternetive Converged Solutions Inc.","VP of Sales","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/raghuraghavan","Raghu Raghavan","Act-On Software","Founder & Board Member","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/craigschinn","Craig Schinn","Actable","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mattgreitzer","Matt Greitzer","Actable","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mohit-baheti-aa664b71","Mohit Baheti","Acting Office","COO and Co Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/francois-theriault-8280b227","Francois Theriault","Action_104","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/vincent-theriault","Vincent Thériault","Action_104","Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/mattgroves","Matt Groves","Action Apps","Co-founder and CTO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/1davidroberts1","David Roberts","Action Starter Limited","Co-Founder and CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/otromp-law-firm-practice-management","Oliver Tromp","Actionstep","VP Sales, EMEA","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/rohangjacob","Rohan Jacob","ActivateStaff","CEO","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/leonardsean","Sean Leonard","ActiveDEMAND","CEO/Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/noamsp","Noam Schwartz","Alice (Formerly ActiveFence)","CEO & Co-Founder","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/john-c-odonnell","John O'Donnell","Alice (Formerly ActiveFence)","Chief Revenue Officer (Global GTM)","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
-"https://www.linkedin.com/in/fredyee","Fred Yee","ActiveIQ","Founder and Chairman","2026-09-21T16:10Z","612584","2026-09-21T16:10Z","612587","2026-09-21_1600_blitz_fulltam.csv"
+https://www.linkedin.com/in/100stevetam,Steve Tam,Parable,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/1agni,Agni A.,Appify,Co-Founder & VP Growth,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/1davidroberts1,David Roberts,Action Starter Limited,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aakritprasad,Aakrit Prasad,AptEdge,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aaron-kuehl-01502117,Aaron Kuehl,Auctic,VP of Sales and Strategic Business Solutions,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aaron-wallace-b48613a,Aaron Wallace,A2Z,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aaronavallon,Aaron Avallon,ARInsights,"VP, Sales",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/abbas-sarraf-phd-1b100146,"Abbas Sarraf, PhD",Aimsio | Field Service Management Software,"Co-founder, Chief Product Officer",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/abdulsalamak,Abdul Salam AK,ASRO Track,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/abhijeet-singh-appbrew,Abhijeet Singh,Appbrew,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/abhikpramanik,Abhik Pramanik,Ashby,Co-Founder & VP of Engineering (We're Hiring!),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/abhisheknayak,Abhishek Nayak,Appsmith,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/abhishekvsingh,Abhishek Vinod S.,AiDASH,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adam-m-green-7633735,Adam M. Green,Apprentice.io,VP Sales and Partnerships,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adamfurlough,Adam Furlough,"Advent Resources, Inc.",VP Sales & Delivery,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adamgregoryschwartz,Adam Schwartz,Parable,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adamjamesstevens,Adam Stevens,44pixels,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adamlitle,Adam Litle,Afresh,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adamsinger,Adam Singer,AdQuick,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adigunadekunle,"Adekunle Mayowa ADIGUN, AWSCDA, AWSSOA, AWSDOP, AWSSAP, AWSDBS",Applatch,CTO/Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adinasimu,Adina Simu,Auditoria.AI,"Chief Product Officer, Chief Commercial Officer, Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/adjeie,Ed Adjei,Aragorn AI,"Co-Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aeural,Engin Ural,Arena,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/agupta24,Anshul Gupta,Actively,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aheed-k-6a24771b,Aheed K.,AnyShift,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ahmedmahmoud,"Ahmed Ehab Mahmoud, PhD",Astute Imaging,COO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aiavci,Ali A.,Ariglad,CTO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ajbstevens,Aonghus Stevens,Asseti,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ajoy-bose-440841,Ajoy Bose,Atrenta,"Chairman, President & CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/akash-magoon-148a3029,Akash Magoon,Adonis,Co-Founder and Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/akh1ln,Akhil N.,Aragon.ai,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/albertsantalo,Albert Santalo,Archie,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alex-chilow-47195a35,Alex Chilow,Aclaimant,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alex-lloyd-70044430,Alex Lloyd,Arcade,Head of Growth,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alexander-christie-a42112a7,Alexander Christie,Attio,Co-Founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alexanderreichert,Alexander Reichert,AgVend,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alexandrakearney,Alex Kearney,Artificial.Agency,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alfonsoastral,Alfonso Alburquerque,Astral Insights,Co-Founder & Chief Product Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alfred-bautista,Alfred Bautista,Advex AI,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/alina-vandenberghe-1548564,Alina Vandenberghe,Chili Piper,Co-Founder & Co-CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/allanpboyd,Allan Boyd,Ascent Platform,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/amandakahlow,Amanda Kahlow,1mind,Human CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/amolvaidya-47billion,Amol Vaidya,47Billion,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/amy-gearing-6062b12,Amy Gearing,"Agilence, Inc.",Chief Revenue Officer (CRO) - Sales and Customer Success,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anantkale,Anant Kale,AppZen,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/andrea-yufen-wang,"Yu-Fen, Andrea Wang",AHEAD Medicine,Co-Founder of AHEAD Medicine,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/andrew-leto-6545584,Andrew Leto,Arcturus Venture,Founder & Partner,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/andrew-parkin,Andrew Parkin,Adara - A RateGain Company,"VP of Sales, Tourism",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/andrewchaffin,Andrew Chaffin,Argo Analytics,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/andrewscheuermann,Andrew Scheuermann,Arch Systems,Cofounder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/andreyleites,Andrey Leites,7taps Microlearning,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/andyscott999,Andrew Scott,1bios,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/angie-witham-dugdale-b897b711,Angie Witham-Dugdale,Affinity (CRM),"VP, Strategic Sales",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aniketbehera,Aniket Behera,100ms,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anilmitra,Anil Mitra,Aretove Technologies,Co-Founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anis-bennaceur,Anis Bennaceur,Attention,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anisetti,Niru Anisetti,atronous.ai,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anish-jain-54790a94,Anish Jain,Aspire,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/annemzink,Anne Zink,5x5 Technologies Inc.,Chief Executive Officer/Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/antcas,Anthony Castrio,ApplyAll,"CTO, Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anthonyscarpone-lambert,"Anthony Scarpone-Lambert, BSN, RN",Adni,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anthonystonham,Anthony Stonham,ASquared | B Corp™ | Digital Product Agency,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anthonyyim,Anthony Yim,Artemis,Co-founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/anton-galvas-3ba42018,Anton G.,AiKYNETIX,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/antontoutovphd,Anton Toutov,AstraNav,Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aparnadhinakaran,Aparna Dhinakaran,Arize AI,Founder - Chief Product Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/apezold,Alex Pezold,Agentech,Founding CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/apwenchel,Adam Wenchel,Arthur,Co-founder / CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aravindupadhyaya,Aravind Upadhyaya,8chili Inc,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/architrathi,Archit Rathi,Atlabs AI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ari-sandman-19139118,Ari Sandman,AS Software,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/arjunsahgal,Arjun Sahgal,Ascent Platform,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/armashula,Gennadii Armashula,Accton,"CEO, Head of Growth",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/art-allen-1a9673b2,Art Allen,Adaptive Computing,President and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/arun-bantval,Arun Bantval,Artemis Care Inc.,President and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/arunkupadhyay,Arun Upadhyay,AntGen - Total Wireless Master Agent,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/asengupta,Arijit Sengupta,Aible,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/asets,Ashwini Oke,ASETS-CA,Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ash-esmaeili,Ash Esmaeili,Aimsio | Field Service Management Software,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ashequeshams,Asheque Shams,Abingdon Software Group,Founder and Group CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ashishkasama,Ashish Kasama,Ads & Scale,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ashpreetbedi,Ashpreet B.,Agno,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/askar-bulegenov,Askar Bulegenov,Athena AI,Co-founder & Managing Director,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aspirity,Alex Efremov,Aspirity Solutions,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/assafmelochna,Assaf Melochna,Aquant,President & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/astute,Nicholas van der Walle,Astute Graphics,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/asupradeep,Supra Appikonda,4CRisk.ai,Co-Founder and COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/atila-orhon,Atila Orhon,"Argmax, Inc.",Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aupeker,"Ali Ufuk Peker, PhD",ADASTEC Corp.,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/avivrevach,Aviv Revach,Adaptive6,CEO & Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/aymericzhuo,Aymeric Zhuo,CodeWords,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ayoolajohn,Ayoola John,Astronaut,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/baranali,Ali BARAN,Arcanor,"Co-Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/barrylibert,Barry Libert,AIMatters,"Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bbesecker,Beck Besecker,3D Cloud,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/becky-lynn-6ab89440,Becky Lynn,arken.legal,Head of Growth Arken,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/beisel,Blair Beisel,ACSI - Alternetive Converged Solutions Inc.,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ben-goolsby-ba027691,Ben Goolsby,Arcoro,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ben-maddox-3b157167,Ben Maddox,Acres,Chief Operating Officer & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/benabode,Ben S.,Abode,Co-Founder & CEO (acq. by 10KC),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/benbrannen,Ben Brannen,atVenu,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/benenzon,Nicolas Benenzon,Humand,CEO & Co-founder,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/benjaminencz,Benjamin Encz,Ashby,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/benleaver,Ben Leaver,arcastream,Chief Executive Officer at Arcastrea,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/benoitmathieu,Mathieu Benoit,Arcane Technologies,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bertan-ilbak-33136321,Bertan Ilbak,Ascendx,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/beth-kahn-cfo-anura,Beth Kahn,Anura,Co-Founder and CFO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bfravel,Brian Fravel,AskNicely,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bhardia,Manish Bhardia,Aimey.ai,Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bindureddy,Bindu Reddy,Abacus.AI,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/blumbergmatt,Matt Blumberg,Markup AI,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/boazhecht,Boaz Hecht,8Flow,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/boblayton1520,Bob Layton,Apptega,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bobriakov,Igor Bobriakov,ActiveWizards | AI Engineering Studio,Principal AI Architect & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/brad-scoggin,Brad Scoggin,ArborXR,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bradley-s-05376a46,Bradley S.,AiDASH,VP of Sales Operations and Demand Generation,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bradleyriss,Bradley Riss,"AppBrilliance, Inc.",co-CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bradyhustad,Brady Hustad,"Argis Solutions, Inc.",Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/brendanobrienaria,Brendan O'Brien,Aria Systems,Chief Innovation Officer & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/brendongeils,Brendon Geils,Athena Intelligence,"Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/brett-t-baldwin,Brett Baldwin,Arbiter,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/brian-deangelis-8a90a939,Brian DeAngelis,AdeptID,Co-Founder & Chief Scientist,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/brucefair,Bruce Fair,Agilio Software,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/bryan-abou-rjaily,Bryan Abou-Rjaily,AtScale,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cal-lai-504820,Cal Lai,AskVet,Chairman and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cameron-fink,Cameron Fink,Aaru,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/camilo-moreno-posada,Camilo Moreno,Atom,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/camilo-rivera-4756157,Camilo Rivera,Apprendo,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cammacarthur,Cameron MacArthur,AI Insurance,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/carlmccauley,Carl McCauley,"360factors, Inc.",CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/carlos-carvalho-aphex,Carlos Carvalho,Aphex,Co-Founder & CRO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/carlwooloff,Carl Wooloff,ASI,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/carlybaigelman,Carly Baigelman,Archway Group,"VP, Head of Marketing",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/caroline-clark-8a217927,Caroline Clark,Arcade,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/carolinetaylorappraisalbureau,Caroline Taylor,Appraisal Bureau,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cassidygaertner,Cassidy Gaertner,Arcos LLC,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/catalinsilviuniculae,Catalin Silviu Niculae,Areus Development,"CEO @ Areus, Implementing Technology Visions for High Level Business & Technology Executives",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ceciliozaragoza,Cecilio Zaragoza,Aplos,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cericsmith,C. Eric Smith,"AppBrilliance, Inc.",Founder/CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chad-salahshour-5b846a11,Chad Salahshour,911Cellular Technologies,Founder / President / CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/charles-vinette-57577088,Charles Vinette,App&Flow,"Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/charles-yeomans-4507a17,Charles Yeomans,Atombeam Technologies,Chairman and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chlynch,Christopher Lynch,AtScale,Executive Chairman & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chris-andrassy,Chris Andrassy,Astral Insights,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chris-huff,Chris Huff,Adlib,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chriscera,Chris Cera,Arcweb Technologies,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chrisckemp,Chris Kemp,Astra,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chrisswan1,Chris Swan,Acqueon,"VP of Sales, Cisco",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/christifontenot,Christi Fontenot,Augment Code,"EA to the CEO, Matt McClernan",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/christodanderson,Chris A.,Applause,VP Sales/Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/christopher-suarez-70076b1b7,Christopher Suarez,A BLUE WORLD,Ceo & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/christophervroom,"Christopher E. Vroom, CFA,AM,CFP®",Artadia,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/chriswgarner,Chris Garner,hosting.com,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cisco801,Cisco Caceres,"Abundera, Inc.","Founder, CTO & CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/claude-choquet-3a140b5,Claude Choquet,123 Certification Inc.,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/clintjrobinson,Clinton Robinson,Parable,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/codyforbes,Cody Forbes,3ʙɪ,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/coerobert,Robert Coe,AcuityMD,"CTO, Co-founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/colin-callahan-63b0512,Colin Callahan,Acklen Avenue,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/connectwithmrod,Michael Rodriguez,Anura,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/conordonahue,Conor D.,Ace Virtual Shooting,Co-Founder/Advisor,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cooperbrandon,Brandon Cooper,Aphid,Co-Founder & Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/coreyrubadue,Corey Rubadue,ArchVision,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/cory-goodyear-3974603a,Cory Goodyear,"4D Nav, LLC",Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/craig-herman-aab3,Craig Herman,120Water,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/craigschinn,Craig Schinn,Actable,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/craigunger,Craig Unger,Hyperproof,Founder and CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/cyrusjia,Cyrus Jia,Argon AI,Co-Founder / CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dacayanan,Ryan D.,Array,"Co-Founder, VP of Sales",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dafydd-llewellyn-a8050a1,Dafydd Llewellyn,HICX,Chief Executive Officer,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/daghan-cam-11490629,Daghan Cam,Aibuild,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/damladokuzoglu,"Damla Dokuzoglu, Ph.D.",AppNava,"CEO, Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dan-cavanaugh,Dan Cavanaugh,Aidentified,"Chief Revenue Officer, Head of Wealth Management",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dana-torgersen,Dana Torgersen,ArmorCode Inc.,VP of Product Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/daniblacknyc,Dani Black,AppWork,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/daniel-haiem-ceo-b650b59a,"Daniel Haiem, CEO",AppMakers USA,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/daniel-lundquist-18b514134,Daniel Lundquist,Apex Cloud,CEO | Founder and CAIO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/daniel-yorsh,Daniel Yorsh,Aryval,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/danieljaye,Daniel Jaye,Aqfer,Founder and Chief Technology Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/danieljfurman,Dan Furman,Arctop,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/danielyaffe,Daniel Yaffe,AnyRoad,COO / Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/danielzarick,Daniel Zarick,Arrows,CEO / Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/daniyal-anjum-5b683576,Daniyal Anjum,attention labs,COO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dariana-lago,Dariana Lago,a11ySolutions,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/darryl-izzard-0b8b6622,Darryl Izzard,"AdmissionPros, LLC",President and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/darye,Darye Henry,AfterSchool HQ,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davefruhling,David Fruhling II,"AppBrilliance, Inc.","co-founder COO/CFO AppBrilliance, Inc.",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davehclark,Dave Clark,Auger,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/david-cherrie-13b36b9b,David Cherrie,Arcade,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/david-kelleher-042278,David Kelleher,4G Clinical,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/david-lanstein-9918305,David Lanstein,Atolio,Co-founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/david-leinweber,David L.,Ascent Cloud,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/david-r-busch,David Busch,AP Express by Nivo1,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/david-shaw-8053933,David Shaw,AppZen,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/david-solomon-326852,David Solomon,Arbill,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidagagne,David Gagne,MetaField,"President, CEO and Director",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidawald,David Wald,Aclaimant,President and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidbuniatyan,Davit Buniatyan,Activeloop,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidclutter,David Clutter,AdRoll,"VP Sales, Global Agency Partnerships",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/daviddevinemws,David Devine,Aptem,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidhassell,David Hassell,15Five,"Vice Chairman, Co-Founder & Evangelist",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidhecht,David Hecht,Chargent (by AppFrontier),Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidjbutler,David B.,Access IT Automation,Co-Founder & COO at Access IT Automation,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidjoohunkim,David Joohun Kim,attention labs,"CEO, Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidjosborne,David Osborne,Auditoria.AI,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidlzion,David Zion,Agility PR Solutions,"VP, Commercial Strategy & Platform Sales",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidpmariani,David P. Mariani,AtScale,"Chief Technology Officer, Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidrwerner,David Werner,AIA Contract Documents,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/davidvanbruwaene,David Van Bruwaene,Asenion (formerly Fairly AI + anch.AI),Co-founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dblauer,David Blauer,40grid,"CEO, Chief Product Officer, Chief Revenue Officer, Co-Founder, Investor",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/deanpalmiter1,Dean Palmiter,Asseta,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/deantribble,E. Dean Tribble,Agoric,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/debbiepopkin,Debbie Popkin,24/7 Software,President | Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/debergalis,Matt DeBergalis,Apollo GraphQL,CEO and Cofounder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dejanpan,Dejan Pangercic,Apex.AI,CTO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/desmondchan,Desmond Chan (He/Him),Aquila Clouds,"Chief Product Officer, Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dettbarn,Jason Dettbarn,Addigy,Founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/devin-horsman-17040544,Devin Horsman,Arcturus,Chief Technical Officer / Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dhawalsehgal,Dhawal Sehgal,Atomic Computing,Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dilbagi,Arsh Shah Dilbagi,Adaline,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dillon-abend-762976172,Dillon Abend,3rd-i: Safety Made Social,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dmitow,Dmitry Morozov,3DiVi Inc.,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dominicdinardo,Dominic Dinardo,Aforza,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/donahuerobert,Bob D.,AppLearn®,VP Sales and Alliances - North America,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dphopper,David Hopper,ApplyPass,"Cofounder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dragonlim,Andy L.,"Addmi, Inc.",Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/drchristinepaszko,Dr. Christine Paszko,"Accelerated Technology Laboratories, Inc.",Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/drew-oetting-52463337,Drew Oetting,8VC,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dror-katzav,Dror Katzav,Atidot,Co Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dsuydam,David Suydam,Architech,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/duncancasemore,Duncan Casemore,Applaud,Co-founder and CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dustin-echenique,Dustin Echenique,AdvizorPro,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/dyyy,David Yue,Accordance,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/edbutterworth,Ed Butterworth,Aforza,Chief Commercial Officer & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/edgarmartinezceja,Edgar Martinez Ceja,Aren,COO & Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/eemac,erin mcnamara,Affinity (CRM),"VP, Product Marketing",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/eli505,Eli Bernstein,Ascertain,"Chief Product Officer, Co-founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/eliasbhage,Elias Hage,App8,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/eliros,Eli Rosenberg,AgVend,Co-Founder & CPO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/elliottlander,Elliott Lander,ATR Inc,"Founder, Managing Director",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/emily-gittins,Emily Gittins,Archive,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/emre-varol,Emre Varol,A2SV | Africa to Silicon Valley,Founder & CEO | A2SV - Africa to Silicon Valley,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/erensel,Pearce Erensel,Approov Mobile Security,"Vice President of Global Sales (VP, App & API Security)",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/eric-driggers-76b111137,Eric Driggers,AIM EMS Software & Services,Head of Sales and Marketing (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/eric-jeffries-59812,Eric Jeffries,Assurified,Co-Founder & Chief Commercial Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ericblaughlin,Eric Laughlin,Agiloft,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/erickholmann,Erick Holmann,Atom,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/estewart920,Emma Bernstein,ActiveProspect,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/etnikblakaj,Etnik Blakaj,Atto,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/evanbroadhead,Evan Broadhead,Agility,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ezracharm,Ezra Charm,7taps Microlearning,Co-Founder and COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/fabiandivito,Fabian Divito,Abacus.AI,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/fahimferdous,Fahim Ferdous,AdQuick,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/fayezmohamood,Fayez Mohamood,Bluecore,Cofounder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/fcalicchia,Filomena Calicchia,Adverweb Consulting Group,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/felipe-pérez,Felipe Pérez,a11ySolutions,Co-Founder/CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/fernandorodriguezvilla,Fernando Rodriguez-Villa,AdeptID,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/filip-rosander-2b53ab15,Filip Rosander,Sigma Software Vertex,CEO North America,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/fionmadan,Fion Lee-Madan (she/her),Asenion (formerly Fairly AI + anch.AI),"Technical Co-Founder, Chief Product Officer and Strategic Partnerships",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/flaluyaux,Frederic Laluyaux,Aera Technology,"Co-founder, President and CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/fooyeah,Fouad ElNaggar,Array,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/foxbrian,Brian Fox,AdAction,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/francescoiorio,Francesco Iorio,Augmenta,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/francescopmarconi,Francesco Marconi,AppliedXL,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/francois-theriault-8280b227,Francois Theriault,Action_104,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/frank-cheung-25714a35,Frank Cheung,Accorded,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/frederikrasmussen,Frederik Rasmussen,innRoad,CEO and President,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/fredyee,Fred Yee,ActiveIQ,Founder and Chairman,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ftrain,Paul Ford,Aboard,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/garryhoffman,Garry Hoffman,3 HTi,CEO / Principal / Sales Leadership,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/garrypartington,Garry Partington,Apadmi,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/garybierc,Gary Bierc,Aperitisoft™,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gaufire,Gaurav S.,AtomsAI,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gavinwhite-eng,Gavin White,About:Energy,Founder / CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gayathrirajahmba,Gayathri Srirajendrarajah,Adage Digital Ltd,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/geoff-gray,Geoff Gray,Aquila,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/george-avetisov,George Avetisov,1up,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/georgebardissi,George Bardissi,1Stream,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/georgeparry12,George Parry,emma AI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/georgiatregear,Georgia Tregear,Humara,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/georgy-melkonyan,Georgy Melkonyan,Arnata,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gerald-hwasta-b335,Gerald Hwasta,24/7 Software,Chairman & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gfpnj,Gary Pignata,Apprentice.io,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/giffordwatkins,Gifford Watkins,Atlantic Web Fitters,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/girishchavan,Girish Chavan,"Astrata, Inc",Co-Founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gjhewitt,Greg Hewitt,120Water,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gkraios,Greg Kraios,250ok,Founder / CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gmcgregor,George McGregor,Approov Mobile Security,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gomezmatt,Matt Gomez,Agility CMS,VP Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gonzalobenedit,Gonzalo Benedit,Aera Technology,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gralpois,Bruno Gralpois,Agency Mania Solutions,Co-Founder and Principal,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/grantsernick,Grant Sernick,3rdwave,VP - Sales and Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/greg-whitaker-59a6b155,Greg Whitaker,AgrigateOne,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gregbrown17,✔️Greg Brown,Appluent Business Solutions,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gregchavers,Greg Chavers,AffableONE Inc.,CRO/CSO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gregcohn,Greg Cohn,Ad Hoc Labs (makers of Burner + Dialed),Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gregmartin72,Greg Martin,Archer Capital Group,Founder & Managing Director,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gregoryhaardt,Gregory Haardt,Apps & Bits,Founder - Apps & Bits,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gregorylkeeney,Gregory L Keeney,Ace Virtual Shooting,VP of Enterprise Sales & Channel Partnerships,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/greta-cutulenco,Greta Cutulenco,Acerta,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/gschmidt,Geoff Schmidt,Apollo GraphQL,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/guptakshi,Kshitij Gupta,100ms,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/guy-vadish,Guy Vadish 🎗️,Artiffex Inc.,"Founder, President & CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/guysutton,Guy Sutton,Appspace,"VP Sales, EMEA and APAC",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/guytuell,Guy Tuell,1QR: The Point of Interest Marketing Solution,Principal CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/haflaherty,Hannah Garner,Arctic Shores,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hajohnston,Harriet Johnston,Ashby,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hamidbaghi,Hamid Baghi,Aimsio | Field Service Management Software,Co-Founder & Chief Technology Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/helen-brown-3cubed,Helen Brown,3Cubed,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hemantmadaan,Hemant Madaan (HM),AptaCloud,CEO / Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/henry-bradlow-a686052a,Henry Bradlow,Adaptive,Co-Founder and CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/henry-sentium,Henry Smith,Agentycs,"Co-Founder, CTO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/henry-yin-88116a52,Henry Yin,AGI House,Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/henrymeller,Henry Meller,Artium AI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hesomparhizkar,Hesom Parhizkar,AdvizorPro,Co-founder & Chief Product Officer (CPO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hooman-parvardeh,"Hooman Parvardeh, PMP, CSM",AssetIntel™,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hoon-ywen-li-0284b4,Hoon-Ywen Li,Anzen,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hortonrobertcameron,Cameron Horton,Attribution,Co-founder & Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hr-team-4ways-64b632195,HR Team 4Ways,4WAYSTECH,CEO 4Waystech,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/hsmccoy,Heather Smith,Abrigo,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ian-bishop-82a55b41,Ian Bishop,Asseti,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ianjwharton,Ian Wharton,Aide Health,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/igor-gitsevich,Igor Gitsevich,ActiveViam,"VP, Solution Sales",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ingudam,Manoranjan Ingudam,HuskyVoice.AI,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/itsarbit,Chun-Yen C.,Arklex AI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/iulia-ms,Iulia Mihailescu,Agoric,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ivan-gekht,Ivan Gekht,The Agile Bulletin,Co-Founder and Editor,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ivan-makeev-52155833,Ivan Makeev,3DLOOK,"Chief Scientist, Co-founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ivanharding,Ivan Harding,Applaud,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/iwitaly,Vitaly Davydov,Adapty.io,"CEO, Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/j-caleb-jones,Caleb Jones,Acentri,Co-founder | Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jack-walden,Jack Walden,Artlogic,Head of Growth Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jacksonnoel,Jackson Noel,Appcues,"Co-Founder & CEO, Board member",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jacobcolker,Jacob Colker,AI2 Incubator,Co-Founder and Managing Director,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jacobnhaddad,Jacob Haddad,Accurx,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jacqueline-cheong,Jacqueline Cheong,Artie,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jacques-deveau-6497834,Jacques Deveau,Audiokinetic,VP Sales & Business Development,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jakemedwellaustin,Jake Medwell,8VC,Co-Founder and Partner,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/james-bleasby-52668a47,James Bleasby,Arreoblue,Director & Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/james-geyer-00,James Geyer,AccountAim: RevOps Analytics,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/james-hirchak,James Hirchak,Astute,President & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jamesfoleyuk,James Foley,adserve,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jamesleepring,James Pring,ACORD Solutions Group,Head of Growth - Global Reinsurance & Large Commercial,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jamesriley2mee,James Riley,2mee,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jamessbates,James Bates,AdviNOW Medical,"Founder, CEO and Chairman",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jamiejackson,Jamie Jackson,Arkatechture,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/janabobosikova,Jana Bobosikova,12:01,Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/janardanprasad,Janardan Prasad,101 GenAI,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jane-johnston-lfedip-40a4a491,Jane Johnston LFEDIP,AphA - Association of healthcare analysts,Co-CEO AphA Association of Professional Healthcare Analysts,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/janetjaiswal,Janet Jaiswal,Arc XP,Global VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jankovicmilan,Milan Jankovic,3lite,President and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/japetralia,Jason Petralia,Anthropogenic,Founder and Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jason-francis-1488013b,Jason Francis,APFusion,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jason-lopatecki-9509941,Jason Lopatecki,Arize AI,Founder - CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jason-manges-07b18914,Jason Manges,Adara - A RateGain Company,VP Sales- Tourism,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jasonades,Jason Ades,Artiffex Inc.,"Co-Founder, Director of Operations & Product Development",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jasongulbinas,Jason Gulbinas,Aila Technologies,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jasonrwells,Jason Wells,AI Dev Lab,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jasontober,Jason Tober,Addigy,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jaspar-carmichael-jack,Jaspar Carmichael-Jack,Artisan,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/javiersegovia,Javier Segovia,Architechtures,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jayashreebiswas,Jayashree Dutta,atronous.ai,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jaybhatia2017,Jay Bhatia,Agilis,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jaydevdhinoja,Jaydev Dhinoja,200OK Solutions,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jaygohillarcurve,Jay Gohill,Arcurve,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jaytrotter,Jay Trotter,Arborgold Software,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jbakken,Jon Bakken,2Checkout,"VP Strategic Sales, NA",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jbetancourt-ha-levi,Juan Luis Betancourt,Ask Aura by Humantelligence Inc.,"CEO, Ask Aura AI coach",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jcjimenezbosques,Juan C Jimenez,AccurKardia,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jduv2683,Jeremy D.,7Factor Software,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeff-dumbrell-365ba713,Jeff Dumbrell,365 Retail Markets,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeffbrodsly,Jeff Brodsly,100GROUP,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeffmvance,Jeff Vance,Adyton,Head of Growth,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeffnatland,Jeff Natland,Arizona Bay,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeffrey-s-866b4113,Jeffrey Spencer,Atreides,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeffreyhanna,Jeff Hanna,Polls for iMessage,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeffstieber,Jeff Stieber,Adaptive,"Strategic Advisor to the CEO, Adaptive Build",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jennifferre-mancillas,"Jennifferre Mancillas, BSN, RN, RNC-NIC",Adni,Co-Founder & COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jeresimpson,Jere L Simpson,Atlas UP,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jesal-mehta-872977,Jesal Mehta,Aavenir,"Founder, and CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jim-dertzbaugh-0b41894,Jim Dertzbaugh,Atombeam Technologies,"Advisor/Consultant - CRO, Business Development, Sales/Channel Development",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jj-wilson,JJ Wilson,Adyton,Co-Founder | President & COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jkwicien,Jason Kwicien,Arches,"Co-Founder, COO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joaodfalcao,João Diogo Falcão,AiFi Inc.,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joe-yurich,Joe Yurich,Agiloft,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joeamaral1,Joe Amaral,"Anthem Business Software, LLC",Founder/CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joelragar,Joel Ragar,Applause,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/john-c-odonnell,John O'Donnell,Alice (Formerly ActiveFence),Chief Revenue Officer (Global GTM),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/johnakennedy,John Kennedy,Actual AI,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/johncolekessler,John Kessler,Aaru,"Co-Founder, CTO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/johndogru,John Dogru,3DOS,CEO - Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/johnnybridges,Johnny Bridges,Artificial Labs,Co-Founder and Co-CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/johnreadman,John Readman 🚴‍♂️ 🎙💻,ASK BOSCO®,Founder & Product owner,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/johnsutliffe,John Sutliffe,12twenty,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/johnwblake,John Blake,Anytime AI,Co-Founder and VP of Revenue,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jon-andrew-a754779,Jon Andrew,Ārahi Ltd.,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jon-rhymes,Jon Rhymes,Aspia Space,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jon-williams-0a10401,Jon Williams,AG Grid,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonanthony,Jon Anthony,Adappt,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonas-hellgren,Jonas Hellgren,APERIO,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonathan-stolter-7b28048,Jonathan Stolter,Archy,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonathanrat,Jonathan Rat,Archy,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonbakke,Jon Bakke,Aerospike,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonbma,Jon Ma,Artemis,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jondmoody,Jon Moody,Aeries Software,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonrobinson-phd,"Jon Robinson, PhD",64 Robots,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonvoigt,Jon Voigt,Agility CMS,Co-founder & Chief Growth Man,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jonzweig,Jonathan Z.,AppOnboard,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jordan-boesch,Jordan Boesch,7shifts,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jordan-williams-b4498053,Jordan Williams,ArborXR,Co-Founder / Head of Product,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jorge-banuelos-0006aa156,Jorge Banuelos,AI2 Incubator,Founder-in-Residence,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jorgelluch,Jorge Lluch,Abacum,"Co-Founder, COO and CFO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joseph-rayfield-6a31918,Joseph Rayfield,askelie®,Chief Executive Officer (CEO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/josephschwartz,Joseph Schwartz,Assurified,Chief Executive Officer and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/josh-mcclanahan,Josh McClanahan,AccountAim: RevOps Analytics,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/josh-russ-4568307a,Josh Russ,8Flow,Co-founder & COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joshdstein,Josh Stein,AdhereTech,Cofounder and Board Member,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joshua-pickering,Josh Pickering,Adthena,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joshuaruff,Joshua Ruff,AgencyAnalytics,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/joshwarwick,Josh Warwick,Wassist,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jpbradette1,Jean-Philippe Bradette,Apprentx by Edgenda,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jpetsick,Joe Petsick,Auctic,Co-Founder / CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jtaylorolson,J. Taylor Olson,Applause,CEO | Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/junaili-lie-09b941,Junaili Lie,AccelByte,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/june-o-1169816,June O.,ABC-Plan,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/justin-schwanke-97751162,Justin Schwanke,"AgVantis, Inc.",President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/justin-sheehan-storybrand,Justin Sheehan,Astra Applications,Founder & Product Strategist,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/jwallia,J.J. Wallia,"ADF Solutions, Inc.",CEO/Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kamilguclu,Kamil Guclu,ADASTEC Corp.,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kanadikirik,Osman (Ozi) Kanadikirik,App Genie,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kaplanjonathan1,Jonathan Kaplan,Abacus Insights,VP - Strategic Accounts and Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/karpagam,Karpagam Narayanan,Ascendo AI,Co-Founder and Investor,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/karthikramki,Karthik Ramakrishnan,Armilla AI,CEO and Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kathleen-brunner,Kathleen Brunner,Acumen Analytics,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kbalakri,Karthik Balakrishnan,ACTUAL,Co-Founder and President,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/keith-neilson-48268850,Keith Neilson,AppFactor,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kelly-mann-cpa,"Kelly Mann, CPA",AuditMiner,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kennyberlin,Kenny Berlin,12twenty,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ketanketan,Ketan Shah,Agentz,"Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kevin-ryan-99aa4b3,Kevin Ryan,"Automated Financial Systems, LLC",Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kevinblang,Kevin Lang,Agerpoint,CEO & President,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kevinterrell,Kevin Terrell,AI2 Incubator,Founder In Residence,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/khurram-bilal-nawaz,Khurram Bilal Nawaz,AcclivousByte,Chief Technology Officer & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kieranoregan1994,Kieran O'Regan,About:Energy,Founder & Chief Growth Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kieronsambrooksmith,Kieron Sambrook-Smith,Aquila Learning,Board Advisor & CRO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kimi-lu,Kimi Lu,Aident AI,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kiyanforoughi,Kiyan Foroughi,Needle,"CEO, Executive Producer & Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kobi-masri-0980b639,Kobi Masri,A.Team,Co-Founder & COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/krishnac,Krishna K. Chittabathini,3K Technologies,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kristenbryantsmith,Kristen Bryant Smith,Appcues,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ksurace,Kevin Surace,Appvance,CEO & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kumar-g-9342742,Kumar G.,3i Partners,"Founder, Managing Partner",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kunalv,Kunal Verma,AppZen,Co-Founder and CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kyle-armstrong-6352496,Kyle Armstrong,Ascenda,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/kylemorrand,Kyle Morrand🥁,302 Interactive,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/landon-bennett-02285620,Landon Bennett,Ad Reform,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/landonboogaard,Landon Boogaard,Technology Management Concepts,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/langleyjessica,Jessica Langley,Athian,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/laps-senthilgiri,Laps Senthilgiri,Apex Projects,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/larsbuttler,"Lars Buttler, PhD",The AI Foundation,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/larssneftrup,Lars Sneftrup Pedersen,Admin By Request,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/laurasilvester,Laura Silvester,Anthill,"Co-founder, COO & Head of Product (Acquired by Humanly March 2026)",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/laurataylor211,Laura Taylor,ARInsights,VP Marketing and Product,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ldecanio,Lesley DeCanio,Archie Labs,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/leanne-madden,Leanne Madden,AP Express by Nivo1,VP of Sales & Customer Success,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lee-burke-4226852b,Lee Burke,Aareon UK,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lee-smith-54a34747,Lee Smith,AcuityMD,"Co-Founder, Head of Commercial Development",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/leonardsean,Sean Leonard,ActiveDEMAND,CEO/Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lfbalaguer,Luis Balaguer,15Element AI,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lfwu2010,Lingfei (Teddy) Wu,Anytime AI,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/liamolohan,Liam Olohan,"Agora Data, Inc.",VP - Sales Operations,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lily-youn,Lily Youn Jaroszewski,Aprimo,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lilytse,Lily T.,Think Dirty®,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lingrajspatil,LingRaj Patil,ArmorCode Inc.,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/linkedindandevane,Dan Devane,Apono,VP Enterprise Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lionelbaquero,Lionel Baquero,AICS® - Asociación Internacional de Calidad de Software,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lmaung,Lwin Maung,Accolade Solutions,Founder and Managing Director,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/looneymike,Michael Looney,1080 Ventures,"Co-Founder, Managing Partner",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/loricihlar,Lori Cihlar,ABOUT Healthcare,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/lukeshardlow,🌏 Luke Shardlow,Ai Lean,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/madelinecrowley,Madeline Crowley,Assignar,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/maggiebritt,Maggie B.,Anterra Technology,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mahendra-alladi,Mahendra Alladi,ACCELQ,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mahesh-lunani-40279610,Mahesh Lunani,Aquasight,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/malarkeyking,David King,Artificial Labs,Co-Founder and Co-CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/manishgautam2420,Manish Gautam,Asama AI,Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/manojverma001,Manoj Verma,Adroit Infosystems,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/marcin-michalak,Marcin Michalak,AgentX AI,Founder and CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/marcus-bush-2760922,Marcus Bush,9Lenses,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mariafilmanovic,Maria Eugenia Filmanovic,Abatable,Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/marinamassingham,Marina Massingham,Aifred Health,Board Chair; formerly CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/marjorie-m-k-hlava-0b1662,Marjorie M K Hlava,"Access Innovations, Inc.","Chief Scientist, Chairman and Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mark-hung,Mark Hung,Ataya,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mark-locker,Mark Locker,Attractions.io,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mark-mcquade,Mark McQuade,Arcee AI,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/markgerberman,Mark Gerberman,Arcturus,VP of Business Development and Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/markmatta,Mark Matta,Atolio,Co-founder & CCO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/marlene-waltz,Marlene Waltz,Apriva,Sr VP of Sales and Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/martinrmahler,Martin Mahler 📊 🍓,Astrato Analytics,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/martintoha,Martin Toha,Array,CEO + Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/marty-carney-368368,Marty Carney,4impactdata,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/marvin-martin-1ab5ab10,Marvin Martin,Acutro,Founder/ Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mathieuallaire,Mathieu Allaire,Agendrix,"CEO, Co-founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/matt-diblasi-1a408b14,Matt DiBlasi,Abyde,Chief Executive Officer & Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/matt-fisch-6945122,Matt Fisch,"AEye, Inc.",CEO and Chairman,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/matt-schwartz-0b76a326,Matt Schwartz,Afresh,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/matt-tabin-1471331,Matt Tabin,2am.tech,Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattbehrend,Matt Behrend,Agility,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattcalvano,Matt Calvano,Adaptive,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattgray914,Matt Gray,Pangea,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattgreitzer,Matt Greitzer,Actable,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattgroves,Matt Groves,Action Apps,Co-founder and CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/matthew-hamburger-0277092,Matthew Hamburger,Acme Software,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/matthewparkhurst,Matthew Parkhurst,Antimetal,"Co-Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/matthias-wickenburg-5117288b,Matthias Wickenburg,Attention,Co-founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattjelley,Matt Jelley BA (Hons),3B for Salesforce,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattjhawes,Matt Hawes,AudienceView,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mattmimo,⚡M A T T M I M O,⚡7ARDIS | AI-powered Smart Technology Solutions,Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/maxine-anderson,Maxine Anderson,Arist,"Co-founder, COO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/maxxburman,Maxx Burman,ArtStation,Co-CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mchasteen,Mike Chasteen,Adlib,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mcnabbscott,Scott McNabb,Assembly Software,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mcquaid,Mike McQuaid,Acceldata,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/meredith-altenhofen-stebbins-45b68a15,Meredith Altenhofen Stebbins,Astrada,"Vice President, Head of Growth",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-gilson-b3857918,Michael Gilson,Conversica,Chief Executive Officer,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/michael-giordmaina-b767a925,Michael Giordmaina,Artis,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-howe-4155a37,Michael Howe,Aprexis Health Solutions,"Co-Founder, CTO & COO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-ibrahim11,Michael Ibrahim,Ada Infrastructure,Head of Growth & Energy,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-jackson-990432,Michael Jackson,Adaptive Computing,"President and Co-Founder (Sales, Marketing, Partner Business Develpment & Operations)",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-kirk-13544b1a,Michael Kirk,AssetPool,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-marsiglia-0726736,Michael Marsiglia,Atomic Object,Co-CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-monovoukas-0786a52b,Michael Monovoukas,AcuityMD,"CEO, Co-founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-vandi,Michael Vandi,Addy AI,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michael-wadsworth,Michael Wadsworth,adoor,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michaelbethuy,Michael Bethuy,aACE Software,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michaelbsrossiter,Michael Rossiter,Atomic,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michaeldavidovich,Michael Davidovich,API Nation,Founder / CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michaeljwoo,Michael Woo,Applied Labs,CEO & Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michaelmagnan,Michael Magnan,AdvizorPro,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michaelndunn,Michael Dunn,Centerbase,Chief Executive Officer and Board Member,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/michalmojzesz,Michal Mojzesz,Archdesk,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michelle-otto-97a4aa16b,Michelle Otto,6Storage Software Solutions,President and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/michelpaquetca,Michel Paquet,Aetonix,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mickessex,Mick Essex,ArcSite,Head of Growth,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/midowns,Michael Downs,Arize AI,"VP, Inside Sales",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mihess,Michael Hess,Accuvia Software Group,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mikelamb5,Mike Lamb,AgencyBloc,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mikeriding,Mike Riding,AI Dev Lab,VP Product Marketing and Management (Contract),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/minalkumar-patel-a657576,Minalkumar Patel,Abacus Insights,CEO and Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mingukang,Mingu Kang,ARIS Technology,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mkarthur,Michael Arthur,AudioShake,"Head of Growth - Live Broadcast, Media & Sport",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mohamedsali,Mohamed Sadeq Ali,AccurKardia,Co-founder & Chief Operating Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mohanamasa,Mohan Reddy Amasa (MBA),AssetSense,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mohit-baheti-aa664b71,Mohit Baheti,Acting Office,COO and Co Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/montmort,Edouard de Montmort,ARVORE Immersive Experiences,"Co-Founder, Board Member",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/moradaskar,Morad Askar,ArrowFin Global (ArrowFin),Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mosofsky,Michael Osofsky,ABC-Plan,"CTO, co-founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mronge,Matt Ronge,Astropad,CEO & Cofounder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/msanjari,"Mehdi Sanjari, PhD, PEng.",AI-innovate,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mudaryaghi,Mudar Yaghi,AppTek.ai,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mujahidsultan,Mujahid Sultan,NEXA,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/mwmcgarry,Mark McGarry,Aibuild,"VP, Enterprise Sales",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nabeelisation,Nabeel Ahsan,AgileForce,Co-Founder and Head IT,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/naman-aggarwal-24a13b,Naman Aggarwal,3Qi Labs,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nasser-chanda-7b7230,Nasser Chanda,Accounting Seed,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nataliemac,Natalie MacLees,AAArdvark,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/neal-suidan,Neal Suidan,Atomic,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/neales,Nick Eales,Aforza,Chief Product & Technology Officer (Co-Founder),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/neeraj-nagpal,Neeraj Nagpal,Acronotics Limited,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/neerajdatta,Neeraj Datta,Abjayon Inc.,Cofounder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nick-swerdfeger-9a30a77,Nick Swerdfeger,Art Storefronts,Special Advisor to CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nickapadmi,Nick Black,Apadmi,Co-Founder & Director,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nickchristensen1,Nick Christensen,AppSumo,Head of Growth,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nicos-vekiarides-4574723,Nicos Vekiarides,"Attestiv, Inc.",CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nigel-clarkson-16a99023,Nigel Clarkson,Adwanted UK | B Corp,UK Managing Director & Global Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nihar-rout-b566162,Nihar Rout,4DAlert,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nihat-kantar-phd-ceng-a200286,"Nihat Kantar, PhD, CEng",Arcanor,Co-Founder & Executive Chairman (Strategy & Finance),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nikhilgupta,Nikhil Gupta,ArmorCode Inc.,Founder & CEO (We are Hiring!!),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nileshvyas,Nilesh Vyas,Ascentt,"Founder, President & CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/noah-casarotto-dinning-8273a9200,Noah Casarotto Dinning,Arvo A.I.,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/noahkagan,Noah Kagan,AppSumo,Chief Sumo & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/noamsp,Noam Schwartz,Alice (Formerly ActiveFence),CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/noamyasour,Noam Yasour,44pixels,Co-founder & CMO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/nolanpkelly,Nolan Kelly,"1upHealth, Inc.",Chief Commercial Officer (CCO/CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/noramawashi,Nora Mawashi,Agilea Solutions,Head of Growth Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/olegsotnikov,Oleg Sotnikov,AppMaster,Founder & CTO / Head of Engineering,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/osmancelik,Osman Celik,Appcircle,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/osmanio-ramadan,Osman Ramadan,CodeWords,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/otromp-law-firm-practice-management,Oliver Tromp,Actionstep,"VP Sales, EMEA",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pablogiampedraglia,Pablo Giampedraglia,asap developers,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pamelajdodge,Pamela Dodge,Atombeam Technologies,VP Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/parham-aghdasi-3727732b,Parham Aghdasi,AICRETE,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/patrick-crowley-50,Patrick Crowley,Agriful Software,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/patrick-utz,Pat Utz,Abstract,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/patrickdunfey,Patrick Dunfey,ATR Inc,VP of Marketing and Sales Enablement,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/patrickquestembert,Patrick Questembert,Actual,"Co-founder, Senior Developer",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/paul-moriarity-84aa442,Paul Moriarity,Adeptia,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/paul-o-carroll-38aaa1105,Paul O'Carroll,Arcol,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/paul-pagel-2823b34,Paul Pagel,8th Light,"Founder, Chairman of the Board",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/paulbcollins09,Paul Collins,AudioEye,VP Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/paulhulford,Paul Hulford,Attain Insight,CEO and Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pauljosephmcmanus,Paul McManus,Advanced Robot Solutions,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pazhyn,Anatolii Pazhyn,AnyforSoft,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/peadarcoyle,Peadar Coyle,AudioStack,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pedropachuca,Pedro Pachuca,Advex AI,Co-founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/petar-vukasinovic-46165a59,Petar Vukasinovic,Agilno,Founder / CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pete-baxter-797a9b22,Pete Baxter,345 Global,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pete-mcchrystal-56637949,Pete McChrystal,Accent Technologies,President and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/peter-baumann-9204a4,Peter Baumann,ActiveNav,CEO and Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/peterdanderson,Peter Anderson,ACD Systems,VP Sales & Business Development,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/peteyang,Peter D. Yang,42 | 42 Technologies,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/phil-perkins-39a15b,Phil Perkins,ACUMEN Corporation,President and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/phil-schrader-9335413,Phil Schrader,Aragorn AI,VP Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/phil-stubbs-5ba3a9a,Phil Stubbs,AI Assistant,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/philip-eller-7667238b,Philip Eller,AccessOwl,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/porterhaney,Porter Haney,AROBS Group,CRO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/powersjeffrey,Jeffrey Powers,Arcturus Industries,CEO and Computer Vision Engineer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/pratap-ranade-7272829,Pratap Ranade,Arena,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/praveenkaradiguddi,Praveen Karadiguddi,AttiFin AI,Chief Executive Officer and founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rachel-wood-8a5168a2,Rachel Wood,Apadmi,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/raghuraghavan,Raghu Raghavan,Act-On Software,Founder & Board Member,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/raj-koneru,Raj Koneru,Anvizent,Founder and Chief Architect,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/raj-sundaram-4603721,Raj Sundaram,ASR Tech Group Inc.,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rajashreevarma,Rajashree Varma,AffableONE Inc.,Founder | CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rajdarjiofficial,Raj Darji,abluva,Founder and Executive,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rajeevkdixit,Rajeev Dixit,47Billion,Co-founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rajivkhaneja,Rajiv Khaneja,AdButler,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rakshithaa-ria-mahesh,Rakshithaa (Ria) Mahesh,Appstle Inc.,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ralphyarro,Ralph Yarro,"ATUA VENTURES, Inc.","Managing Director, Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ramesh-panchagnula-7995b82a,Ramesh Panchagnula,AppKnit,President/Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ramki-pitchuiyer,Ramki Pitchuiyer,Ascendo AI,Co-Founder and CCO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ramynassar,Ramy Nassar,1000 Days Out,Founder + Managing Partner,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rankinandy,Andy Rankin,Array,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/raphaelouzan,Raphael Ouzan,A.Team,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rathishmm,Rathish Menchery Mony,Appfabs Incorporation,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ravi-m-842921,Ravi M.,Acnovate Corporation,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/raykaat,Ray Karadayi,Applied Automation Technologies,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rconline,Rohit Choudhary,Acceldata,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rdavidcohen,David Cohen,Accumen Data Services,Director / Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rebecca-trachtenberg,Rebecca Trachtenberg,Apiphany,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/reedhenry,Reed Henry,Aquera,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/reid-sandelands-3579008b,Reid Sandelands,Accordant Company,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rich-ziade-a600221,Rich Ziade,Aboard,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/richard-cupelli-632b3572,Richard Cupelli,AffordableHousing.com,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/richard-griffith-a59951172,Richard Griffith,Archway Group,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/richardprice,Richard Price,Academia.edu,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/richkahn,Rich Kahn,Anura,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rick-rowe-22670a4,Rick Rowe,"Anthem Engineering, LLC","Co-founder, Chief Operating and Financial Officer",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rickbrauen,Rick Brauen,Appenate - formerly Forms On Fire®,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ridgejames,James Ridge,3B for Salesforce,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rishabhbansal,Rishabh Bansal,Pipeline AI,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rjschulte,Russell Schulte,"ABIS, Inc.",CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rmgupta,Rohit Gupta,Auditoria.AI,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/robert-desantis-aba104,Robert DeSantis,Arkestro,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/robertdesteno,Robert DeSteno,Archive360,Co-founder & Executive Chairman,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/robertmodonnell,Robert O'Donnell,Aquanomix,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/roblautt,Rob Lautt,A3 Solutions,"CEO, Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/roblyu,Rob Lyu,Switch,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/roeegold,Roee Gold,Area,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rohanakhanna,Rohan K.,Arkham,VP of Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rohangjacob,Rohan Jacob,ActivateStaff,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/roneilr,Roneil Rumburg,Audius,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/roy-m-18ab538,Roy M.,Atomic Mobile,Chief Revenue Officer (CRO) and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rpazhyannur,Rajesh Pazhyannur,Ataya,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rupertmorrison,Rupert Morrison,Ārahi Ltd.,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/rushabhasheth,Rushabh Sheth,Docsumo,Co-founder & CEO,2026-09-21T13:55Z,612584,2026-09-21T13:58Z,612587,2026-09-21_1355_clay_batch1.csv
+https://www.linkedin.com/in/russellwhiteivendionlineretail,Russell White,Aevus,VP Sales EMEA,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ryan-canning-9ba3757a,Ryan Canning,ARCHITEXTURES,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ryan-hoogerwerf-bba822149,Ryan Hoogerwerf,AcquireROI,VP of Sales & Partnerships,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ryan-laverty,Ryan Laverty,Arist,"Co-Founder, Board Member",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ryanpatrickhorn,Ryan P. Horn,AdRoll,"VP, Head of Marketing",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/saad-bin-shafiq,Saad Bin Shafiq,Nodes.inc,Founder/CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/saiakhilpulikam,Sai Akhil Pulikam,Applix,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sallywhiteuk,Sally White,Ablyss Systems Ltd,Founder & Director,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/samantha12345,Sam Stallings,Artisan,Founder & CPTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/samcaucci,Sam Caucci,1Huddle,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/samson-opaleye-58665994,Samson Opaleye,Applatch,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/samy-danesh-50890a126,Samy Danesh,Argon AI,"Co-Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sanbanerjee,San Banerjee,ADDA.io,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sania-u-aa952230,Sania U.,AnyShift,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/saxenarahul1,Rahul Saxena,AiDASH,"Co-Founder, Chief Product & Technology Officer",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/scott-holmen-63aa6410,Scott Holmen,Agency73 - Salesforce Consulting Partner,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/scott-james-2874ba3,Scott James,Applied Dynamics International,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/scottarosenberg,Scott Rosenberg,257,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/scottbuelter,Scott Buelter,Ascent360,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/scottcraig3,Scott Craig,AccelOne,Chief Executive Officer (CEO) / Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/scottlasseigne,Scott Lasseigne,APS Payroll,VP of Sales and Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/scottzielski,Scott Zielski,"Aaniie, Inc.",Chairman and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/seanartgreen,Sean Green,ARTERNAL,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/seankearns,Sean Kearns,Affinity (CRM),Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/seanknapp,Sean Knapp,Ascend.io,"Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/seanlandsberg,"Sean Landsberg, CAM",AppWork,Co-Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/seannstubbs,Seann Stubbs,AppSumo,President & Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/seans2,Sean St. Clair,Acceldata,"VP Sales, Strategic Accounts",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/seattle-hanlon,Mike Hanlon,Abett,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sebastien-leduc,Sebastien Leduc,APPCOM,"CEO, US",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sebdelemos,Seb de Lemos,hosting.com,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sekouwhite,Sekou White,A.Team,"VP, Head of Marketing & Partnerships",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/serge-aliseenko-96b63b143,Serge Aliseenko,AIBY,Co-Founder & Co-CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sfldn,Brian Snyder,Aide Health,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sfleischer,"Silke Fleischer, Scientific Conference Apps","ATIV Software | Scientific, Medical Meeting Apps",Executive and Co-Founder & Conference Technology Strategist,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shaharchen,Shahar Chen,Aquant,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shailendu,Shailendu Verma,APPSeCONNECT,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sham-reddy,Sham Reddy,ACCELQ,"Director, Office of the CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shao-hang-he,Shao Hang H.,Athena AI,Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sharad-pm,Sharad Agrawal,Adapts,Co-Founder & COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shariqmansoor,Shariq Mansoor,Aera Technology,Founder and Chief Technology Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shariqwagener,Shariq Wagener,7Dxperts,Director of Data & AI (Co-founder),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shawn-crowley-150053b,Shawn Crowley,Atomic Object,Co-CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sheidashahi,Sheida Shahi,Adaptis,"Founder, CEO, Architect",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shekharyadav,Shekhar Yadav,23 Ventures,"Founder (CTO), 23 Ventures (AI Product Studio)",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shengliang,Sheng Liang,Obot AI,Cofounder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shreyasiyer30,Shreyas Iyer,Antimetal,Co-Founder and CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shruthinrao,Shruthi Rao,"Adapt Ready, Inc.",C.E.O. & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/shuchikhurana,"Shuchi ""SK"" Khurana",Addiguru,"Founder, President & CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sibtay,Sibtay Shah,12 Tech,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/siddhartha-jha-ba4b7534,Siddhartha Jha,Arbol,Chairman & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/simhasadasiva,Simha Sadasiva,Ushur,Co Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/simon-west-2a734355,Simon West,arbnco,COO & Co Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/snehaltalati,Snehal Talati,3C Software,"Chief Revenue Officer, Profitability Solutions",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sonal-koul,Sonal Koul,Articence Inc,Founder & AI Systems Program Lead,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sophie-wyne-0539aaa3,Sophie Wyne,Ariglad,CEO & Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sourabh-deorah,Sourabh Deorah,AdvantageClub.ai,Founder & Chief Executive Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sridhargoud123,Sridhar B,Adroit Innovative Solutions Inc,Executive VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/srinipagidyala,Srini Pagidyala,Aigo.ai - Pioneering Cognitive AI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/srohit0,Rohit S.,AITS,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sruggieri,Steven Ruggieri,ActiveState,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stefanobellasio,Stefano Bellasio,Anthropos inc.,CEO and Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stephanie-feraday-62b743,Stephanie Feraday,aPriori Technologies,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stephenli,Stephen L.,Aotu.ai,"Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stephenmesser,Stephen Messer,"960 Media, Inc",Board Member and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/steve-deitz-2a46b3a,Steve Deitz,900lbs,CEO / Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/steve-miller-0387a510,Steve Miller,ARTERNAL,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/steve-pataky-a085002,Steve Pataky,Aible,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/steve-thurley,Steve Thurley,askelie®,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stevegravel,Steve Gravel,Ascent Cloud,Head of Growth,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stevencbaumgartner,Steven Baumgartner,AudienceView,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stevenrafferty,Steve Rafferty,ActiveProspect,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stevenscaffardi,Steven Scaffardi,Adwanted Group,"Global CEO, Events & Publishing",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stryder-thompkins-691aa8,Stryder Thompkins,Agency73 - Salesforce Consulting Partner,Co-Founder and CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/stuarthutchinson07,Stuart Hutchinson,"ADF Solutions, Inc.",VP Sales EMEA,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/suchit-kaura-9987771,Suchit Kaura,Aquila Clouds,CEO & Co-founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sudesh-sud,Sudesh Sud,ApariPro,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sumeetghosh,Sumeet Ghosh,Asama AI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sunbidshrestha,Sunbid Shrestha,Anthropic Identity,Vice President of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/sunthara,Gajen Sunthara,"1upHealth, Inc.",Founder & Key Shareholder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/suzy-dean-b5877412,Suzy Dean,Addin365,"CEO, Co-Founder",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/swiftyjim,Jim Swift,Audiense,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/syed-saad-agileforce,Syed Saad,AgileForce,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tal-is-short,Tal Flanchraych,ApplyAll,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/talchalozin,Tal Chalozin,257,CTO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/taley,Tom Aley,Aidentified,Co-CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tamalsaha,Tamal Saha,AppsCode Inc.,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tang8330,Robin Tang,Artie,Co-Founder & CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/terri-roeslmeier-8457542,Terri Roeslmeier,Automated Business Designs,President and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/thejuliomartinez,Julio Martínez,Abacum,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/themoko,Jessica Powell,AudioShake,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/thomasfdaly,Tom Daly,AppVault,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/thoufeeque-saheer,Thoufeeque Saheer,Archi's Academy,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/timfinnigan1,Tim Finnigan,ActiveProspect,Head of Growth Marketing,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/timnguyenbsm,Tim Nguyen,AskBobAI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/timopkunz,Timo P Kunz 🎧,AudioStack,Founder & CSO/CTO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tobyhung,Toby Hung,1Fort AI,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tolwagner,Thomas Wagner,Affinitiv,Chief Revenue Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tom-dibble-9b2169,Tom Dibble,Aria Systems,President & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tom-harber-marketing,Tom Harber,aer studios,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tom-mitchell-897946a,Tom Mitchell,Actsoft Inc,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tomconnard,Tom Connard,3D Source,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tomhessen,Tom Hessen,9Lenses,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tony-danna-8884b7128,Tony Danna,365 Retail Markets,VP of SMB Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tonyrindsberg,Tony Rindsberg,arkusnexus,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tvisha,Tvisha Dholakia,apibanking.com,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tyler-gerber-75218ab0,Tyler Gerber,Audiience™,Co-Founder and Chief Operating Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/tylerjohn,Tyler John,Actively,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ufuk-civilo-12576a22,Ufuk Civilo,Ascendx,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/ugur-yekta-basak-8a1797167,Ugur Yekta Basak,artlabs,"Co-Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/urisoroka,Uri Soroka,Apolo,Co-Founder and COO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/uygar-turantekin,Uygar Turantekin,AOP+ | Easy Print on Demand,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/vajariya,Ritesh Vajariya,AI Guru,"Founder, CEO",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/valerio-magliulo,Valerio Magliulo,Abatable,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/vallabhs,Vallab Srinivas,AquilaTest,Founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/vijay-proddhutur-7b6b8b5,Vijay Proddhutur,Accelerize 360,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/vincent-theriault,Vincent Thériault,Action_104,Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/vishu91,Vishu Rao,Aerosimple,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/vivekjoshi63,Vivek Joshi,Aftermarket Champions,Founder and Community Builder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/vosspeter,Peter Voss,Aigo.ai - Pioneering Cognitive AI,Founder/ CEO/ Chief Scientist,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/wael-elseaidy,Wael Elseaidy,Astute Imaging,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/webbbenjamin,Benjamin Webb,Above Data,CEO & Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/webbbrown,Webb Brown,IBM Kubecost,Co-founder & CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/wericdunn,Eric Dunn,Aesthetix CRM,CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/westjones,West Jones,Addiction Recovery,Founder/CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/whatshugo,Yu (Hugo) Chen,Anytime AI,Co-founder and VP of Engineering,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/whitneyjoycathcart,Whitney Cathcart,3DLOOK,Co-Founder and Chief Commercial Officer,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/will-ferrer-0339493a,Will Ferrer,Atlas Inspire,CEO & Founder: AI Strategy and Implementation for Established Businesses,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/willblyth,Will Blyth,Arondite,Co-founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/willstackable,Will Stackable,ArborXR,Co-Founder / CMO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/xanderkotsatos,Xander Kotsatos,Aqfer,Chief Revenue Officer (CRO),2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/xavier-bellouard-a38690,Xavier Bellouard,ActiveViam,"Co-Founder, Board member/advisor",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/xingjianzh,Xingjian (XJ) Z.,Apex.AI,"Corporate Development Director, Head of Growth",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/xuelai-robin-wang-bb61b378,Xuelai (Robin) Wang,AgentX AI,Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/yaffe,Jonathan Yaffe,AnyRoad,CEO and Co-Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/yxie1,"Yao Shepherd (Xie), PhD",Assertion AI,Co-Founder and CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/zacharyrosen,Zack Rosen,Abundance Network,Founder,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/zack-yurch-1069685b,Zack Yurch,Agency Revolution,VP of Sales,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/zhou-jo-yu-95327378,Zhou (Jo) Yu,Arklex AI,Co-Founder &CEO,2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+https://www.linkedin.com/in/zsuzsakecsmar,Zsuzsa Kecsmar,Antavo AI Loyalty Cloud,"Co-founder, Chief Strategy Officer",2026-09-21T17:30Z,612584,2026-09-21T17:30Z,612587,2026-09-21_1600_blitz_fulltam.csv
+"https://www.linkedin.com/in/ericboduch","Eric Boduch","24 and Up","Founder and Chief Executive Officer","2026-09-21T17:30Z","612584","2026-09-21T17:30Z","612587","2026-09-21_1600_blitz_fulltam.csv"

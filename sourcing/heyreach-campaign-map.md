@@ -116,9 +116,9 @@ for full detail (target ICP, to-dos, progress log).
 
 | Stage | Campaign name | Campaign ID | Status (as of 2026-09-21) |
 |---|---|---|---|
-| Con Req | US & Europe \| Con Req \| Vertical 4 \|Moe 1.0 | 612584 | **IN_PROGRESS — live**, 210 leads sending (10 Clay + 200 Blitz full-TAM, partial push — ~14,390 more sourced and queued in repo CSV, see `verticals/vertical-4-b2b-saas.md`) |
+| Con Req | US & Europe \| Con Req \| Vertical 4 \|Moe 1.0 | 612584 | **IN_PROGRESS — live**, 807 leads sending (confirmed via `get_campaign`, matches Open Check exactly) — ~13,783 more sourced and queued in repo CSV, see `verticals/vertical-4-b2b-saas.md` |
 | Con Acc | US & Europe \| Con Acc \| Vertical 4 \|Moe 1.0 | 612586 | DRAFT (terminal — fills automatically via Acc webhook once leads accept) |
-| Open Check | US & Europe \| Open Check \| Vertical 4 \|Moe 1.0 | 612587 | **IN_PROGRESS — live**, 210 leads sending (same as Con Req) |
+| Open Check | US & Europe \| Open Check \| Vertical 4 \|Moe 1.0 | 612587 | **IN_PROGRESS — live**, 807 leads sending (confirmed synced with Con Req) |
 | Open Profile | US & Europe \| Open Profile \| Vertical 4 \|Moe 1.0 | 612588 | DRAFT (terminal — fills automatically via Open webhook once profiles confirm open) |
 
 **Push targets:**

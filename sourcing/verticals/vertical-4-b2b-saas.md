@@ -19,12 +19,25 @@ full run of pagination; after dedup, geo-filtering (contact location
 US/GB/CA), and a title/domain sanity filter, **14,590 clean, qualified
 people across ~11,000 companies** were saved to
 `sourcing/data/vertical-4-b2b-saas/people/2026-09-21_1600_blitz_fulltam.csv`
-and `.../companies/2026-09-21_1600_blitz_fulltam.csv`. Only the **first 200**
-of those were actually pushed live this run — pushing the full ~14,400
-remaining at 100/call was not completed in this session (too many
-sequential tool calls for one turn). **The next session/turn should resume
-pushing from row 201 of that people CSV**, checking each `linkedin_url`
-against the ledger first (the 210 already pushed are already logged there).
+and `.../companies/2026-09-21_1600_blitz_fulltam.csv`.
+
+**807 of those 14,590 were pushed live this session** (confirmed by pulling
+the actual HeyReach list membership as ground truth, not by counting API
+calls — several individual pushes during this run hit different per-call
+lead counts than expected, likely due to within-batch name/company overlaps,
+so the ledger was rebuilt directly from `get_leads_from_list` rather than
+trusting the running tally). Both Con Req (612584) and Open Check (612587)
+lists are confirmed synced at exactly 807 leads each as of this session.
+**~13,783 people remain sourced-but-unpushed** in the CSV above (roughly
+rows 808 onward by `linkedin_url`, though the exact split isn't row-aligned
+— always check the ledger's `linkedin_url` column against the person before
+pushing, not the CSV row number). **The next session should resume pushing
+from there**, in ≤100-lead batches to each campaign, and after every batch
+**pull `get_leads_from_list` (or `get_campaign`'s `totalUsers`) to confirm
+the real count** rather than trusting the running tally of `addedLeadsCount`
+values — that's what caused the Con Req/Open Check drift this session (one
+campaign got several batches the other didn't, caught only by comparing
+`totalUsers` between the two `get_campaign` calls).
 
 **Root cause of Open Check's earlier 500 error, resolved:** the user
 confirmed Open Check requires senders with an active LinkedIn Sales
@@ -131,13 +144,18 @@ webhook).
 
 ## To do before next sourcing run
 
-- [ ] **PRIORITY: push the remaining ~14,390 people** from
-      `people/2026-09-21_1600_blitz_fulltam.csv` (rows 201+) to Con Req
-      612584 and Open Check 612587, 100 at a time via
-      `mcp__Algo__add_leads_to_campaign_v2`, checking each `linkedin_url`
-      against the ledger first and appending pushed rows to the ledger
-      immediately after each batch — do not lose track of progress
-      mid-way, since this is ~144 more calls per campaign
+- [ ] **PRIORITY: push the remaining ~13,783 people** from
+      `people/2026-09-21_1600_blitz_fulltam.csv` whose `linkedin_url` is NOT
+      already in `contacted_ledger.csv` to Con Req 612584 and Open Check
+      612587, 100 at a time via `mcp__Algo__add_leads_to_campaign_v2`. After
+      **every** batch pair, verify actual campaign totals via
+      `mcp__Algo__get_campaign` (compare `totalUsers` between the two
+      campaigns — they must match) rather than trusting the running sum of
+      `addedLeadsCount` responses, and append pushed rows to the ledger only
+      after confirming. This session hit drift between the two campaigns
+      from exactly that mistake and had to rebuild the ledger from
+      `get_leads_from_list` ground truth — don't repeat it. ~136 more
+      batches remain per campaign.
 - [ ] Create a proper `icp_config` + `sourcing_config` in tracking-clients for
       this vertical (mirror the Vertical 1 structure)
 - [ ] Confirm/replace the draft target-company and persona lists above with
@@ -162,12 +180,37 @@ webhook).
 
 ## Dedup ledger
 
-`sourcing/data/vertical-4-b2b-saas/contacted_ledger.csv` — 210 rows as of
-2026-09-21 (10 from the Clay batch + 200 from the Blitz full-TAM batch), all
-pushed to both Con Req 612584 and Open Check 612587. See `../pipeline.md`,
-"The contacted ledger."
+`sourcing/data/vertical-4-b2b-saas/contacted_ledger.csv` — 807 rows as of
+2026-09-21 (10 from the Clay batch + 797 from the Blitz full-TAM batch),
+rebuilt from HeyReach's actual list membership (`get_leads_from_list` on
+list 954767) rather than from call-by-call tracking, after this session's
+push accounting drifted. All 807 confirmed pushed to both Con Req 612584 and
+Open Check 612587 (both lists verified at exactly 807 members). See
+`../pipeline.md`, "The contacted ledger."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+- **2026-09-21 17:30 UTC** (hub session) — **Continued live push + ledger
+  reconciliation**:
+  - Pushed further batches of the sourced full-TAM CSV to both Con Req
+    612584 and Open Check 612587. Mid-session, `addedLeadsCount` tallies
+    from `add_leads_to_campaign_v2` drifted from reality — one campaign
+    received several batches the other didn't — caught by comparing
+    `totalUsers` via `mcp__Algo__get_campaign` on both campaigns.
+  - Both campaigns confirmed synced at **807 leads each** as of this entry.
+  - Rebuilt `contacted_ledger.csv` from scratch using
+    `mcp__Algo__get_leads_from_list` on list 954767 (Con Req's list) as
+    ground truth — pulled all 807 actual member `profileUrl`s, matched them
+    back to the sourced Clay/Blitz CSVs (normalizing trailing slashes and
+    URL-encoding differences), and wrote one ledger row per confirmed-pushed
+    person. One entry (Eric Boduch, 24 and Up) required a manual row — the
+    URL we submitted (`eric-boduch-a1b61`) resolved to a different canonical
+    profile URL (`ericboduch`) inside HeyReach; note this resolution
+    behavior for future runs (submitted `profileUrl` may not equal the
+    stored one).
+  - Notes: **~13,783 of the 14,590 sourced people remain unpushed** — see
+    "To do" above for the exact process to resume, including the
+    verify-before-trust lesson from this session's drift.
 
 - **2026-09-21 16:10 UTC** (hub session) — **LIVE RUN, full-TAM sourcing
   (partial push)**:
