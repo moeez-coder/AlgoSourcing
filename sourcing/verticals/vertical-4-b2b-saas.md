@@ -2,6 +2,22 @@
 
 ## Status
 
+**Full remaining TAM push COMPLETE as of 2026-09-21 (this session)** — the
+~13,793 people sourced-but-unpushed from
+`people/2026-09-21_1600_blitz_fulltam.csv` were pushed to both Con Req
+(612584) and Open Check (612587) in 138 batches, split across multiple
+parallel background agents. Both campaigns now confirmed at
+**totalUsers = 14,576** each (verified via `mcp__Algo__get_campaign`).
+`contacted_ledger.csv` was rebuilt from scratch from HeyReach's actual Con
+Req list membership (`get_leads_from_list` on list 954767, paginated in 15
+batches of up to 1000) as ground truth — 14,576 rows, 14,537 matched back to
+the source CSVs by normalized `linkedin_url`, 39 unmatched (HeyReach-only
+name/company/title recorded, `first_sourced_run_file` = "unmatched"). Note:
+Open Check's actual list ID is **954769** (confirmed via `get_campaign` on
+612587 this session), not 954768 as earlier notes assumed — Con Req's list
+(954767) remains the ground-truth source for the ledger per the standing
+instruction, and it's in sync with Open Check by count.
+
 **Live as of 2026-09-21** — per the user's explicit go-ahead, the testing/
 priming pause (`pipeline.md`) was lifted for Vertical 4 only (not the other
 verticals). Both Con Req (612584) and Open Check (612587) are IN_PROGRESS.
@@ -144,18 +160,11 @@ webhook).
 
 ## To do before next sourcing run
 
-- [ ] **PRIORITY: push the remaining ~13,783 people** from
-      `people/2026-09-21_1600_blitz_fulltam.csv` whose `linkedin_url` is NOT
-      already in `contacted_ledger.csv` to Con Req 612584 and Open Check
-      612587, 100 at a time via `mcp__Algo__add_leads_to_campaign_v2`. After
-      **every** batch pair, verify actual campaign totals via
-      `mcp__Algo__get_campaign` (compare `totalUsers` between the two
-      campaigns — they must match) rather than trusting the running sum of
-      `addedLeadsCount` responses, and append pushed rows to the ledger only
-      after confirming. This session hit drift between the two campaigns
-      from exactly that mistake and had to rebuild the ledger from
-      `get_leads_from_list` ground truth — don't repeat it. ~136 more
-      batches remain per campaign.
+- [x] **Push the remaining ~13,783 people** from
+      `people/2026-09-21_1600_blitz_fulltam.csv` to Con Req 612584 and Open
+      Check 612587 — **done this session** (138 batches, parallel background
+      agents). Both campaigns confirmed at `totalUsers = 14,576`; ledger
+      rebuilt from `get_leads_from_list` ground truth.
 - [ ] Create a proper `icp_config` + `sourcing_config` in tracking-clients for
       this vertical (mirror the Vertical 1 structure)
 - [ ] Confirm/replace the draft target-company and persona lists above with
@@ -180,15 +189,50 @@ webhook).
 
 ## Dedup ledger
 
-`sourcing/data/vertical-4-b2b-saas/contacted_ledger.csv` — 807 rows as of
-2026-09-21 (10 from the Clay batch + 797 from the Blitz full-TAM batch),
-rebuilt from HeyReach's actual list membership (`get_leads_from_list` on
-list 954767) rather than from call-by-call tracking, after this session's
-push accounting drifted. All 807 confirmed pushed to both Con Req 612584 and
-Open Check 612587 (both lists verified at exactly 807 members). See
+`sourcing/data/vertical-4-b2b-saas/contacted_ledger.csv` — **14,576 rows as
+of 2026-09-21** (rebuilt from scratch), one row per lead confirmed in
+HeyReach's actual Con Req list membership (`get_leads_from_list` on list
+954767, paginated 15x at limit 1000). 14,537 rows matched back to
+`people/2026-09-21_1600_blitz_fulltam.csv` or
+`people/2026-09-21_1355_clay_batch1.csv` by normalized `linkedin_url`
+(lowercased, URL-decoded, trailing slash stripped); 39 rows are unmatched
+(HeyReach silently resolved the submitted URL to a different canonical one,
+or the lead has no traceable source row) and carry
+`first_sourced_run_file = "unmatched"` with name/company/title as returned
+by HeyReach itself. All 14,576 confirmed pushed to both Con Req 612584 and
+Open Check 612587 (both campaigns verified at `totalUsers = 14,576`). See
 `../pipeline.md`, "The contacted ledger."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+- **2026-09-21 19:00 UTC** (ledger-reconciliation session) — **Full remaining
+  TAM push completed + ledger rebuilt from ground truth**:
+  - Confirmed the full remaining TAM push (the ~13,793 people left unpushed
+    as of the prior session's entry) completed via 138 batches split across
+    multiple parallel background agents. Both Con Req 612584 and Open Check
+    612587 now show `totalUsers = 14,576` (verified via `mcp__Algo__get_campaign`
+    on both).
+  - Verified Open Check's actual `linkedInUserListId` is **954769** (per
+    `get_campaign` on 612587), not 954768 — noted for future reference; Con
+    Req's list (954767) is used as the ledger's ground-truth ledger source
+    per the standing instruction, and its count matches Open Check's.
+  - Paginated `mcp__Algo__get_leads_from_list` on list 954767 in 15 calls
+    (limit 1000, offset 0→14000) to pull all 14,576 leads' `profileUrl` +
+    HeyReach-side name/company/title.
+  - Rebuilt `sourcing/data/vertical-4-b2b-saas/contacted_ledger.csv` from
+    scratch: normalized every HeyReach `profileUrl` and every source CSV's
+    `linkedin_url` (lowercase, URL-decoded, trailing slash stripped) and
+    matched. **14,537 of 14,576 matched** to
+    `people/2026-09-21_1600_blitz_fulltam.csv` or
+    `people/2026-09-21_1355_clay_batch1.csv`; **39 unmatched** (HeyReach URL
+    resolution quirk noted in the prior session's entry recurs at scale) —
+    recorded with HeyReach's own name/company/title and
+    `first_sourced_run_file = "unmatched"`.
+  - Both `con_req_pushed_at`/`open_check_pushed_at` set to 2026-09-21 for all
+    rows (today's date, per this session's dual confirmed push).
+  - Updated `../heyreach-campaign-map.md` Vertical 4 lead counts from 807 to
+    14,576 for both campaigns.
+  - To-do: the "push remaining TAM" item is now marked done above.
 
 - **2026-09-21 17:30 UTC** (hub session) — **Continued live push + ledger
   reconciliation**:
