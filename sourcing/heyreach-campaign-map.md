@@ -107,6 +107,40 @@ Superseded Sept 2 generation (DRAFT/PAUSED, likely not the live target — do
 not push here unless the user says otherwise): Con Req 580487 (PAUSED),
 Con Acc 580482 (PAUSED), Open Check 580514 (DRAFT), Open Profile 580496 (DRAFT).
 
+## Vertical 4 — B2B SaaS companies ("US & Europe" campaigns, cloned from Vertical 1 templates 2026-09-21)
+
+Created 2026-09-21 via the `heyreach-vertical-launch` skill. **Live as of
+2026-09-21** — the standing testing/priming pause was explicitly lifted for
+this vertical only (not Verticals 1-3). See `verticals/vertical-4-b2b-saas.md`
+for full detail (target ICP, to-dos, progress log).
+
+| Stage | Campaign name | Campaign ID | Status (as of 2026-09-21) |
+|---|---|---|---|
+| Con Req | US & Europe \| Con Req \| Vertical 4 \|Moe 1.0 | 612584 | **IN_PROGRESS — live**, 210 leads sending (10 Clay + 200 Blitz full-TAM, partial push — ~14,390 more sourced and queued in repo CSV, see `verticals/vertical-4-b2b-saas.md`) |
+| Con Acc | US & Europe \| Con Acc \| Vertical 4 \|Moe 1.0 | 612586 | DRAFT (terminal — fills automatically via Acc webhook once leads accept) |
+| Open Check | US & Europe \| Open Check \| Vertical 4 \|Moe 1.0 | 612587 | **IN_PROGRESS — live**, 210 leads sending (same as Con Req) |
+| Open Profile | US & Europe \| Open Profile \| Vertical 4 \|Moe 1.0 | 612588 | DRAFT (terminal — fills automatically via Open webhook once profiles confirm open) |
+
+**Push targets:**
+- **Con Req 612584** — live, webhook verified (Acc webhook 82967 →
+  CONNECTION_REQUEST_ACCEPTED). First batch of 10 pushed 2026-09-21.
+- **Open Check 612587** — live, webhook verified (Open webhook 82968 →
+  VIEWED_PROFILE). Needed a sender swap to Sales-Nav-licensed accounts before
+  it would start — see below. First batch of 10 pushed 2026-09-21.
+
+**⚠️ Con Acc and Open Profile still carry Vertical 1's unfilled template
+placeholders** (`{message1}`/`{message2}`/`{message3}`, `{subject}`/
+`{inmail}`) — write real copy before the first accepted connection/confirmed
+open-profile lead actually needs a message sent.
+
+Senders: first 100 valid accounts from Vertical 1's pool (4 disconnected
+Vertical-1 accounts were swapped for other valid Vertical-1 accounts to keep
+the pool at 100). **Open Check's sender list differs from the other 3** —
+HeyReach requires Sales-Nav-licensed senders for Open Check to start; 20 of
+the original 100 lacked a license and were swapped for other valid Nav-
+licensed accounts from the wider workspace pool. See
+`verticals/vertical-4-b2b-saas.md` for the exact account-ID swaps.
+
 ## How to push sourced leads in
 
 **Push each sourced batch to both the Con Req and Open Check campaigns** for

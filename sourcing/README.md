@@ -18,6 +18,7 @@ sessions from colliding or duplicating leads.
 - `verticals/vertical-1-staffing-recruitment.md`
 - `verticals/vertical-2-marketing.md`
 - `verticals/vertical-3-ma.md`
+- `verticals/vertical-4-b2b-saas.md`
 - `heyreach-campaign-map.md` — every relevant HeyReach campaign ID, by vertical/stage
 - `pipeline.md` — the Blitz → Clay → HeyReach sourcing workflow, data-file conventions, and key system IDs
 - `data/<vertical>/companies/`, `data/<vertical>/people/` — every sourcing run's output, saved as timestamped CSVs (required for every run — see `pipeline.md`)
