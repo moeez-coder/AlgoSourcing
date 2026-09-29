@@ -13,7 +13,7 @@ Everything lives under [`sourcing/`](sourcing/):
 | [`CLAUDE.md`](CLAUDE.md) | Rules every Claude session loads automatically (read order, sourcing method, dedup, push and key rules) |
 | [`.claude/skills/listbuild/`](.claude/skills/listbuild/SKILL.md) | The sourcing engine every session uses: Blitz → Clay → DiscoLike, cheapest first, with dedup against every contacted ledger |
 | [`sourcing/README.md`](sourcing/README.md) | Full index and key IDs — start here for details |
-| [`sourcing/COORDINATION.md`](sourcing/COORDINATION.md) | Master/individual session model — how the primary working session and occasional per-vertical sessions share this repo without colliding |
+| [`sourcing/COORDINATION.md`](sourcing/COORDINATION.md) | Session model: one session per vertical does its own sourcing, the master session guides and checks; every session works on `main` |
 | [`sourcing/TOOLS.md`](sourcing/TOOLS.md) | What's actually connected right now (Clay, Blitz, HeyReach, etc.) and where API keys belong |
 | [`sourcing/icp-overview.md`](sourcing/icp-overview.md) | Shared targeting criteria across all verticals (revenue, headcount, geography) |
 | [`sourcing/verticals/`](sourcing/verticals/) | One file per vertical: target companies, personas, status |
@@ -32,16 +32,14 @@ USA/UK/Europe with founders locally present.
 
 ## How this works day to day
 
-One **master session** does most of the actual work across all three
-verticals directly: sourcing companies and people, saving raw output as CSVs
-under `sourcing/data/<vertical>/`, checking/updating each vertical's
-`contacted_ledger.csv` so nobody gets contacted twice, tracking TAM, and (once
-approved) pushing leads into each vertical's **Con Req** and **Open Check**
-HeyReach campaigns (never Con Acc or Open Profile — those fill
-automatically). The user opens a separate, **individual session for one
-vertical** only occasionally — to fine-tune something or fix an issue in that
-vertical specifically — not as the default way work gets done. See
-`sourcing/COORDINATION.md` for the full model.
+Each vertical has its **own Claude session that does its sourcing**: it sizes the market with the listbuild
+skill, runs the full build once you approve, saves the files under `sourcing/data/<vertical>/`, and (once you
+approve) pushes leads into that vertical's **Con Req** and **Open Check** HeyReach campaigns, updating its
+`contacted_ledger.csv` so nobody is contacted twice. Con Acc and Open Profile fill automatically via Clay.
+
+The **master session** ("ALGO BD Main") is the guide and checker: it owns the shared rules and tools and makes
+sure every vertical's work is correct (dedup across verticals, client do-not-contact list, ICP and seniority
+rules, healthy campaigns). **Every session works on the `main` branch.** See `sourcing/COORDINATION.md`.
 
 ## Status / open items
 

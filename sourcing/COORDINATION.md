@@ -1,52 +1,39 @@
 # Multi-Session Coordination
 
-**Updated 2026-09-08 — supersedes the earlier "hub session does groundwork /
-execution session does sourcing" split.** The user now wants most actual
-sourcing work done in one primary session, with individual per-vertical
-sessions used only occasionally, for fine-tuning or troubleshooting. These
-rules exist so that primary session and any occasional individual sessions
-don't collide, duplicate pushes, or lose each other's work.
+**Updated 2026-09-29 (user decision) — supersedes the 2026-09-08 "master does most of the work" model.**
+Each vertical has its own **individual session that does that vertical's sourcing and pushes**. The **master
+session is the guide and the checker**: it owns the shared rules, tools and code, and makes sure every
+vertical's work is correct and consistent. All sessions work on **`main`** (see "One branch: main").
 
-**Check `pipeline.md`'s "Current phase" banner before pushing anything to
-HeyReach** — as of 2026-09-08 all verticals are in a testing/priming phase
-with pushes paused pending the user's final approval. This applies to every
-session, master or individual, across every vertical.
+**Check `pipeline.md`'s "Current phase" banner before pushing anything to HeyReach.** It applies to every
+session, and each vertical's push still needs the user's go-ahead.
 
-**Every session, master or individual, sources with the `listbuild` skill**
-(`.claude/skills/listbuild/SKILL.md`, added 2026-09-29), and the repo-root
-`CLAUDE.md` loads automatically with the shared rules. An individual session
-tuning one vertical edits that vertical's config in `sourcing/listbuild/config/`;
-changes to the shared code (`seniority.py`, `icp_gen.py`, providers) are
-test-first and noted in its Progress Log so the master session sees them.
+**Every session sources with the `listbuild` skill** (`.claude/skills/listbuild/SKILL.md`), and the repo-root
+`CLAUDE.md` loads automatically with the shared rules.
 
 ## Master / individual session model
 
-- **Master session** (this one — the one the user is primarily working in;
-  currently `session_019W2MEyTk1GwcVjEfcm7j7v`): does most of the actual work,
-  across **all** verticals directly — TAM sizing, sourcing companies/people
-  via Blitz/Clay, saving CSVs, ledger checks/updates, Progress Log entries,
-  and (once the testing/priming phase lifts) HeyReach pushes. Not restricted
-  to one vertical's files — free to read/write across
-  `sourcing/verticals/*`, `sourcing/data/*/**` for whichever vertical the
-  user is asking about. Also still does the groundwork role from the old
-  model: laying groundwork for a new vertical/segment (ICP file, HeyReach
-  campaign map entry, data folders + ledger, creating HeyReach campaigns via
-  the `heyreach-vertical-launch` skill if needed) before an individual
-  session for it would ever be opened.
-- **Individual session** (opened by the user directly in Claude Code, only
-  when something needs fine-tuning or isn't going right in one specific
-  vertical/segment — not the default way work gets done anymore): scoped to
-  **one vertical**, same restricted rules as before — stay inside that
-  vertical's `sourcing/verticals/<slug>.md` and
-  `sourcing/data/<slug>/**`, treat everything else as shared/read-mostly, and
-  `git pull` before touching anything, since the master session is likely to
-  have pushed new data since the individual session was last opened. It
-  should not make ICP-identity-level decisions or create new HeyReach
-  campaigns on its own — surface those to the user instead of guessing.
-
-Because the master session does most of the work now, most commits will come
-from here — that's expected. An individual session is the exception, spun up
-for a specific fix, not a standing per-vertical worker.
+- **Individual session** (one per vertical, e.g. "Vertical 2 Marketing", "Vertical 4 B2B SaaS initialization"):
+  - Does its own vertical's work end to end: listbuild preview (TAM) -> user approval -> run -> `algo_bridge.py
+    import` -> review with the user -> push (when approved) -> ledger update -> TAM and Progress Log entries.
+  - Stays inside `sourcing/verticals/<its-vertical>.md`, `sourcing/data/<its-vertical>/**` and its own config in
+    `sourcing/listbuild/config/`.
+  - Does not change the shared ICP, shared code or other verticals on its own. Needs a change there (a bug fix,
+    a rule gap)? Make it test-first if it is code, keep it small, and log it prominently in its Progress Log so
+    the master session reviews it.
+  - Asks the user before creating HeyReach campaigns or resuming a paused campaign.
+- **Master session** (`session_019W2MEyTk1GwcVjEfcm7j7v`, "ALGO BD Main"):
+  - Owns the shared rules and tools: `CLAUDE.md`, `icp-overview.md`, `pipeline.md`, `TOOLS.md`, this file,
+    `verticals-portfolio.md`, `client-base-vertical-analysis.md`, `data/dnc_clients.csv`, the listbuild code and
+    `algo_bridge.py`.
+  - **Checks that everything works correctly**, across all verticals: every vertical's contacted ledger is on
+    `main` and in the exclusion seeds; nobody is contacted twice or at a client; runs used listbuild with the
+    current checks; ICP and seniority rules are applied; HeyReach campaigns are healthy (e.g. Con Acc / Open
+    Profile actually receiving leads); shared-code changes from individual sessions are correct.
+  - Reviews individual sessions' commits and reports problems to the user; fixes shared code and docs itself.
+  - Lays the groundwork for a new vertical (portfolio card, config, data folder and ledger, campaign-map entry)
+    before its individual session starts, and gives the user the session's starting prompt.
+  - Does sourcing for a vertical only when the user asks it to (e.g. the 2026-09-29 full-universe runs).
 
 ## Ownership boundaries
 
@@ -70,13 +57,17 @@ for a specific fix, not a standing per-vertical worker.
   ones. This applies to the master session too when appending alongside
   work an individual session already logged.
 
-## One branch (rule added 2026-09-29)
+## One branch: main (user decision 2026-09-29)
 
-Every session, master or individual, works on **`claude/algo-acquisition-sourcing-jmos79`** and pushes only
-there. Claude Code gives each new session its own branch by default; switch before touching anything:
-`git fetch origin claude/algo-acquisition-sourcing-jmos79 && git checkout claude/algo-acquisition-sourcing-jmos79`.
-Why: the V4 session worked on its own branch (`claude/upbeat-knuth-kwy4n4`), so its 14,576-person contacted
-ledger was invisible to every other session's dedup for 8 days.
+Every session, master or individual, works on **`main`** and pushes only there. Claude Code gives each new
+session its own branch by default, so switch before touching anything:
+`git fetch origin main && git checkout main && git pull origin main`.
+- Pull right before you commit and again before you push (`git pull --no-rebase origin main`); other sessions push
+  to `main` all the time. Never force-push, never rebase `main`.
+- The old shared branch `claude/algo-acquisition-sourcing-jmos79` and per-session branches such as
+  `claude/upbeat-knuth-kwy4n4` are history only: everything on them is on `main`. Do not push to them.
+- Why: the V4 session worked on its own branch, so its 14,576-person contacted ledger was invisible to every other
+  session's dedup for 8 days.
 
 ## Before doing any sourcing or push, in either session type
 
@@ -101,10 +92,9 @@ per-run people CSVs) as the answer to "have we already reached out to this
 person." This is what actually prevents sending the same person a connection
 request or open-profile InMail twice.
 
-If the master session and an individual session end up sourcing the same
-vertical concurrently (uncommon now that individual sessions are the
-exception, but possible if the user opens one to fine-tune something while
-also asking the master session to keep working that vertical), `git pull`
+If two sessions end up sourcing the same vertical concurrently (e.g. the
+master session was asked to run it while the vertical's own session is
+open), `git pull`
 immediately before checking the ledger so you see the other session's latest
 pushes, and resolve any ledger merge conflict by keeping both sessions' rows
 (never drop a row to resolve a conflict).
@@ -118,8 +108,7 @@ pushes, and resolve any ledger merge conflict by keeping both sessions' rows
   session ends unexpectedly.
 - Append one Progress Log entry (and a TAM entry, if sizing was done) to that
   vertical's file (format in `pipeline.md`).
-- Commit and push these changes to the branch so the other session type can
-  see them.
+- Commit and push these changes to `main` so every other session sees them.
 
 ## Git conflict handling
 

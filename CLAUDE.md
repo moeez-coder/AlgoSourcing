@@ -5,7 +5,8 @@ Algo Acquisition's own BD sourcing: find director-plus decision-makers at Staffi
 loads automatically in every Claude Code session opened on this repo, master or individual.
 
 ## Read before doing anything
-1. `sourcing/COORDINATION.md`: master vs individual session, who owns which files, pull/log/push discipline.
+1. `sourcing/COORDINATION.md`: each vertical's own session does its sourcing; the master session guides and
+   checks. Who owns which files, and the pull/log/push discipline.
 2. `sourcing/pipeline.md`: the **"Current phase" banner** (which pushes are allowed right now) and the workflow.
 3. `sourcing/TOOLS.md`: which tools and keys are live and their quotas.
 4. `sourcing/icp-overview.md` + the vertical file in `sourcing/verticals/`: ICP, seniority, TAM and Progress Log.
@@ -51,11 +52,11 @@ loads automatically in every Claude Code session opened on this repo, master or 
 - A missing key: stop and tell the user (TOOLS.md, "Where API keys live").
 
 ## Git
-- **One branch for every session, master and individual:** `claude/algo-acquisition-sourcing-jmos79`. Never work
-  on a session's auto-created branch: a ledger that only lives there is invisible to every other session's dedup
-  (happened with V4 on 2026-09-21). If your session started on another branch, `git fetch origin
-  claude/algo-acquisition-sourcing-jmos79 && git checkout claude/algo-acquisition-sourcing-jmos79` first.
-- Work on `claude/algo-acquisition-sourcing-jmos79`; `git pull origin claude/algo-acquisition-sourcing-jmos79`
-  before editing, since other sessions push to it. No PRs unless the user asks.
+- **Every session, master and individual, works on `main` and pushes only there** (user decision 2026-09-29).
+  If your session started on another branch: `git fetch origin main && git checkout main && git pull origin main`.
+  Never push to a session's auto-created branch or the old shared branch `claude/algo-acquisition-sourcing-jmos79`:
+  a ledger that lives only there is invisible to every other session's dedup (happened with V4 on 2026-09-21).
+- `git pull --no-rebase origin main` before editing and again before pushing; other sessions push to it. No force
+  push, no rebase. No PRs unless the user asks.
 - Keep the md files current: a finding that changes how others should work goes into the relevant shared file,
   not only into chat.
