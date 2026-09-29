@@ -10,7 +10,8 @@ loads automatically in every Claude Code session opened on this repo, master or 
 3. `sourcing/TOOLS.md`: which tools and keys are live and their quotas.
 4. `sourcing/icp-overview.md` + the vertical file in `sourcing/verticals/`: ICP, seniority, TAM and Progress Log.
 5. `sourcing/heyreach-campaign-map.md`: campaign IDs per vertical.
-6. `sourcing/client-base-vertical-analysis.md`: which verticals the client base supports (2026-09-29).
+6. `sourcing/verticals-portfolio.md` (all verticals, standard format) and `sourcing/client-base-vertical-analysis.md`
+   (the client evidence behind it). V4-V9 are proposals until the user approves them.
 
 ## Sourcing method (mandatory)
 - **All sourcing, TAM sizing and list builds (pipeline.md steps 0-4) go through the `listbuild` skill**

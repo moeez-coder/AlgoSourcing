@@ -16,6 +16,7 @@ sessions from colliding or duplicating leads.
 - `../CLAUDE.md` (repo root) — the rules every session loads automatically: read order, listbuild is mandatory for sourcing, dedup, push rules, keys
 - `../.claude/skills/listbuild/SKILL.md` — **how all sourcing/TAM runs are done** (Blitz → Clay → DiscoLike with filter canary, dedup, title guard, ICP-fit split); vertical configs in `listbuild/config/`
 - `TOOLS.md` — **read second** — what's actually callable (Clay/Blitz/Cold IQ/HeyReach status) and where API keys live (never in this repo)
+- `verticals-portfolio.md` — **every vertical (live V1-V3 and proposed V4-V9) in one standard card format**, with priority, filters, personas, TAM and next step
 - `client-base-vertical-analysis.md` — every current/past client profiled and the verticals they support (2026-09-29)
 - `data/dnc_clients.csv` — current and past clients: never contacted (import drops them)
 - `icp-overview.md` — shared firmographic/geographic filters across all verticals
