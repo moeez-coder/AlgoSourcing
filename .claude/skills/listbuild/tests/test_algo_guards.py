@@ -80,3 +80,14 @@ def test_algo_shorthand_expands_to_the_full_geo_list():
     from listbuild.icp_gen import ALGO_GEOS, build_icp
     icp = build_icp("t", ["Staffing and Recruiting"], ["ALGO"], 1_000_000)
     assert icp["company_hq_countries"] == ALGO_GEOS and icp["person_countries"] == ALGO_GEOS
+
+
+def test_provider_limit_on_paid_layer_is_survived_but_other_errors_are_not():
+    from listbuild.http import HttpError
+    from listbuild.orchestrate import provider_limit_notice
+    limit = HttpError(403, '{"detail":"Account has reached the monthly usage limit"}', "https://api.discolike.com/v1/contacts")
+    assert "discolike-estimate" in provider_limit_notice("discolike-estimate", limit)
+    assert provider_limit_notice("clay", HttpError(402, "quota", "u"))
+    assert provider_limit_notice("blitz", limit) is None          # the free layer failing is a real error
+    assert provider_limit_notice("discolike-fetch", HttpError(500, "boom", "u")) is None
+    assert provider_limit_notice("discolike-fetch", ValueError("x")) is None

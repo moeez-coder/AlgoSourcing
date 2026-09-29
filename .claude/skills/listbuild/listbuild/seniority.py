@@ -8,21 +8,26 @@ import re
 import unicodedata
 
 _STRONG = re.compile(
-    r"\b(directors?|directeur|directrice|diretor|diretora|directora|vp|svp|evp|vice[- ]?president|head|chief|c[a-z]{1,2}o|"
+    r"\b(directors?|directeur|directrice|diretor|diretora|directora|vp|svp|evp|vice[- ]?president[ea]?|head|chief|c[a-z]{1,2}o|"
     r"president|owner|founder|co[- ]?founder|proprietor|board member|chair|chairman|chairwoman|chairperson|"
     r"general manager|managing member|entrepreneur|fondateur|fondatrice|proprietaire|"
     # German / Dutch / Spanish / Italian senior titles (text is accent-folded first: geschaftsfuhrer = Geschäftsführer)
     r"geschaftsfuhrer(?:in)?|geschaftsfuhrend(?:e|er)?|inhaber(?:in)?|(?:mit)?grunder(?:in)?|vorstand\w*|"
     r"(?:mede-?)?eigenaar|(?:mede-?)?oprichter|fundador(?:a)?|cofundador(?:a)?|propietari[oa]|"
-    r"(?:co)?fondatore|fondatrice|titolare|amministratore delegato)\b"
+    r"(?:co)?fondatore|fondatrice|titolare|amministratore delegato|"
+    # Italian / Spanish / Polish / Nordic / Czech / Slovak / Hungarian (accent-folded; Nordic ø does not fold)
+    r"presidente|proprietari[oa]|direttore|direttrice|dyrektor|prezes|direkt(?:or|ør)(?:in)?|vd|toimitusjohtaja|"
+    r"daglig leder|jednatel(?:ka)?|reditel(?:ka)?|riaditel(?:ka)?|ugyvezeto|igazgato)\b"
 )
 # Top-tier titles: pass even when a rank word from Algo's exclude list is present ("Founder & Specialist Recruiter").
 _TOP = re.compile(
     r"\b(owner|founder|co[- ]?founder|cofounder|proprietor|managing director|managing partner|ceo|c[a-z]{1,2}o|"
     r"chief\b.*\bofficer|chair(?:man|woman|person)?|geschaftsfuhrer(?:in)?|geschaftsfuhrend(?:e|er)?|inhaber(?:in)?|"
     r"(?:mit)?grunder(?:in)?|(?:mede-?)?eigenaar|(?:mede-?)?oprichter|fondateur|fondatrice|fundador(?:a)?|"
-    r"cofundador(?:a)?|(?:co)?fondatore|titolare|amministratore delegato|directeur general|director general)\b"
-    r"|(?<!vice )(?<!vice-)\bpresident\b"
+    r"cofundador(?:a)?|(?:co)?fondatore|titolare|amministratore delegato|directeur general|directora? general|"
+    r"proprietari[oa]|prezes|vd|verkstallande direktor|adm(?:inistrerende|\.)? direkt(?:or|ør)|daglig leder|"
+    r"toimitusjohtaja|direttore generale|dyrektor generalny|jednatel(?:ka)?|ugyvezeto)\b"
+    r"|(?<!vice )(?<!vice-)\bpresident(?:e|a)?\b"
 )
 # Weak positives pass only when no individual-contributor / manager word is present.
 _WEAK = re.compile(r"\b(partner|principal|md|socio|socia|gesellschafter(?:in)?)\b")
@@ -40,7 +45,7 @@ _HARD_FAIL = re.compile(
 # Algo Acquisition's exclude list (sourcing/icp-overview.md, "Seniority filter"): fail unless the title is top-tier, so
 # "Associate Director" / "Business Development Representative" fail but "Founder & Specialist Recruiter" passes.
 _RANK_FAIL = re.compile(
-    r"\b(associate|coordinator|specialist|analyst|representative|bdr|sdr|account executive|"
+    r"\b(associate|coordinator|koordinator(?:in)?|coordinatore|coordinador(?:a)?|specialist|analyst|representative|bdr|sdr|account executive|"
     r"talent (?:acquisition )?partner|acquisition partner)\b"
 )
 _TOKEN = re.compile(r"[a-z0-9]+|[&,/|-]")

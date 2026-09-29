@@ -81,6 +81,12 @@ tests in `tests/test_seniority.py`; every listbuild run applies it):
   Fondateur, Directeur Général), Dutch (Eigenaar, Oprichter), Spanish
   (Fundador, Propietario, Director General) and Italian (Fondatore,
   Titolare, Amministratore Delegato) senior titles are recognised.
+  Added 2026-09-29 after the V1 full run: Italian Presidente, Proprietario,
+  Direttore (incl. "Direttore di filiale" = branch director); Polish
+  Prezes, Dyrektor; Swedish VD / Verkställande direktör; Norwegian/Danish
+  Direktør, Adm. direktør, Daglig leder; Finnish Toimitusjohtaja; Czech
+  Jednatel, Ředitel; Hungarian Ügyvezető, Igazgató; Spanish/Italian
+  Vicepresidente. This recovered 1,449 V1 people the rule had dropped.
 - Bare "Manager", "Recruiter", "Consultant" without a senior word fail.
 - Change the rule only test-first, and update this section when you do.
 

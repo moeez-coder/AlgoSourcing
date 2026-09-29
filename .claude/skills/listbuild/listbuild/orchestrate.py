@@ -199,6 +199,20 @@ def _ns(**kw):
     return argparse.Namespace(**kw)
 
 
+# Provider answers that mean "limit reached / not paid", not a bug: the stage stops, the run continues.
+# DiscoLike answers 403 "Account has reached the monthly usage limit" (seen 2026-09-29), Clay 402.
+PROVIDER_LIMIT_STATUSES = (402, 403, 429)
+PAID_LAYER_STAGES = ("clay", "merge", "discolike-estimate", "discolike-fetch")
+
+
+def provider_limit_notice(stage, err):
+    """Notice text when `err` from `stage` is a provider limit the run should survive, else None."""
+    if not isinstance(err, HttpError) or err.status not in PROVIDER_LIMIT_STATUSES or stage not in PAID_LAYER_STAGES:
+        return None
+    return (f"{stage}: provider limit, HTTP {err.status} ({str(err)[:160]}). The run continued without it; rerun "
+            f"`run --force --stages {stage} fit consolidate-final export` once the limit clears.")
+
+
 def cmd_run(ctx, args):
     """Whole pipeline in cost order. Every stage is idempotent/resumable; completed stages are skipped unless --force."""
     lg = ctx.ledger
@@ -236,6 +250,12 @@ def cmd_run(ctx, args):
             fn()
         except C.QuotaExceeded as e:
             log(f"stage {name}: Clay quota exhausted, continuing without it ({str(e)[:100]})")
+        except HttpError as e:
+            notice = provider_limit_notice(name, e)
+            if notice is None:
+                raise
+            P._notice(lg, notice)
+            log(f"NOTICE: {notice}")
         done.add(name)
         lg.set_kv("run_done", sorted(done))
     notices = lg.get_kv("run_notices", [])

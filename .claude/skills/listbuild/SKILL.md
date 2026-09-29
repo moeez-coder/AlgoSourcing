@@ -62,7 +62,9 @@ Paths used below (run everything **from the repo root** unless a step says other
 - **Clay public API** (`CLAY_API_KEY`): quota **exhausted until 2027-01-01** (47 of 1,000,000 results left on
   2026-09-29). The run skips Clay and lists it under "PROVIDER LIMITS HIT"; rerun `run --force --stages clay merge domains fit consolidate-final export`
   after the reset. The Clay MCP (`mcp__Clay__*`) is a separate channel and still works for small targeted pulls.
-- **DiscoLike**: key valid, account **overdrawn (~ -$4)**, $0.0035/contact. Cap 0 until the user tops up and approves.
+- **DiscoLike**: key valid, account **overdrawn (~ -$4)** and even the free estimate call now answers HTTP 403 "monthly
+  usage limit", $0.0035/contact. Cap 0 until the user tops up and approves. A 402/403/429 from Clay or DiscoLike becomes
+  a notice and the run continues (`orchestrate.provider_limit_notice`); any other error still stops the run.
 - **AI Ark / Cold IQ**: not wired into listbuild yet. Use them afterwards for enrichment or gap-fill (TOOLS.md), and
   feed any extra people through the same seeds + ledger check before saving.
 

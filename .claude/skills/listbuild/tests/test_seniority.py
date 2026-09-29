@@ -97,3 +97,20 @@ def test_vice_president_is_not_top_tier(title):
 ])
 def test_non_english_assistant_intern_always_fail(title):
     assert classify_title(title) == "fail"
+
+
+@pytest.mark.parametrize("title", [
+    "PRESIDENTE", "Presidente e Amministratore Delegato", "Proprietario", "Koncern-VD", "VD", "Dyrektor HR",
+    "Prezes Zarządu", "Direktor", "Administrerende direktør", "Adm. direktør", "Daglig leder", "Toimitusjohtaja",
+    "Direttore Generale", "Direttrice Commerciale", "Jednatel", "Ügyvezető igazgató", "Ředitel", "Directora General",
+    "Vicepresidente", "Vicepresidenta Comercial",
+])
+def test_senior_titles_in_more_european_languages_pass(title):
+    assert classify_title(title) == "pass"
+
+
+@pytest.mark.parametrize("title", [
+    "Koordinator, Office of the VD", "Assistente del Presidente", "Specialist to the Prezes",
+])
+def test_rank_words_still_fail_when_the_top_word_is_someone_else(title):
+    assert classify_title(title) == "fail"
