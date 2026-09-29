@@ -149,6 +149,21 @@ the original 100 lacked a license and were swapped for other valid Nav-
 licensed accounts from the wider workspace pool. See
 `verticals/vertical-4-b2b-saas.md` for the exact account-ID swaps.
 
+## Verticals 1b, 5, 6, 7, 8, 9 — no campaigns yet (groundwork 2026-09-29)
+
+| Vertical | File | HeyReach campaigns |
+|---|---|---|
+| V1b Boutique executive search | `verticals/vertical-1b-boutique-exec-search.md` | not created |
+| V5 IT services & technology partners | `verticals/vertical-5-it-services.md` | not created |
+| V6 Life-sciences & healthcare B2B services | `verticals/vertical-6-life-sciences-services.md` | not created |
+| V7 Nearshore / offshore dev teams | `verticals/vertical-7-nearshore-dev.md` | not created |
+| V8 Fractional executives & B2B consultancies | `verticals/vertical-8-fractional-consulting.md` | not created |
+| V9 PEO / EOR / payroll & HR tech | `verticals/vertical-9-peo-eor-hr-tech.md` | not created |
+
+Create each set (Con Req, Con Acc, Open Check, Open Profile + the Acc and Open Clay webhooks) with the
+`heyreach-vertical-launch` skill only after the user approves it, and record the IDs here. Check that Con Acc and
+Open Profile actually receive leads once live (V4's Con Acc stayed at 0 users for 8 days).
+
 ## How to push sourced leads in
 
 **Push each sourced batch to both the Con Req and Open Check campaigns** for

@@ -1,0 +1,211 @@
+# Algo Acquisition listbuild config: Vertical 8, Fractional executives and B2B consultancies (>=10 staff). Created 2026-09-29 by the master session (groundwork).
+# Shared ICP: sourcing/icp-overview.md (US/UK/Europe HQ + person location, $1M+ revenue, Director+),
+# headcount 10-500 employees on LinkedIn (Blitz employee_count; user chose a 500 cap for new verticals).
+# Catch-all consulting labels, keyword-gated. TEST vertical.
+# Keyword-gated labels are exported as *_candidates for review, never into the main list.
+name: v8_fractional_consulting
+company_hq_countries:
+- US
+- GB
+- IE
+- FR
+- DE
+- ES
+- IT
+- NL
+- BE
+- PT
+- CH
+- AT
+- SE
+- 'NO'
+- DK
+- FI
+- PL
+- CZ
+- SK
+- HU
+- RO
+- BG
+- GR
+- HR
+- SI
+- EE
+- LV
+- LT
+- LU
+- MT
+- CY
+- IS
+- LI
+- MC
+- AD
+- SM
+- UA
+- RS
+- ME
+- MK
+- AL
+- BA
+- MD
+person_countries:
+- US
+- GB
+- IE
+- FR
+- DE
+- ES
+- IT
+- NL
+- BE
+- PT
+- CH
+- AT
+- SE
+- 'NO'
+- DK
+- FI
+- PL
+- CZ
+- SK
+- HU
+- RO
+- BG
+- GR
+- HR
+- SI
+- EE
+- LV
+- LT
+- LU
+- MT
+- CY
+- IS
+- LI
+- MC
+- AD
+- SM
+- UA
+- RS
+- ME
+- MK
+- AL
+- BA
+- MD
+revenue_min_usd: 1000000
+employee_count_min: 10
+employee_count_max: 500
+seniority: director_plus
+industries:
+  clay:
+  - Business Consulting and Services
+  - Strategic Management Services
+  blitz:
+  - Business Consulting and Services
+  - Strategic Management Services
+  - Management Consulting
+  discolike: []
+  discolike_optional: []
+seniority_map:
+  clay:
+  - C-suite
+  - VP
+  - Director
+  - Head
+  - Founder
+  - Owner
+  - Partner
+  - Board Member
+  blitz:
+  - C-Team
+  - VP
+  - Director
+  discolike:
+  - executive
+  - vp
+  - director
+clay_revenue_buckets:
+- 1M-5M
+- 5M-10M
+- 10M-25M
+- 25M-75M
+- 75M-200M
+- 200M-500M
+- 500M-1B
+- 1B-10B
+- 10B-100B
+- 100B-1T
+clay_country_names:
+  US: United States
+  GB: United Kingdom
+  IE: Ireland
+  FR: France
+  DE: Germany
+  ES: Spain
+  IT: Italy
+  NL: Netherlands
+  BE: Belgium
+  PT: Portugal
+  CH: Switzerland
+  AT: Austria
+  SE: Sweden
+  'NO': Norway
+  DK: Denmark
+  FI: Finland
+  PL: Poland
+  CZ: Czechia
+  SK: Slovakia
+  HU: Hungary
+  RO: Romania
+  BG: Bulgaria
+  GR: Greece
+  HR: Croatia
+  SI: Slovenia
+  EE: Estonia
+  LV: Latvia
+  LT: Lithuania
+  LU: Luxembourg
+  MT: Malta
+  CY: Cyprus
+  IS: Iceland
+  LI: Liechtenstein
+  MC: Monaco
+  AD: Andorra
+  SM: San Marino
+  UA: Ukraine
+  RS: Serbia
+  ME: Montenegro
+  MK: Macedonia
+  AL: Albania
+  BA: Bosnia and Herzegovina
+  MD: Moldova
+clay_person_country_names:
+  CZ: Czech Republic
+  MK: North Macedonia
+discolike_employee_floor: 11
+fit:
+  core_industries: []
+  keyword_gated_industries:
+  - Business Consulting and Services
+  - Management Consulting
+  - Strategic Management Services
+  keywords:
+  - fractional CFO
+  - fractional CMO
+  - fractional CRO
+  - fractional COO
+  - fractional executive
+  - fractional leadership
+  - revenue operations
+  - RevOps
+  - go-to-market consulting
+  - GTM consulting
+  - pricing strategy
+  - sales consulting
+  - growth consulting
+  - interim executive
+company_type_exclude:
+- Nonprofit
+- Government Agency
+- Educational
+- Educational Institution

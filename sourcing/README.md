@@ -24,6 +24,8 @@ sessions from colliding or duplicating leads.
 - `verticals/vertical-2-marketing.md`
 - `verticals/vertical-3-ma.md`
 - `verticals/vertical-4-b2b-saas.md`
+- `verticals/vertical-1b-boutique-exec-search.md`, `vertical-5-it-services.md`, `vertical-6-life-sciences-services.md`,
+  `vertical-7-nearshore-dev.md`, `vertical-8-fractional-consulting.md`, `vertical-9-peo-eor-hr-tech.md` (groundwork 2026-09-29, no campaigns yet)
 - `heyreach-campaign-map.md` — every relevant HeyReach campaign ID, by vertical/stage
 - `pipeline.md` — the Blitz → Clay → HeyReach sourcing workflow, data-file conventions, and key system IDs
 - `data/<vertical>/companies/`, `data/<vertical>/people/`, `data/<vertical>/reports/` — every sourcing run's output, saved as timestamped CSVs (required for every run — see `pipeline.md`)

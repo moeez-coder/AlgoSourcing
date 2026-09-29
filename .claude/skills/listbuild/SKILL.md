@@ -30,7 +30,8 @@ Paths used below (run everything **from the repo root** unless a step says other
    contacted twice across verticals either). Always pass it as `--seeds`.
 3. **Config.** Use the vertical's existing config. For a new segment:
    `cd sourcing/listbuild && python ../../SKILL/scripts/listbuild.py new-icp --name <slug> --industries "<label>" ... --countries ALGO --revenue-min 1000000 --seniority director_plus`
-   (`ALGO` = the 43 US/UK/Europe HQ codes from icp-overview.md). Then copy the `company_type_exclude` block and the
+   (`ALGO` = the 43 US/UK/Europe HQ codes from icp-overview.md). Add `--employees-max 500` for the new-vertical cap
+   (`--employees-min` defaults to 10; both count employees on LinkedIn). Then copy the `company_type_exclude` block and the
    keyword gates from an existing vertical config. Read the printed notes: catch-all labels become a candidates layer;
    unmapped labels mean a misspelling; "related labels" are suggestions to confirm with the user, never add silently.
 4. **Preview (free, ~1 min).** `cd sourcing/listbuild && python ../../SKILL/scripts/listbuild.py --icp config/<slug>.yaml preview --seeds seeds/contacted_all.csv`

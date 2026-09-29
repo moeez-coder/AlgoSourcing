@@ -32,7 +32,8 @@ def _cli():
 # ----------------------------------------------------------------------------- new-icp
 def cmd_new_icp(ctx, args):
     cfg = build_icp(name=args.name, industries=args.industries, countries=args.countries, revenue_min_usd=args.revenue_min,
-                    seniority=args.seniority, person_countries=args.person_countries or None, keywords=args.keywords)
+                    seniority=args.seniority, person_countries=args.person_countries or None, keywords=args.keywords,
+                    employee_count_min=getattr(args, "employees_min", 10), employee_count_max=getattr(args, "employees_max", None))
     notes = cfg.pop("_mapping_notes")
     path = WORKSPACE / "config" / f"{args.name}.yaml"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -67,8 +68,10 @@ def cmd_preview(ctx, args):
     total_core = bz.count(core_icp, {}) if core_labels and core_labels != icp["industries"]["blitz"] else total_all
     per_country = {c: bz.count(core_icp, {"country": c}) for c in icp["company_hq_countries"]}
     lines += [f"Blitz (free, plan {[p.get('name') for p in ki.get('active_plans', [])]}, {ki.get('records_remaining'):,} records left this cycle):",
-              f"  main-list contacts (core industries {core_labels}): ~{total_core:,}  by HQ country: " + ", ".join(f"{c} {n:,}" for c, n in per_country.items()),
-              (f"  plus ~{total_all - total_core:,} in catch-all industries -> candidates file" if total_all != total_core else ""),
+              (f"  main-list contacts (core industries {core_labels}): ~{total_core:,}  by HQ country: " if core_labels else
+               f"  NO core industries: all ~{total_all:,} contacts are in keyword-gated industries; only keyword-matched companies are "
+               f"exported, to the candidates file (review before any push). By HQ country: ") + ", ".join(f"{c} {n:,}" for c, n in per_country.items()),
+              (f"  plus ~{total_all - total_core:,} in catch-all industries -> candidates file" if core_labels and total_all != total_core else ""),
               f"  estimated sweep time: ~{max(2, total_all / 600 / 60):.0f} min"]
     # --- Blitz sample
     n_countries = max(1, len(icp["company_hq_countries"]))

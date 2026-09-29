@@ -21,8 +21,9 @@ def build_contact_params(icp, exclusion_id=None, employee_floor=None, include_op
     p += [("filter_country", c) for c in icp["company_hq_countries"]]
     p += [("person_country", c) for c in icp["person_countries"]]
     p.append(("has_linkedin", "true"))
-    if employee_floor:
-        p.append(("employee_range", f"{int(employee_floor)},"))
+    cap = icp.get("employee_count_max")
+    if employee_floor or cap:
+        p.append(("employee_range", f"{int(employee_floor) if employee_floor else ''},{int(cap) if cap else ''}"))
     if exclusion_id:
         p.append(("exclusion_query_id", exclusion_id))
     if extra:

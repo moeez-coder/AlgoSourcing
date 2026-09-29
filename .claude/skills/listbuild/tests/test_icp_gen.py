@@ -52,3 +52,11 @@ def test_build_icp_rejects_unknown_country_or_seniority():
         build_icp(name="x", industries=["Marketing Services"], countries=["XX"], revenue_min_usd=0)
     with pytest.raises(ValueError):
         build_icp(name="x", industries=["Marketing Services"], countries=["US"], revenue_min_usd=0, seniority="everyone")
+
+
+def test_new_vertical_labels_expand_to_the_legacy_labels_blitz_still_carries():
+    from listbuild.icp_gen import map_industries
+    m = map_industries(["Research Services", "Biotechnology Research", "Pharmaceutical Manufacturing", "IT Services and IT Consulting"])
+    for legacy in ["Research", "Biotechnology", "Pharmaceuticals", "Information Technology and Services"]:
+        assert legacy in m["blitz"]
+    assert "Medical Devices" not in map_industries(["Medical Equipment Manufacturing"])["blitz"]  # Blitz rejects it (422)

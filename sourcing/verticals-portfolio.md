@@ -2,7 +2,7 @@
 
 Drafted 2026-09-29 by the master session from `client-base-vertical-analysis.md` (65 current/past clients) and
 Algo's offer (Core: $20k/quarter for 40 showed meetings, ~$500 a meeting; 3x ROI needs ~$15k+ first-year value
-per won client). V1-V4 are live (V4 since 2026-09-21); V1b and V5-V9 are **proposals** until the user approves them. When a proposal is approved,
+per won client). V1-V4 are live (V4 since 2026-09-21); V1b and V5-V9 have groundwork done (2026-09-29, user-approved) and are waiting for their own sessions until the user approves them. When a proposal is approved,
 it gets its own `verticals/vertical-N-<slug>.md`, a listbuild config, a data folder with a contacted ledger, and
 HeyReach campaigns.
 
@@ -16,15 +16,15 @@ contacted; push only to Con Req and Open Check.
 | # | Vertical | Status | Priority | Value per won client | Client proof | TAM |
 |---|---|---|---|---|---|---|
 | V1 | Staffing & Recruitment | Live | **P1** | $15-30k per placement | 35 clients | 33,735 companies / 116,574 people (59,926 main list) |
-| V1b | Boutique executive search (2-10 staff) | Proposed test | P2 | $50-100k+ per search | 9 clients | Not measured |
+| V1b | Boutique executive search (2-9 staff) | Groundwork done, no campaigns | P2 | $50-100k+ per search | 12 clients | ~678 core + ~13,801 keyword-matched companies; ~934 main-list people |
 | V2 | Marketing agencies | Live | Maintain | $30-60k retainers | 1 client | ~95,182 companies / ~448,854 people (262,549 main list) |
 | V3 | M&A advisory | Live (draft config) | P3 test | $100k+ success fees | None | 24,272 main list (1,335 companies) + 106,006 candidates; low precision |
 | V4 | B2B SaaS & AI | **Live since 2026-09-21** (own session) | **P1** | $15-100k ACV | 13 clients | 14,576 pushed (US/GB/CA only); full-universe re-cut needed |
-| V5 | IT services & technology partners | Proposed | **P1** | $50k+ projects / MRR | 7 clients | Not measured |
-| V6 | Life-sciences & healthcare B2B services | Proposed | P2 | $50k+ contracts | 7 clients | Not measured |
-| V7 | Nearshore / offshore dev teams | Proposed test | P3 | $100k+ a year | 2 clients | Not measured |
-| V8 | Fractional executives & B2B consultancies | Proposed test | P3 | $30-150k retainers | 6 clients (small) | Not measured |
-| V9 | PEO / EOR / payroll & HR tech | Proposed test | P3 | High, per employee | 2 clients | Not measured |
+| V5 | IT services & technology partners | Groundwork done, no campaigns | **P1** | $50k+ projects / MRR | 7 clients | ~87,815 core + ~2,495 keyword-matched companies; ~265,785 main-list people |
+| V6 | Life-sciences & healthcare B2B services | Groundwork done, no campaigns | P2 | $50k+ contracts | 7 clients | ~4,738 keyword-matched companies (all review-first) |
+| V7 | Nearshore / offshore dev teams | Groundwork done, no campaigns (test) | P3 | $100k+ a year | 2 clients | ~11,146 keyword-matched companies (all review-first) |
+| V8 | Fractional executives & B2B consultancies | Groundwork done, no campaigns (test) | P3 | $30-150k retainers | 6 clients (small) | ~3,226 keyword-matched companies (all review-first) |
+| V9 | PEO / EOR / payroll & HR tech | Groundwork done, no campaigns (test) | P3 | High, per employee | 2 clients | ~2,709 keyword-matched companies (all review-first) |
 
 "Not measured" = run a free `listbuild preview` once the card is approved (it reports companies and people).
 
@@ -72,8 +72,8 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
 - **Next step:** user approval to push the 59,926 main list; decide whether to review the 16.7k held-back
   HR-services people (it includes some real staffing firms).
 
-## V1b: Boutique executive search (2-10 staff)
-- **Status / priority:** Proposed test, P2.
+## V1b: Boutique executive search (2-9 staff)
+- **Status / priority:** **Groundwork done 2026-09-29** (vertical file, listbuild config, data folder + ledger, free preview); no sourcing run, no HeyReach campaigns. See `verticals/vertical-1b-boutique-exec-search.md`. P2. Headcount 2-9 on LinkedIn (user-approved exception).
 - **Who:** retained or contingent executive search boutiques with 2-10 staff and >= $1M revenue.
 - **Why:**
   - **Client proof:** 12 of the 35 recruitment clients have 10 or fewer LinkedIn staff (Harrison Stone, Brick,
@@ -85,7 +85,7 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
   - **Headcount:** 2-10. **This is an exception to the shared >= 10 rule and needs the user's yes.**
 - **People:** Founder, Managing Partner, Partner, Managing Director, CEO.
 - **Messaging angle:** meetings with PE-backed CEOs, CHROs and hiring executives; retained-mandate economics.
-- **TAM:** not measured.
+- **TAM (2026-09-29 preview):** see the summary table above and the vertical file's TAM section.
 - **HeyReach:** a separate campaign set, or a list inside V1's.
 - **Next step:** user decision on the headcount exception, then a preview.
 
@@ -148,12 +148,12 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
 - **Segments:** vertical AI and data (health tech, fintech and financial data, legal tech, HR/payroll tech,
   defence/industrial software, retail/martech).
 - **Messaging angle:** 40 showed demos a quarter or money back, without hiring SDRs. Proof: VNTANA, ITS.
-- **TAM:** not measured. Expect the largest pool of any vertical.
+- **TAM:** 14,576 people pushed from a hand-rolled US/GB/CA Blitz pull (2026-09-21); a listbuild TAM on the shared ICP is not measured yet.
 - **HeyReach:** new campaign set needed.
 - **Next step:** approve, then preview.
 
 ## V5: IT services & technology partners
-- **Status / priority:** Proposed, P1.
+- **Status / priority:** **Groundwork done 2026-09-29** (vertical file, listbuild config, data folder + ledger, free preview); no sourcing run, no HeyReach campaigns. See `verticals/vertical-5-it-services.md`. P1.
 - **Who:** SAP, Salesforce, Microsoft, ServiceNow and Siemens implementation partners; managed IT (MSPs) and
   cybersecurity services; data and AI consultancies; infrastructure resellers.
 - **Why:**
@@ -168,12 +168,11 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
   - **Headcount:** 10-500.
 - **People:** Founder, CEO, Managing Director, Partner, CRO, VP / Head / Director of Sales, BD, Alliances.
 - **Messaging angle:** meetings with CIOs, CTOs and operations leaders at mid-market companies. Proof: Triumphus.
-- **TAM:** not measured.
+- **TAM (2026-09-29 preview):** see the summary table above and the vertical file's TAM section.
 - **HeyReach:** new campaign set needed.
-- **Next step:** approve, then preview.
 
 ## V6: Life-sciences & healthcare B2B services
-- **Status / priority:** Proposed, P2. It can also run as a segment of V1 + V4.
+- **Status / priority:** **Groundwork done 2026-09-29** (vertical file, listbuild config, data folder + ledger, free preview); no sourcing run, no HeyReach campaigns. See `verticals/vertical-6-life-sciences-services.md`. P2. All labels keyword-gated (Research Services moved out of core).
 - **Who:** contract research and manufacturing organisations (CROs, CDMOs), clinical-trial and clinical-data
   services, pharmacovigilance and regulatory consultancies, medical communications, lab services, medtech
   service providers.
@@ -190,12 +189,12 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
   - Expect a small main list and a large candidates file.
 - **People:** CEO, Chief Commercial Officer, VP / Head of BD, VP Sales, Head of Partnerships.
 - **Messaging angle:** meetings with clinical, R&D and procurement leaders at pharma and biotech companies.
-- **TAM:** not measured.
+- **TAM (2026-09-29 preview):** see the summary table above and the vertical file's TAM section.
 - **HeyReach:** new campaign set needed.
 - **Next step:** after V4/V5.
 
 ## V7: Nearshore / offshore development teams (US/UK/Europe HQ only)
-- **Status / priority:** Proposed test, P3. It could also be a V5 segment.
+- **Status / priority:** **Groundwork done 2026-09-29** (vertical file, listbuild config, data folder + ledger, free preview); no sourcing run, no HeyReach campaigns. See `verticals/vertical-7-nearshore-dev.md`. P3 test.
 - **Who:** providers of dedicated developer teams, staff augmentation and nearshore R&D centres, HQ'd in the US,
   UK or Europe.
 - **Why:**
@@ -207,11 +206,11 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
     Europe developers.
 - **People:** Founder, CEO, CRO, VP Sales, Head of BD.
 - **Messaging angle:** meetings with CTOs and VPs of Engineering facing hiring freezes.
-- **TAM:** not measured.
+- **TAM (2026-09-29 preview):** see the summary table above and the vertical file's TAM section.
 - **Next step:** a small test after V5.
 
 ## V8: Fractional executives & B2B consultancies (>= 10 staff)
-- **Status / priority:** Proposed test, P3.
+- **Status / priority:** **Groundwork done 2026-09-29** (vertical file, listbuild config, data folder + ledger, free preview); no sourcing run, no HeyReach campaigns. See `verticals/vertical-8-fractional-consulting.md`. P3 test.
 - **Who:** fractional CFO / CMO / CRO firms, RevOps and go-to-market consultancies, pricing strategy firms.
 - **Why:**
   - **Client proof:** 6 clients (Tiffany Otten / Coro, Jeanny Consulting, Sullivan Adventures, Follow The Sun,
@@ -224,11 +223,11 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
   - **Headcount:** >= 10 kept.
 - **People:** Founder, Managing Partner, CEO, Partner.
 - **Messaging angle:** meetings with founders and CEOs of $5-50M companies.
-- **TAM:** not measured. The catch-all label is noisy.
+- **TAM (2026-09-29 preview):** see the summary table above and the vertical file's TAM section.
 - **Next step:** keyword-gated test only.
 
 ## V9: PEO / EOR / payroll & HR-tech providers
-- **Status / priority:** Proposed test, P3.
+- **Status / priority:** **Groundwork done 2026-09-29** (vertical file, listbuild config, data folder + ledger, free preview); no sourcing run, no HeyReach campaigns. See `verticals/vertical-9-peo-eor-hr-tech.md`. P3 test.
 - **Who:** professional employer organisations, employer-of-record and global payroll providers, HR outsourcing,
   HR / payroll software.
 - **Why:**
@@ -241,7 +240,7 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
     record, EOR, global payroll, payroll provider, HR outsourcing, benefits administration, HRIS.
 - **People:** Founder, CEO, CRO, VP / Head of Sales, BD, Partnerships.
 - **Messaging angle:** meetings with CFOs, COOs and HR leaders at scaling and expanding companies.
-- **TAM:** not measured. A quick first cut can come from V1's held-back layer.
+- **TAM (2026-09-29 preview):** see the summary table above and the vertical file's TAM section.
 - **Next step:** test after V4/V5.
 
 ---

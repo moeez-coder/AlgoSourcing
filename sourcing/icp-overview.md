@@ -13,6 +13,12 @@ across all three verticals unless a vertical doc overrides them.
 
 - **Minimum company revenue:** $1,000,000
 - **Minimum headcount:** 10 employees
+- **Maximum headcount (new verticals, user decision 2026-09-29):** 500 employees for V5-V9; V1-V4 have no cap yet
+  (open decision, see `verticals-portfolio.md`). V1b (boutique executive search) is an approved exception: 2-9.
+- **How listbuild measures headcount (found 2026-09-29):** Blitz `company.employee_count` counts **employees on
+  LinkedIn**, which is much stricter than the company's declared LinkedIn size band (`employee_range`). Example, UK
+  IT services: declared 11-500 staff = 16,337 companies, >= 10 employees on LinkedIn = 6,727. All 2026-09-29 runs
+  use `employee_count`. Switching to the declared band would roughly double or triple most TAMs; open decision.
 
 ## Geographic / presence filter
 

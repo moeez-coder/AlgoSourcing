@@ -91,3 +91,29 @@ def test_provider_limit_on_paid_layer_is_survived_but_other_errors_are_not():
     assert provider_limit_notice("blitz", limit) is None          # the free layer failing is a real error
     assert provider_limit_notice("discolike-fetch", HttpError(500, "boom", "u")) is None
     assert provider_limit_notice("discolike-fetch", ValueError("x")) is None
+
+
+def test_employee_count_max_is_sent_to_blitz_with_the_min(icp):
+    from listbuild.providers.blitz import build_company_body, build_people_body
+    icp = dict(icp, employee_count_min=10, employee_count_max=500)
+    for body in (build_people_body(icp, {}, 50), build_company_body(icp, {}, 50)):
+        assert body["company"]["employee_count"] == {"min": 10, "max": 500}
+    icp.pop("employee_count_max")
+    assert build_people_body(icp, {}, 50)["company"]["employee_count"] == {"min": 10}
+
+
+def test_build_icp_employee_count_max_optional():
+    from listbuild.icp_gen import build_icp
+    assert "employee_count_max" not in build_icp("x", ["Staffing and Recruiting"], ["US"], 1_000_000) or \
+        build_icp("x", ["Staffing and Recruiting"], ["US"], 1_000_000)["employee_count_max"] is None
+    cfg = build_icp("x", ["Staffing and Recruiting"], ["US"], 1_000_000, employee_count_min=2, employee_count_max=9)
+    assert (cfg["employee_count_min"], cfg["employee_count_max"]) == (2, 9)
+
+
+def test_discolike_employee_range_uses_floor_and_cap(icp):
+    from listbuild.providers.discolike import build_contact_params
+    icp = dict(icp, employee_count_max=500)
+    assert ("employee_range", "11,500") in build_contact_params(icp, employee_floor=11)
+    assert ("employee_range", ",500") in build_contact_params(icp)
+    icp.pop("employee_count_max")
+    assert ("employee_range", "11,") in build_contact_params(icp, employee_floor=11)

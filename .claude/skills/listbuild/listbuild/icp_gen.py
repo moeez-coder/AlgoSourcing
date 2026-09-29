@@ -61,6 +61,14 @@ LEGACY_LABELS = {
     "Events Services": [],
     "Investment Banking": [],
     "Venture Capital and Private Equity Principals": ["Venture Capital & Private Equity"],
+    # labels for V1b/V5-V9 (legacy labels verified against Blitz 2026-09-29; "Computer & Network Security" and
+    # "Medical Devices" are rejected by Blitz with HTTP 422, so they are not listed)
+    "Computer and Network Security": [],
+    "Research Services": ["Research"],
+    "Biotechnology Research": ["Biotechnology"],
+    "Pharmaceutical Manufacturing": ["Pharmaceuticals"],
+    "Medical Equipment Manufacturing": [],
+    "Strategic Management Services": [],
 }
 
 # LinkedIn label -> DiscoLike bucket (only where the mapping is clean; others skip DiscoLike).
@@ -175,7 +183,7 @@ def map_industries(clay_labels):
 
 
 def build_icp(name, industries, countries, revenue_min_usd, seniority="director_plus", person_countries=None,
-               keywords=None, employee_count_min=10):
+               keywords=None, employee_count_min=10, employee_count_max=None):
     """employee_count_min defaults to 10: the icp-overview.md headcount floor, non-negotiable per the user
     (2026-09-15). Overridable per-config, but every Algo vertical config should keep the default."""
     countries = [c for x in countries for c in (ALGO_GEOS if x == "ALGO" else [x])]
@@ -197,6 +205,7 @@ def build_icp(name, industries, countries, revenue_min_usd, seniority="director_
         "person_countries": persons,
         "revenue_min_usd": revenue_min_usd,
         "employee_count_min": int(employee_count_min) if employee_count_min else 10,
+        "employee_count_max": int(employee_count_max) if employee_count_max else None,
         "seniority": seniority,
         "industries": {"clay": m["clay"], "blitz": m["blitz"], "discolike": m["discolike"], "discolike_optional": []},
         "seniority_map": SENIORITY_MAPS[seniority],

@@ -845,6 +845,8 @@ def main(argv=None):
     p.add_argument("--name", required=True); p.add_argument("--industries", nargs="+", required=True, help="LinkedIn/Clay industry labels")
     p.add_argument("--countries", nargs="+", required=True, help="ISO-2 HQ countries"); p.add_argument("--person-countries", nargs="*")
     p.add_argument("--revenue-min", type=int, default=0); p.add_argument("--seniority", default="director_plus", choices=["director_plus", "vp_plus", "manager_plus"])
+    p.add_argument("--employees-min", type=int, default=10, help="employees on LinkedIn (Blitz employee_count), default 10")
+    p.add_argument("--employees-max", type=int, default=None, help="optional cap, e.g. 500")
     p.add_argument("--keywords", nargs="*", help="override marketing keywords for the catch-all candidates layer")
     p = sub.add_parser("preview", help="free sizing + sample contacts before the full run"); p.add_argument("--sample", type=int, default=60, help="Blitz sample rows in total (plus up to 20 Clay rows)")
     p.add_argument("--seeds", nargs="*", default=[], help="prior-contact CSVs; sample rows already prospected are flagged")
