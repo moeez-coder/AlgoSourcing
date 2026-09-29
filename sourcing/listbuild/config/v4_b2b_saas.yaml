@@ -89,6 +89,7 @@ person_countries:
 - MD
 revenue_min_usd: 1000000
 employee_count_min: 10
+employee_count_max: 500
 seniority: director_plus
 industries:
   clay:

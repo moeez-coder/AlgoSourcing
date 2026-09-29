@@ -30,8 +30,13 @@ def build_people_body(icp, shard, page_size, cursor=None):
     }
     if icp.get("revenue_min_usd"):
         company["revenue"] = {"min": int(icp["revenue_min_usd"])}
-    if icp.get("employee_count_min"):
-        company["employee_count"] = {"min": int(icp["employee_count_min"])}
+    if icp.get("employee_count_min") or icp.get("employee_count_max"):
+        ec = {}
+        if icp.get("employee_count_min"):
+            ec["min"] = int(icp["employee_count_min"])
+        if icp.get("employee_count_max"):
+            ec["max"] = int(icp["employee_count_max"])
+        company["employee_count"] = ec
     if icp.get("company_type_exclude"):
         company["type"] = {"exclude": list(icp["company_type_exclude"])}
     if "employee_range" in shard:
@@ -68,8 +73,13 @@ def build_company_body(icp, shard, page_size, cursor=None, industries=None, keyw
     }
     if icp.get("revenue_min_usd"):
         company["revenue"] = {"min": int(icp["revenue_min_usd"])}
-    if icp.get("employee_count_min"):
-        company["employee_count"] = {"min": int(icp["employee_count_min"])}
+    if icp.get("employee_count_min") or icp.get("employee_count_max"):
+        ec = {}
+        if icp.get("employee_count_min"):
+            ec["min"] = int(icp["employee_count_min"])
+        if icp.get("employee_count_max"):
+            ec["max"] = int(icp["employee_count_max"])
+        company["employee_count"] = ec
     if icp.get("company_type_exclude"):
         company["type"] = {"exclude": list(icp["company_type_exclude"])}
     if "employee_range" in shard:
