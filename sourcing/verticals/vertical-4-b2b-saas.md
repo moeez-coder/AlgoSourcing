@@ -205,6 +205,39 @@ Open Check 612587 (both campaigns verified at `totalUsers = 14,576`). See
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
+- **2026-09-29 (later)** (individual session, troubleshooting only) — **Root cause on Con Acc 0 users; Open Profile
+  copy looks correctly wired**. No HeyReach change made, no leads sourced or pushed, per explicit user scope.
+  - **Con Acc (612586) is empty because nothing is writing to its list, not because the campaign is DRAFT.**
+    `get_leads_from_list` on list **954768** (Con Acc's own list) returns `totalCount: 0`. Webhook 82967
+    ("Vertical 4 | Moe | Acc", `CONNECTION_REQUEST_ACCEPTED`, scoped to campaign 612584) is `isActive: true` and
+    correctly scoped on the HeyReach side — so HeyReach is firing accepted-connection events to Clay
+    (`...024865e8-0654-4744-8a93-574ee1b3ddc6`) for Con Req's 172 finished / some-accepted leads, but nothing comes
+    back. Compare with Open webhook 82968, which clearly works: Open Profile's list (954770) has 753 leads actually
+    loaded and the campaign is IN_PROGRESS. So the break is specific to the **Con Acc side of the Clay table** behind
+    webhook 82967 — most likely its push-back-to-HeyReach step is missing, disabled, or points at the wrong
+    campaign/list ID. This needs checking inside the Clay table itself (not visible from HeyReach's API) — I don't
+    have Clay workspace access in this session to inspect it further. Con Acc's DRAFT status is a secondary problem
+    on top of this: even once Clay starts pushing leads into list 954768, someone needs to start campaign 612586 (a
+    HeyReach change, so left to the user/master session) or the leads will just sit there.
+  - **Open Profile (612588) copy mechanism looks correctly designed, can't fully verify per-lead values.** Its
+    sequence node is `INMAIL` with `payload.messages[0] = {"subject":"{subject}","message":"{inmail}"}` and a
+    generic fallback (`"Hey!"` / `"Happy to connect!"`) — this is the intended per-lead-merge-field pattern (same as
+    V1's 557771), not a literal unfilled placeholder like Con Acc's `{message1}`/`{message2}`/`{message3}` (which
+    are the same kind of merge-field token, just still unreviewed copy per the existing to-do). 753 leads are loaded
+    and IN_PROGRESS with real send attempts — sampled failures are `BlockedByRecepient_CannotSendInMail`,
+    `NoInMailCreditsRemaining`, `TooManyRetries` (mechanical/credit issues, not "field missing" errors), which is
+    evidence the send pipeline itself is functioning. However, `get_lead` on a sampled Open Profile lead
+    (krisdavis) does not surface `customUserFields` in its response at all, so I could not directly confirm the
+    Clay-written `subject`/`inmail` values are non-empty for real leads vs. falling back to the generic message —
+    that would need either a Clay-side check or a HeyReach conversation/message-log lookup this session didn't have
+    tools for.
+  - **Proposal:** (1) have someone with Clay workspace access open the table behind webhook 82967 and confirm/fix
+    its HeyReach push-back step (target campaign 612586 / list 954768) — this is the actual fix, can't be done from
+    HeyReach's side; (2) once Con Acc is receiving leads, start campaign 612586 (HeyReach change — needs user
+    approval); (3) spot-check a few sent Open Profile InMails in the HeyReach UI or via a message/conversation
+    lookup to confirm real `{subject}`/`{inmail}` content went out rather than the fallback, since the API path
+    used this session couldn't confirm it either way.
+
 - **2026-09-29 11:10 UTC** (master session) — **Branch merge + audit, no push, no HeyReach change**:
   - This vertical's work lived only on branch `claude/upbeat-knuth-kwy4n4` (PR #3 merged part of it into
     `main`); the 14,576-person ledger never reached the shared branch `claude/algo-acquisition-sourcing-jmos79`,
