@@ -8,7 +8,7 @@ description: Use for ANY people/company sourcing, TAM sizing or list build in th
 ## Overview
 This is the **mandatory method for pipeline.md steps 0-4** (TAM, companies, people, dedup, save) in every session,
 master or individual. It layers providers cheapest to most expensive (Blitz -> Clay -> DiscoLike), dedups on the
-LinkedIn URL **and** on sha1(first|last|domain), excludes everyone in any vertical's `contacted_ledger.csv`, drops
+normalised LinkedIn URL **only** (Algo rule 2026-09-29: never on name + company), excludes everyone in any vertical's `contacted_ledger.csv`, drops
 sub-director titles, and splits companies into fit / candidate (keyword-gated catch-all industry) / unknown.
 **Preview first; the user approves the sample before any full run.** HeyReach pushes (steps 5-6) stay manual and
 follow `sourcing/pipeline.md`'s "Current phase" banner.
@@ -86,6 +86,8 @@ Paths used below (run everything **from the repo root** unless a step says other
   person's own title is top-tier (Founder, Owner, CEO, Managing Director, Chief ... Officer, President, Geschäftsführer,
   Inhaber, Fondateur, Fundador, Eigenaar ...). Assistant/Intern/Trainee/AVP/advisory-board always fail, in any language
   the regex covers. VP passes but is not top-tier. Tighten only test-first (`SKILL/tests/test_seniority.py`).
+- **Dedup is LinkedIn-URL-only.** The upstream name+domain matching (exclusion, merge, similar-slug collapse) is
+  switched off in `ledger.py` / `seeds.py` / `pipeline.py`; tests in `test_ledger.py` pin it. Do not re-enable it.
 - **Percent-encoded LinkedIn slugs** (`%C3%A9`, even double-encoded) are decoded before dedup; never compare raw URLs.
 - **Never spend before the estimate.** DiscoLike ignores exclusion lists, so ~40% of paid rows overlap the free
   layers. Spend truth is the billing log (`GET /usage -> billing_events`), not the balance field.

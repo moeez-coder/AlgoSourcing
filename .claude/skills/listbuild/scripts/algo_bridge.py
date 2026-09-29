@@ -1,7 +1,7 @@
 """Bridge between listbuild and the AlgoSourcing repo conventions (sourcing/pipeline.md).
 
-    seeds   build the exclusion CSV from every vertical's contacted_ledger.csv (LinkedIn URL), enriched with
-            first/last/domain from the per-run people CSVs so name+domain matching also works
+    seeds   build the exclusion CSV from every vertical's contacted_ledger.csv (LinkedIn URL; dedup is
+            LinkedIn-URL-only), with first/last/domain from the per-run people CSVs for reference
     import  copy a finished listbuild run into sourcing/data/<vertical>/{people,companies,reports}/ using our
             file naming and column conventions, re-checking every row against the contacted ledgers
 
@@ -78,7 +78,7 @@ def cmd_seeds(args):
         for u, meta in sorted(urls.items()):
             first, last, dom = names.get(u, ("", "", ""))
             w.writerow(["https://www." + u, first, last, dom, meta["full_name"], meta["vertical"]])
-    print(f"wrote {out}: {len(urls):,} contacted people ({len(names):,} with name+domain for the second match key)")
+    print(f"wrote {out}: {len(urls):,} contacted people (dedup key: LinkedIn URL)")
 
 
 def cmd_import(args):

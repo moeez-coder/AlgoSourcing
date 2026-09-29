@@ -54,11 +54,12 @@ def test_two_people_with_same_name_and_company_but_different_linkedin_stay_separ
     assert lg.count_contacts() == 2
 
 
-def test_row_without_linkedin_merges_into_existing_by_name_and_domain(tmp_path):
+def test_row_without_linkedin_does_not_merge_on_name_and_domain(tmp_path):
+    # LinkedIn-URL-only dedup (user rule 2026-09-29)
     lg = Ledger(tmp_path / "l.sqlite")
     lg.upsert_contact(row())
-    assert lg.upsert_contact(row(linkedin_url=None, source="clay")) == "merged"
-    assert lg.count_contacts() == 1
+    assert lg.upsert_contact(row(linkedin_url=None, source="clay")) == "inserted"
+    assert lg.count_contacts() == 2
 
 
 def test_purge_excluded_removes_contacts_seeded_after_insert(tmp_path):
@@ -72,13 +73,13 @@ def test_purge_excluded_removes_contacts_seeded_after_insert(tmp_path):
     assert lg.count_contacts() == 1 and lg.get_contact("li:linkedin.com/in/bob") is not None
 
 
-def test_purge_excluded_also_matches_name_and_domain_when_linkedin_slugs_differ(tmp_path):
+def test_purge_excluded_ignores_name_and_domain_when_linkedin_urls_differ(tmp_path):
     lg = Ledger(tmp_path / "l.sqlite")
     lg.upsert_contact(row(linkedin_url="https://linkedin.com/in/janedoe"))
     lg.add_excluded([{"linkedin_url": "https://linkedin.com/in/jane-doe-75a040139", "first_name": "Jane", "last_name": "Doe",
                       "company_domain": "acme.com", "origin": "prior.csv"}])
-    assert lg.purge_excluded() == 1
-    assert lg.count_contacts() == 0
+    assert lg.purge_excluded() == 0
+    assert lg.count_contacts() == 1
 
 
 def test_dedupe_similar_slugs_collapses_same_person_but_keeps_distinct_people(tmp_path):
@@ -98,21 +99,16 @@ def test_dedupe_similar_slugs_collapses_same_person_but_keeps_distinct_people(tm
     assert lg.get_contact("li:linkedin.com/in/john-smith-headofgrowth") is not None
 
 
-def test_refresh_alt_keys_after_domain_backfill_lets_purge_match(tmp_path):
+def test_name_and_domain_seed_does_not_block_a_linkedin_contact(tmp_path):
     lg = Ledger(tmp_path / "l.sqlite")
-    lg.upsert_contact(row(linkedin_url="https://linkedin.com/in/janedoe", company_domain=None, source="clay"))
-    lg.conn.execute("UPDATE contacts SET company_domain = 'acme.com'")
-    lg.conn.commit()
-    lg.add_excluded([{"linkedin_url": "https://linkedin.com/in/jane-doe-75a040139", "first_name": "Jane", "last_name": "Doe",
-                      "company_domain": "acme.com", "origin": "prior.csv"}])
-    assert lg.purge_excluded() == 0          # stale key: no match yet
-    assert lg.refresh_alt_keys() == 1
-    assert lg.purge_excluded() == 1
+    lg.add_excluded([{"linkedin_url": None, "first_name": "Jane", "last_name": "Doe", "company_domain": "acme.com"}])
+    assert lg.upsert_contact(row()) == "inserted"
+    assert lg.purge_excluded() == 0
 
 
-def test_excluded_keeps_every_name_variant_for_the_same_linkedin_url(tmp_path):
+def test_same_linkedin_url_is_excluded_whatever_the_name(tmp_path):
     lg = Ledger(tmp_path / "l.sqlite")
-    lg.add_excluded([{"linkedin_url": "https://linkedin.com/in/jaime-frantz-9ab9a88", "first_name": "Jaime", "last_name": "Frantz", "company_domain": "x.com"},
-                     {"linkedin_url": "https://linkedin.com/in/jaime-frantz-9ab9a88", "first_name": "Jaime", "last_name": "Cramer", "company_domain": "x.com"}])
-    lg.upsert_contact(row(linkedin_url="https://linkedin.com/in/jaime-cramer-9ab9a88", first_name="Jaime", last_name="Cramer", company_domain="x.com"))
-    assert lg.purge_excluded() == 1
+    lg.add_excluded([{"linkedin_url": "https://linkedin.com/in/jaime-frantz-9ab9a88", "first_name": "Jaime", "last_name": "Frantz", "company_domain": "x.com"}])
+    assert lg.upsert_contact(row(linkedin_url="https://www.linkedin.com/in/Jaime-Frantz-9ab9a88/", first_name="Jaime", last_name="Cramer", company_domain="y.com")) == "excluded"
+
+

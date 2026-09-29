@@ -56,8 +56,6 @@ def load_seed_keys(paths):
 
 
 def is_seeded(row, li, alt):
+    """LinkedIn URL only (user rule 2026-09-29); `alt` is accepted for call compatibility and ignored."""
     u = normalize_linkedin_url(row.get("linkedin_url"))
-    if u and u in li:
-        return True
-    a = alt_key(row.get("first_name"), row.get("last_name"), row.get("company_domain"))
-    return bool(a and a in alt)
+    return bool(u and u in li)

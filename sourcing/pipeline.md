@@ -133,8 +133,9 @@ What it enforces that earlier runs did not:
   aborts if any filter's count equals the unfiltered database total.
 - **Lossless sharding** under Blitz's 50k-per-query cap, so a TAM pull is
   complete, and partition gaps above 10% are reported.
-- **Two dedup keys:** normalised, percent-decoded LinkedIn URL and
-  sha1(first|last|domain), against all verticals' ledgers.
+- **Dedup on the LinkedIn URL only** (user rule 2026-09-29): normalised,
+  percent-decoded, against all verticals' ledgers. Name + company matches
+  are not treated as duplicates.
 - **Title guard in code** (`seniority.py`): the icp-overview.md seniority
   rule, including the exclude list, the top-tier override and German /
   French / Dutch / Spanish / Italian titles.

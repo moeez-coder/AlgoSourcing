@@ -110,20 +110,13 @@ class Ledger:
         return key, ak
 
     def is_excluded(self, key, ak):
-        """Excluded if the LinkedIn key matches, or if the name+domain key matches and either side lacks a LinkedIn URL."""
-        if key.startswith("li:"):
-            cur = self.conn.execute(
-                "SELECT 1 FROM excluded WHERE key = ? OR (? IS NOT NULL AND linkedin_url IS NULL AND alt_key = ?) LIMIT 1", (key, ak, ak))
-        else:
-            cur = self.conn.execute("SELECT 1 FROM excluded WHERE key = ? OR (? IS NOT NULL AND alt_key = ?) LIMIT 1", (key, ak, ak))
-        return cur.fetchone() is not None
+        """Excluded only on the exact identity key. Algo Acquisition dedups on the LinkedIn URL alone (user rule
+        2026-09-29): a name+domain match never excludes a person who has a different LinkedIn URL."""
+        return self.conn.execute("SELECT 1 FROM excluded WHERE key = ? LIMIT 1", (key,)).fetchone() is not None
 
     def _find_existing(self, key, ak):
-        """A LinkedIn-keyed row matches only on LinkedIn; a row without LinkedIn may match on name+domain."""
-        if key.startswith("li:"):
-            return self.conn.execute("SELECT * FROM contacts WHERE key = ? LIMIT 1", (key,)).fetchone()
-        return self.conn.execute(
-            "SELECT * FROM contacts WHERE key = ? OR (? IS NOT NULL AND alt_key = ?) LIMIT 1", (key, ak, ak)).fetchone()
+        """Merge only on the exact identity key (the LinkedIn URL when there is one)."""
+        return self.conn.execute("SELECT * FROM contacts WHERE key = ? LIMIT 1", (key,)).fetchone()
 
     def upsert_contact(self, row, commit=True):
         """Insert or merge one contact. Returns 'inserted' | 'merged' | 'excluded' | 'skipped'."""
@@ -238,26 +231,14 @@ class Ledger:
                 self.conn.execute(
                     "INSERT OR IGNORE INTO excluded(key, linkedin_url, alt_key, company_domain, origin) VALUES (?,?,?,?,?)",
                     (key, li, ak, dom, r.get("origin") or origin))
-                if ak and key != "alt:" + ak:
-                    # keep every name variant seen for this LinkedIn URL (e.g. surname changes) so name+domain purges still match
-                    self.conn.execute(
-                        "INSERT OR IGNORE INTO excluded(key, linkedin_url, alt_key, company_domain, origin) VALUES (?,?,?,?,?)",
-                        ("alt:" + ak, li, ak, dom, r.get("origin") or origin))
                 n += 1
             self.conn.commit()
         return n
 
     def purge_excluded(self):
-        """Remove contacts that match an exclusion by LinkedIn key OR by first+last+domain.
-
-        The name+domain match is deliberately applied even when both sides carry (different) LinkedIn
-        URLs: people change their LinkedIn slug, and re-contacting a prior prospect costs more than
-        losing the rare same-name colleague. Returns rows removed.
-        """
+        """Remove contacts whose identity key (normalised LinkedIn URL) matches an exclusion. Returns rows removed."""
         with self.lock:
-            cur = self.conn.execute(
-                "DELETE FROM contacts WHERE key IN (SELECT key FROM excluded) "
-                "OR alt_key IN (SELECT alt_key FROM excluded WHERE alt_key IS NOT NULL)")
+            cur = self.conn.execute("DELETE FROM contacts WHERE key IN (SELECT key FROM excluded)")
             self.conn.commit()
             return cur.rowcount
 

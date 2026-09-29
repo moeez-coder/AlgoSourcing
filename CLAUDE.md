@@ -24,8 +24,8 @@ loads automatically in every Claude Code session opened on this repo, master or 
 ## Never contact anyone twice
 - Before any run: `python .claude/skills/listbuild/scripts/algo_bridge.py seeds` (all verticals' ledgers ->
   `sourcing/listbuild/seeds/contacted_all.csv`) and pass it as `--seeds`.
-- Dedup keys: normalised LinkedIn URL (lowercase, no query, no trailing slash, percent-decoded) and
-  sha1(first|last|domain).
+- **Dedup on the LinkedIn URL only** (user rule 2026-09-29): normalised = lowercase, no query, no trailing slash,
+  percent-decoded. Never drop or merge people because name + company match; different URL = different person.
 - After every push, update `sourcing/data/<vertical>/contacted_ledger.csv` **before the turn ends**.
 
 ## Push rules

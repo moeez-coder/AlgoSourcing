@@ -738,9 +738,8 @@ def cmd_consolidate(ctx, args):
     refreshed = lg.refresh_alt_keys()
     log(f"refreshed {refreshed:,} name+domain keys after domain back-fill")
     purged = lg.purge_excluded()
-    log(f"purged {purged:,} contacts that match exclusion seeds (LinkedIn key or first+last+domain)")
-    collapsed = lg.dedupe_similar_slugs()
-    log(f"collapsed {collapsed:,} same-person rows whose LinkedIn slugs differ only in form")
+    log(f"purged {purged:,} contacts whose LinkedIn URL is in the exclusion seeds")
+    collapsed = 0  # LinkedIn-URL-only dedup (user rule 2026-09-29): different URLs are different people
     with lg.lock:
         rows = conn.execute("SELECT key, job_title FROM contacts").fetchall()
         for r in rows:
