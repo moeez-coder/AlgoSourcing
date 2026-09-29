@@ -19,6 +19,25 @@ def test_employee_count_min_omitted_when_not_in_icp(icp):
     assert "employee_count" not in body["company"]
 
 
+def test_employee_count_max_merges_with_min(icp):
+    """employee_count_max (an optional ceiling, e.g. V4's 500-employee cap) merges into the same
+    employee_count dict as employee_count_min rather than overwriting it."""
+    from listbuild.providers.blitz import build_company_body
+    icp = {**icp, "employee_count_max": 500}
+    body = build_people_body(icp, {}, page_size=50)
+    assert body["company"]["employee_count"] == {"min": 10, "max": 500}
+    body2 = build_company_body(icp, {}, page_size=50)
+    assert body2["company"]["employee_count"] == {"min": 10, "max": 500}
+
+
+def test_employee_count_max_alone_omits_min(icp):
+    icp = {**icp}
+    icp.pop("employee_count_min", None)
+    icp["employee_count_max"] = 500
+    body = build_people_body(icp, {}, page_size=50)
+    assert body["company"]["employee_count"] == {"max": 500}
+
+
 def test_employee_range_shard_coexists_with_employee_count_floor(icp):
     """employee_range (a shard bucket) and employee_count.min (the icp-overview.md headcount floor, non-negotiable
     per the user 2026-09-15) are independent Blitz filters and must both be present when both apply."""
