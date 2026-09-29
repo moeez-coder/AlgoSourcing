@@ -30,7 +30,9 @@ _TOP = re.compile(
     r"|(?<!vice )(?<!vice-)\bpresident(?:e|a)?\b"
 )
 # Weak positives pass only when no individual-contributor / manager word is present.
-_WEAK = re.compile(r"\b(partner|principal|md|socio|socia|gesellschafter(?:in)?)\b")
+# "socio" = partner (ES/IT/PT) only as a role, not in "socio-sanitario" (care worker), "socio-educative" etc.
+_WEAK = re.compile(r"\b(partner|principal|md|gesellschafter(?:in)?)\b"
+                   r"|\bsoci[oa]\b(?![- ]?(?:sanitari|educ|assist|profession|cultur|econom|politi|sanitair))")
 _IC_WORDS = re.compile(
     r"\b(manager|coordinator|specialist|associate|analyst|executive|representative|consultant|engineer|recruiter|"
     r"assistant|intern|trainee|student|apprentice)\b"

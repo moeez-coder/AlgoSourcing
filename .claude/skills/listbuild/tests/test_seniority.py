@@ -114,3 +114,12 @@ def test_senior_titles_in_more_european_languages_pass(title):
 ])
 def test_rank_words_still_fail_when_the_top_word_is_someone_else(title):
     assert classify_title(title) == "fail"
+
+
+@pytest.mark.parametrize("title,expected", [
+    ("Operatore socio-sanitario", "fail"), ("Operatrice socio sanitaria", "fail"), ("Tecnico dei servizi socio sanitari", "fail"),
+    ("Assistante socio-éducative", "fail"), ("Conseillère en insertion socio-professionnelle", "fail"),
+    ("Socio", "pass"), ("Socio fundador", "pass"), ("Socio gerente", "pass"), ("Socia directora", "pass"),
+])
+def test_socio_means_partner_only_as_a_role(title, expected):
+    assert classify_title(title) == expected

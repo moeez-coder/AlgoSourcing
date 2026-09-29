@@ -58,6 +58,22 @@ Total companies matching this vertical's ICP filters, and total people
 matching its persona/title filters across those companies — not the sample
 actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
+### 2026-09-29 09:34 UTC — master session (listbuild full-universe run)
+- Companies matching ICP filters: **~33,735** in core industries (Staffing and Recruiting, Executive Search
+  Services, Temporary Help Services), plus ~2,412 HR Services / Human Resources companies that pass the staffing
+  keyword gate. Method: `listbuild run`, `sourcing/listbuild/config/v1_staffing_recruitment.yaml`, Blitz company
+  sweep; filters: 43 US/UK/Europe HQ countries, revenue >= $1M, **headcount >= 10**, Nonprofit / Government /
+  Educational excluded; filter canary passed (every filter narrows the database).
+- People matching persona/title filters: **~116,574** director-plus people (Blitz people sweep, 106 lossless
+  shards, 110,991 returned = 95%), 98,991 unique after LinkedIn-URL dedup and excluding the 9,929 already in a
+  contacted ledger; 90,251 pass the title guard. Split: **59,926 main list** at 14,133 companies (after dropping
+  128 people at Algo clients), 12,051 keyword-gated candidates at 1,613 companies, 1,440 unverified-industry,
+  16,706 held back at HR-services firms that failed the staffing keyword gate.
+- Notes: supersedes every earlier V1 TAM entry. The 2026-09-09 6,825-company universe was a hand-rolled,
+  capped subset; the 2026-09-17 held-back 60,772-person fetch was built without the filter canary and without
+  the headcount floor and must not be used. Blitz only: Clay public-API quota is exhausted until 2027-01-01 and
+  DiscoLike answers 403 "monthly usage limit" (its V1 pool was ~264k contacts, ~$923, before the floor).
+
 ### 2026-09-09 15:22 UTC — execution-session-vertical-1
 - Companies matching ICP filters: 6,825 (US 5,661 + Europe/UK 1,164). Method:
   Blitz Company Search, fully paginated to exhaustion, filtered by
@@ -78,6 +94,24 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   floor on the people TAM, not an overcount.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-29 09:34 UTC — master session — FULL-UNIVERSE LISTBUILD RUN, NO PUSH
+- Sourced: 30,944 companies / 73,417 people exported (59,926 main + 12,051 candidates + 1,440 unverified).
+- Files: sourcing/data/vertical-1-staffing-recruitment/people/2026-09-29_0934_listbuild-full-universe.csv (main, the
+  only push candidate), `..._candidates.csv`, `..._unverified.csv`;
+  companies/2026-09-29_0934_listbuild-full-universe.csv (every company seen, `qualified` = fit/candidate/unfit/unknown);
+  reports/2026-09-29_0934_listbuild-full-universe_cost_report.md.
+- Pushed to HeyReach: none. Not pushed until the user approves (pipeline.md phase banner).
+- Checks: 0 duplicate LinkedIn URLs, 0 people already in any vertical's contacted ledger, 0 title-guard fails in
+  the exported files, 128 people at current/past clients dropped (`sourcing/data/dnc_clients.csv`). Main list is
+  55% US, 27% UK, then NL, DE, FR, SE, IE, CH; seniority C-Team 26,462 / Director 26,838 / VP 6,626.
+- Fixes made during the run (all shared code, test-first, 217 tests): headcount floor now sent to Blitz (found by
+  the V2 session; the first V1 pull without it was discarded); DiscoLike 403 no longer aborts a run; title guard
+  recognises Italian/Polish/Nordic/Czech/Hungarian senior titles (+~1,450 people) and no longer passes Italian
+  care workers ("operatore socio-sanitario").
+- Notes for the user: (1) about 16.7k held-back people are at HR-services firms that failed the staffing keyword
+  gate; a few are real staffing firms (Synergie Italia, TAPFIN, VitalSelect), so a reviewed export of that layer
+  would add data. (2) 36 people at 9 clients were pushed in earlier rounds (see client-base-vertical-analysis.md).
 
 ### 2026-09-17 13:45 UTC — execution-session-vertical-1 — CLAY (second source): batch 1 sourced + pushed to Open Check
 - Following the Blitz bug found earlier today, user asked to also use
