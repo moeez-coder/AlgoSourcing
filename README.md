@@ -10,6 +10,8 @@ Everything lives under [`sourcing/`](sourcing/):
 
 | File | What it's for |
 |---|---|
+| [`CLAUDE.md`](CLAUDE.md) | Rules every Claude session loads automatically (read order, sourcing method, dedup, push and key rules) |
+| [`.claude/skills/listbuild/`](.claude/skills/listbuild/SKILL.md) | The sourcing engine every session uses: Blitz → Clay → DiscoLike, cheapest first, with dedup against every contacted ledger |
 | [`sourcing/README.md`](sourcing/README.md) | Full index and key IDs — start here for details |
 | [`sourcing/COORDINATION.md`](sourcing/COORDINATION.md) | Master/individual session model — how the primary working session and occasional per-vertical sessions share this repo without colliding |
 | [`sourcing/TOOLS.md`](sourcing/TOOLS.md) | What's actually connected right now (Clay, Blitz, HeyReach, etc.) and where API keys belong |
@@ -43,9 +45,12 @@ vertical specifically — not as the default way work gets done. See
 
 ## Status / open items
 
-- Clay and Blitz are both fully connected and live as of 2026-09-08 — see
-  `sourcing/TOOLS.md` for confirmed API access details (Blitz has no MCP
-  wrapper; it's called directly via HTTP using an environment-level
-  `BLITZ_API_KEY`).
-- Cold IQ is referenced by the user but not yet identified/connected.
+- **Sourcing runs through the listbuild skill** since 2026-09-29 (see
+  `CLAUDE.md`). Preview first, approve, then run; outputs land in
+  `sourcing/data/<vertical>/`.
+- Blitz, AI Ark and Cold IQ keys are live. The Clay public API's quota is used
+  up until 2027-01-01, and DiscoLike needs a top-up before any paid pull. See
+  `sourcing/TOOLS.md` for details.
+- The 2026-09-17 "Blitz data bug" turned out to be Blitz ignoring an
+  unsupported filter; listbuild now checks every filter before running.
 - Tracked in pull requests [#1](https://github.com/moeez-coder/AlgoSourcing/pull/1) and [#2](https://github.com/moeez-coder/AlgoSourcing/pull/2), both merged. Further pushes to this branch will open a new PR automatically.

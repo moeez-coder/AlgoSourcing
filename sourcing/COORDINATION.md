@@ -12,6 +12,13 @@ HeyReach** — as of 2026-09-08 all verticals are in a testing/priming phase
 with pushes paused pending the user's final approval. This applies to every
 session, master or individual, across every vertical.
 
+**Every session, master or individual, sources with the `listbuild` skill**
+(`.claude/skills/listbuild/SKILL.md`, added 2026-09-29), and the repo-root
+`CLAUDE.md` loads automatically with the shared rules. An individual session
+tuning one vertical edits that vertical's config in `sourcing/listbuild/config/`;
+changes to the shared code (`seniority.py`, `icp_gen.py`, providers) are
+test-first and noted in its Progress Log so the master session sees them.
+
 ## Master / individual session model
 
 - **Master session** (this one — the one the user is primarily working in;

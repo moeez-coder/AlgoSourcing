@@ -73,7 +73,7 @@ While this phase is active, any session — master or individual — should:
   below).
 
 **Before starting, read `TOOLS.md`** for what's actually callable right now
-(Clay and Blitz are both live as of 2026-09-08; Cold IQ/Prospeo are not) and,
+(provider status, quotas and balances change; check it every time) and,
 critically, where API keys actually live (environment-level config — never
 in this repo or in chat). Blitz has no MCP wrapper — call its REST API
 directly via HTTP using the `BLITZ_API_KEY` env var, after confirming your
@@ -106,6 +106,49 @@ never as a reason to skip a more expensive source:
    the richer combined record.
 4. As new tools get connected (Cold IQ, Prospeo, etc. — see `TOOLS.md`), add
    them into this waterfall rather than treating Clay+Blitz as the ceiling.
+
+## How steps 0-4 run: the listbuild skill (mandatory from 2026-09-29)
+
+Steps 0-4 below (TAM, companies, people, dedup, save) are executed with the
+`listbuild` skill in `.claude/skills/listbuild/` (read its `SKILL.md`), in
+every session. It replaces hand-rolled Blitz/Clay pagination scripts for
+bulk pulls. The short version:
+
+1. Check keys (presence only), `pip install -r` its requirements, run its tests.
+2. `python .claude/skills/listbuild/scripts/algo_bridge.py seeds`: exclusion
+   list from **every** vertical's contacted ledger.
+3. Preview with the vertical's config in `sourcing/listbuild/config/`:
+   free; gives the TAM (step 0), a sample, the title-check fails and the
+   prior-contact overlap. Show the user and wait for approval.
+4. Run in the background with `--discolike-cap-usd 0` unless a DiscoLike
+   spend was approved. It is resumable.
+5. `algo_bridge.py import --vertical <slug> --icp <config> --label <label>`
+   writes the people/companies/reports files into `sourcing/data/<vertical>/`
+   (step 4) and re-checks every row against every ledger.
+6. Append TAM + Progress Log entries, commit, push. Steps 5-7 below are unchanged.
+
+What it enforces that earlier runs did not:
+- **Filter canary:** Blitz silently ignores unsupported filters (the cause
+  of the 2026-09-17 "Forbes" incident, see TOOLS.md). Every preview/run
+  aborts if any filter's count equals the unfiltered database total.
+- **Lossless sharding** under Blitz's 50k-per-query cap, so a TAM pull is
+  complete, and partition gaps above 10% are reported.
+- **Two dedup keys:** normalised, percent-decoded LinkedIn URL and
+  sha1(first|last|domain), against all verticals' ledgers.
+- **Title guard in code** (`seniority.py`): the icp-overview.md seniority
+  rule, including the exclude list, the top-tier override and German /
+  French / Dutch / Spanish / Italian titles.
+- **ICP-fit split:** core industries -> main file; catch-all industries
+  (HR Services, Financial Services, Market Research, consulting labels)
+  pass only on a keyword gate and go to a separate `_candidates` file;
+  companies with no enriched industry go to `_unverified`. Only the main
+  file is pushed without review.
+- Company type excludes (Nonprofit, Government Agency, Educational),
+  revenue >= $1M via provider revenue bands, HQ in the 43 US/UK/Europe codes.
+  The "founders locally present" check is still manual: persons are also
+  filtered to the same geos, and the sample review should confirm it.
+- Provider limits (Clay quota, DiscoLike balance) are reported under
+  "PROVIDER LIMITS HIT", never silently skipped.
 
 ## Workflow
 
@@ -226,6 +269,12 @@ estimated_revenue, industry, signal(s), qualified (yes/no), notes`
 
 `first_name, last_name, full_name, title, company_name, company_domain,
 linkedin_url, email (if found), seniority, source (blitz/clay/both)`
+
+listbuild imports add `company_linkedin_url, industry, person_country,
+company_country, title_check, icp_fit, fit_reason` and use the label
+`listbuild-<label>` (`..._candidates.csv` / `..._unverified.csv` for the
+review layers). Its cost report and preview go to
+`sourcing/data/<vertical>/reports/`.
 
 This per-run file is the audit trail of what was sourced in that batch — it
 is not the dedup source (that's the ledger, above). After pushing, the

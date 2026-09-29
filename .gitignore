@@ -4,3 +4,11 @@
 !.env.example
 *.key
 *credentials*.json
+
+# listbuild scratch: rebuilt on demand; the committed record is sourcing/data/
+sourcing/listbuild/out/
+sourcing/listbuild/seeds/
+sourcing/listbuild/.env
+__pycache__/
+.pytest_cache/
+*.sqlite

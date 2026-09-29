@@ -61,13 +61,28 @@ include match succeeds — a title can contain an include keyword as a
 substring while still being a junior role (e.g. "Business Development
 Representative" contains "Business Development").
 
-**Known gap, found 2026-09-15 (Vertical 1, round 3):** the exclude list
-above is English-only. A German title, "Assistent der Geschäftsführung"
-(assistant to management), slipped through since it doesn't contain the
-English word "assistant" as a substring. Not fixed yet — flagging for
-whoever picks this up next to add non-English equivalents of the exclude
-terms (this is a shared-rule gap, likely to recur in any vertical with
-European companies, not specific to Vertical 1).
+**Enforced in code since 2026-09-29** (`.claude/skills/listbuild/listbuild/seniority.py`,
+tests in `tests/test_seniority.py`; every listbuild run applies it):
+- The exclude list fails a title **unless the person's own title is
+  top-tier**: Founder / Co-Founder / Owner / CEO / any C-level or "Chief ...
+  Officer" / President (not Vice President) / Managing Director / Managing
+  Partner / Chair. So "Founder & Specialist Recruiter" passes, while
+  "Associate Director", "Coordinator, Office of the CEO" and "Business
+  Development Representative" fail.
+- Assistant, Intern, Trainee, Student, Apprentice, AVP (assistant vice
+  president) and advisory-board roles **always** fail, including their
+  German/Dutch/French/Spanish/Italian/Portuguese forms (Assistent(in),
+  Assistente, Asistente, Praktikant, Werkstudent, Stagiaire, Tirocinante,
+  Becario, Estagiário), so "Assistent to the Managing Director" fails.
+- VP / SVP / EVP pass, but VP does not override the exclude list.
+- **Non-English titles:** the 2026-09-15 gap ("Assistent der
+  Geschäftsführung" slipping through) is fixed. Accents are folded and
+  German (Geschäftsführer, Inhaber, Gründer, Vorstand), French (Directeur,
+  Fondateur, Directeur Général), Dutch (Eigenaar, Oprichter), Spanish
+  (Fundador, Propietario, Director General) and Italian (Fondatore,
+  Titolare, Amministratore Delegato) senior titles are recognised.
+- Bare "Manager", "Recruiter", "Consultant" without a senior word fail.
+- Change the rule only test-first, and update this section when you do.
 
 **Matching method — this is what actually went wrong in the Vertical 2
 test run, apply the fix everywhere:**

@@ -1,0 +1,228 @@
+# Algo Acquisition listbuild config: Vertical 2, Marketing companies. The 3 'wide net' labels are gated: Design Services pulled in SaaS (Figma) on 2026-09-08.
+# Shared ICP: sourcing/icp-overview.md (US/UK/Europe HQ + person location, $1M+ revenue, Director+).
+# Keyword-gated labels are exported as *_candidates for review, never into the main list.
+name: v2_marketing
+company_hq_countries:
+- US
+- GB
+- IE
+- FR
+- DE
+- ES
+- IT
+- NL
+- BE
+- PT
+- CH
+- AT
+- SE
+- 'NO'
+- DK
+- FI
+- PL
+- CZ
+- SK
+- HU
+- RO
+- BG
+- GR
+- HR
+- SI
+- EE
+- LV
+- LT
+- LU
+- MT
+- CY
+- IS
+- LI
+- MC
+- AD
+- SM
+- UA
+- RS
+- ME
+- MK
+- AL
+- BA
+- MD
+person_countries:
+- US
+- GB
+- IE
+- FR
+- DE
+- ES
+- IT
+- NL
+- BE
+- PT
+- CH
+- AT
+- SE
+- 'NO'
+- DK
+- FI
+- PL
+- CZ
+- SK
+- HU
+- RO
+- BG
+- GR
+- HR
+- SI
+- EE
+- LV
+- LT
+- LU
+- MT
+- CY
+- IS
+- LI
+- MC
+- AD
+- SM
+- UA
+- RS
+- ME
+- MK
+- AL
+- BA
+- MD
+revenue_min_usd: 1000000
+seniority: director_plus
+industries:
+  clay:
+  - Marketing Services
+  - Advertising Services
+  - Public Relations and Communications Services
+  - Graphic Design
+  - Market Research
+  - Design Services
+  - Events Services
+  blitz:
+  - Marketing Services
+  - Advertising Services
+  - Public Relations and Communications Services
+  - Graphic Design
+  - Market Research
+  - Design Services
+  - Events Services
+  - Marketing and Advertising
+  - Public Relations and Communications
+  - Design
+  discolike:
+  - ADVERTISING_AND_MARKETING
+  discolike_optional: []
+seniority_map:
+  clay:
+  - C-suite
+  - VP
+  - Director
+  - Head
+  - Founder
+  - Owner
+  - Partner
+  - Board Member
+  blitz:
+  - C-Team
+  - VP
+  - Director
+  discolike:
+  - executive
+  - vp
+  - director
+clay_revenue_buckets:
+- 1M-5M
+- 5M-10M
+- 10M-25M
+- 25M-75M
+- 75M-200M
+- 200M-500M
+- 500M-1B
+- 1B-10B
+- 10B-100B
+- 100B-1T
+clay_country_names:
+  US: United States
+  GB: United Kingdom
+  IE: Ireland
+  FR: France
+  DE: Germany
+  ES: Spain
+  IT: Italy
+  NL: Netherlands
+  BE: Belgium
+  PT: Portugal
+  CH: Switzerland
+  AT: Austria
+  SE: Sweden
+  'NO': Norway
+  DK: Denmark
+  FI: Finland
+  PL: Poland
+  CZ: Czechia
+  SK: Slovakia
+  HU: Hungary
+  RO: Romania
+  BG: Bulgaria
+  GR: Greece
+  HR: Croatia
+  SI: Slovenia
+  EE: Estonia
+  LV: Latvia
+  LT: Lithuania
+  LU: Luxembourg
+  MT: Malta
+  CY: Cyprus
+  IS: Iceland
+  LI: Liechtenstein
+  MC: Monaco
+  AD: Andorra
+  SM: San Marino
+  UA: Ukraine
+  RS: Serbia
+  ME: Montenegro
+  MK: Macedonia
+  AL: Albania
+  BA: Bosnia and Herzegovina
+  MD: Moldova
+clay_person_country_names:
+  CZ: Czech Republic
+  MK: North Macedonia
+discolike_employee_floor: 11
+fit:
+  core_industries:
+  - Marketing Services
+  - Advertising Services
+  - Public Relations and Communications Services
+  - Graphic Design
+  - Marketing and Advertising
+  - Public Relations and Communications
+  - ADVERTISING_AND_MARKETING
+  keyword_gated_industries:
+  - Market Research
+  - Design Services
+  - Design
+  - Events Services
+  keywords:
+  - marketing agency
+  - advertising agency
+  - branding agency
+  - creative agency
+  - digital agency
+  - public relations agency
+  - media buying
+  - media planning
+  - performance marketing
+  - demand generation agency
+  - content marketing agency
+  - growth marketing agency
+  - marketing consultancy
+  - brand strategy
+company_type_exclude:
+- Nonprofit
+- Government Agency
+- Educational
+- Educational Institution

@@ -1,0 +1,212 @@
+# Algo Acquisition listbuild config: Vertical 1, Staffing & Recruitment. HR Services is gated: it pulled HR-tech/payroll/PEO firms (Paychex, Deel) in the 2026-09-09 run.
+# Shared ICP: sourcing/icp-overview.md (US/UK/Europe HQ + person location, $1M+ revenue, Director+).
+# Keyword-gated labels are exported as *_candidates for review, never into the main list.
+name: v1_staffing_recruitment
+company_hq_countries:
+- US
+- GB
+- IE
+- FR
+- DE
+- ES
+- IT
+- NL
+- BE
+- PT
+- CH
+- AT
+- SE
+- 'NO'
+- DK
+- FI
+- PL
+- CZ
+- SK
+- HU
+- RO
+- BG
+- GR
+- HR
+- SI
+- EE
+- LV
+- LT
+- LU
+- MT
+- CY
+- IS
+- LI
+- MC
+- AD
+- SM
+- UA
+- RS
+- ME
+- MK
+- AL
+- BA
+- MD
+person_countries:
+- US
+- GB
+- IE
+- FR
+- DE
+- ES
+- IT
+- NL
+- BE
+- PT
+- CH
+- AT
+- SE
+- 'NO'
+- DK
+- FI
+- PL
+- CZ
+- SK
+- HU
+- RO
+- BG
+- GR
+- HR
+- SI
+- EE
+- LV
+- LT
+- LU
+- MT
+- CY
+- IS
+- LI
+- MC
+- AD
+- SM
+- UA
+- RS
+- ME
+- MK
+- AL
+- BA
+- MD
+revenue_min_usd: 1000000
+seniority: director_plus
+industries:
+  clay:
+  - Staffing and Recruiting
+  - Executive Search Services
+  - Temporary Help Services
+  - Human Resources Services
+  blitz:
+  - Staffing and Recruiting
+  - Executive Search Services
+  - Temporary Help Services
+  - Human Resources Services
+  - Human Resources
+  discolike:
+  - HUMAN_RESOURCES
+  discolike_optional: []
+seniority_map:
+  clay:
+  - C-suite
+  - VP
+  - Director
+  - Head
+  - Founder
+  - Owner
+  - Partner
+  - Board Member
+  blitz:
+  - C-Team
+  - VP
+  - Director
+  discolike:
+  - executive
+  - vp
+  - director
+clay_revenue_buckets:
+- 1M-5M
+- 5M-10M
+- 10M-25M
+- 25M-75M
+- 75M-200M
+- 200M-500M
+- 500M-1B
+- 1B-10B
+- 10B-100B
+- 100B-1T
+clay_country_names:
+  US: United States
+  GB: United Kingdom
+  IE: Ireland
+  FR: France
+  DE: Germany
+  ES: Spain
+  IT: Italy
+  NL: Netherlands
+  BE: Belgium
+  PT: Portugal
+  CH: Switzerland
+  AT: Austria
+  SE: Sweden
+  'NO': Norway
+  DK: Denmark
+  FI: Finland
+  PL: Poland
+  CZ: Czechia
+  SK: Slovakia
+  HU: Hungary
+  RO: Romania
+  BG: Bulgaria
+  GR: Greece
+  HR: Croatia
+  SI: Slovenia
+  EE: Estonia
+  LV: Latvia
+  LT: Lithuania
+  LU: Luxembourg
+  MT: Malta
+  CY: Cyprus
+  IS: Iceland
+  LI: Liechtenstein
+  MC: Monaco
+  AD: Andorra
+  SM: San Marino
+  UA: Ukraine
+  RS: Serbia
+  ME: Montenegro
+  MK: Macedonia
+  AL: Albania
+  BA: Bosnia and Herzegovina
+  MD: Moldova
+clay_person_country_names:
+  CZ: Czech Republic
+  MK: North Macedonia
+discolike_employee_floor: 11
+fit:
+  core_industries:
+  - Staffing and Recruiting
+  - Executive Search Services
+  - Temporary Help Services
+  - HUMAN_RESOURCES
+  keyword_gated_industries:
+  - Human Resources Services
+  - Human Resources
+  keywords:
+  - staffing agency
+  - recruitment agency
+  - recruiting firm
+  - executive search
+  - headhunting
+  - talent acquisition
+  - RPO
+  - recruitment process outsourcing
+  - temporary staffing
+  - contract staffing
+  - permanent placement
+company_type_exclude:
+- Nonprofit
+- Government Agency
+- Educational
+- Educational Institution
