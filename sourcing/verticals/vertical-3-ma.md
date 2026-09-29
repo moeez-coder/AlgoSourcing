@@ -69,8 +69,36 @@ Total companies matching this vertical's ICP filters, and total people
 matching its persona/title filters across those companies — not the sample
 actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
-_No estimate logged yet as of 2026-09-08._
+### 2026-09-29 10:32 UTC — master session (listbuild full-universe run, DRAFT config)
+- Companies matching ICP filters: core industry Investment Banking at **1,335 companies** in the main list, plus
+  **~3,379** Financial Services / Business Consulting / Management Consulting companies that pass the M&A keyword
+  gate (M&A advisory, sell-side, buy-side, business broker, corporate finance / transaction advisory, exit
+  planning). Blitz company sweep saw ~82,448 companies across all four labels. Method: `listbuild run`,
+  `config/v3_ma_advisory.yaml` (DRAFT); 43 US/UK/Europe HQ countries, revenue >= $1M, headcount >= 10;
+  canary passed.
+- People matching persona/title filters: **~857,290** director-plus people across the four labels (395 shards,
+  821,918 returned = 96%), 801,016 unique after LinkedIn-URL dedup; 716,606 pass the title guard. Split: **24,272
+  main list** (Investment Banking), 106,006 keyword-gated candidates, 4,622 unverified; 580,653 held back
+  (Financial Services / consulting firms without M&A keywords).
+- Notes: **low precision on this draft.** Main list: Deutsche Bank alone is 7,417 people (30%), plus asset managers
+  (Empower, AllianceBernstein); only 10,377 main-list people are at companies of <= 200 staff. Candidates are
+  dominated by enterprises whose descriptions mention M&A (Fidelity 10,718, Accenture 7,941, KPMG, EY-Parthenon,
+  New York Life, Wells Fargo). An upper headcount cap and/or the "acquirers" framing (verticals-portfolio.md) is
+  needed before any push.
+
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
-_No sourcing runs yet as of 2026-09-08._
+### 2026-09-29 10:32 UTC — master session — FULL-UNIVERSE LISTBUILD RUN (DRAFT CONFIG), NO PUSH
+- Sourced: 75,339 companies / 134,900 people exported (24,272 main + 106,006 candidates + 4,622 unverified).
+- Files: sourcing/data/vertical-3-ma/people/2026-09-29_1032_listbuild-full-universe-draft.csv (main),
+  `..._candidates_part01..02.csv`, `..._unverified.csv`; companies/2026-09-29_1032_listbuild-full-universe-draft.csv;
+  reports/2026-09-29_1032_listbuild-full-universe-draft_cost_report.md.
+- Pushed to HeyReach: none. Not push-ready: the config is a DRAFT and precision is low (see TAM entry).
+- Checks: 0 duplicate LinkedIn URLs, 0 people already in any contacted ledger (only 231 V3 prospects were ever
+  seeded), 0 title-guard fails, 0 client staff; 1,075 people dropped at placeholder employers ("Family Office",
+  "Undisclosed", "Self-Employed Contractor", "Private Company"). Main list: US 52%, DE 31% (Deutsche Bank), GB 5%.
+- Notes for the user: decide (1) M&A advisors vs acquirers, and (2) an upper headcount cap (<= 1,000 leaves 13,230
+  main-list people; <= 500 leaves 11,804; <= 200 leaves 10,377). Re-cut the config, then re-run: the Blitz pull is
+  free on the flat plan and takes ~35 min.
+

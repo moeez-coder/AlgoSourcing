@@ -17,8 +17,8 @@ contacted; push only to Con Req and Open Check.
 |---|---|---|---|---|---|---|
 | V1 | Staffing & Recruitment | Live | **P1** | $15-30k per placement | 35 clients | 33,735 companies / 116,574 people (59,926 main list) |
 | V1b | Boutique executive search (2-10 staff) | Proposed test | P2 | $50-100k+ per search | 9 clients | Not measured |
-| V2 | Marketing agencies | Live | Maintain | $30-60k retainers | 1 client | ~448,854 people (run in progress) |
-| V3 | M&A advisory | Live (draft config) | P3 test | $100k+ success fees | None | Upper bound 24,615 core people (before headcount floor) |
+| V2 | Marketing agencies | Live | Maintain | $30-60k retainers | 1 client | ~95,182 companies / ~448,854 people (262,549 main list) |
+| V3 | M&A advisory | Live (draft config) | P3 test | $100k+ success fees | None | 24,272 main list (1,335 companies) + 106,006 candidates; low precision |
 | V4 | B2B SaaS & AI | Proposed | **P1** | $15-100k ACV | 13 clients | Not measured |
 | V5 | IT services & technology partners | Proposed | **P1** | $50k+ projects / MRR | 7 clients | Not measured |
 | V6 | Life-sciences & healthcare B2B services | Proposed | P2 | $50k+ contracts | 7 clients | Not measured |
@@ -27,6 +27,16 @@ contacted; push only to Con Req and Open Check.
 | V9 | PEO / EOR / payroll & HR tech | Proposed test | P3 | High, per employee | 2 clients | Not measured |
 
 "Not measured" = run a free `listbuild preview` once the card is approved (it reports companies and people).
+
+**Open decision: an upper company-size limit.** The shared ICP has none, so large groups are in every list (V1:
+Robert Half 2,171, Hays 1,036; V2: VML, Publicis, Omnicom; V3: Deutsche Bank 7,417). Algo's offer fits founder-led
+firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
+
+| Main list | All sizes | <= 1,000 staff | <= 500 | <= 200 |
+|---|---|---|---|---|
+| V1 | 60,054 | 47,525 | 44,001 | 37,504 |
+| V2 | 263,601 | 234,000 | 215,713 | 188,932 |
+| V3 | 24,731 | 13,230 | 11,804 | 10,377 |
 
 ---
 
@@ -93,7 +103,7 @@ contacted; push only to Con Req and Open Check.
 - **People:** Founder, CEO, Managing Director, Partner, VP / Head / Director of New Business, Growth, Client Services.
 - **Messaging angle:** new-client meetings for agencies with no BD team. Narrow to specialist B2B and healthcare
   agencies (Matchstick) if it gets another pass.
-- **TAM:** ~448,854 people planned (main + borderline); the run is in progress.
+- **TAM (2026-09-29 run):** ~95,182 companies, ~448,854 people; 262,549 main list, 23,961 candidates.
 - **HeyReach:** Con Req 568586 and Open Check 568621 (both IN_PROGRESS).
 - **Next step:** finish the run and import; push only on the user's approval.
 
@@ -112,7 +122,8 @@ contacted; push only to Con Req and Open Check.
 - **Messaging angle:** meetings with business owners open to a sale.
   - **Alternative framing** (closer to the client evidence): acquirers such as holding companies, search funds and
     lower-mid-market PE, pitched as a deal-flow engine.
-- **TAM:** upper bound 24,615 core people and 1.18M borderline, measured before the headcount floor.
+- **TAM (2026-09-29 run):** 24,272 main list at 1,335 Investment Banking firms (Deutsche Bank alone 7,417) and
+  106,006 keyword-gated candidates, mostly at enterprises; needs a size cap or re-framing before a push.
 - **HeyReach:** Con Req 587149 (IN_PROGRESS); Open Check 587156 (FINISHED; confirmed for reuse).
 - **Next step:** the user chooses advisors or acquirers. The queued V3 run uses the advisor draft.
 

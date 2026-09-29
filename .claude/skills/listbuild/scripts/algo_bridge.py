@@ -59,7 +59,9 @@ def contacted_urls(root):
 # Employer names people use instead of a real company (LinkedIn has pages literally called "Private Company").
 PLACEHOLDER_EMPLOYERS = {"private company", "confidential", "confidential company", "stealth", "stealth mode",
                          "stealth startup", "stealth mode startup", "self-employed", "self employed", "freelance",
-                         "freelancer", "independent", "independent consultant", "n/a", "na", "none", "-"}
+                         "freelancer", "independent", "independent consultant", "n/a", "na", "none", "-",
+                         "self-employed contractor", "undisclosed", "undisclosed company", "family office",
+                         "private investor", "retired"}
 MAX_ROWS_PER_FILE = 100_000  # keeps each CSV well under GitHub's 50 MB warning size
 
 
