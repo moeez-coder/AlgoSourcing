@@ -3,6 +3,7 @@ name: marketing_companies_5geo_director_plus
 company_hq_countries: [US, GB, CA, AU, NZ]
 person_countries: [US, GB, CA, AU, NZ]
 revenue_min_usd: 1000000
+employee_count_min: 10  # icp-overview.md floor, non-negotiable per the user 2026-09-15
 seniority: director_plus
 
 # Per-provider industry mapping. Values must be the exact enum strings each provider accepts.
