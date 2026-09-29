@@ -63,6 +63,19 @@ Total companies matching this vertical's ICP filters, and total people
 matching its persona/title filters across those companies — not the sample
 actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
+### 2026-09-29 09:59 UTC — master session (listbuild full-universe run)
+- Companies matching ICP filters: **~95,182** in core industries (Marketing Services, Advertising Services, Public
+  Relations and Communications Services, Graphic Design + legacy labels), plus ~3,188 Market Research / Design /
+  Events companies that pass the agency keyword gate. Method: `listbuild run`, `config/v2_marketing.yaml`, Blitz
+  company sweep; 43 US/UK/Europe HQ countries, revenue >= $1M, **headcount >= 10**, Nonprofit / Government /
+  Educational excluded; filter canary passed.
+- People matching persona/title filters: **~448,854** director-plus people (195 lossless shards, 425,532 returned =
+  95%), 392,230 unique after LinkedIn-URL dedup and excluding 21,151 already in a contacted ledger; 363,183 pass the
+  title guard. Split: **262,549 main list** (at ~45,000 companies), 23,961 keyword-gated candidates, 3,812
+  unverified, 71,793 held back at Events / Design / Market Research companies that failed the agency keyword gate.
+- Notes: supersedes the 2026-09-09 19,604-company / 83,223-people entry and the pre-floor preview figures. Blitz
+  only (Clay quota exhausted until 2027-01-01; DiscoLike 403 "monthly usage limit").
+
 ### 2026-09-09 12:20 UTC — execution-session-vertical-2 (Director-and-above correction, per confirmed seniority rule)
 - Companies matching ICP filters: 19,604 (unchanged — same 8-industry, headcount/revenue/HQ/type
   filters as the entry below; this run only changed the person-level seniority filter).
@@ -202,6 +215,21 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   pushing anything.
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-29 09:59 UTC — master session — FULL-UNIVERSE LISTBUILD RUN, NO PUSH
+- Sourced: 88,029 companies / 290,322 people exported (262,549 main + 23,961 candidates + 3,812 unverified).
+- Files: sourcing/data/vertical-2-marketing/people/2026-09-29_0959_listbuild-full-universe_part01..03.csv (main,
+  the only push candidates; split at 100k rows), `..._candidates.csv`, `..._unverified.csv`;
+  companies/2026-09-29_0959_listbuild-full-universe.csv; reports/2026-09-29_0959_listbuild-full-universe_cost_report.md.
+- Pushed to HeyReach: none. Awaiting the user's approval (pipeline.md phase banner).
+- Checks: 0 duplicate LinkedIn URLs, 0 people already in any contacted ledger, 0 title-guard fails, 0 client staff,
+  1,074 people dropped at placeholder employers ("Private Company", "Self-employed", "Freelance", "Confidential").
+  Main list: US 57%, GB 16%, FR 5%, DE 4%, ES 3%, IT 3%; Director 146.5k / C-Team 83.4k / VP 33.6k;
+  Advertising Services 76%.
+- Notes for the user: about 53k main-list people work at large agency groups with more than 100 people in the list
+  (VML 2,024, Publicis Groupe 1,577, Epsilon, Edelman, Accenture Song, Weber Shandwick, Omnicom Media...). The
+  shared ICP has no upper size limit, so they are kept; a headcount cap (e.g. <= 500 or <= 1,000) would remove them
+  if the user prefers founder-led agencies. This entry supersedes the 09:40 "in progress" note below.
 
 ### 2026-09-29 09:40 UTC — master session — FULL V2 SWEEP IN PROGRESS, NO PUSH
 - The user asked the master session (2026-09-29) to run complete-universe sourcing for all verticals, so the

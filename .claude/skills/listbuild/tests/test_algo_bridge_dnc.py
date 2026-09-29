@@ -22,3 +22,10 @@ def test_dnc_matches_on_domain_or_company_linkedin(tmp_path):
 
 def test_no_dnc_file_means_nothing_excluded(tmp_path):
     assert ab.dnc_companies(tmp_path) == (set(), set())
+
+
+def test_placeholder_employers_are_recognised():
+    for name in ["Private Company", " private company ", "Self-employed", "Freelance", "Confidential", "Stealth Mode"]:
+        assert ab.is_placeholder_employer(name), name
+    for name in ["Private Equity Partners", "Freelance Recruiters Ltd", "Hays", None, ""]:
+        assert not ab.is_placeholder_employer(name), name

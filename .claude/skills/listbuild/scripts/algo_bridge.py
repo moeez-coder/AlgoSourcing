@@ -56,6 +56,17 @@ def contacted_urls(root):
     return urls
 
 
+# Employer names people use instead of a real company (LinkedIn has pages literally called "Private Company").
+PLACEHOLDER_EMPLOYERS = {"private company", "confidential", "confidential company", "stealth", "stealth mode",
+                         "stealth startup", "stealth mode startup", "self-employed", "self employed", "freelance",
+                         "freelancer", "independent", "independent consultant", "n/a", "na", "none", "-"}
+MAX_ROWS_PER_FILE = 100_000  # keeps each CSV well under GitHub's 50 MB warning size
+
+
+def is_placeholder_employer(name):
+    return (name or "").strip().lower() in PLACEHOLDER_EMPLOYERS
+
+
 def dnc_companies(root):
     """(domains, company LinkedIn URLs) of current and past clients in sourcing/data/dnc_clients.csv: never contacted."""
     doms, urls = set(), set()
@@ -126,25 +137,32 @@ def cmd_import(args):
     (vdir / "people").mkdir(exist_ok=True)
     summary = {}
     for fit, suffix in buckets.items():
-        path = vdir / "people" / f"{base}{suffix}.csv"
-        n = dropped = dnc = 0
-        with path.open("w", encoding="utf-8", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=PEOPLE_COLS, extrasaction="ignore")
-            w.writeheader()
-            for r in conn.execute(f"SELECT * FROM contacts WHERE {where} AND icp_fit = ? ORDER BY key", (fit,)):
-                r = dict(r)
-                if normalize_linkedin_url(r.get("linkedin_url")) in contacted:
-                    dropped += 1
-                    continue
-                if is_dnc(r, dnc_doms, dnc_urls):
-                    dnc += 1
-                    continue
-                r["title"], r["source"], r["email"] = r.get("job_title"), r.get("all_sources"), ""
-                w.writerow(r)
-                n += 1
-        if n == 0:
-            path.unlink()
-        summary[fit] = (n, dropped, dnc, path.name if n else None)
+        n = dropped = dnc = placeholder = 0
+        keep = []
+        for r in conn.execute(f"SELECT * FROM contacts WHERE {where} AND icp_fit = ? ORDER BY key", (fit,)):
+            r = dict(r)
+            if normalize_linkedin_url(r.get("linkedin_url")) in contacted:
+                dropped += 1
+                continue
+            if is_dnc(r, dnc_doms, dnc_urls):
+                dnc += 1
+                continue
+            if is_placeholder_employer(r.get("company_name")):
+                placeholder += 1
+                continue
+            r["title"], r["source"], r["email"] = r.get("job_title"), r.get("all_sources"), ""
+            keep.append(r)
+        n = len(keep)
+        names = []
+        parts = max(1, -(-n // MAX_ROWS_PER_FILE))
+        for i in range(parts if n else 0):
+            name = f"{base}{suffix}.csv" if parts == 1 else f"{base}{suffix}_part{i + 1:02d}.csv"
+            with (vdir / "people" / name).open("w", encoding="utf-8", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=PEOPLE_COLS, extrasaction="ignore")
+                w.writeheader()
+                w.writerows(keep[i * MAX_ROWS_PER_FILE:(i + 1) * MAX_ROWS_PER_FILE])
+            names.append(name)
+        summary[fit] = (n, dropped, dnc, placeholder, ", ".join(names) or None)
 
     comp_path = vdir / "companies" / f"{base}.csv"
     comp_path.parent.mkdir(exist_ok=True)
@@ -156,7 +174,7 @@ def cmd_import(args):
         w.writeheader()
         for c in conn.execute("SELECT * FROM companies ORDER BY domain"):
             c = dict(c)
-            if is_dnc(c, dnc_doms, dnc_urls, domain_key="domain", url_key="linkedin_url"):
+            if is_dnc(c, dnc_doms, dnc_urls, domain_key="domain", url_key="linkedin_url") or is_placeholder_employer(c.get("name")):
                 continue
             kw = None if c.get("keyword_fit") is None else bool(c["keyword_fit"])
             status, reason = classify_company_fit(icp, c.get("industry"), kw)
@@ -172,9 +190,10 @@ def cmd_import(args):
             shutil.copy(run_dir / name, rep / f"{base}_{name}")
 
     print(f"imported listbuild run '{icp['name']}' into {vdir.relative_to(root)}")
-    for fit, (n, dropped, dnc, fname) in summary.items():
+    for fit, (n, dropped, dnc, placeholder, fname) in summary.items():
         print(f"  {fit:9}: {n:,} people -> people/{fname}" + (f"  ({dropped:,} dropped: already in a contacted ledger)" if dropped else "")
-              + (f"  ({dnc:,} dropped: work at a client in dnc_clients.csv)" if dnc else ""))
+              + (f"  ({dnc:,} dropped: work at a client in dnc_clients.csv)" if dnc else "")
+              + (f"  ({placeholder:,} dropped: placeholder employer such as 'Private Company')" if placeholder else ""))
     print(f"  companies: {nc:,} -> companies/{comp_path.name}")
     print("next: add the TAM + Progress Log entries to the vertical file (sourcing/pipeline.md formats), commit, then push "
           "only the main (fit) file per the current-phase rules.")
