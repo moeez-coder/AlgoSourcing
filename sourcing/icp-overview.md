@@ -27,11 +27,93 @@ across all three verticals unless a vertical doc overrides them.
   check that the founder(s)/leadership listed on LinkedIn/company site are
   based in that same HQ region before qualifying a company.
 
+## Seniority filter (standing rule, all verticals — added 2026-09-08)
+
+**Only target senior stakeholders who are genuine decision-makers** — people
+with real authority to approve or champion a BD/outbound engagement. This
+applies to people-sourcing in every vertical, not just wherever it was first
+noticed as a problem (Vertical 2's test run — see its Progress Log entry
+2026-09-08 11:39 UTC — found free-text title matching pulling in junior
+BDR/associate-level people under keywords like "Business Development").
+
+**Include (seniority level) — Director and above, confirmed by the user
+2026-09-09:**
+- Director / Senior Director / Director-level (any function relevant to the
+  vertical — Sales, BD, Growth, Revenue, Marketing, New Business, Partnerships)
+- Owner / Founder / Co-Founder / Managing Partner / Partner
+- C-suite: CEO, COO, CFO, CRO, CMO, CTO, CGO, or any "Chief ... Officer"
+- President / Managing Director / Executive Director
+- VP and above (VP, SVP, EVP) in Sales, Business Development, Growth,
+  Revenue, Marketing, New Business, or Partnerships
+
+(An earlier draft of this rule, written 2026-09-08, excluded Director by
+default and treated it as a per-vertical override for M&A only. The user
+confirmed 2026-09-09 that Director-and-above is fine everywhere — this
+supersedes that draft. Vertical 1's stored tracking-clients ICP config
+already includes Director, so no change needed there on this point.)
+
+**Explicit exclude (regardless of an include-keyword match):** Representative,
+Associate, Coordinator, Specialist, Analyst, Assistant, Intern, Trainee, BDR,
+SDR, Account Executive, and bare "Manager" (an individual-contributor title in
+most orgs — does not count as senior on its own, even if it shows up inside a
+longer title string). Apply this exclude list as a second pass even after an
+include match succeeds — a title can contain an include keyword as a
+substring while still being a junior role (e.g. "Business Development
+Representative" contains "Business Development").
+
+**Enforced in code since 2026-09-29** (`.claude/skills/listbuild/listbuild/seniority.py`,
+tests in `tests/test_seniority.py`; every listbuild run applies it):
+- The exclude list fails a title **unless the person's own title is
+  top-tier**: Founder / Co-Founder / Owner / CEO / any C-level or "Chief ...
+  Officer" / President (not Vice President) / Managing Director / Managing
+  Partner / Chair. So "Founder & Specialist Recruiter" passes, while
+  "Associate Director", "Coordinator, Office of the CEO" and "Business
+  Development Representative" fail.
+- Assistant, Intern, Trainee, Student, Apprentice, AVP (assistant vice
+  president) and advisory-board roles **always** fail, including their
+  German/Dutch/French/Spanish/Italian/Portuguese forms (Assistent(in),
+  Assistente, Asistente, Praktikant, Werkstudent, Stagiaire, Tirocinante,
+  Becario, Estagiário), so "Assistent to the Managing Director" fails.
+- VP / SVP / EVP pass, but VP does not override the exclude list.
+- **Non-English titles:** the 2026-09-15 gap ("Assistent der
+  Geschäftsführung" slipping through) is fixed. Accents are folded and
+  German (Geschäftsführer, Inhaber, Gründer, Vorstand), French (Directeur,
+  Fondateur, Directeur Général), Dutch (Eigenaar, Oprichter), Spanish
+  (Fundador, Propietario, Director General) and Italian (Fondatore,
+  Titolare, Amministratore Delegato) senior titles are recognised.
+  Added 2026-09-29 after the V1 full run: Italian Presidente, Proprietario,
+  Direttore (incl. "Direttore di filiale" = branch director); Polish
+  Prezes, Dyrektor; Swedish VD / Verkställande direktör; Norwegian/Danish
+  Direktør, Adm. direktør, Daglig leder; Finnish Toimitusjohtaja; Czech
+  Jednatel, Ředitel; Hungarian Ügyvezető, Igazgató; Spanish/Italian
+  Vicepresidente. This recovered 1,449 V1 people the rule had dropped.
+- Bare "Manager", "Recruiter", "Consultant" without a senior word fail.
+- Change the rule only test-first, and update this section when you do.
+
+**Matching method — this is what actually went wrong in the Vertical 2
+test run, apply the fix everywhere:**
+- Free-text/loose keyword title search over-matches badly — e.g. searching
+  loosely for "VP Sales" matched "VP Learning and Development", "VP Design",
+  etc., because the matcher was scoring token overlap ("VP") rather than the
+  full phrase.
+- Use **bracket-exact / exact-phrase matching** for short, generic titles
+  (`[CEO]`, `[Founder]`, `[President]`, `[Owner]`, `[Managing Partner]`) —
+  the syntax a given tool supports for exact rather than fuzzy matching.
+- For multi-word functional titles (VP Business Development, Head of
+  Growth), require the full phrase, not token-overlap.
+- Prefer a structured seniority/job-level field when the tool offers one
+  (e.g. Blitz's people-search seniority buckets) over pure title-string
+  matching, and combine both when available for the tightest result.
+- Always run the exclude list above as a second pass, even on results that
+  already matched an include title/seniority filter.
+
 ## Explicitly excluded
 
 - Companies whose only real HQ/operating base is outside the USA, UK, or
   Europe, even if they list a US/UK/EU mailing address.
 - Below $1M revenue or below 10 employees.
+- People whose title matches the seniority exclude list above, or who don't
+  meet the include criteria, regardless of company fit.
 
 ## Note on the earlier draft of this criterion
 

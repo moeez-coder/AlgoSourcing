@@ -13,7 +13,12 @@ sessions from colliding or duplicating leads.
 ## Index
 
 - `COORDINATION.md` — **read first** — rules for running multiple sessions/agents against this repo at once
+- `../CLAUDE.md` (repo root) — the rules every session loads automatically: read order, listbuild is mandatory for sourcing, dedup, push rules, keys
+- `../.claude/skills/listbuild/SKILL.md` — **how all sourcing/TAM runs are done** (Blitz → Clay → DiscoLike with filter canary, dedup, title guard, ICP-fit split); vertical configs in `listbuild/config/`
 - `TOOLS.md` — **read second** — what's actually callable (Clay/Blitz/Cold IQ/HeyReach status) and where API keys live (never in this repo)
+- `verticals-portfolio.md` — **every vertical (live V1-V3 and proposed V4-V9) in one standard card format**, with priority, filters, personas, TAM and next step
+- `client-base-vertical-analysis.md` — every current/past client profiled and the verticals they support (2026-09-29)
+- `data/dnc_clients.csv` — current and past clients: never contacted (import drops them)
 - `icp-overview.md` — shared firmographic/geographic filters across all verticals
 - `verticals/vertical-1-staffing-recruitment.md`
 - `verticals/vertical-2-marketing.md`
@@ -21,7 +26,7 @@ sessions from colliding or duplicating leads.
 - `verticals/vertical-4-b2b-saas.md`
 - `heyreach-campaign-map.md` — every relevant HeyReach campaign ID, by vertical/stage
 - `pipeline.md` — the Blitz → Clay → HeyReach sourcing workflow, data-file conventions, and key system IDs
-- `data/<vertical>/companies/`, `data/<vertical>/people/` — every sourcing run's output, saved as timestamped CSVs (required for every run — see `pipeline.md`)
+- `data/<vertical>/companies/`, `data/<vertical>/people/`, `data/<vertical>/reports/` — every sourcing run's output, saved as timestamped CSVs (required for every run — see `pipeline.md`)
 
 ## Key IDs (system of record)
 

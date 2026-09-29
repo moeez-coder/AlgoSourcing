@@ -18,23 +18,38 @@ for this vertical in the new system — only raw HeyReach campaigns.
   hiring burst, new office/market expansion, leadership change (new
   CEO/CRO/Head of Growth), recent funding or acquisition.
 
-## Target personas / titles (draft, mirrored from Vertical 1's buyer profile)
+## Target personas / titles
 
-- **Seniority include:** CXO, Director, Vice President, Owner / Partner,
-  Founder
-- **Job titles (draft):** CEO, Founder, Managing Partner, President, VP
-  Sales/Business Development, Head of Growth, Head of New Business
-- These are drafted from Algo's own stated buyer profile ("Founders, owners,
-  MDs and sales directors at B2B companies that depend on outbound") — not yet
-  validated specifically for the marketing-agency vertical. Refine once real
-  results come back.
+**Apply the shared seniority filter in `../icp-overview.md`** ("Seniority
+filter" section) — this directly resolves finding #1 from the 2026-09-08
+test run below (loose title matching pulled in junior BDR/associate-level
+people). Director-and-above: Owner/Founder/Partner, C-suite, President/
+Managing Director, Director, VP-and-above in Sales/BD/Growth/Revenue/
+Marketing/New Business/Partnerships.
+
+Vertical-specific job titles to search within that seniority band (draft):
+CEO, Founder, Managing Partner, President, VP Sales, VP Business Development,
+Head of Growth, Head of New Business. Use exact/bracket matching (`[CEO]`,
+`[Founder]`, `[President]`, etc.) for short titles per the shared rule's
+"Matching method" — this is what the test run below found necessary. Still
+not yet validated specifically for the marketing-agency vertical beyond that
+one test run; refine further as more results come back.
 
 ## To do (non-blocking — can proceed with drafts, refine as results come in)
 
+- [x] ~~Persona/title list needs bracket-exact matching + seniority
+      filter~~ — resolved 2026-09-08, see `../icp-overview.md` "Seniority
+      filter" section, added in response to this vertical's own test-run
+      finding.
 - [ ] Create a proper `icp_config` + `sourcing_config` in tracking-clients for
       this vertical (mirror the Vertical 1 structure) so it's tracked the same
       way
-- [ ] Confirm/replace the draft persona list above once real results come back
+- [ ] Company-size ceiling still missing (test-run finding #2, separate from
+      the seniority fix) — large holding companies (Publicis, Omnicom, IPG,
+      WPP) still pass the raw company filters
+- [ ] Re-run the TAM/sample with the new seniority filter applied — the
+      13,383/40,035 TAM and the 40,035 people figure both predate this rule
+      and are now stale
 
 ## Dedup ledger
 
@@ -42,6 +57,654 @@ for this vertical in the new system — only raw HeyReach campaigns.
 only as of 2026-09-08, no runs yet). Check it before every push, update it
 after every push — see `../pipeline.md`, "The contacted ledger."
 
+## TAM (Total Addressable Market) — append-only, newest entry on top
+
+Total companies matching this vertical's ICP filters, and total people
+matching its persona/title filters across those companies — not the sample
+actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
+
+### 2026-09-29 09:59 UTC — master session (listbuild full-universe run)
+- Companies matching ICP filters: **~95,182** in core industries (Marketing Services, Advertising Services, Public
+  Relations and Communications Services, Graphic Design + legacy labels), plus ~3,188 Market Research / Design /
+  Events companies that pass the agency keyword gate. Method: `listbuild run`, `config/v2_marketing.yaml`, Blitz
+  company sweep; 43 US/UK/Europe HQ countries, revenue >= $1M, **headcount >= 10**, Nonprofit / Government /
+  Educational excluded; filter canary passed.
+- People matching persona/title filters: **~448,854** director-plus people (195 lossless shards, 425,532 returned =
+  95%), 392,230 unique after LinkedIn-URL dedup and excluding 21,151 already in a contacted ledger; 363,183 pass the
+  title guard. Split: **262,549 main list** (at ~45,000 companies), 23,961 keyword-gated candidates, 3,812
+  unverified, 71,793 held back at Events / Design / Market Research companies that failed the agency keyword gate.
+- Notes: supersedes the 2026-09-09 19,604-company / 83,223-people entry and the pre-floor preview figures. Blitz
+  only (Clay quota exhausted until 2027-01-01; DiscoLike 403 "monthly usage limit").
+
+### 2026-09-09 12:20 UTC — execution-session-vertical-2 (Director-and-above correction, per confirmed seniority rule)
+- Companies matching ICP filters: 19,604 (unchanged — same 8-industry, headcount/revenue/HQ/type
+  filters as the entry below; this run only changed the person-level seniority filter).
+- People matching persona/title filters across those companies: 83,223 (method: Blitz
+  `POST /v2/search/people`, `total_results`, `max_results=1`; company filters unchanged,
+  person filters corrected to `job_level` = [C-Team, VP, Director] (dropped Manager, Staff)
+  + `job_function` = [Advertising & Marketing, Sales & Business Development], per the
+  user's 2026-09-09 confirmation ("Director and above ... not lower than that") now
+  codified in `../icp-overview.md`'s "Seniority filter" section.
+- Notes: **This is the vertical's current working TAM** — supersedes the 422,850 figure
+  below, which used the broader Manager/Staff-inclusive job_level set at the user's
+  earlier "~400,000" volume request. The `total_results` figure (83,223) reflects only
+  the `job_level`+`job_function` filter, not the standing rule's mandatory second-pass
+  exclude list (Representative, Associate, Coordinator, Specialist, Analyst, Assistant,
+  Intern, Trainee, BDR, SDR, Account Executive, bare "Manager") — that exclude pass can
+  only be applied to actually-returned records (title strings), not to a `total_results`
+  count, so 83,223 is a slight overcount of the true addressable pool; the ~9.2%
+  exclude rate measured on the 10,512-person sample below (965 of 11,477 pre-exclude
+  records) is a reasonable estimate of the gap if a tighter TAM number is needed.
+
+### 2026-09-08 14:48 UTC — execution-session-vertical-2 (wide-net re-run, per user request)
+- Companies matching ICP filters: 19,604 (method: Blitz `POST /v2/search/companies`,
+  `total_results`; same as prior entry below but industry list widened from 5 to 8:
+  added Market Research, Design Services, Events Services. Headcount/revenue/HQ/type
+  filters unchanged.)
+- People matching persona/title filters across those companies: 422,850 (method:
+  Blitz `POST /v2/search/people`, `total_results`, `max_results=1`; same 8-industry
+  company filters, person filters switched from the narrow title-keyword list to
+  `job_level` = [C-Team, VP, Director, Manager, Staff] AND `job_function` = [Advertising
+  & Marketing, Sales & Business Development] — this is a materially different, broader
+  targeting method than the previous entry's title-keyword approach, done at the
+  user's explicit request to widen the net toward ~400,000 people. Landed at 422,850,
+  ~6% over the ~400k target — close enough without further tuning.)
+- Notes: **This number is legitimate but concentration-heavy** — confirmed by
+  pulling real records, not just inferred: of the first 3,000 people records
+  returned by blanket pagination against this exact filter set, 2,674 (89%) were
+  a single company (Publicis Groupe, 41,945 LinkedIn employees) and the rest were
+  Figma (a design SaaS company, mistagged into the "Design Services" industry —
+  see Progress Log for detail). A handful of the largest global holding-company
+  networks account for a very large share of the 422,850 total; the number is
+  real but not evenly distributed across the 19,604 companies. See Progress Log
+  entry same timestamp for how the actual sample was built to avoid this
+  concentration.
+- This *replaces* the prior entry's method as the vertical's working definition of
+  "decision-maker" for TAM purposes going forward (bracket-exact C-suite titles
+  were abandoned in favor of job_level+job_function for volume) — flagging in case
+  a future run wants to reconcile the two TAM methodologies rather than just take
+  the newest number at face value.
+
+### 2026-09-08 11:39 UTC — execution-session-vertical-2 (test run)
+- Companies matching ICP filters: 13,383 (method: Blitz `POST /v2/search/companies`,
+  `total_results` field; filters: `industry.include` = [Marketing and Advertising,
+  Advertising Services, Marketing Services, Public Relations and Communications
+  Services, Graphic Design], `employee_count.min=10`, `revenue.min=1000000`,
+  `hq.country_code` = US + UK + ~40-code Europe list (see run notes below),
+  `type.exclude` = [Nonprofit, Government Agency, Educational, Educational
+  Institution])
+- People matching persona/title filters across those companies: 40,035 (method:
+  Blitz `POST /v2/search/people`, `total_results` field, `max_results=1` to
+  minimize record spend; same company filters as above, plus `people.job_title.include`
+  = [CEO, Founder, Managing Partner, President, VP Sales, Vice President Sales,
+  VP Business Development, Vice President Business Development, Head of Growth,
+  Head of New Business, Owner, Partner] -- i.e. the *draft* persona list as
+  originally written, before the title-matching issue below was discovered)
+- Notes: Estimate, not exact -- Blitz's underlying LinkedIn-derived data has known
+  gaps/miscategorization (see Progress Log entry same timestamp for detail). The
+  13,383/40,035 figures **include very large global agency holding networks
+  (Publicis, Omnicom, IPG, WPP-owned shops, etc.) and some mis-tagged ad-tech/martech
+  platforms** that do not match the vertical's actual intent ("independent agencies
+  that themselves rely on outbound BD") -- true addressable TAM for boutique/independent
+  agencies is materially smaller than these headline numbers; see Progress Log for
+  the sample-level breakdown that surfaced this. The people TAM was run with the
+  *original* draft title list (loose keyword matching), which the same run found to
+  overcount significantly (see Progress Log) -- treat 40,035 as an upper bound, not
+  a refined estimate. "Founders locally present" (icp-overview.md) is not a
+  structured Blitz filter and is not reflected in either count -- both are HQ-country
+  filters only.
+- Europe country_code list used: US, GB, IE, FR, DE, ES, IT, NL, BE, PT, CH, AT, SE,
+  NO, DK, FI, PL, CZ, SK, HU, RO, BG, GR, HR, SI, EE, LV, LT, LU, MT, CY, IS, LI, MC,
+  AD, SM, UA, RS, ME, MK, AL, BA, MD -- a judgment call, not confirmed with the user;
+  flag if a different Europe boundary (e.g. EU-27 only, or including/excluding
+  specific non-EU states) is intended.
+
+### 2026-09-29 09:04 UTC — execution-session-vertical-2 (listbuild adoption + shared-code fix)
+- Companies matching ICP filters (core industries only): ~338,002 (method: `listbuild preview`,
+  `sourcing/listbuild/config/v2_marketing.yaml`, canary-verified — every filter narrows from the
+  unfiltered 68,363,495-company baseline, none silently ignored). Plus ~111,159 in catch-all/keyword-
+  gated industries (Market Research, Design Services, Design, Events Services) -> candidates file,
+  never the main list.
+- People: not yet re-measured as a total_results figure this run (preview samples 215 rows across the
+  Blitz sweep rather than reporting one aggregate count the way the old hand-rolled TAM query did);
+  the 338,002/111,159 company figures are the comparable step-0 numbers. A people TAM figure will come
+  from the actual sweep (`run`) once approved.
+- **This supersedes the 2026-09-09 19,604-companies / 83,223-people entry, which is now known stale for
+  two reasons, not one:** (a) it predates the repo-wide adoption of the Blitz filter canary — re-running
+  the identical company-search filter combo on 2026-09-29 returned 92,407, a ~4.7x jump this session
+  could not fully explain by Blitz's index growing in three weeks alone; (b) mid-investigation, this
+  session found and fixed a real, separate bug that also inflated that 92,407 figure and the initial
+  (pre-fix) listbuild preview's ~549,150/~182,965 numbers — see below.
+- **Bug found and fixed (shared code, affects all three verticals, not just V2):** `employee_count_min`
+  (the icp-overview.md headcount floor, "minimum 10 headcount is non-negotiable" per the user
+  2026-09-15) was defined nowhere in listbuild's config schema and was never sent to Blitz's
+  `/v2/search/companies` or `/v2/search/people` request bodies — only `discolike_employee_floor` (used
+  solely by the DiscoLike adapter) existed. Every Blitz-sourced company/person count listbuild had
+  produced up to this point (including V1's 2026-09-29 preview: ~122,984 core + ~50,020 keyword-gated)
+  was measured without the floor. Fixed test-first: added `employee_count_min` (default 10) to
+  `icp_gen.build_icp()`, wired it into `providers/blitz.py`'s `build_people_body` and
+  `build_company_body` as `company.employee_count.min`, added it to all three vertical configs
+  (v1/v2/v3) and the example fixture config, and added 5 new tests (`test_blitz_adapter.py`,
+  `test_icp_gen.py`). Re-ran the full suite (182 passed) and re-ran V2's preview after the fix: main-list
+  dropped from ~549,150 to ~338,002 and catch-all from ~182,965 to ~111,159 (a ~38% reduction), confirming
+  the floor was real and material. **V1 and V3's own logged TAM figures from before this fix should be
+  treated as upper bounds until re-previewed with the fix in place** — flagging for the master session
+  and whichever session next touches those verticals, per COORDINATION.md's rule that a shared-code
+  change from an individual session gets noted here for visibility.
+- **Cross-checked Vertical 2's entire pushed history (35,360 people, all four hand-rolled sourcing
+  rounds) against the newly-added `sourcing/data/dnc_clients.csv` (Algo's own client do-not-contact
+  list, added 2026-09-29 by the master session) given that commit's note that 36 people at 9 clients
+  had already been pushed in earlier V1 rounds.** One name-only match surfaced ("BLU") but resolved as a
+  false positive on inspection: the sourced person's `company_domain` is `blu-brand.nl` (an unrelated
+  Dutch brand agency), not the Algo client's `bluselection.com`. **Zero real client-contamination hits
+  in Vertical 2's pushed data.**
+- Verified the specific Blitz bug behind the 2026-09-17 "Forbes" incident (`company.linkedin_url` not
+  being a valid **Company Search** filter) does not affect this vertical's methodology: this vertical's
+  hand-rolled per-company sourcing used `company.linkedin_url` as a **People Search** filter instead
+  (a real, documented field for that endpoint) — re-verified directly: scoping people-search to
+  Publicis Groupe's URL alone returned 17,080 of 454,021,881 unfiltered, with every result's
+  `company_name`/`company_linkedin_url` matching the company queried. The 35,360 already-pushed people
+  are sound on this specific point.
+- Notes: from here forward, all Vertical 2 sourcing goes through `listbuild` per the repo-wide mandate
+  (`CLAUDE.md`, `COORDINATION.md`, `pipeline.md`, all updated 2026-09-29) — no more hand-rolled Blitz
+  scripts. Preview sample (215 rows) showed 7 title-guard fails (~3.3%) and only 3 rows already in the
+  cross-vertical seed list (52,555 people) — low overlap, as expected given this run targets the
+  ~338,002-company pool that the old per-company-capped method (which topped out around company #10,000
+  before hitting diminishing returns) never came close to exhausting. Reported the corrected preview to
+  the user; awaiting approval before running the full sweep (`listbuild run --discolike-cap-usd 0`) or
+  pushing anything.
+
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
-_No sourcing runs yet as of 2026-09-08._
+### 2026-09-29 09:59 UTC — master session — FULL-UNIVERSE LISTBUILD RUN, NO PUSH
+- Sourced: 88,029 companies / 290,322 people exported (262,549 main + 23,961 candidates + 3,812 unverified).
+- Files: sourcing/data/vertical-2-marketing/people/2026-09-29_0959_listbuild-full-universe_part01..03.csv (main,
+  the only push candidates; split at 100k rows), `..._candidates.csv`, `..._unverified.csv`;
+  companies/2026-09-29_0959_listbuild-full-universe.csv; reports/2026-09-29_0959_listbuild-full-universe_cost_report.md.
+- Pushed to HeyReach: none. Awaiting the user's approval (pipeline.md phase banner).
+- Checks: 0 duplicate LinkedIn URLs, 0 people already in any contacted ledger, 0 title-guard fails, 0 client staff,
+  1,074 people dropped at placeholder employers ("Private Company", "Self-employed", "Freelance", "Confidential").
+  Main list: US 57%, GB 16%, FR 5%, DE 4%, ES 3%, IT 3%; Director 146.5k / C-Team 83.4k / VP 33.6k;
+  Advertising Services 76%.
+- Notes for the user: about 53k main-list people work at large agency groups with more than 100 people in the list
+  (VML 2,024, Publicis Groupe 1,577, Epsilon, Edelman, Accenture Song, Weber Shandwick, Omnicom Media...). The
+  shared ICP has no upper size limit, so they are kept; a headcount cap (e.g. <= 500 or <= 1,000) would remove them
+  if the user prefers founder-led agencies. This entry supersedes the 09:40 "in progress" note below.
+
+### 2026-09-29 09:40 UTC — master session — FULL V2 SWEEP IN PROGRESS, NO PUSH
+- The user asked the master session (2026-09-29) to run complete-universe sourcing for all verticals, so the
+  master session is running the full V2 `listbuild run` (`config/v2_marketing.yaml`, `--discolike-cap-usd 0`),
+  after V1 and before V3. **The V2 individual session does not need to run the sweep itself.**
+- It uses the `employee_count_min` fix from the 09:04 entry below (thanks: it also invalidated the master
+  session's first V1 pull, which is being redone). Dedup is LinkedIn URL only (user rule 2026-09-29); clients
+  in `sourcing/data/dnc_clients.csv` are dropped at import.
+- Results, TAM and files will be logged here when the run and `algo_bridge.py import` finish. Nothing is pushed.
+
+### 2026-09-29 09:04 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (listbuild adoption; shared-code fix)
+- Sourced: 0 people pushed this run — tooling adoption + a preview only (`listbuild preview`, free,
+  no data pulled beyond the 215-row sample). Full sweep not yet run, pending user approval.
+- Files: none new under `sourcing/data/vertical-2-marketing/` this run — the preview sample lives at
+  `sourcing/listbuild/out/v2_marketing/preview.csv` (gitignored scratch, not committed).
+- Pushed to HeyReach: none (this session did not touch either campaign).
+- Feedback given to user: read the 2026-09-29 repo-wide `listbuild` adoption (CLAUDE.md, COORDINATION.md,
+  TOOLS.md, pipeline.md, icp-overview.md all updated), ran an independent integrity check on this
+  vertical's own already-pushed 35,360 people given the Blitz filter-ignoring bug that invalidated V1's
+  batch — confirmed clean (see TAM section entry, same timestamp, for the full detail): the specific
+  filter this vertical relied on (`company.linkedin_url` in **people** search) is real and verified
+  narrowing correctly, unlike the broken **company**-search usage that caused V1's incident. Then found
+  and fixed a second, separate, shared-code bug (`employee_count_min` never reaching Blitz at all) that
+  would have inflated the very TAM re-measurement this session was doing — fixed test-first across all
+  three vertical configs, not just V2's. Ran `listbuild preview` for V2 twice (before and after the fix)
+  to show the user the real effect: ~732K -> ~449K combined main+candidate people once the non-negotiable
+  headcount floor was actually applied. Cross-checked this vertical's full push history against the
+  newly-added client DNC list (zero real hits, one false positive resolved). Reported all of this plus
+  the corrected preview numbers to the user and am awaiting approval before running the full sweep.
+- Notes: this vertical's config (`sourcing/listbuild/config/v2_marketing.yaml`) is otherwise unchanged
+  from what the master session already set up — same 8-industry mapping (6 core + Market Research/Design
+  Services/Design/Events Services keyword-gated), same 43-country US/UK/Europe list, same director_plus
+  seniority map. Next step once approved: `listbuild run --discolike-cap-usd 0` (DiscoLike capped at $0
+  regardless, since the account is currently overdrawn), then `algo_bridge.py import`, then this
+  vertical's actual TAM-people figure and a proper sourced batch, per the mandatory workflow.
+
+### 2026-09-15 11:20 UTC — execution-session-vertical-2 — LIVE PUSH (round-4 batch, both campaigns — full TAM coverage reached at current filters)
+- User asked for "more to open checks"; while sourcing was underway, also
+  asked to push the same batch to Con Req. Both confirmed directly.
+- **Sourcing hit a real ceiling this round.** Pulled every remaining
+  unscanned company (rounds 4+4b, 6,358 companies) — this **exhausts the
+  entire ~19,604-company TAM** at the current filters (8 industries,
+  headcount≥10, revenue≥$1M, US/UK/Europe, Director-and-above). Even
+  re-querying round-1's companies (the largest/highest-ranked, previously
+  capped at only 10-25 each) at cap=60 added **zero** new people, confirming
+  those are fully depleted at this seniority bar, not just under-capped.
+  Result: only 4,179 new people this round, well short of the ~10k the last
+  three rounds delivered. Surfaced this to the user directly rather than
+  silently pushing a smaller batch as if it hit target — user confirmed
+  pushing the 4,179 as-is; declined (for now) the offered alternatives of
+  layering in Clay or loosening the seniority bar back toward Manager-level.
+- **Standing instruction from the user this round: "minimum 10 head count is
+  non-negotiable."** This vertical's `employee_count.min` has been 10 in
+  every round including this one — no change needed, noted here for the
+  record since it came up mid-session.
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-15_1101_director-plus-round4-batch6.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-15_1101_director-plus-round4-batch6.csv
+- Pushed to HeyReach Con Req campaign 568586 — verified via progressStats
+  delta: totalUsers 83,149 → 87,063 = **+3,914** net new (self-reported
+  agent sum: 3,934 added + 229 updated = 4,163 of 4,179 rows; ~20-lead
+  variance vs. the verified delta).
+- Pushed to HeyReach Open Check campaign 568621 — verified via progressStats
+  delta: totalUsers 87,493 → 91,407 = **+3,914** net new (self-reported
+  agent sum: 3,914 added + 220 updated = 4,134 of 4,179 rows; exact match
+  vs. the verified delta this time).
+- Minor data-quality note: 7 of 4,179 people had `company_name` "Freelance"
+  or "Self-employed" — LinkedIn placeholder values, not real qualifying
+  companies. Flagged in the people CSV's notes column, not scrubbed from the
+  push (a small, known class of noise, consistent with prior rounds'
+  findings).
+- Ledger updated: all 4,179 people are new ledger rows with both
+  `con_req_pushed_at` and `open_check_pushed_at` set to
+  2026-09-15T11:20:00Z. Ledger total for this vertical: 35,360 rows.
+- **Implication for future rounds:** without a policy change (adding Clay
+  as a second source, loosening seniority, or broadening industries/geo),
+  this vertical's easily-reachable Blitz-sourced pool at the Director-and-
+  above bar is now effectively exhausted. Any further "send more" requests
+  should expect this same ceiling unless one of those levers changes — worth
+  deciding proactively rather than rediscovering it via another near-empty
+  sourcing run.
+
+### 2026-09-13 13:05 UTC — execution-session-vertical-2 — LIVE PUSH (round-3 batch, both campaigns, by explicit user confirmation)
+- User asked to "add more leads" without specifying scope; clarified via
+  AskUserQuestion — confirmed both Con Req 568586 + Open Check 568621, target
+  ~10k new.
+- Sourced 10,502 new people from 5,500 previously-unscanned companies (rounds
+  3+3b combined — the initial 2,500-company round-3 pool only yielded 6,151
+  people even after raising the per-company cap to 30, a much lower rate than
+  rounds 1-2's ~4-5/company; had to pull a second fresh pool of 3,000
+  companies (round 3b) to close the gap rather than keep raising the cap on
+  an already-thin pool). 3,306 distinct companies represented, largest single
+  company only 0.3% of the batch. Deduped against the by-then 20,679-row
+  ledger before sourcing.
+- **Applied a fix from the previous round's finding:** rows with a blank
+  first_name or last_name were repaired by splitting `full_name` as a
+  fallback (61 of 10,502 rows affected) before this batch was pushed.
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-13_1242_director-plus-round3-batch5.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-13_1242_director-plus-round3-batch5.csv
+- Pushed to HeyReach Con Req campaign: "US | Con Req | Vertical 2 | Moe 1.0"
+  (568586) — verified via progressStats delta: totalUsers 73,982 → 83,457 =
+  **+9,475** net new (self-reported agent sum: 9,462 added + 1,040 updated =
+  10,502, i.e. exact row-count reconciliation at the agent level; small
+  ~13-lead variance vs. the verified campaign delta, much tighter than the
+  prior round's ~300-lead variance).
+- Pushed to HeyReach Open Check campaign: "US | Open Check | Vertical 2 | Moe
+  1.0" (568621) — verified via progressStats delta: totalUsers 78,328 →
+  87,527 = **+9,199** net new (self-reported agent sum: 9,483 added + 1,019
+  updated = 10,502, exact row-count reconciliation at the agent level; larger
+  ~284-lead variance vs. the verified delta this time).
+- **Notable improvement over the previous two rounds: zero unaccounted-for
+  leads in every one of the 8 push agents' self-reported sums this round**
+  (added + updated = exactly the row count submitted, in all 8 chunks/~216
+  batches) — a first for this vertical's pushes. Consistent with the
+  full_name-fallback fix closing the specific gap-cause found last round
+  (blank name fields), though the campaign-level verified deltas still show
+  some variance against the agents' self-reports (see above) that isn't
+  fully explained — logging as an open, low-magnitude discrepancy between
+  "what the push API told the calling agent" and "what the campaign's own
+  aggregate counter shows," not resolved this run.
+- **Operational fix applied and confirmed working:** gave each of the 8
+  parallel push agents its own uniquely-named working subdirectory (e.g.
+  `r3_conreq_1/`, `r3_opencheck_2/`) instead of the shared scratchpad root,
+  per the collision two agents caught and self-corrected in the prior round.
+  No collisions were reported this round.
+- Ledger updated: all 10,502 people are new ledger rows with both
+  `con_req_pushed_at` and `open_check_pushed_at` set to 2026-09-13T13:05:00Z
+  (campaign IDs 568586 / 568621 respectively) — this batch went to both
+  campaigns from the start, unlike the 2026-09-11 entry where Con Req and
+  Open Check were pushed at different times for different batches. Ledger
+  total for this vertical: 31,181 rows.
+- Notes: continues the same one-off, user-directed exception to the
+  testing/priming pause established 2026-09-09 — does not extend to any
+  other vertical.
+
+### 2026-09-11 20:35 UTC — execution-session-vertical-2 — LIVE PUSH (Con Req completed + round-2 Open Check batch, by explicit user confirmation)
+- Two separate pushes this entry, both user-confirmed directly:
+  1. **Con Req 568586, first push:** pushed the original 10,512-person batch
+     (`2026-09-09_1220_director-plus-10k-batch3.csv`, already in Open Check since
+     2026-09-09) to Con Req for the first time — this completes the standard
+     "push same batch to both Con Req and Open Check" pattern that was
+     deferred in the 2026-09-09 13:11 UTC entry pending separate confirmation.
+  2. **Open Check 568621, round 2:** sourced and pushed a second, entirely new
+     batch of 10,167 people from 2,500 previously-unscanned companies (same
+     ICP filters, same Director-and-above seniority rule + exclude-list pass),
+     deduped against the ledger before sourcing so nothing already-pushed was
+     re-sourced.
+- Files (round 2): sourcing/data/vertical-2-marketing/companies/2026-09-11_2031_director-plus-round2-batch4.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-11_2031_director-plus-round2-batch4.csv
+- Push mechanics: same pattern as before — 4 parallel agents per push (8 total
+  this entry), each handling ~2,540-2,630 rows in 100-lead batches via
+  `add_leads_to_campaign_v2`, hard-pinned to a single campaign ID per push
+  (568586 for Con Req, 568621 for Open Check — verified no cross-contamination).
+- **Results verified against each campaign's own `progressStats` delta
+  (authoritative over agents' self-reported sums, which had some variance —
+  see below):**
+  - Con Req 568586: `totalUsers` 64,076 → 74,058 = **+9,982** net new leads.
+    Agents' self-reported sum of "added" was 9,698 (a ~2.8% undercount vs. the
+    verified delta) plus 753 "updated" (already-existing) — the discrepancy
+    between self-reported added and the real delta isn't fully explained;
+    treating the campaign's own number as ground truth.
+  - Open Check 568621 (round 2 only): `totalUsers` 71,410 → 78,579 = **+7,169**
+    net new leads. Self-reported sums from 3 of 4 push agents (chunks 2-4):
+    added 2,295+2,288+256=4,839, updated 231+247+2,272=2,750; the 4th agent
+    (chunk 1) did not report an exact added/updated split, only that
+    "added+updated accounted for the full 2,542 rows [minus a handful of
+    intra-batch duplicates]" — using the verified campaign delta (7,169) as
+    the authoritative total rather than reconciling the imprecise self-report.
+  - All 8 push-agent responses reported `failedLeadsCount: 0` on every one of
+    their ~208 combined batch calls; no batch-level (whole-call) failures, no
+    retries needed.
+- **Small, consistent per-batch shortfall (added+updated slightly under rows
+  submitted) observed again, ~0.3-1% per chunk, same as the first push.**
+  Different agents gave different, mutually exclusive explanations this time
+  (duplicate LinkedIn profile URLs within a batch; blank first/last name
+  fields in the source CSV; one agent explicitly ruled out duplicates in its
+  own chunk and still saw the gap) — **no single explanation held across all
+  8 chunks**, so this is being logged as an unresolved, low-magnitude
+  (sub-1%) artifact of the push endpoint or source data, not a confirmed root
+  cause. One concretely-verified case: chunk 3 of the Con Req push found ~13
+  rows with a blank first_name or last_name (single-token full names, e.g.
+  "Harne" with no first name) that the API silently didn't count as
+  added/updated/failed — this specific cause is real and worth a CSV-
+  construction fix (fall back to splitting `full_name` when first/last are
+  empty) for future runs, though it doesn't account for the gap seen in
+  chunks that had no such rows.
+- **Same "already-existing" pattern recurred for round-2 Open Check, at
+  similar magnitude to the first push:** one of round 2's four chunks was
+  ~89% "updated" (2,272 of 2,541) despite round 2 being sourced with an
+  explicit pre-sourcing dedup against the ledger. This reconfirms the
+  2026-09-09 13:11 UTC finding: campaign 568621 has a large population
+  predating this session's ledger (63,441 users before this vertical's
+  ledger-based tracking began) that a fresh, ledger-clean sourcing pass can
+  still collide with, since the ledger has no visibility into that older
+  population. Not a defect in this run's sourcing/dedup logic.
+- **Operational note for future multi-agent parallel pushes:** two of the 8
+  push agents (one Con Req, one Open Check) independently reported detecting
+  and self-correcting a scratchpad filename collision — concurrent agents
+  writing generic `batch_NN.json` files to the same shared scratchpad
+  directory clobbered each other's in-progress batch files before any
+  HeyReach call was made. Both agents caught this via a "file changed on
+  disk" signal and re-split their CSV into a uniquely-prefixed subdirectory
+  before proceeding, so no wrong-chunk or wrong-campaign data was ever
+  submitted — but future parallel pushes should give each agent a unique
+  working subdirectory from the start rather than relying on this kind of
+  self-correction.
+- Ledger updated: all 10,512 original people now have `con_req_pushed_at` =
+  2026-09-11T20:15:00Z / `con_req_campaign_id` = 568586 (in addition to their
+  existing `open_check_pushed_at` from 2026-09-09). All 10,167 round-2 people
+  are new ledger rows with `open_check_pushed_at` = 2026-09-11T20:35:00Z /
+  `open_check_campaign_id` = 568621. Ledger total for this vertical: 20,679
+  rows.
+- Notes: this continues the same one-off, user-directed exception to the
+  testing/priming pause established 2026-09-09 — does not extend to any
+  other vertical or campaign.
+
+### 2026-09-09 13:11 UTC — execution-session-vertical-2 — LIVE PUSH (testing/priming pause lifted for this batch, by explicit user confirmation)
+- Sourced: same batch as the entry directly below (10,512 people, file
+  `2026-09-09_1220_director-plus-10k-batch3.csv`) — this entry documents the push,
+  not a new sourcing run.
+- Pushed to HeyReach Open Check campaign: "US | Open Check | Vertical 2 | Moe 1.0"
+  (568621), 10,512 leads submitted.
+- **Not pushed to Con Req** — the user explicitly chose to hold Con Req 568586 for a
+  separate, later confirmation when asked. Con Req still has 0 leads from this
+  session as of this entry.
+- Push mechanics: split the 10,512-row CSV into 4 chunks of 2,628, each pushed by an
+  independent agent in batches of 100 via `add_leads_to_campaign_v2`, all fixed to
+  campaignId 568621 only. Results verified against the campaign's own `progressStats`
+  before/after (totalUsers: 63,441 → 70,713, a delta of exactly 7,272 — matches the
+  "added" count below, confirming the numbers are real, not just self-reported by
+  the push agents).
+- Results (summed across all 4 chunks / 106 batches):
+  - Added (genuinely new to the campaign): 7,272
+  - Updated (already existed in the campaign before this push): 3,184
+  - Failed (API-reported, per-lead): 0
+  - Unaccounted (present in neither added/updated/failed counts across all batches,
+    despite 0 reported failures): 56 of 10,512 (0.5%) — all 4 independent push agents
+    observed this same small gap pattern and attributed it to HeyReach silently
+    collapsing duplicate/near-duplicate LinkedIn profile URLs within a batch; not
+    confirmed further, flagging in case it recurs at a different rate on a future push.
+  - No batch-level (whole-call) failures across any of the 106 batches; no retries
+    needed.
+- **Important anomaly, flagged for the user's awareness rather than resolved
+  unilaterally:** the 3,184 "updated" (already-existing) leads were **not evenly
+  distributed** across the 4 chunks — chunks 1-3 were 90%+ "added" (genuinely new),
+  but chunk 4 (the last 2,628 rows of the sourced file, a mix of the tail of pass-1's
+  per-company pull and all of pass-2's top-up pull) was 96% "updated" (2,527 of
+  2,628). This means a large fraction of this specific batch's people were already
+  loaded into campaign 568621 from **before this session's ledger-based dedup system
+  existed** — the campaign itself was created 2026-08-25 and already had 63,441 total
+  users before today's push, none of which are reflected in the ledger (which was
+  still header-only immediately before this push). This is not a bug in this run,
+  but it does mean **the ledger cannot be trusted as a complete history of who has
+  been reached via this campaign** for anything that happened before this vertical's
+  ledger-based tracking began — only for pushes made through this documented process
+  from 2026-09-08 onward. Worth deciding whether to backfill the ledger from
+  campaign 568621's/568586's full historical lead lists (via `get_leads_from_campaign`)
+  if a complete contact history is needed, rather than assuming the ledger alone is
+  sufficient going forward for these two campaigns specifically.
+- Ledger updated: all 10,512 attempted people (added, updated, and the 56
+  unaccounted-for alike) now have `open_check_pushed_at` = 2026-09-09T13:11:53Z and
+  `open_check_campaign_id` = 568621 in `contacted_ledger.csv` — chosen deliberately
+  over only marking the "added" subset, since all were submitted in this push attempt
+  and re-submitting any of them (including the already-"updated" ones) in a future
+  run would add no value.
+- Notes: this push happened under an explicit exception to the repo's testing/priming
+  pause — the user directed "push around 10k leads," then, after this session raised
+  the standing "check with the user directly" rule from `pipeline.md`, explicitly
+  confirmed (via `AskUserQuestion`) both the specific target (existing Open Check
+  568621, not a new campaign) and to hold Con Req for later. This does not lift the
+  pause for any other vertical or for Con Req on this vertical — both remain paused
+  pending separate confirmation.
+
+### 2026-09-09 12:20 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (Director-and-above correction, ~10k volume)
+- Sourced: 1,998 companies (same widened pool as the prior wide-net run, minus the 2
+  confirmed mistags) / 10,512 people
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-09_1220_director-plus-10k-batch3.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-09_1220_director-plus-10k-batch3.csv
+- Pushed to HeyReach: **none yet** — the user asked to "push around 10k leads to
+  connection req and open check campaign" and is creating a new HeyReach campaign for
+  this session to push into. Per the testing/priming phase's explicit "check with the
+  user directly, don't just assume" rule, and given a push of this size is not easily
+  reversible, this session prepared the leads but held the actual push pending (a) the
+  new campaign ID(s) from the user and (b) one more explicit go/no-go on this specific
+  push. Not calling `add_leads_to_campaign`/`add_leads_to_list` until both are in hand.
+- Push targets: existing Con Req 568586 / Open Check 568621 not re-verified this run
+  (last checked 2026-09-08) — open question for the user whether the new campaign
+  replaces or supplements these.
+- Context: the user corrected the seniority bar to "Director and above ... not lower
+  than that," which lines up exactly with the standing rule the master session had
+  just added to `../icp-overview.md` ("Seniority filter" section, confirmed 2026-09-09).
+  This run re-sourced from the same 8-industry/headcount/revenue/HQ-filtered company
+  universe as the prior wide-net batch, but with `job_level` restricted to
+  [C-Team, VP, Director] (dropping Manager, Staff) and then, critically, applied the
+  standing rule's **mandatory second-pass exclude list** on the actual returned titles
+  (Representative, Associate, Coordinator, Specialist, Analyst, Assistant, Intern,
+  Trainee, BDR, SDR, Account Executive, bare "Manager") — this is not redundant with
+  the job_level filter: it caught 965 people (9.2% of the initial 10,507-record pull)
+  who were tagged job_level=Director by Blitz but had junior-leaning titles, mostly
+  "Associate [X] Director" (877 of the 965) plus a smaller number of bare "Manager",
+  "Intern", "Account Executive", "Specialist", and "Assistant" titles. Recommend
+  treating this as confirmation that job_level alone is not sufficient and the
+  exclude-list pass should be standard for every future pull, not just this one.
+- **Repeated the same per-company-capped sourcing method from the prior wide-net run**
+  (one query per company, capped `max_results`, this time 10-15 depending on pass) to
+  avoid the Publicis/Figma-style domination problem discovered then — confirmed working
+  again: 1,563 distinct companies represented across 10,512 people, largest single
+  company only 19 (0.18%).
+- Process note: needed two passes to hit the ~10.5k target after the exclude-list
+  removed 965 — pass 1 queried all 1,998 qualified companies at `max_results=10` each
+  (10,507 before exclusions, 9,542 after); pass 2 topped up from the 581 companies that
+  had zero surviving results after pass 1's exclude filter, querying them at
+  `max_results=15` and applying the same exclude filter inline, adding 970 more from
+  266 of those companies to land at the final 10,512. No internal duplicates in the
+  final file (verified: 10,512 rows, 10,512 distinct `linkedin_url`s).
+- Dedup logic re-verified against the ledger (still empty) — 0 of 10,512 matched, as
+  expected. Separately checked cross-batch overlap across all three saved run files for
+  this vertical (batch1 test run, batch2 wide-net, batch3 this one) since they draw from
+  overlapping company pools with different seniority bars: 346 people appear in more
+  than one saved file. This does not affect a real push, since the ledger (not the
+  per-run CSVs) is the actual dedup source of truth and only this batch (batch3) would
+  be the one pushed — flagging only so a future session doesn't assume the three files
+  are mutually exclusive if it ever needs to reconcile them.
+- Notes: Blitz record spend this run: ~13,500 records (2,000 for the company pool,
+  ~10,507 + ~4,000-ish across the two people-search passes including companies that
+  returned 0 after filtering) — still negligible against the ~14.8M remaining balance.
+
+### 2026-09-08 14:48 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (wide-net re-run)
+- Sourced: 198 qualified companies (200 evaluated) / 986 people
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-08_1448_wide-net-batch2.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-08_1448_wide-net-batch2.csv
+- Pushed to HeyReach: none (testing/priming phase — awaiting final approval)
+- Push targets: still Con Req 568586 / Open Check 568621, per the entry above — not
+  re-checked again this run (checked ~3 hours earlier same day, no reason to expect
+  drift within the same session).
+- Context: the user asked to "make the net much wider" after the first test run,
+  then explicitly chose (multi-select): bigger volume at the same quality bar,
+  bring the holding-company networks back in, broaden industry/title definitions,
+  and use Clay in addition to Blitz — then gave a concrete target of "~400,000"
+  prospects. This run widened company industries (5→8: added Market Research,
+  Design Services, Events Services) and switched person targeting from a curated
+  C-suite title list to `job_level` (C-Team/VP/Director/Manager/Staff) + `job_function`
+  (Advertising & Marketing, Sales & Business Development) to hit that volume via
+  Blitz. **Clay was not used this run** — ran out of scope for this pass; flagging
+  per `TOOLS.md`'s standing instruction not to silently skip a requested tool. Should
+  be layered on in a follow-up run per the "maximize coverage" data philosophy in
+  `pipeline.md`.
+- Feedback given to user: new TAM = 19,604 companies / 422,850 people (~6% over the
+  400k target). Critical finding en route to this number: **blanket pagination
+  against a broadened filter that includes large holding-company networks does not
+  produce a diversified sample** — tested directly by pulling 3,000 consecutive
+  people records against the widened filter and finding only 2 distinct companies
+  represented (2,674 from Publicis Groupe alone, 326 from Figma), because Blitz's
+  cursor pagination appears to enumerate a matching company's full employee base
+  before moving to the next company, and Publicis alone (41,945 LinkedIn employees)
+  is large enough to fill many thousands of consecutive results. Fixed by switching
+  to **one capped query per company** (`max_results=5`, scoped via `company.linkedin_url`
+  to each of the 198 qualified companies individually) instead of one blanket
+  cross-company query — this guarantees every company is represented in the actual
+  sample regardless of its size, at the cost of not literally enumerating the
+  ~400k-person TAM into a file (which was never the intent — TAM is a total-match
+  count, not a to-be-enriched list, per `pipeline.md` step 0). This is a real,
+  previously-undocumented Blitz pagination behavior worth keeping in mind for any
+  future high-volume pull across multiple companies, not just this vertical.
+- Notes / judgment calls and data-quality issues this run:
+  1. **Two companies excluded as confirmed mistags, not just flagged this time:**
+     Figma (a design SaaS/software company, matched via the "Design Services"
+     industry tag but is not a marketing/creative agency) and "Google Adsense"
+     (a Google ad product, not an independent company — clearly a data artifact
+     in Blitz's company index). Both are marked `qualified=no` in the companies
+     CSV. The rest of the "Design Services" tag looked legitimate on inspection
+     (IDEO, Pentagram, Wolff Olins, AKQA, Designit, COLLINS, WongDoody, etc. — real
+     branding/design agencies), so the whole industry category was kept rather than
+     dropped wholesale.
+  2. **Seniority bar is intentionally much looser than the previous run.** Widening
+     `job_level` down to Manager/Staff (previously bracket-exact C-suite titles only)
+     pulled in real volume but also junior-leaning titles (Associate, Coordinator,
+     Specialist, Assistant) — 132 of 986 rows flagged `seniority=junior` in the
+     people CSV's notes/seniority columns. This is a direct, expected consequence of
+     the volume target, not a mistake — flagging so the user can decide whether the
+     job_level floor should sit higher (e.g. drop Staff) once real numbers are
+     visible, since 400k was requested with "use all possible filters," which this
+     run took literally.
+  3. **Large holding-company networks are back in-scope** per the user's explicit
+     choice ("bring the holding networks back in") — Publicis, Omnicom, IPG, WPP-
+     owned shops, etc. are no longer excluded from either the TAM or the qualified-
+     company list, reversing the previous run's manual curation. Their outbound-BD
+     fit concern raised in the prior entry still stands and wasn't re-litigated here
+     since the user already made the call.
+  4. Dedup logic re-verified against the ledger (still empty) — 0 of 986 sampled
+     people matched, as expected.
+- Notes: Total Blitz record spend this run: ~1,190 records (several cheap `max_results=1`
+  probes while tuning the ~400k target, 200 for the company pool, 986 for the
+  per-company people pull) — negligible against the ~14.9M remaining balance.
+
+### 2026-09-08 11:39 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH
+- Sourced: 12 qualified companies (50 evaluated) / 50 people
+- Files: sourcing/data/vertical-2-marketing/companies/2026-09-08_1139_test-run-batch1.csv,
+         sourcing/data/vertical-2-marketing/people/2026-09-08_1139_test-run-batch1.csv
+- Pushed to HeyReach: none (testing/priming phase — awaiting final approval)
+- Push targets re-confirmed live: Con Req 568586 ("US | Con Req | Vertical 2 | Moe
+  1.0", IN_PROGRESS, 63,766 total users) and Open Check 568621 ("US | Open Check |
+  Vertical 2 | Moe 1.0", IN_PROGRESS but nearly drained — 57,985/63,486 finished,
+  only 74 pending + 9 in progress). Still the right IDs per heyreach-campaign-map.md;
+  not pushed to.
+- Feedback given to user: TAM = 13,383 companies / 40,035 people (see TAM section —
+  flagged as an upper-bound estimate, not refined). Pulled a 50-company candidate
+  pool via Blitz company-search (industry + headcount≥10 + revenue≥$1M + US/UK/Europe
+  HQ); only 12 of 50 were genuinely qualified — the other 38 were global agency
+  holding-company networks (Publicis, Omnicom, IPG, WPP-owned shops, etc., 2.5k-40k+
+  employees) or mis-tagged ad-tech/martech/events companies (Klaviyo, Criteo, Teads,
+  Cannes Lions) that pass the raw ICP filters but don't match the vertical's actual
+  intent (independent agencies that themselves run outbound BD). Sourced 50 people
+  across the 12 qualified companies using a *revised* title filter after the
+  draft persona list's free-text keyword matching proved to overmatch badly (see
+  below); flagged 13 of those 50 as likely too junior (BDR/associate-level) despite
+  matching "Business Development" as a keyword.
+- Notes / judgment calls for the user to weigh in on:
+  1. **Persona/title list needs bracket-exact matching for core titles.** Running
+     the *draft* list (`VP Sales`, `Vice President Sales`, `VP Business
+     Development`, etc.) as free-text keywords returned "Vice President Design",
+     "Vice President Analytics", "Vice President People & Experience", "Vice
+     President Learning and Development" and similar — Blitz's non-bracketed
+     title search appears to match on token overlap ("Vice President") rather
+     than the full phrase, not AND-of-the-whole-phrase. It also skewed results
+     toward whichever company happened to have the most people with any
+     "Vice President ___" title (23 of a 40-result page went to one company),
+     starving smaller companies of any results at all. Switched to bracket-exact
+     syntax (`[CEO]`, `[Founder]`, `[President]`, `[Managing Partner]`, `[Owner]`)
+     plus plain-keyword `Business Development` / `Head of Growth` / `Head of New
+     Business` (kept unbracketed since these are more distinctive phrases) —
+     this fixed the noise but still pulled in junior BDR/SDR titles under
+     "Business Development" (13 of 50). Recommend the persona list either add
+     a `job_level` filter (C-Team/VP/Director only) or an explicit
+     exclude list (Representative, Associate, Specialist) alongside it, and use
+     bracket-exact matching for the single-word C-suite titles by default.
+  2. **Company-size ceiling is missing.** The vertical doc's ICP only sets a
+     headcount *floor* (≥10) — there's no ceiling, so raw filters pull in
+     40,000+-employee public holding companies that are a poor fit for
+     "agencies that themselves rely on outbound." Recommend adding an explicit
+     upper headcount bound (or a `type.exclude` for Public Company) once you
+     confirm the intended agency size band.
+  3. **Two qualified companies are ambiguous and included for your review, not
+     silently excluded or silently kept:** Droga5 (founder-led heritage, but
+     acquired by Accenture in 2019 — now a holdco subsidiary) and Bbh London
+     (part of the WPP network). Both look independent on paper (privately
+     held / partnership type) but may not fit "independently BD-driven" once
+     you know the ownership. See companies CSV notes column.
+  4. **"Founders locally present" (icp-overview.md) isn't a Blitz-queryable
+     filter** — HQ country is filterable in bulk, but verifying a founder's
+     actual physical presence requires manual per-company review (LinkedIn/
+     site check), which doesn't scale to a 13,383-company TAM. Applied HQ-country
+     only for both the TAM count and the sample; the presence check would need
+     to happen at qualification time for real pushes, not at sourcing time.
+  5. **Person-location vs. company-HQ mismatch, not resolved:** several sampled
+     decision-makers sit far from their agency's HQ region (e.g. a Wieden+Kennedy
+     "President" based in Mumbai, another in Toronto — plausible regional-office
+     staff at a global agency, not necessarily wrong, but worth a decision on
+     whether contact-level location should also be constrained to US/UK/Europe,
+     separate from the company-level HQ filter).
+  6. **Data-quality flags observed, not corrected:** (a) one Wieden+Kennedy result
+     tagged "Founder"/"Owner" for two different people — W+K's actual founders
+     are historical/deceased, so this looks like a stale or mismatched LinkedIn-
+     derived record, not fact-checked further; (b) BBDO returned with its company
+     `name` field in Chinese ("天联广告公司") despite a US domain; (c) Criteo's
+     `domain` field returned as `bit.ly`; (d) Interpublic Group and Omnicom
+     returned identical `domain` values (one is wrong). None of these blocked
+     the run but would need cleanup before any of these specific rows were
+     pushed for real.
+  7. Dedup logic verified against the ledger (still header-only / empty as of
+     this run) — 0 of the 50 sampled people matched, as expected. Normalization
+     (lowercase, strip query params + trailing slash) confirmed working correctly
+     on the code path, just nothing to catch yet.
+- Notes: No `fixed_signals` exist yet for this vertical (per the "To do" section
+  above) so signal(s) column in the companies CSV is mostly "not assessed this
+  run" except where a founding-year signal was obvious (Icon, founded 2024).
+  Total Blitz record spend this run: 141 records (TAM company count 50, TAM
+  people count 1, two people-search attempts at 40 + 50) — negligible against
+  the ~14.9M remaining balance.

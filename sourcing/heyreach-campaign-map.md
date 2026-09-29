@@ -80,12 +80,11 @@ tracking-clients system — only the raw HeyReach campaigns above.
 
 ## Vertical 3 — M&A ("USA" Sept-2 draft set + "M&A - SEPT" relaunch set)
 
-Two generations of campaigns exist. The Sept 2 "USA | ... | Vertical 3" set
-looks superseded by the Sept 6 "M&A - SEPT - ..." set (created 4 days later,
-actively running/finished vs. the Vertical-3-named ones sitting in
-DRAFT/PAUSED).
+Two generations of campaigns exist. **Confirmed by the user (2026-09-09):
+use the "M&A - SEPT - ..." labeled campaigns** (created by Joe) — the
+earlier "USA | ... | Vertical 3" Sept-2 set is not in use.
 
-**Current (Sept 6) generation — use this one:**
+**Confirmed (Sept 6, "M&A"-labeled) generation — use this one:**
 
 | Stage | Campaign name | Campaign ID | Status (as of 2026-09-08) |
 |---|---|---|---|
@@ -97,11 +96,20 @@ DRAFT/PAUSED).
 
 **Push targets:**
 - **Con Req 587149** (IN_PROGRESS — live, ready to receive leads)
-- **Open Check 587156** — currently FINISHED (fully drained, 8,290 users
-  already processed). Confirm with the user whether to resume/reuse this one
-  or create a fresh Open Check campaign for this vertical before pushing new
-  leads. Note there's also an older superseded Open Check (580514, DRAFT,
-  Sept-2 generation) — don't use that one either without checking first.
+- **Open Check 587156** — **user confirmed 2026-09-09: reuse this one, not a
+  fresh campaign.** Was FINISHED as of 2026-09-09 (8,290 users already
+  processed, 0 pending/in-progress). A direct `resume_campaign` call (before
+  adding any leads) failed twice with a 500 — **don't bother calling it**;
+  the fix is simpler: **just push leads directly with
+  `add_leads_to_campaign`/`_v2`.** Confirmed 2026-09-09 on Vertical 1's own
+  FINISHED Open Check (567476, identical situation): pushing leads alone
+  flipped its status FINISHED → IN_PROGRESS automatically, with no
+  `resume_campaign` call needed at all. Apply the same approach here —
+  `resume_campaign` is for previously-*paused* campaigns specifically, not
+  drained/FINISHED ones; adding leads is what actually restarts a FINISHED
+  campaign. Note there's also an older superseded Open Check (580514, DRAFT,
+  Sept-2 generation) — don't use that
+  one, per the user's confirmation to use the M&A-labeled set only.
 
 Superseded Sept 2 generation (DRAFT/PAUSED, likely not the live target — do
 not push here unless the user says otherwise): Con Req 580487 (PAUSED),
