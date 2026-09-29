@@ -145,6 +145,52 @@ listbuild run queued behind V1 and V2 is a draft config and could be paused unti
   label ("Business Consulting and Services") is the noisiest catch-all there is. At most a small keyword-gated test.
 - **Industrial manufacturing:** one client (Garrison Flood Control).
 
+## Fit with what Algo sells (added 2026-09-29)
+
+### The offer (algoacquisition.ai, read 2026-09-29)
+- A done-for-you **booked-meeting engine**: ICP research, messaging, sending infrastructure, reply handling within
+  5 minutes, warm calling and booking. LinkedIn first (Sales Navigator), cold email second.
+- Plans: Starter (5 client seats, 1,500 connection requests/month, no guarantee); **Core, $20,000/quarter, 40
+  showed meetings/quarter guaranteed** (10 virtual + 5 client seats, 4,500 requests/month); Scale (400
+  meetings/quarter). Prorated money back if the minimum is missed.
+- Case-study industries on the site: staffing/recruitment, life sciences, SaaS, insurance technology, 3D commerce,
+  aerospace, maritime/offshore. Claimed "$56K+ average new revenue per client per quarter".
+
+### What makes a buyer a good fit for that offer
+1. **Economics:** Core costs ~$500 per showed meeting. Break-even needs close rate x first-year value >= $500 per
+   meeting (10% close -> $5k); a comfortable 3x return needs **$15k+ first-year value per won client**.
+2. **Buyers live on LinkedIn:** the client's own customers are directors and executives who respond on LinkedIn.
+3. **Consultative, meeting-led sale**, not self-serve or transactional.
+4. **Capacity for 40+ meetings a quarter:** a founder plus at least one closer; roughly 10-250 staff and >= $1M
+   revenue, so the $80k/year fee is affordable (matches the shared ICP).
+5. **Growth depends on new logos** and there is no in-house SDR team (the "vs Apollo / ZoomInfo" pitch).
+6. **Proof:** Algo already has case studies or clients in the space.
+
+### Vertical scorecard (client evidence + offer fit)
+| Vertical | Typical first-year value per won client | Client evidence | Offer fit | Recommendation |
+|---|---|---|---|---|
+| Staffing & recruitment (V1) | $15-30k per placement, repeat hiring | 35 clients, site case studies | Excellent | **Top priority**, run sub-segments |
+| Retained / boutique executive search (V1b) | $50-100k+ per retained search | 9 clients | Excellent economics; small firms | Separate segment; allow 2-10 staff as a test |
+| B2B SaaS / AI, ACV >= $15k (new V4) | $15-100k ACV | 13 clients, SaaS / insurtech / 3D-commerce case studies | Strong | **Launch** |
+| IT services, MSPs, SAP / Salesforce / Siemens partners (new V5) | $50k+ projects or MRR | 7 clients, Triumphus testimonial | Strong | **Launch** |
+| Life-sciences and healthcare B2B services: CROs / CDMOs, clinical data, medtech services, healthcare staffing (new V6) | $50k+ contracts | 7 clients across clusters, "life sciences" case study | Strong | Launch after V4/V5, or as a V1 + V4 sub-segment |
+| Nearshore / offshore dev teams and BPO, US/UK/EU HQ only (new V7) | $100k+/year per team | Zipdev, Alcor | Strong economics, crowded space | Test |
+| Fractional-exec and B2B consulting firms with >= 10 staff (fractional CFO/CMO, RevOps) | $30-150k retainers | 6 small clients | Good economics, mostly too small | Keyword-gated test only |
+| PEO / EOR / payroll and HR-tech providers | High, per-employee fees | Brain Payroll, SharpenHR | Good | Test, overlaps V4 |
+| M&A advisory (V3) | Success fees ($100k+) | None; Long Holding (acquirer) is the nearest | Economics fit, no proof; low volume of sellers | Keep as a small test, or reframe to acquirers |
+| Marketing agencies (V2) | $30-60k retainers | 1 agency client | Fits economically but agencies often sell outbound themselves | Maintain only |
+
+**Not a fit for the offer:** B2C and e-commerce, local trades, SaaS under ~$5k ACV (can't absorb $500 a
+meeting), and government- or procurement-led sales where LinkedIn meetings don't move deals.
+
+### Messaging angles per vertical (from the offer)
+- **Recruitment / search:** meetings with hiring managers and HR leaders, guaranteed, instead of more job-board
+  spend or BD hires; proof: Core Group Resources' first placement and Mastrovito's contract signing.
+- **SaaS / AI:** pipeline without hiring SDRs or buying Apollo / ZoomInfo seats; 40 showed demos a quarter or money
+  back; proof: VNTANA (3D commerce), ITS (insurtech).
+- **IT services / consulting partners:** meetings with CIOs, CTOs and operations leaders; proof: Triumphus.
+- **Life sciences:** meetings with clinical, R&D and procurement leaders; proof: Meet Life Sciences.
+
 ## Do-not-contact: clients are excluded from all outreach
 - `sourcing/data/dnc_clients.csv` holds all 65 clients (company name, every known domain, company LinkedIn URL).
   `algo_bridge.py import` drops anyone whose company domain or company LinkedIn URL matches, and drops the
