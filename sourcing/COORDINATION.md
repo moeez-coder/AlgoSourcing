@@ -70,6 +70,14 @@ for a specific fix, not a standing per-vertical worker.
   ones. This applies to the master session too when appending alongside
   work an individual session already logged.
 
+## One branch (rule added 2026-09-29)
+
+Every session, master or individual, works on **`claude/algo-acquisition-sourcing-jmos79`** and pushes only
+there. Claude Code gives each new session its own branch by default; switch before touching anything:
+`git fetch origin claude/algo-acquisition-sourcing-jmos79 && git checkout claude/algo-acquisition-sourcing-jmos79`.
+Why: the V4 session worked on its own branch (`claude/upbeat-knuth-kwy4n4`), so its 14,576-person contacted
+ledger was invisible to every other session's dedup for 8 days.
+
 ## Before doing any sourcing or push, in either session type
 
 1. `git pull` (or fetch + check) to get any updates the other session type

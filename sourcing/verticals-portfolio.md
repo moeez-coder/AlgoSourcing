@@ -2,7 +2,7 @@
 
 Drafted 2026-09-29 by the master session from `client-base-vertical-analysis.md` (65 current/past clients) and
 Algo's offer (Core: $20k/quarter for 40 showed meetings, ~$500 a meeting; 3x ROI needs ~$15k+ first-year value
-per won client). V1-V3 are live; V4-V9 are **proposals** until the user approves them. When a proposal is approved,
+per won client). V1-V4 are live (V4 since 2026-09-21); V1b and V5-V9 are **proposals** until the user approves them. When a proposal is approved,
 it gets its own `verticals/vertical-N-<slug>.md`, a listbuild config, a data folder with a contacted ledger, and
 HeyReach campaigns.
 
@@ -19,7 +19,7 @@ contacted; push only to Con Req and Open Check.
 | V1b | Boutique executive search (2-10 staff) | Proposed test | P2 | $50-100k+ per search | 9 clients | Not measured |
 | V2 | Marketing agencies | Live | Maintain | $30-60k retainers | 1 client | ~95,182 companies / ~448,854 people (262,549 main list) |
 | V3 | M&A advisory | Live (draft config) | P3 test | $100k+ success fees | None | 24,272 main list (1,335 companies) + 106,006 candidates; low precision |
-| V4 | B2B SaaS & AI | Proposed | **P1** | $15-100k ACV | 13 clients | Not measured |
+| V4 | B2B SaaS & AI | **Live since 2026-09-21** (own session) | **P1** | $15-100k ACV | 13 clients | 14,576 pushed (US/GB/CA only); full-universe re-cut needed |
 | V5 | IT services & technology partners | Proposed | **P1** | $50k+ projects / MRR | 7 clients | Not measured |
 | V6 | Life-sciences & healthcare B2B services | Proposed | P2 | $50k+ contracts | 7 clients | Not measured |
 | V7 | Nearshore / offshore dev teams | Proposed test | P3 | $100k+ a year | 2 clients | Not measured |
@@ -128,7 +128,10 @@ firms without an SDR team better. Main list sizes by cap (2026-09-29 runs):
 - **Next step:** the user chooses advisors or acquirers. The queued V3 run uses the advisor draft.
 
 ## V4: B2B SaaS & AI companies
-- **Status / priority:** Proposed, P1.
+- **Status / priority:** **Live since 2026-09-21** (created by the V4 session: campaigns Con Req 612584, Con Acc
+  612586, Open Check 612587, Open Profile 612588; 14,576 people pushed). P1. See `verticals/vertical-4-b2b-saas.md`.
+- **Gaps to fix:** sourced US/GB/CA only (Canada outside the ICP, Europe missing), industry-only, before the
+  listbuild checks; Con Acc is still DRAFT with 0 users. A full-universe listbuild re-cut on the shared ICP is next.
 - **Who:** venture-backed or bootstrapped B2B software and AI companies selling contracts of >= $15k a year to
   businesses.
 - **Why:**

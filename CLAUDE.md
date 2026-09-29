@@ -11,7 +11,7 @@ loads automatically in every Claude Code session opened on this repo, master or 
 4. `sourcing/icp-overview.md` + the vertical file in `sourcing/verticals/`: ICP, seniority, TAM and Progress Log.
 5. `sourcing/heyreach-campaign-map.md`: campaign IDs per vertical.
 6. `sourcing/verticals-portfolio.md` (all verticals, standard format) and `sourcing/client-base-vertical-analysis.md`
-   (the client evidence behind it). V4-V9 are proposals until the user approves them.
+   (the client evidence behind it). V4 (B2B SaaS) is live; V1b and V5-V9 are proposals until the user approves them.
 
 ## Sourcing method (mandatory)
 - **All sourcing, TAM sizing and list builds (pipeline.md steps 0-4) go through the `listbuild` skill**
@@ -51,6 +51,10 @@ loads automatically in every Claude Code session opened on this repo, master or 
 - A missing key: stop and tell the user (TOOLS.md, "Where API keys live").
 
 ## Git
+- **One branch for every session, master and individual:** `claude/algo-acquisition-sourcing-jmos79`. Never work
+  on a session's auto-created branch: a ledger that only lives there is invisible to every other session's dedup
+  (happened with V4 on 2026-09-21). If your session started on another branch, `git fetch origin
+  claude/algo-acquisition-sourcing-jmos79 && git checkout claude/algo-acquisition-sourcing-jmos79` first.
 - Work on `claude/algo-acquisition-sourcing-jmos79`; `git pull origin claude/algo-acquisition-sourcing-jmos79`
   before editing, since other sessions push to it. No PRs unless the user asks.
 - Keep the md files current: a finding that changes how others should work goes into the relevant shared file,
