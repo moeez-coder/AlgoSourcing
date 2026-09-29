@@ -3,7 +3,8 @@
     seeds   build the exclusion CSV from every vertical's contacted_ledger.csv (LinkedIn URL; dedup is
             LinkedIn-URL-only), with first/last/domain from the per-run people CSVs for reference
     import  copy a finished listbuild run into sourcing/data/<vertical>/{people,companies,reports}/ using our
-            file naming and column conventions, re-checking every row against the contacted ledgers
+            file naming and column conventions, re-checking every row against the contacted ledgers and dropping
+            anyone at a current/past client (sourcing/data/dnc_clients.csv, by company domain or LinkedIn URL)
 
 Run from the repo root:
     python .claude/skills/listbuild/scripts/algo_bridge.py seeds
@@ -23,7 +24,7 @@ sys.path.insert(0, str(SKILL_DIR))
 
 import yaml  # noqa: E402
 
-from listbuild.identity import normalize_domain, normalize_linkedin_url  # noqa: E402
+from listbuild.identity import normalize_company_linkedin_url, normalize_domain, normalize_linkedin_url  # noqa: E402
 from listbuild.seeds import detect_columns  # noqa: E402
 
 csv.field_size_limit(10**8)
@@ -53,6 +54,28 @@ def contacted_urls(root):
                 if u:
                     urls.setdefault(u, {"full_name": row.get("full_name") or "", "vertical": ledger.parent.name})
     return urls
+
+
+def dnc_companies(root):
+    """(domains, company LinkedIn URLs) of current and past clients in sourcing/data/dnc_clients.csv: never contacted."""
+    doms, urls = set(), set()
+    path = root / "sourcing" / "data" / "dnc_clients.csv"
+    if not path.exists():
+        return doms, urls
+    with path.open(encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            for d in (row.get("domains") or "").split(";"):
+                d = normalize_domain(d)
+                if d:
+                    doms.add(d)
+            u = normalize_company_linkedin_url(row.get("company_linkedin_url"))
+            if u:
+                urls.add(u)
+    return doms, urls
+
+
+def is_dnc(row, doms, urls, domain_key="company_domain", url_key="company_linkedin_url"):
+    return (normalize_domain(row.get(domain_key)) in doms) or (normalize_company_linkedin_url(row.get(url_key)) in urls)
 
 
 def cmd_seeds(args):
@@ -94,6 +117,7 @@ def cmd_import(args):
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H%M")
     base = f"{stamp}_listbuild-{args.label}"
     contacted = contacted_urls(root)
+    dnc_doms, dnc_urls = dnc_companies(root)
 
     conn = sqlite3.connect(db)
     conn.row_factory = sqlite3.Row
@@ -103,7 +127,7 @@ def cmd_import(args):
     summary = {}
     for fit, suffix in buckets.items():
         path = vdir / "people" / f"{base}{suffix}.csv"
-        n = dropped = 0
+        n = dropped = dnc = 0
         with path.open("w", encoding="utf-8", newline="") as f:
             w = csv.DictWriter(f, fieldnames=PEOPLE_COLS, extrasaction="ignore")
             w.writeheader()
@@ -112,12 +136,15 @@ def cmd_import(args):
                 if normalize_linkedin_url(r.get("linkedin_url")) in contacted:
                     dropped += 1
                     continue
+                if is_dnc(r, dnc_doms, dnc_urls):
+                    dnc += 1
+                    continue
                 r["title"], r["source"], r["email"] = r.get("job_title"), r.get("all_sources"), ""
                 w.writerow(r)
                 n += 1
         if n == 0:
             path.unlink()
-        summary[fit] = (n, dropped, path.name if n else None)
+        summary[fit] = (n, dropped, dnc, path.name if n else None)
 
     comp_path = vdir / "companies" / f"{base}.csv"
     comp_path.parent.mkdir(exist_ok=True)
@@ -129,6 +156,8 @@ def cmd_import(args):
         w.writeheader()
         for c in conn.execute("SELECT * FROM companies ORDER BY domain"):
             c = dict(c)
+            if is_dnc(c, dnc_doms, dnc_urls, domain_key="domain", url_key="linkedin_url"):
+                continue
             kw = None if c.get("keyword_fit") is None else bool(c["keyword_fit"])
             status, reason = classify_company_fit(icp, c.get("industry"), kw)
             w.writerow({"company_name": c.get("name"), "domain": c.get("domain"), "linkedin_url": c.get("linkedin_url"),
@@ -143,8 +172,9 @@ def cmd_import(args):
             shutil.copy(run_dir / name, rep / f"{base}_{name}")
 
     print(f"imported listbuild run '{icp['name']}' into {vdir.relative_to(root)}")
-    for fit, (n, dropped, fname) in summary.items():
-        print(f"  {fit:9}: {n:,} people -> people/{fname}" + (f"  ({dropped:,} dropped: already in a contacted ledger)" if dropped else ""))
+    for fit, (n, dropped, dnc, fname) in summary.items():
+        print(f"  {fit:9}: {n:,} people -> people/{fname}" + (f"  ({dropped:,} dropped: already in a contacted ledger)" if dropped else "")
+              + (f"  ({dnc:,} dropped: work at a client in dnc_clients.csv)" if dnc else ""))
     print(f"  companies: {nc:,} -> companies/{comp_path.name}")
     print("next: add the TAM + Progress Log entries to the vertical file (sourcing/pipeline.md formats), commit, then push "
           "only the main (fit) file per the current-phase rules.")

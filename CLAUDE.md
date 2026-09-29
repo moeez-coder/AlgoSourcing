@@ -10,6 +10,7 @@ loads automatically in every Claude Code session opened on this repo, master or 
 3. `sourcing/TOOLS.md`: which tools and keys are live and their quotas.
 4. `sourcing/icp-overview.md` + the vertical file in `sourcing/verticals/`: ICP, seniority, TAM and Progress Log.
 5. `sourcing/heyreach-campaign-map.md`: campaign IDs per vertical.
+6. `sourcing/client-base-vertical-analysis.md`: which verticals the client base supports (2026-09-29).
 
 ## Sourcing method (mandatory)
 - **All sourcing, TAM sizing and list builds (pipeline.md steps 0-4) go through the `listbuild` skill**
@@ -26,6 +27,8 @@ loads automatically in every Claude Code session opened on this repo, master or 
   `sourcing/listbuild/seeds/contacted_all.csv`) and pass it as `--seeds`.
 - **Dedup on the LinkedIn URL only** (user rule 2026-09-29): normalised = lowercase, no query, no trailing slash,
   percent-decoded. Never drop or merge people because name + company match; different URL = different person.
+- **Never contact current or past clients:** `sourcing/data/dnc_clients.csv` (company domains + LinkedIn URLs).
+  `algo_bridge.py import` drops them; check it before any manual push too. Add a new client there when it signs.
 - After every push, update `sourcing/data/<vertical>/contacted_ledger.csv` **before the turn ends**.
 
 ## Push rules

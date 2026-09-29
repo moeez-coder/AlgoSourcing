@@ -125,6 +125,7 @@ bulk pulls. The short version:
 5. `algo_bridge.py import --vertical <slug> --icp <config> --label <label>`
    writes the people/companies/reports files into `sourcing/data/<vertical>/`
    (step 4) and re-checks every row against every ledger.
+   It also drops anyone at a current/past client (`sourcing/data/dnc_clients.csv`).
 6. Append TAM + Progress Log entries, commit, push. Steps 5-7 below are unchanged.
 
 What it enforces that earlier runs did not:
