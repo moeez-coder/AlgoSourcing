@@ -174,7 +174,10 @@ def map_industries(clay_labels):
     }
 
 
-def build_icp(name, industries, countries, revenue_min_usd, seniority="director_plus", person_countries=None, keywords=None):
+def build_icp(name, industries, countries, revenue_min_usd, seniority="director_plus", person_countries=None,
+               keywords=None, employee_count_min=10):
+    """employee_count_min defaults to 10: the icp-overview.md headcount floor, non-negotiable per the user
+    (2026-09-15). Overridable per-config, but every Algo vertical config should keep the default."""
     countries = [c for x in countries for c in (ALGO_GEOS if x == "ALGO" else [x])]
     if person_countries:
         person_countries = [c for x in person_countries for c in (ALGO_GEOS if x == "ALGO" else [x])]
@@ -193,6 +196,7 @@ def build_icp(name, industries, countries, revenue_min_usd, seniority="director_
         "company_hq_countries": list(countries),
         "person_countries": persons,
         "revenue_min_usd": revenue_min_usd,
+        "employee_count_min": int(employee_count_min) if employee_count_min else 10,
         "seniority": seniority,
         "industries": {"clay": m["clay"], "blitz": m["blitz"], "discolike": m["discolike"], "discolike_optional": []},
         "seniority_map": SENIORITY_MAPS[seniority],

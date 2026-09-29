@@ -6,9 +6,25 @@ def test_full_body_uses_all_icp_lists(icp):
     assert body["company"]["industry"]["include"] == icp["industries"]["blitz"]
     assert body["company"]["hq"]["country_code"] == ["US", "GB", "CA", "AU", "NZ"]
     assert body["company"]["revenue"] == {"min": 1000000}
+    assert body["company"]["employee_count"] == {"min": 10}
     assert body["people"]["job_level"] == ["C-Team", "VP", "Director"]
     assert body["people"]["location"]["country_code"] == ["US", "GB", "CA", "AU", "NZ"]
     assert body["max_results"] == 50 and "cursor" not in body
+
+
+def test_employee_count_min_omitted_when_not_in_icp(icp):
+    icp = {**icp}
+    icp.pop("employee_count_min", None)
+    body = build_people_body(icp, {}, page_size=50)
+    assert "employee_count" not in body["company"]
+
+
+def test_employee_range_shard_coexists_with_employee_count_floor(icp):
+    """employee_range (a shard bucket) and employee_count.min (the icp-overview.md headcount floor, non-negotiable
+    per the user 2026-09-15) are independent Blitz filters and must both be present when both apply."""
+    body = build_people_body(icp, {"employee_range": "11-50"}, page_size=50)
+    assert body["company"]["employee_range"] == ["11-50"]
+    assert body["company"]["employee_count"] == {"min": 10}
 
 
 def test_shard_filters_narrow_body_and_cursor_is_passed(icp):
@@ -55,6 +71,7 @@ def test_company_body_targets_gated_industries_with_keywords(icp):
     assert body["company"]["keywords"]["include"] == icp["fit"]["keywords"]
     assert body["company"]["hq"]["country_code"] == ["US"] and body["company"]["employee_range"] == ["11-50"]
     assert body["company"]["revenue"] == {"min": 1000000} and body["cursor"] == "c1" and "people" not in body
+    assert body["company"]["employee_count"] == {"min": 10}
     body2 = build_company_body(icp, {"industry": "Marketing Services"}, page_size=50)
     assert body2["company"]["industry"]["include"] == ["Marketing Services"] and "keywords" not in body2["company"]
     c = parse_company({"linkedin_url": "https://www.linkedin.com/company/x", "name": "X Ltd", "industry": "Advertising Services",

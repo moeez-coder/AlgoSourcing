@@ -146,7 +146,88 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
   flag if a different Europe boundary (e.g. EU-27 only, or including/excluding
   specific non-EU states) is intended.
 
+### 2026-09-29 09:04 UTC — execution-session-vertical-2 (listbuild adoption + shared-code fix)
+- Companies matching ICP filters (core industries only): ~338,002 (method: `listbuild preview`,
+  `sourcing/listbuild/config/v2_marketing.yaml`, canary-verified — every filter narrows from the
+  unfiltered 68,363,495-company baseline, none silently ignored). Plus ~111,159 in catch-all/keyword-
+  gated industries (Market Research, Design Services, Design, Events Services) -> candidates file,
+  never the main list.
+- People: not yet re-measured as a total_results figure this run (preview samples 215 rows across the
+  Blitz sweep rather than reporting one aggregate count the way the old hand-rolled TAM query did);
+  the 338,002/111,159 company figures are the comparable step-0 numbers. A people TAM figure will come
+  from the actual sweep (`run`) once approved.
+- **This supersedes the 2026-09-09 19,604-companies / 83,223-people entry, which is now known stale for
+  two reasons, not one:** (a) it predates the repo-wide adoption of the Blitz filter canary — re-running
+  the identical company-search filter combo on 2026-09-29 returned 92,407, a ~4.7x jump this session
+  could not fully explain by Blitz's index growing in three weeks alone; (b) mid-investigation, this
+  session found and fixed a real, separate bug that also inflated that 92,407 figure and the initial
+  (pre-fix) listbuild preview's ~549,150/~182,965 numbers — see below.
+- **Bug found and fixed (shared code, affects all three verticals, not just V2):** `employee_count_min`
+  (the icp-overview.md headcount floor, "minimum 10 headcount is non-negotiable" per the user
+  2026-09-15) was defined nowhere in listbuild's config schema and was never sent to Blitz's
+  `/v2/search/companies` or `/v2/search/people` request bodies — only `discolike_employee_floor` (used
+  solely by the DiscoLike adapter) existed. Every Blitz-sourced company/person count listbuild had
+  produced up to this point (including V1's 2026-09-29 preview: ~122,984 core + ~50,020 keyword-gated)
+  was measured without the floor. Fixed test-first: added `employee_count_min` (default 10) to
+  `icp_gen.build_icp()`, wired it into `providers/blitz.py`'s `build_people_body` and
+  `build_company_body` as `company.employee_count.min`, added it to all three vertical configs
+  (v1/v2/v3) and the example fixture config, and added 5 new tests (`test_blitz_adapter.py`,
+  `test_icp_gen.py`). Re-ran the full suite (182 passed) and re-ran V2's preview after the fix: main-list
+  dropped from ~549,150 to ~338,002 and catch-all from ~182,965 to ~111,159 (a ~38% reduction), confirming
+  the floor was real and material. **V1 and V3's own logged TAM figures from before this fix should be
+  treated as upper bounds until re-previewed with the fix in place** — flagging for the master session
+  and whichever session next touches those verticals, per COORDINATION.md's rule that a shared-code
+  change from an individual session gets noted here for visibility.
+- **Cross-checked Vertical 2's entire pushed history (35,360 people, all four hand-rolled sourcing
+  rounds) against the newly-added `sourcing/data/dnc_clients.csv` (Algo's own client do-not-contact
+  list, added 2026-09-29 by the master session) given that commit's note that 36 people at 9 clients
+  had already been pushed in earlier V1 rounds.** One name-only match surfaced ("BLU") but resolved as a
+  false positive on inspection: the sourced person's `company_domain` is `blu-brand.nl` (an unrelated
+  Dutch brand agency), not the Algo client's `bluselection.com`. **Zero real client-contamination hits
+  in Vertical 2's pushed data.**
+- Verified the specific Blitz bug behind the 2026-09-17 "Forbes" incident (`company.linkedin_url` not
+  being a valid **Company Search** filter) does not affect this vertical's methodology: this vertical's
+  hand-rolled per-company sourcing used `company.linkedin_url` as a **People Search** filter instead
+  (a real, documented field for that endpoint) — re-verified directly: scoping people-search to
+  Publicis Groupe's URL alone returned 17,080 of 454,021,881 unfiltered, with every result's
+  `company_name`/`company_linkedin_url` matching the company queried. The 35,360 already-pushed people
+  are sound on this specific point.
+- Notes: from here forward, all Vertical 2 sourcing goes through `listbuild` per the repo-wide mandate
+  (`CLAUDE.md`, `COORDINATION.md`, `pipeline.md`, all updated 2026-09-29) — no more hand-rolled Blitz
+  scripts. Preview sample (215 rows) showed 7 title-guard fails (~3.3%) and only 3 rows already in the
+  cross-vertical seed list (52,555 people) — low overlap, as expected given this run targets the
+  ~338,002-company pool that the old per-company-capped method (which topped out around company #10,000
+  before hitting diminishing returns) never came close to exhausting. Reported the corrected preview to
+  the user; awaiting approval before running the full sweep (`listbuild run --discolike-cap-usd 0`) or
+  pushing anything.
+
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-29 09:04 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (listbuild adoption; shared-code fix)
+- Sourced: 0 people pushed this run — tooling adoption + a preview only (`listbuild preview`, free,
+  no data pulled beyond the 215-row sample). Full sweep not yet run, pending user approval.
+- Files: none new under `sourcing/data/vertical-2-marketing/` this run — the preview sample lives at
+  `sourcing/listbuild/out/v2_marketing/preview.csv` (gitignored scratch, not committed).
+- Pushed to HeyReach: none (this session did not touch either campaign).
+- Feedback given to user: read the 2026-09-29 repo-wide `listbuild` adoption (CLAUDE.md, COORDINATION.md,
+  TOOLS.md, pipeline.md, icp-overview.md all updated), ran an independent integrity check on this
+  vertical's own already-pushed 35,360 people given the Blitz filter-ignoring bug that invalidated V1's
+  batch — confirmed clean (see TAM section entry, same timestamp, for the full detail): the specific
+  filter this vertical relied on (`company.linkedin_url` in **people** search) is real and verified
+  narrowing correctly, unlike the broken **company**-search usage that caused V1's incident. Then found
+  and fixed a second, separate, shared-code bug (`employee_count_min` never reaching Blitz at all) that
+  would have inflated the very TAM re-measurement this session was doing — fixed test-first across all
+  three vertical configs, not just V2's. Ran `listbuild preview` for V2 twice (before and after the fix)
+  to show the user the real effect: ~732K -> ~449K combined main+candidate people once the non-negotiable
+  headcount floor was actually applied. Cross-checked this vertical's full push history against the
+  newly-added client DNC list (zero real hits, one false positive resolved). Reported all of this plus
+  the corrected preview numbers to the user and am awaiting approval before running the full sweep.
+- Notes: this vertical's config (`sourcing/listbuild/config/v2_marketing.yaml`) is otherwise unchanged
+  from what the master session already set up — same 8-industry mapping (6 core + Market Research/Design
+  Services/Design/Events Services keyword-gated), same 43-country US/UK/Europe list, same director_plus
+  seniority map. Next step once approved: `listbuild run --discolike-cap-usd 0` (DiscoLike capped at $0
+  regardless, since the account is currently overdrawn), then `algo_bridge.py import`, then this
+  vertical's actual TAM-people figure and a proper sourced batch, per the mandatory workflow.
 
 ### 2026-09-15 11:20 UTC — execution-session-vertical-2 — LIVE PUSH (round-4 batch, both campaigns — full TAM coverage reached at current filters)
 - User asked for "more to open checks"; while sourcing was underway, also

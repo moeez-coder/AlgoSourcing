@@ -91,6 +91,8 @@ person_countries:
 - BA
 - MD
 revenue_min_usd: 1000000
+employee_count_min: 10  # icp-overview.md floor, non-negotiable per the user 2026-09-15 -- was missing from the
+                         # Blitz adapter until this session's fix (2026-09-29); see V2's Progress Log entry.
 seniority: director_plus
 industries:
   clay:

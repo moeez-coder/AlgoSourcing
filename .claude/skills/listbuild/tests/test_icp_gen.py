@@ -35,6 +35,15 @@ def test_build_icp_produces_a_complete_config(icp):
     assert cfg["industries"]["discolike"] == ["HUMAN_RESOURCES"]
     assert cfg["fit"]["core_industries"] == ["Staffing and Recruiting", "HUMAN_RESOURCES"]
     assert cfg["fit"]["keyword_gated_industries"] == [] and cfg["fit"]["keywords"] == []
+    assert cfg["employee_count_min"] == 10  # icp-overview.md floor, non-negotiable per the user 2026-09-15
+
+
+def test_build_icp_employee_count_min_is_overridable_but_defaults_to_the_shared_floor():
+    cfg = build_icp(name="x", industries=["Marketing Services"], countries=["US"], revenue_min_usd=0)
+    assert cfg["employee_count_min"] == 10
+    cfg2 = build_icp(name="x", industries=["Marketing Services"], countries=["US"], revenue_min_usd=0,
+                      employee_count_min=25)
+    assert cfg2["employee_count_min"] == 25
 
 
 def test_build_icp_rejects_unknown_country_or_seniority():
