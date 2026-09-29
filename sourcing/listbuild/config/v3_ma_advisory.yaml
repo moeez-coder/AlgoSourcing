@@ -93,6 +93,8 @@ person_countries:
 revenue_min_usd: 1000000
 employee_count_min: 10  # icp-overview.md floor, non-negotiable per the user 2026-09-15 -- was missing from the
                          # Blitz adapter until Vertical 2's session fixed it (2026-09-29); re-run TAM/sourcing here too.
+employee_count_max: 500  # user decision 2026-09-29: cap at 500 to cut out mega-enterprises (e.g. Deutsche Bank,
+                          # Fidelity, Accenture) dominating the DRAFT run; keep to boutique/mid-size advisory shops.
 seniority: director_plus
 industries:
   clay:
