@@ -203,6 +203,15 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
 
+### 2026-09-29 09:40 UTC — master session — FULL V2 SWEEP IN PROGRESS, NO PUSH
+- The user asked the master session (2026-09-29) to run complete-universe sourcing for all verticals, so the
+  master session is running the full V2 `listbuild run` (`config/v2_marketing.yaml`, `--discolike-cap-usd 0`),
+  after V1 and before V3. **The V2 individual session does not need to run the sweep itself.**
+- It uses the `employee_count_min` fix from the 09:04 entry below (thanks: it also invalidated the master
+  session's first V1 pull, which is being redone). Dedup is LinkedIn URL only (user rule 2026-09-29); clients
+  in `sourcing/data/dnc_clients.csv` are dropped at import.
+- Results, TAM and files will be logged here when the run and `algo_bridge.py import` finish. Nothing is pushed.
+
 ### 2026-09-29 09:04 UTC — execution-session-vertical-2 — TEST RUN, NO PUSH (listbuild adoption; shared-code fix)
 - Sourced: 0 people pushed this run — tooling adoption + a preview only (`listbuild preview`, free,
   no data pulled beyond the 215-row sample). Full sweep not yet run, pending user approval.
