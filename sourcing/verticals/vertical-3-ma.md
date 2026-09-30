@@ -69,6 +69,23 @@ Total companies matching this vertical's ICP filters, and total people
 matching its persona/title filters across those companies — not the sample
 actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
+### 2026-09-30 12:43 UTC — individual session (listbuild full-universe rerun, cap500 config)
+- Companies matching ICP filters: core industry Investment Banking, headcount 10-500, at **73,716 companies**
+  exported (companies file); of these, people-bearing fit-industry companies number in the low thousands after the
+  cap (see top companies below). Method: `listbuild run`, `config/v3_ma_advisory.yaml` with `employee_count_max: 500`
+  added (user decision 2026-09-29); same 43 US/UK/Europe HQ countries, revenue >= $1M, headcount 10-500; canary
+  passed; Clay skipped (quota exhausted until 2027-01-01, 37 results left of 1,000,000).
+- People matching persona/title filters: **351,269** director-plus-title people swept from Blitz (174 shards, 359,589
+  fetched = 96%), after title guard 329,352 pass; ICP fit split: **11,192 main list** (core industry, Investment
+  Banking, headcount <= 500), 26,777 keyword-gated candidates (Business Consulting/Management Consulting/Financial
+  Services + M&A keywords), 6,341 unverified (industry unknown), 304,308 unfit (mostly consulting firms without M&A
+  keywords, or outside headcount cap).
+- Notes: **much cleaner than the DRAFT run.** Main list top companies are genuine boutique/mid-size advisory shops —
+  Leerink Partners (143), Capstone Partners (127), SunTrust Robinson Humphrey (118), ROTH Capital Partners (114),
+  Daiwa Capital Markets Europe (103), Deutsche Numis (103), Solomon Partners (102), Peel Hunt (81), MarshBerry (77) —
+  no single mega-bank dominates (vs. Deutsche Bank = 30% of the prior draft's main list). Country split: US 6,986
+  (62%), GB 1,375 (12%), FR 692, IT 370, ES 306, DE 247.
+
 ### 2026-09-29 10:32 UTC — master session (listbuild full-universe run, DRAFT config)
 - Companies matching ICP filters: core industry Investment Banking at **1,335 companies** in the main list, plus
   **~3,379** Financial Services / Business Consulting / Management Consulting companies that pass the M&A keyword
@@ -88,6 +105,26 @@ actually sourced/pushed. See `../pipeline.md`, "TAM entry format."
 
 
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-30 12:43 UTC — individual session — FULL-UNIVERSE LISTBUILD RERUN (CAP500 CONFIG), NO PUSH
+- User decision (2026-09-29): keep headcount cap at <= 500 and re-run; advisors-vs-acquirers framing not yet decided
+  (left as-is for now — config still targets M&A advisory firms, not acquirers).
+- Config change: added `employee_count_max: 500` to `sourcing/listbuild/config/v3_ma_advisory.yaml`, committed and
+  pushed to main (commit db85a0e) before running.
+- Sourced: 73,716 companies / 44,310 people exported (11,192 main + 26,777 candidates + 6,341 unverified).
+- Files: sourcing/data/vertical-3-ma/people/2026-09-30_1243_listbuild-listbuild-full-universe-cap500.csv (main),
+  `..._candidates.csv`, `..._unverified.csv`; companies/2026-09-30_1243_listbuild-listbuild-full-universe-cap500.csv;
+  reports/2026-09-30_1243_listbuild-listbuild-full-universe-cap500_cost_report.md.
+- Pushed to HeyReach: none — this is a preview/review run per the master-session model (listbuild preview -> user
+  approval -> run -> import -> review -> push only when approved). Showing the user the main file next for a push
+  decision.
+- Checks: seeds rebuilt from all verticals' ledgers (67,123 contacted people) before the run; Blitz filter canary
+  passed; title guard dropped 21,909 sub-director rows; 0 people purged as already-contacted (excluded=304 were
+  merges within this run's own shards, not ledger hits — seed exclusion ran at 67,123 keys with 0 subsequent purges
+  in consolidate). Clay layer skipped cleanly (quota exhausted, reported per the "every provider" rule). DiscoLike
+  has no bucket for these industries, skipped as before.
+- See TAM entry above for the company/precision detail (top companies now genuine boutique/mid-size shops, not one
+  mega-bank).
 
 ### 2026-09-29 10:32 UTC — master session — FULL-UNIVERSE LISTBUILD RUN (DRAFT CONFIG), NO PUSH
 - Sourced: 75,339 companies / 134,900 people exported (24,272 main + 106,006 candidates + 4,622 unverified).
