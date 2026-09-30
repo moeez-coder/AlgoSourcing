@@ -203,7 +203,56 @@ by HeyReach itself. All 14,576 confirmed pushed to both Con Req 612584 and
 Open Check 612587 (both campaigns verified at `totalUsers = 14,576`). See
 `../pipeline.md`, "The contacted ledger."
 
+## TAM (Total Addressable Market) — append-only, newest entry on top
+
+### 2026-09-29 11:47 UTC — individual session (v4_b2b_saas listbuild run)
+- Companies matching ICP filters: 47,912 (method: `listbuild` skill, Blitz company + people search,
+  `config/v4_b2b_saas.yaml` — industries Software Development / Data Infrastructure and Analytics / Desktop
+  Computing Software Products / Mobile Computing Software Products / Computer Software (legacy label),
+  employee_count 10-500 (new ceiling, see Progress Log), revenue >= $1M, HQ in the 43 ALGO US/UK/Europe codes,
+  director-plus seniority, "Business Intelligence Platforms" kept as a keyword-gated catch-all, not core)
+- People matching persona/title filters across those companies: 204,041 raw contacts -> after title guard,
+  ICP-fit classification, DNC-client and placeholder-employer drops: **183,335 fit** (the push file),
+  634 candidate (BI-platform catch-all, keyword-gated ~30% precise, needs review), 5,115 unverified (company
+  industry couldn't be confirmed), 1,226 held back entirely (company outside the ICP)
+- Notes: this supersedes the 2026-09-21 hand-rolled TAM sizing (14,590 people, no listbuild canary/title-guard/
+  DNC check existed then). Exact, not estimated — full Blitz sweep completed (218/218 shards). Clay quota still
+  exhausted (0 net-new from Clay). DiscoLike hit its account limit before an estimate could be pulled (403,
+  "monthly usage limit") — its ~$625 gross / ~178K-contact estimate from the un-capped preview is stale post-cap
+  and needs re-pulling once the account is topped up, if the user wants that layer. **Not yet reviewed by the
+  user or pushed to HeyReach** — see Progress Log.
+
 ## Progress Log (append-only — newest entry on top; do not edit or delete other sessions' entries)
+
+### 2026-09-29 11:47 UTC — individual session (v4_b2b_saas listbuild run) — NO PUSH, awaiting review
+- Sourced: 47,912 companies / 204,041 raw contacts -> 183,335 fit / 634 candidate / 5,115 unverified (see TAM
+  entry above for the full breakdown and filter)
+- Files: `sourcing/data/vertical-4-b2b-saas/companies/2026-09-30_1243_listbuild-listbuild-500cap.csv`,
+  `sourcing/data/vertical-4-b2b-saas/people/2026-09-30_1243_listbuild-listbuild-500cap_part01.csv` +
+  `_part02.csv` (fit, split in two by `algo_bridge.py import`), `..._candidates.csv`, `..._unverified.csv`;
+  reports at `sourcing/data/vertical-4-b2b-saas/reports/2026-09-30_1243_listbuild-listbuild-500cap_{cost_report,preview}.md`
+- Pushed to HeyReach: **none** — the user asked only for the universe ("get me the universe"), not a push; this
+  is new sourcing, not a resend of the already-pushed 14,576 from 2026-09-21, so it needs its own review/approval
+  before touching Con Req 612584 / Open Check 612587
+- Config/code change (shared, logged for the master session): added `employee_count_max` support to the Blitz
+  adapter (`.claude/skills/listbuild/listbuild/providers/blitz.py`, test-first in `test_blitz_adapter.py` — it
+  only had a floor before). Applied a 500-employee ceiling to `config/v4_b2b_saas.yaml` after the user approved
+  it over an uncapped run: the uncapped preview (~462K TAM) sampled Google/Microsoft/Meta/XING, not V4's real
+  ICP; the capped preview/run (this one) has none of those in its sample and a lower title-guard fail rate.
+- Dedup: cross-vertical seeds rebuilt before the run (67,123 people, including this vertical's own already-live
+  14,576) — `algo_bridge.py import` re-checked every row against every ledger; 11 people dropped as employed at a
+  DNC client (`sourcing/data/dnc_clients.csv`), 47 dropped for a placeholder employer name (e.g. "Private
+  Company"). No overlap-with-already-pushed count surfaced separately since the seeds exclusion already ran
+  during the Blitz fetch/consolidate stage (`purged_as_excluded: 0` in the run's own log, i.e. the shard-level
+  filters meant already-contacted people mostly weren't re-fetched rather than being fetched then dropped).
+- Feedback given to user: reported the TAM (183,393 exported / 183,335 after DNC+placeholder drops), the sample
+  (clean, no enterprise names post-cap), title-guard fail rate (~7% uncapped, lower capped), and that Clay/
+  DiscoLike are both at their limits this cycle (known, already in TOOLS.md).
+- Notes for next session: this is a much larger candidate pool than the 2026-09-21 push (183K vs 14.6K) — before
+  pushing any of it, the user should say how much to push and confirm the review files
+  (`_candidates`/`_unverified`) don't need action first, per CLAUDE.md's push rules. Also still open from the
+  prior troubleshooting entry below: Con Acc 612586 receiving 0 leads (Clay-side break), and unconfirmed whether
+  Open Profile 612588 sends real per-lead `{subject}`/`{inmail}` copy.
 
 - **2026-09-29 (later)** (individual session, troubleshooting only) — **Root cause on Con Acc 0 users; Open Profile
   copy looks correctly wired**. No HeyReach change made, no leads sourced or pushed, per explicit user scope.
