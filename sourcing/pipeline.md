@@ -54,6 +54,34 @@ separately confirmed. Con Req 567452 remains PAUSED — queued leads won't
 send until someone explicitly resumes it, which is a separate decision
 from adding leads (it also restarts the pre-existing mid-flight people).
 
+**Standing exception, 2026-10-02 — Open Check top-ups (user: "orchestrate it such that open check always has
+leads").** Each live vertical's own session may push its **main (fit) listbuild file** into **its live Open Check
+campaign** without asking again, following "Open Check top-up rule" below. This covers Open Check only: Con Req,
+`_candidates` and `_unverified` files, and verticals whose list is not approved (V3 until the user picks advisors
+or acquirers; V1b and V5-V9 until campaigns exist) still need the user's go-ahead.
+
+### Open Check top-up rule (2026-10-02)
+
+- **Check daily** (and before ending any session turn that touches the vertical): `get_campaign` on the vertical's
+  live Open Check; read `progressStats.totalUsersPending` and `status`.
+- **Floor:** if pending is below **10,000** (or the campaign is FINISHED), top it up. **Top-up size:** push enough
+  to bring pending to about **25,000**, i.e. roughly two weeks at the ~1,800 people/day an Open Check drains with
+  ~140 senders (V1 and V4 measured 2026-10-02). Re-measure: drain/day = change in (finished + failed) between two
+  readings / days between them, and adjust the floor to 7 days of drain if it differs a lot.
+- **Who goes in:** the newest main (fit) file(s) in `sourcing/data/<vertical>/people/`, rows not yet in **any**
+  vertical's `contacted_ledger.csv` (rebuild with `algo_bridge.py seeds`) and not at a client
+  (`data/dnc_clients.csv`; the import already dropped them, check anyway). Take rows in file order unless the user
+  set a priority (e.g. smaller companies first).
+- **How:** `add_leads_to_campaign_v2` in batches of 100. Pushing to a FINISHED Open Check resumes it. After the
+  batches, confirm with `get_campaign` that `totalUsers` grew by about the number pushed (HeyReach reports people
+  already in the list as "updated", not added). If HeyReach rate-limits the account, stop and resume later; the
+  call is idempotent per lead.
+- **Then, before the turn ends:** append every pushed person to the vertical's `contacted_ledger.csv`
+  (`open_check_pushed_at`, `open_check_campaign_id`, `first_sourced_run_file`), add a Progress Log entry (pending
+  before/after, pushed, added vs updated), commit and push to `main`.
+- **Running low on main-list people?** When fewer than 30,000 never-pushed main-list people remain, tell the user:
+  the next step is a fresh listbuild run (or reviewing `_candidates`) so the queue never runs dry.
+
 While this phase is active, any session — master or individual — should:
 - Do the full sourcing workflow (companies → people → dedup-check against the
   ledger → save CSVs) exactly as normal.

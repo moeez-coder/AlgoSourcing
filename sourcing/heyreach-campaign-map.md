@@ -164,6 +164,21 @@ Create each set (Con Req, Con Acc, Open Check, Open Profile + the Acc and Open C
 `heyreach-vertical-launch` skill only after the user approves it, and record the IDs here. Check that Con Acc and
 Open Profile actually receive leads once live (V4's Con Acc stayed at 0 users for 8 days).
 
+## Open Check live state (master check 2026-10-02) and top-up owners
+
+| Vertical | Live Open Check | Status 2026-10-02 | Pending | Never-pushed main-list people | Top-up owner |
+|---|---|---|---|---|---|
+| V1 | 567476 | IN_PROGRESS | 19,948 | 59,902 (2026-09-29 run) | V1 session (top up when < 10,000) |
+| V2 | **606544** "Moe 1.2" (shares list 887598 with PAUSED 568621 "Moe 1.0", 107,670 pending there) | IN_PROGRESS | 12,702 | 262,463 (2026-09-29 run) | V2 session |
+| V3 | 587156 | FINISHED, 0 pending | 0 | 11,192 (2026-09-30 500-cap run) | V3 session, **after** the user decides advisors vs acquirers |
+| V4 | 612587 | FINISHED, 5 pending | 5 | 183,335 (2026-09-30 500-cap run) | V4 session (top up now) |
+
+- V1's Open Check holds 89,359 people and V2's list 301,521, far more than our ledgers (17,203 and 35,360): pushes
+  made before this repo existed (or outside it) are in HeyReach but not in our ledgers. HeyReach treats a re-push
+  into the same list as "updated", so top-ups don't re-contact those people in that campaign.
+- Push V2 top-ups to **606544** (the running one), not the paused 568621; ask the user whether 568621 should stay
+  paused or be cancelled, since resuming it would re-view everyone on the shared list.
+
 ## How to push sourced leads in
 
 **Push each sourced batch to both the Con Req and Open Check campaigns** for
