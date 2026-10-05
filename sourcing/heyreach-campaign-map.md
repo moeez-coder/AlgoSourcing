@@ -179,6 +179,21 @@ Open Profile actually receive leads once live (V4's Con Acc stayed at 0 users fo
 - Push V2 top-ups to **606544** (the running one), not the paused 568621; ask the user whether 568621 should stay
   paused or be cancelled, since resuming it would re-view everyone on the shared list.
 
+### Update 2026-10-05 (master): every live Open Check is empty, and senders lack Sales Navigator
+
+| Open Check | Status | Pending | Since 2026-10-02 | Senders with valid Sales Navigator |
+|---|---|---|---|---|
+| V1 567476 | FINISHED | 0 | +208 finished, **+22,194 failed** | **1 of 97** |
+| V2 606544 | IN_PROGRESS | 1 | +3,232 finished, **+12,048 failed** | 13 of 125 |
+| V4 612587 | FINISHED | 5 | no change | 13 of 130 |
+| V3 587156 | FINISHED | 0 | no change | (blocked on the advisors/acquirers decision) |
+
+Workspace: 21 of 227 LinkedIn accounts are active, authenticated and Navigator-valid
+(182680, 183004, 204050, 207783, 241001, 245788, 246063, 246253, 246449, 246642, 246728, 246746, 247808, 248669,
+249125, 249296, 251394, 253831, 253852, 253917, 253972). The failure spike since ~2026-10-02 lines up with the
+lapsed licences (V4's Open Check ran cleanly on Navigator senders 2026-09-21). **No top-ups until this is fixed or the
+user approves a workaround** (pipeline.md "Open Check top-up rule", precondition).
+
 ## How to push sourced leads in
 
 **Push each sourced batch to both the Con Req and Open Check campaigns** for

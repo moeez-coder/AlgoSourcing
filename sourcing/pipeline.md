@@ -62,6 +62,12 @@ or acquirers; V1b and V5-V9 until campaigns exist) still need the user's go-ahea
 
 ### Open Check top-up rule (2026-10-02)
 
+- **Precondition, checked first (added 2026-10-05):** Open Check only works with senders that have a valid Sales
+  Navigator. Run `get_all_linked_in_accounts` and count the campaign's senders with `isActive`, `authIsValid` and
+  `isValidNavigator` all true. **If fewer than 10, do not push**: the leads fail and are used up. Tell the user
+  instead. (On 2026-10-05 only 21 of 227 workspace accounts qualified; V1's Open Check had 1 of 97 and failed
+  22,194 leads in 3 days.) Capacity is about 40 profile views per valid sender per day, shared across every
+  campaign that sender is on, so size the top-up to that.
 - **Check daily** (and before ending any session turn that touches the vertical): `get_campaign` on the vertical's
   live Open Check; read `progressStats.totalUsersPending` and `status`.
 - **Floor:** if pending is below **10,000** (or the campaign is FINISHED), top it up. **Top-up size:** push enough
