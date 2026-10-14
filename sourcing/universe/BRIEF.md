@@ -102,6 +102,46 @@ skipped; always pass `--discolike-cap-usd 0`. Blitz is the only provider.
   `GET https://api.blitz-api.ai/v2/account/key-info` with header `x-api-key: $BLITZ_API_KEY` (~14.4M left, resets
   2026-11-07). Run verticals one at a time. A full pull of ~2-3M people fits.
 
+### 6b. More lessons from the listbuild skill (all apply here)
+Most of these are enforced by the code you were given; the rest are how you operate.
+- **Enforced in code:** filter canary; LinkedIn-URL-only dedup (name + company never merges or excludes anyone;
+  `tests/test_ledger.py` pins it); percent-encoded slugs (`%C3%A9`, even double-encoded) decoded before comparing;
+  a Blitz company lookup that answers with a different company than requested is rejected; a 402 / 403 / 429 from
+  Clay or DiscoLike becomes a notice and the run continues, any other error stops it; the title guard below.
+- **Every run attempts every provider.** Never disable a provider or edit a config to dodge a limit. At the end of
+  each run listbuild prints "PROVIDER LIMITS HIT": relay that list to the user verbatim.
+- **Never spend before the estimate.** DiscoLike is paid ($0.0035 per contact), ignores exclusion lists (~40% of
+  paid rows overlap the free layers) and is capped at $0 for this run.
+- **Noisy titles:** "Partner" and "Head of <desk>" at recruitment firms, and "Art Director" at agencies, are often
+  fee-earners or mid-level. Point them out in the preview sample and let the user decide; do not change the rule
+  silently.
+- **Change the title rule only test-first:** add the case to `listbuild/tests/test_seniority.py`, fix
+  `listbuild/listbuild/seniority.py`, run the tests, then
+  `run --force --stages consolidate-final export` for the affected configs.
+- **Show the preview sample** (about 10 rows per vertical) and the title-guard fail count with the TAM table; the user
+  approves the sample before any full run.
+
+### 6c. Common mistakes
+| Symptom | Cause | Fix |
+|---|---|---|
+| `FilterIgnored` in preview | a filter Blitz does not support | remove or rename it in the config; never bypass the canary |
+| Consultancies in the main list | catch-all label under `fit.core_industries` | move it to `keyword_gated_industries` |
+| Already-contacted people reappear | `--seeds` not passed | always pass `--seeds seeds/contacted_all.csv`; `algo_universe.py` re-checks |
+| Blitz shard `oversized` | > 50k rows in one filter combination | add a dimension to `SHARD_DIMS` in `listbuild/listbuild/providers/blitz.py`, or accept and report the partial |
+| Fetched far fewer rows than planned (> 10% gap) | Blitz partition gap | rerun the stage (`run --force --stages blitz`) and report if it persists |
+| HTTP 402 / 403 from Clay or DiscoLike | quota / account limit | expected in this run; the run continues; report it |
+| A sub-director title in the output | title-guard gap | test-first fix (6b), then rerun `consolidate-final export` |
+| An HTTP 422 from Blitz | invalid industry label or enum value | fix the label (Blitz enums are case-sensitive) |
+| A run stops after ~10 minutes | cloud shell background limit | start detached with `setsid nohup ... &` and rerun the same command to resume |
+
+### 6d. Provider status (2026-10-14)
+- **Blitz:** live, ~14.4M records this cycle (resets 2026-11-07); the only provider used.
+- **Clay public API:** quota exhausted until 2027-01-01; listbuild skips it and reports it.
+- **DiscoLike:** account at its monthly limit (HTTP 403); capped at $0.
+- **AI Ark / Cold IQ:** not part of listbuild; not used in this run.
+
+More detail on stages, provider facts and the ledger schema: `listbuild/README.md`.
+
 ## 7. Keys
 Needs the env var `BLITZ_API_KEY`. Check presence only (`env | grep -q '^BLITZ_API_KEY=' && echo set`); never print,
 log or write a key into a file. If it is missing, stop and tell the user.
